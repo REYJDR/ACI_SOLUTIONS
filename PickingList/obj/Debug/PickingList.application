@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="PickingList.exe.manifest" size="109674">
+    <dependentAssembly dependencyType="install" codebase="PickingList.exe.manifest" size="109706">
       <assemblyIdentity name="PickingList.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4RGFFJQ3y3zg97ZbVHhs77iEjgwPI389ie5Ie06KFWU=</dsig:DigestValue>
+        <dsig:DigestValue>+bIVPPU4y76TxAWk+UJ25CdmEmxBN5FLI/xc0rQuNi4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

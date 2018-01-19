@@ -15,16 +15,16 @@
       </applicationRequestMinimum>
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
         <!--
-          UAC Manifest Options
-          If you want to change the Windows User Account Control level replace the 
-          requestedExecutionLevel node with one of the following.
+          Opciones del manifiesto de UAC
+          Si desea cambiar el nivel de Control de cuentas de usuario de Windows, reemplace el 
+          nodo requestedExecutionLevel por uno de los siguientes.
 
         <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
         <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
         <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
 
-         If you want to utilize File and Registry Virtualization for backward 
-         compatibility then delete the requestedExecutionLevel node.
+         Si desea usar Virtualización de archivos y Registro para compatibilidad con 
+         versiones anteriores, elimine el nodo requestedExecutionLevel.
     -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
@@ -1802,7 +1802,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ymkVFC6dHStHCDX2ac4O0VXMzbdCjLqMyDb/Tgu8Xts=</dsig:DigestValue>
+        <dsig:DigestValue>ZIIukeyGK22f8483C4sV2h/kJkR5Y1LsrJHqB/8VOsw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1815,13 +1815,13 @@
       <dsig:DigestValue>5tTnALTALCJuy7ACBgsQHSXdgCMoeMvlnoA5x/vQWsY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PickingList.exe.config" size="189">
+  <file name="PickingList.exe.config" size="184">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>rl5/qDc7Jz+tB+BIbOv9iMGPlRe6YJwrjmU09dnlPcs=</dsig:DigestValue>
+      <dsig:DigestValue>gXPU0Xy3KObyxeLOgSTOfrD0WdxiCFvKq3hqvx9rN6c=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
