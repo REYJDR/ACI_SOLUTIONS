@@ -1,0 +1,33 @@
+USE [Sage50]
+GO
+
+/****** Object:  Table [dbo].[COMPRAS_ADIDAS]    Script Date: 12/12/2017 9:17:17 p.m. ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[COMPRAS_ADIDAS](
+	[NO_CARTON] [varchar](50) NOT NULL,
+	[DELIVERY] [varchar](50) NOT NULL,
+	[CONTENEDOR] [varchar](11) NULL,
+	[PROVEEDOR] [varchar](10) NULL,
+	[MATERIAL] [varchar](6) NULL,
+	[EAN] [varchar](50) NULL,
+	[GRID_VALUE] [varchar](5) NULL,
+	[DELIVERY_QTY] [int] NULL,
+	[ESTADO] [varchar](10) NULL,
+	[INVOICE_DATE] [timestamp] NULL,
+	[PO_NUMBER] [varchar](20) NULL,
+	[MODEL_DESC] [varchar](30) NULL,
+	[GENDER] [varchar](5) NULL,
+	[DIVISION] [varchar](2) NULL,
+	[BRAND_CODE] [varchar](2) NULL,
+	[PRODUCT_TYPE] [varchar](25) NULL,
+	[SPORT_DESC] [varchar](25) NULL,
+	[AGE_GRP_DESC] [varchar](8) NULL,
+	[DATE_UPDATE]  AS (getdate())
+) ON [PRIMARY]
+GO
+

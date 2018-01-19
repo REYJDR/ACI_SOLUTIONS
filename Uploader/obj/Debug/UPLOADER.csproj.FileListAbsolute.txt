@@ -1,0 +1,16 @@
+\\Mac\Home\Documents\GitHub\UPLOADER_LAYOUT_DEV\UPLOADER\obj\Debug\UPLOADER.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\GitHub\UPLOADER_LAYOUT_DEV\UPLOADER\bin\Debug\UPLOADER.exe.config
+\\Mac\Home\Documents\GitHub\UPLOADER_LAYOUT_DEV\UPLOADER\bin\Debug\UPLOADER.exe.manifest
+\\Mac\Home\Documents\GitHub\UPLOADER_LAYOUT_DEV\UPLOADER\bin\Debug\UPLOADER.application
+\\Mac\Home\Documents\GitHub\UPLOADER_LAYOUT_DEV\UPLOADER\bin\Debug\UPLOADER.exe
+\\Mac\Home\Documents\GitHub\UPLOADER_LAYOUT_DEV\UPLOADER\bin\Debug\UPLOADER.pdb
+\\Mac\Home\Documents\GitHub\UPLOADER_LAYOUT_DEV\UPLOADER\obj\Debug\UPLOADER.csproj.ResolveComReference.cache
+\\Mac\Home\Documents\GitHub\UPLOADER_LAYOUT_DEV\UPLOADER\obj\Debug\UPLOADER.FrmGrid.resources
+\\Mac\Home\Documents\GitHub\UPLOADER_LAYOUT_DEV\UPLOADER\obj\Debug\UPLOADER.FrmInit.resources
+\\Mac\Home\Documents\GitHub\UPLOADER_LAYOUT_DEV\UPLOADER\obj\Debug\UPLOADER.Properties.Resources.resources
+\\Mac\Home\Documents\GitHub\UPLOADER_LAYOUT_DEV\UPLOADER\obj\Debug\UPLOADER.csproj.GenerateResource.Cache
+\\Mac\Home\Documents\GitHub\UPLOADER_LAYOUT_DEV\UPLOADER\obj\Debug\UPLOADER.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\GitHub\UPLOADER_LAYOUT_DEV\UPLOADER\obj\Debug\UPLOADER.exe.manifest
+\\Mac\Home\Documents\GitHub\UPLOADER_LAYOUT_DEV\UPLOADER\obj\Debug\UPLOADER.application
+\\Mac\Home\Documents\GitHub\UPLOADER_LAYOUT_DEV\UPLOADER\obj\Debug\UPLOADER.exe
+\\Mac\Home\Documents\GitHub\UPLOADER_LAYOUT_DEV\UPLOADER\obj\Debug\UPLOADER.pdb
