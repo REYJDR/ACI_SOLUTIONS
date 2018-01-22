@@ -120,21 +120,6 @@ namespace PickingList
 
             dateRange = "'"+dateTimeFrom.Text+ "' and '" + dateTimeTo.Text+"'";
 
-
-            /*DataTable listRefCat = dbquery.SOCatalog();
-
-            if(listRefCat.Rows.Count > 0) 
-            { 
-
-                for(int i=0; i< listRefCat.Rows.Count; i++)
-                {
-
-                comboBoxFrom.Items.Add(listRefCat.Rows[i]["InvNumForThisTrx"]);
-                comboBoxTo.Items.Add(listRefCat.Rows[i]["InvNumForThisTrx"]);
-
-                }
-            }*/
-
         }
 
         public void setMsgtext(string text)
@@ -156,18 +141,18 @@ namespace PickingList
             else
             { 
 
-                        if (comboBoxFrom.SelectedIndex != -1 && comboBoxFrom.SelectedItem.ToString() != "" )
+                        if (textInvFrom.Text != "" )
                         {
 
-                            if (comboBoxTo.SelectedIndex != -1 && comboBoxTo.SelectedItem.ToString() != "")
+                            if (textInvTo.Text != "")
                             {
 
-                            invRange = " and A.InvNumForThisTrx between '" + comboBoxFrom.SelectedItem.ToString() + "' and '" + comboBoxTo.SelectedItem.ToString() + "'";
+                            invRange = " and A.InvNumForThisTrx between '" + textInvFrom.Text + "' and '" + textInvTo.Text + "'";
 
                             }
                             else
                             {
-                            invRange = " and A.InvNumForThisTrx = '" + comboBoxFrom.SelectedItem.ToString()+ "'";
+                            invRange = " and A.InvNumForThisTrx = '" + textInvFrom.Text + "'";
                             }
 
                         }

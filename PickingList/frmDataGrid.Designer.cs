@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDataGrid));
             this.dataGridPre = new System.Windows.Forms.DataGridView();
             this.btnProc = new System.Windows.Forms.Button();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.chkSelAll = new System.Windows.Forms.CheckBox();
+            this.SelChkBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPre)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,7 +43,7 @@
             this.dataGridPre.AllowUserToDeleteRows = false;
             this.dataGridPre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridPre.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Seleccionar});
+            this.SelChkBox});
             this.dataGridPre.Location = new System.Drawing.Point(5, 12);
             this.dataGridPre.Name = "dataGridPre";
             this.dataGridPre.ReadOnly = true;
@@ -50,7 +52,7 @@
             // 
             // btnProc
             // 
-            this.btnProc.Location = new System.Drawing.Point(355, 218);
+            this.btnProc.Location = new System.Drawing.Point(398, 219);
             this.btnProc.Name = "btnProc";
             this.btnProc.Size = new System.Drawing.Size(75, 23);
             this.btnProc.TabIndex = 1;
@@ -58,11 +60,27 @@
             this.btnProc.UseVisualStyleBackColor = true;
             this.btnProc.Click += new System.EventHandler(this.btnProc_Click);
             // 
-            // Seleccionar
+            // chkSelAll
             // 
-            this.Seleccionar.HeaderText = "Seleccionar";
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.ReadOnly = true;
+            this.chkSelAll.AutoSize = true;
+            this.chkSelAll.Location = new System.Drawing.Point(13, 223);
+            this.chkSelAll.Name = "chkSelAll";
+            this.chkSelAll.Size = new System.Drawing.Size(70, 17);
+            this.chkSelAll.TabIndex = 2;
+            this.chkSelAll.Text = "Select All";
+            this.chkSelAll.UseVisualStyleBackColor = true;
+            this.chkSelAll.CheckedChanged += new System.EventHandler(this.chkSelAll_CheckedChanged);
+            // 
+            // SelChkBox
+            // 
+            this.SelChkBox.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.NullValue = false;
+            this.SelChkBox.DefaultCellStyle = dataGridViewCellStyle1;
+            this.SelChkBox.HeaderText = "Selection";
+            this.SelChkBox.Name = "SelChkBox";
+            this.SelChkBox.ReadOnly = true;
+            this.SelChkBox.Width = 57;
             // 
             // frmDataGrid
             // 
@@ -72,14 +90,15 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(485, 258);
+            this.Controls.Add(this.chkSelAll);
             this.Controls.Add(this.btnProc);
             this.Controls.Add(this.dataGridPre);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDataGrid";
             this.Text = "Picking List Sales Order";
-            this.Load += new System.EventHandler(this.frmDataGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPre)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -87,6 +106,7 @@
 
         private System.Windows.Forms.DataGridView dataGridPre;
         private System.Windows.Forms.Button btnProc;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
+        private System.Windows.Forms.CheckBox chkSelAll;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn SelChkBox;
     }
 }

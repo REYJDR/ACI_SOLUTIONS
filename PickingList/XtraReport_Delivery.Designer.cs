@@ -313,7 +313,9 @@
             // 
             // xrTable1
             // 
-            this.xrTable1.BackColor = System.Drawing.Color.Transparent;
+            this.xrTable1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.xrTable1.BorderColor = System.Drawing.Color.DimGray;
+            this.xrTable1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable1.EvenStyleName = "DetailData3";
             this.xrTable1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
@@ -324,6 +326,8 @@
             this.xrTable1.SizeF = new System.Drawing.SizeF(1075F, 25F);
             this.xrTable1.StyleName = "DetailData3";
             this.xrTable1.StylePriority.UseBackColor = false;
+            this.xrTable1.StylePriority.UseBorderColor = false;
+            this.xrTable1.StylePriority.UseBorders = false;
             this.xrTable1.StylePriority.UseFont = false;
             // 
             // xrTableRow1

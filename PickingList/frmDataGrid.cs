@@ -8,26 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace PickingList
 {
     public partial class frmDataGrid : Form
     {
+        
+
+
         public frmDataGrid()
         {
             InitializeComponent();
         }
 
-        private void frmDataGrid_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public void fillGrid(DataTable data)
-        {
-
-
+        {           
+         
             dataGridPre.DataSource = data;
             dataGridPre.AutoResizeColumns();
+
+            FitDataGrid(dataGridPre);
 
             /*setear columnas como NO editable excepto la columna de chackbox */
             dataGridPre.ReadOnly = false;
@@ -41,6 +41,7 @@ namespace PickingList
             /* FIN SETADO DE COLUMNAS */
 
         }
+
 
         private void btnProc_Click(object sender, EventArgs e)
         {
@@ -85,13 +86,35 @@ namespace PickingList
 
         private void PrintReport()
         {
-
-            
             frmReport repViewer = new frmReport();
 
             repViewer.Show();
         }
 
-        
+        private void FitDataGrid(DataGridView dgv)
+        {
+            DataGridViewElementStates states = DataGridViewElementStates.None;
+
+            dgv.ScrollBars = ScrollBars.None;
+            var totalHeight = dgv.Rows.GetRowsHeight(states) + dgv.ColumnHeadersHeight;
+
+            totalHeight += dgv.Rows.Count;
+
+            var totalWidth = dgv.Columns.GetColumnsWidth(states) + dgv.RowHeadersWidth;
+            dgv.ClientSize = new Size(totalWidth, totalHeight);
+        }
+
+        private void chkSelAll_CheckedChanged(object sender, EventArgs e)
+        {
+            for (int j = 0; j < dataGridPre.RowCount; j++)
+
+            {
+
+                dataGridPre[0, j].Value = chkSelAll.Checked;
+
+            }
+
+            dataGridPre.EndEdit();
+        }
     }
 }
