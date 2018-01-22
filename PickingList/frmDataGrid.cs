@@ -45,6 +45,10 @@ namespace PickingList
         private void btnProc_Click(object sender, EventArgs e)
         {
 
+            FrmInit frmInit = new FrmInit();
+
+            frmInit.setMsgtext("Quering data...");
+
             /*REY CORRECCIONES */
             DataTable selecRows = new DataTable(); /*DECLARAS LA TABLA COMO DATATABLE*/
             DbQuery repQuery = new DbQuery();
@@ -73,9 +77,9 @@ namespace PickingList
                 }
 
             repQuery.repQuery(selecRows);
-            PrintReport(); 
+            PrintReport();
+            frmInit.setMsgtext("Done");
 
-                        
         }
 
 

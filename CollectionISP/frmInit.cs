@@ -135,11 +135,11 @@ namespace CollectionISP
             dateCollectOF = dateCollectOf.Text;
     }
 
-        private void setMsgtext(string text)
+        public void setMsgtext(string text)
         {
 
             StatusLabel.Text = text;
-
+            statusStrip1.Refresh();
         }
 
         private void btnQuery_Click(object sender, EventArgs e)

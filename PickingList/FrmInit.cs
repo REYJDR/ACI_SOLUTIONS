@@ -71,7 +71,7 @@ namespace PickingList
 
             if (dbConn.StartConn().State == System.Data.ConnectionState.Open)
             {
-
+                setMsgtext("Test de conexión exitoso");
                 MessageBox.Show("Test de conexión exitoso", "Test de conexión");
                 /* this.Close();*/
 
@@ -137,13 +137,20 @@ namespace PickingList
 
         }
 
+        public void setMsgtext(string text)
+        {
+
+            StatusLabel.Text = text;
+            statusStrip1.Refresh();
+
+        }
 
         private void btnQuery_Click(object sender, EventArgs e)
         {
 
-              if(comboBoxRepType.SelectedIndex == -1)
+            if(comboBoxRepType.SelectedIndex == -1)
             {
-
+                setMsgtext("Please select a Report Type");
                 MessageBox.Show("Please select a Report Type");
             }
             else

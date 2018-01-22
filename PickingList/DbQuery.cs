@@ -13,9 +13,7 @@ namespace PickingList
 
         public static DataTable queryTable;
         
-
-
-
+        
         public DataTable SOCatalog()
         {
            
@@ -108,7 +106,7 @@ namespace PickingList
                                 "B.Quantity," +
                                 "D.ItemID," +
                                 "D.UPC_SKU," +
-                                "D.ItemDescription," +
+                                "D.SalesDescription," +
                                 "D.Weight," +
                                 "B.Amount,"+
                                 "D.StockingUM as Unit"+

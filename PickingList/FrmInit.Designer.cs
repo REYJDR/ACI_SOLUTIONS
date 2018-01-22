@@ -33,15 +33,12 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tabPrincipal = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
             this.comboBoxRepType = new System.Windows.Forms.ComboBox();
             this.btnQuery = new System.Windows.Forms.Button();
             this.comboBoxTo = new System.Windows.Forms.ComboBox();
             this.comboBoxFrom = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblRefTo = new System.Windows.Forms.TextBox();
             this.lblRefFrom = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblDateTo = new System.Windows.Forms.TextBox();
             this.lblDateFrom = new System.Windows.Forms.TextBox();
             this.dateTimeTo = new System.Windows.Forms.DateTimePicker();
@@ -57,10 +54,19 @@
             this.textUser = new System.Windows.Forms.TextBox();
             this.textHostname = new System.Windows.Forms.TextBox();
             this.dbQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabPrincipal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbQueryBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -76,42 +82,23 @@
             this.tabPrincipal.Location = new System.Drawing.Point(-2, 0);
             this.tabPrincipal.Name = "tabPrincipal";
             this.tabPrincipal.SelectedIndex = 0;
-            this.tabPrincipal.Size = new System.Drawing.Size(402, 246);
+            this.tabPrincipal.Size = new System.Drawing.Size(402, 222);
             this.tabPrincipal.TabIndex = 1;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.comboBoxRepType);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.btnQuery);
-            this.tabPage1.Controls.Add(this.comboBoxTo);
-            this.tabPage1.Controls.Add(this.comboBoxFrom);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.lblRefTo);
-            this.tabPage1.Controls.Add(this.lblRefFrom);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.lblDateTo);
-            this.tabPage1.Controls.Add(this.lblDateFrom);
-            this.tabPage1.Controls.Add(this.dateTimeTo);
-            this.tabPage1.Controls.Add(this.dateTimeFrom);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(394, 220);
+            this.tabPage1.Size = new System.Drawing.Size(394, 196);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Report Filter";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 161);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 13);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Report Type";
             // 
             // comboBoxRepType
             // 
@@ -119,15 +106,15 @@
             this.comboBoxRepType.Items.AddRange(new object[] {
             "Delivery",
             "Sales"});
-            this.comboBoxRepType.Location = new System.Drawing.Point(51, 184);
+            this.comboBoxRepType.Location = new System.Drawing.Point(9, 19);
             this.comboBoxRepType.Name = "comboBoxRepType";
-            this.comboBoxRepType.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxRepType.Size = new System.Drawing.Size(162, 21);
             this.comboBoxRepType.TabIndex = 13;
             this.comboBoxRepType.SelectedIndexChanged += new System.EventHandler(this.comboBoxRepType_SelectedIndexChanged_1);
             // 
             // btnQuery
             // 
-            this.btnQuery.Location = new System.Drawing.Point(276, 184);
+            this.btnQuery.Location = new System.Drawing.Point(312, 162);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(75, 23);
             this.btnQuery.TabIndex = 12;
@@ -138,7 +125,7 @@
             // comboBoxTo
             // 
             this.comboBoxTo.FormattingEnabled = true;
-            this.comboBoxTo.Location = new System.Drawing.Point(230, 120);
+            this.comboBoxTo.Location = new System.Drawing.Point(47, 64);
             this.comboBoxTo.Name = "comboBoxTo";
             this.comboBoxTo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBoxTo.Size = new System.Drawing.Size(121, 21);
@@ -148,27 +135,17 @@
             // 
             this.comboBoxFrom.FormattingEnabled = true;
             this.comboBoxFrom.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBoxFrom.Location = new System.Drawing.Point(51, 121);
+            this.comboBoxFrom.Location = new System.Drawing.Point(47, 28);
             this.comboBoxFrom.Name = "comboBoxFrom";
             this.comboBoxFrom.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBoxFrom.Size = new System.Drawing.Size(121, 21);
             this.comboBoxFrom.TabIndex = 10;
             this.comboBoxFrom.SelectedIndexChanged += new System.EventHandler(this.comboBoxFrom_SelectedIndexChanged_1);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Invoice #";
-            // 
             // lblRefTo
             // 
             this.lblRefTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRefTo.Location = new System.Drawing.Point(189, 121);
+            this.lblRefTo.Location = new System.Drawing.Point(6, 65);
             this.lblRefTo.Name = "lblRefTo";
             this.lblRefTo.Size = new System.Drawing.Size(35, 20);
             this.lblRefTo.TabIndex = 6;
@@ -177,27 +154,16 @@
             // lblRefFrom
             // 
             this.lblRefFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRefFrom.Location = new System.Drawing.Point(10, 121);
+            this.lblRefFrom.Location = new System.Drawing.Point(6, 28);
             this.lblRefFrom.Name = "lblRefFrom";
             this.lblRefFrom.Size = new System.Drawing.Size(35, 20);
             this.lblRefFrom.TabIndex = 5;
             this.lblRefFrom.Text = "From";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Invoice Date Range";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // lblDateTo
             // 
             this.lblDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateTo.Location = new System.Drawing.Point(189, 48);
+            this.lblDateTo.Location = new System.Drawing.Point(9, 65);
             this.lblDateTo.Name = "lblDateTo";
             this.lblDateTo.Size = new System.Drawing.Size(35, 20);
             this.lblDateTo.TabIndex = 3;
@@ -206,7 +172,7 @@
             // lblDateFrom
             // 
             this.lblDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateFrom.Location = new System.Drawing.Point(10, 48);
+            this.lblDateFrom.Location = new System.Drawing.Point(9, 28);
             this.lblDateFrom.Name = "lblDateFrom";
             this.lblDateFrom.Size = new System.Drawing.Size(35, 20);
             this.lblDateFrom.TabIndex = 2;
@@ -218,10 +184,10 @@
             this.dateTimeTo.CustomFormat = "yyyy-MM-dd";
             this.dateTimeTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeTo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimeTo.Location = new System.Drawing.Point(246, 48);
+            this.dateTimeTo.Location = new System.Drawing.Point(50, 65);
             this.dateTimeTo.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
             this.dateTimeTo.Name = "dateTimeTo";
-            this.dateTimeTo.Size = new System.Drawing.Size(93, 20);
+            this.dateTimeTo.Size = new System.Drawing.Size(121, 20);
             this.dateTimeTo.TabIndex = 1;
             this.dateTimeTo.Value = new System.DateTime(2018, 1, 7, 14, 53, 37, 0);
             this.dateTimeTo.ValueChanged += new System.EventHandler(this.dateTimeTo_ValueChanged);
@@ -232,9 +198,9 @@
             this.dateTimeFrom.CustomFormat = "yyyy-MM-dd";
             this.dateTimeFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeFrom.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimeFrom.Location = new System.Drawing.Point(73, 48);
+            this.dateTimeFrom.Location = new System.Drawing.Point(50, 28);
             this.dateTimeFrom.Name = "dateTimeFrom";
-            this.dateTimeFrom.Size = new System.Drawing.Size(94, 20);
+            this.dateTimeFrom.Size = new System.Drawing.Size(121, 20);
             this.dateTimeFrom.TabIndex = 0;
             this.dateTimeFrom.Value = new System.DateTime(2018, 1, 7, 14, 53, 17, 0);
             this.dateTimeFrom.ValueChanged += new System.EventHandler(this.dateTimeFrom_ValueChanged);
@@ -338,11 +304,63 @@
             // 
             this.dbQueryBindingSource.DataSource = typeof(PickingList.DbQuery);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblDateFrom);
+            this.groupBox1.Controls.Add(this.dateTimeFrom);
+            this.groupBox1.Controls.Add(this.lblDateTo);
+            this.groupBox1.Controls.Add(this.dateTimeTo);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(187, 100);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Invoice Date Range";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lblRefFrom);
+            this.groupBox2.Controls.Add(this.lblRefTo);
+            this.groupBox2.Controls.Add(this.comboBoxFrom);
+            this.groupBox2.Controls.Add(this.comboBoxTo);
+            this.groupBox2.Location = new System.Drawing.Point(199, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(188, 100);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Invoice #";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.comboBoxRepType);
+            this.groupBox3.Location = new System.Drawing.Point(6, 113);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(187, 48);
+            this.groupBox3.TabIndex = 17;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Report Type";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 225);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(401, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(0, 17);
+            // 
             // FrmInit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(401, 247);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmInit";
@@ -350,11 +368,18 @@
             this.Load += new System.EventHandler(this.FrmInit_Load);
             this.tabPrincipal.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbQueryBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -379,18 +404,17 @@
         private System.Windows.Forms.TextBox lblDateFrom;
         private System.Windows.Forms.TextBox lblRefTo;
         private System.Windows.Forms.TextBox lblRefFrom;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxTo;
         private System.Windows.Forms.ComboBox comboBoxFrom;
         private System.Windows.Forms.Button btnQuery;
 
         private System.Windows.Forms.BindingSource dbQueryBindingSource;
         private System.Windows.Forms.ComboBox comboBoxRepType;
-        private System.Windows.Forms.Label label3;
-
-       
-
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
     }
 }
 
