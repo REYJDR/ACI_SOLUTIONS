@@ -54,11 +54,16 @@ namespace PickingList
             string invRange = FrmInit.invRange;
 
             /*QUERY PARA LLENAR PREVIEW DEL PICKING LIST */
-                string sqlInv = "SELECT DISTINCT C.Reference as InvoiceNo,C.TransactionDate as Date,B.CustomerID as CustomerID,B.Customer_Bill_Name as Name FROM JrnlRow A" +
+                string sqlInv = "SELECT DISTINCT C.Reference as InvoiceNo," +
+                           " C.TransactionDate as Date," +
+                           " B.CustomerID as CustomerID," +
+                           " B.Customer_Bill_Name as Name " +
+                           " FROM JrnlRow A" +
                            " INNER JOIN Customers B ON B.CustomerRecordNumber = A.CustomerRecordNumber" +
                            " INNER JOIN JrnlHdr C ON A.PostOrder = C.PostOrder" +
                            " WHERE A.Journal = '3' " +
                            " AND A.RowType = '0' " +
+                           " AND C.MainAmount > '0'" +
                            " AND A.RowDate between " +
                            dateRange + invRange+ ";";
 
@@ -119,6 +124,7 @@ namespace PickingList
                                 " AND A.TransactionDate ='" + date + "'" +
                                 " AND A.Reference = '" + invNum + "'" +
                                 " AND C.CustomerID = '" + cusID + "'" +
+                                " AND B.Amount < '0'" +
                                 " Order by A.Reference; ";
 
 
