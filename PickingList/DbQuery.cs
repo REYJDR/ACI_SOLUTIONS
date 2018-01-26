@@ -12,7 +12,22 @@ namespace PickingList
     {
 
         public static DataTable queryTable;
-        
+
+        public DataTable  CompanyName()
+        {
+      
+            DbConnetionPervasive dbcon = new DbConnetionPervasive();
+
+            DataTable soData = new DataTable();
+
+            string  SqlComp = "select CompanyName from Company;";
+
+            dbcon.Query(SqlComp).Fill(soData);
+
+
+            return soData;
+        }
+
         
         public DataTable SOCatalog()
         {
@@ -162,6 +177,7 @@ namespace PickingList
             try
             {
                 DataTable resTable = new DataTable("Result");
+                resTable.Columns.Add("CompanyName", typeof(String));
                 resTable.Columns.Add("InvoiceNo", typeof(String));
                 resTable.Columns.Add("InvoiceDate", typeof(String));
                 resTable.Columns.Add("IdCustomer", typeof(String));
@@ -184,7 +200,11 @@ namespace PickingList
                     rawDate = Convert.ToDateTime(tableRep.Rows[i].Field<DateTime>(1));
                     date = rawDate.ToString("yyyy-MM-dd");
 
+                   DataTable CompanyName = this.CompanyName();
+
+
                     resTable.Rows.Add(
+                           CompanyName.Rows[0].Field<string>(0),
                            tableRep.Rows[i].Field<string>(0),
                            date,                    
                            tableRep.Rows[i].Field<string>(2),

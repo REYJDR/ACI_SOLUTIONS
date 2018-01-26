@@ -78,8 +78,9 @@ namespace PickingList
                 }
 
             repQuery.repQuery(selecRows);
-            PrintReport();
             frmInit.setMsgtext("Done");
+            PrintReport();
+           
 
         }
 
@@ -95,10 +96,10 @@ namespace PickingList
         {
             DataGridViewElementStates states = DataGridViewElementStates.None;
 
-            dgv.ScrollBars = ScrollBars.None;
+            //dgv.ScrollBars = ScrollBars.None;
             var totalHeight = dgv.Rows.GetRowsHeight(states) + dgv.ColumnHeadersHeight;
 
-            totalHeight += dgv.Rows.Count;
+            totalHeight += dgv.Rows.Count *4;
 
             var totalWidth = dgv.Columns.GetColumnsWidth(states) + dgv.RowHeadersWidth;
             dgv.ClientSize = new Size(totalWidth, totalHeight);

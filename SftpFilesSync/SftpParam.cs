@@ -11,12 +11,12 @@ namespace SftpFilesSync
     {
 
         private string hostaname;
-        private string port;
+        private int port;
         private string user;
         private string password;
 
         public string Hostaname { get => hostaname; set => hostaname = value; }
-        public string Port { get => port; set => port = value; }
+        public int Port { get => port; set => port = value; }
         public string User { get => user; set => user = value; }
         public string Password { get => password; set => password = value; }
 
@@ -47,7 +47,7 @@ namespace SftpFilesSync
                 TextReader file = new StreamReader("SftpParams.txt");
 
                 Hostaname = file.ReadLine();
-                port = file.ReadLine();
+                port = Convert.ToInt32(file.ReadLine());
                 User = file.ReadLine();
                 Password = file.ReadLine();
 
@@ -69,7 +69,7 @@ namespace SftpFilesSync
                 TextReader file = new StreamReader("SftpParams.txt");
 
                 Hostaname = file.ReadLine();
-                port = file.ReadLine();
+                port = Convert.ToInt32(file.ReadLine());
                 User = file.ReadLine();
                 Password = file.ReadLine();
 

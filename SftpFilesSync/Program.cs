@@ -16,7 +16,7 @@ namespace SftpFilesSync
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmInit());
+            Application.Run(new FrmInit());
         }
     }
 }
