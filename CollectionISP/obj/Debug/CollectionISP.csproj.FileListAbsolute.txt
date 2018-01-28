@@ -364,7 +364,6 @@
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\CollectionISP\bin\Debug\es\DevExpress.Diagram.v17.2.Core.resources.dll
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\CollectionISP\bin\Debug\ja\DevExpress.Diagram.v17.2.Core.resources.dll
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\CollectionISP\bin\Debug\ru\DevExpress.Diagram.v17.2.Core.resources.dll
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\CollectionISP\obj\Debug\CollectionISP.csprojResolveAssemblyReference.cache
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\CollectionISP\obj\Debug\CollectionISP.frmRepView.resources
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\CollectionISP\obj\Debug\CollectionISP.frmDataGrid.resources
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\CollectionISP\obj\Debug\CollectionISP.frmInit.resources
@@ -376,3 +375,9 @@
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\CollectionISP\obj\Debug\CollectionISP.csproj.CoreCompileInputs.cache
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\CollectionISP\obj\Debug\CollectionISP.exe
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\CollectionISP\obj\Debug\CollectionISP.pdb
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\CollectionISP\obj\Debug\CollectionISP.frmReportViewDS.resources
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\CollectionISP\obj\Debug\CollectionISP.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\CollectionISP\bin\Debug\CollectionISP.exe.manifest
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\CollectionISP\bin\Debug\CollectionISP.application
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\CollectionISP\obj\Debug\CollectionISP.exe.manifest
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\CollectionISP\obj\Debug\CollectionISP.application

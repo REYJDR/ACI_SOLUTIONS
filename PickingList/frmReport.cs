@@ -23,7 +23,9 @@ namespace PickingList
             XtraReport_Delivery deliveryRep = new XtraReport_Delivery();
 
             if (docview == "Sales")
+
             {
+                salesRep.LoadLayout("XtraReport_Delivery2.repx");
                 salesRep.CreateDocument();
                 documentViewer1.DocumentSource = salesRep;
             }

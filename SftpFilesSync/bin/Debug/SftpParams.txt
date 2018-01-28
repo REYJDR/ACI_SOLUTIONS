@@ -1,4 +1,6 @@
-aciweb-pa.com
-21
-delifish@aciweb-pa.com
-123456
+107.180.12.15
+22
+daoutel
+DAOUTEL2018
+\\Mac\Home\Downloads\ACI_SFTPSYNC_OpenSSH.ppk
+public_html/delifish

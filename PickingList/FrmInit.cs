@@ -12,6 +12,7 @@ using Microsoft.VisualBasic.FileIO;
 using System.Data.SqlClient;
 using System.Data.Odbc;
 using System.Data.OleDb;
+using DevExpress.XtraReports.UI;
 
 
 namespace PickingList
@@ -209,6 +210,26 @@ namespace PickingList
 
         private void comboBoxFrom_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnDesigner_Click(object sender, EventArgs e)
+        {
+            
+                XtraReport_Delivery report = new XtraReport_Delivery();
+                ReportDesignTool dt = new ReportDesignTool(report);
+
+                // Invoke the standard End-User Designer form. 
+                dt.ShowDesigner();
+
+                // Invoke the standard End-User Designer form modally. 
+              //  dt.ShowDesignerDialog();
+
+                // Invoke the Ribbon End-User Designer form. 
+               // dt.ShowRibbonDesigner();
+
+                // Invoke the Ribbon End-User Designer form modally. 
+              //  dt.ShowRibbonDesignerDialog();
 
         }
     }

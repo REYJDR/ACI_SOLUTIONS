@@ -22,6 +22,10 @@ namespace CollectionISP
         public static string dateRangeRep;
         public static string dateCollectOF;
 
+        public static bool CheckInvRep;
+        public static bool CheckCollectRep;
+
+        bool Loaded;
 
         private DbParam conParams;
 
@@ -30,10 +34,13 @@ namespace CollectionISP
         OpenFileDialog of = new OpenFileDialog();
         
 
+
         public frmInit()
         {
             InitializeComponent();
             InitValue();
+
+            
         }
 
         private void InitValue()
@@ -46,6 +53,34 @@ namespace CollectionISP
             textUser.Text = conParams.User;
             textPass.Text = conParams.Password;
 
+            
+            dateCollectOf.Value = DateTime.Now;
+
+            SetInvDate();
+            SetRepDate();
+
+
+            setDatesRange();
+
+
+
+        }
+
+        public void SetInvDate()
+        {
+            Loaded = false;
+            dateInvTo.Value = DateTime.Now;
+            dateInvFrom.Value = DateTime.Now;
+            Loaded = true;
+
+        }
+
+        public void SetRepDate()
+        {
+            Loaded = false;
+            dateRepTo.Value = DateTime.Now;
+            dateRepFrom.Value = DateTime.Now;
+            Loaded = true;
 
         }
 
@@ -81,58 +116,58 @@ namespace CollectionISP
 
         }
 
-        private void FrmInit_Load(object sender, EventArgs e)
-        {
-
-            setDatesRange();
-
-        }
 
         
         private void setDatesRange()
         {
-
-            if (dateInvFrom.Text != "" && dateInvTo.Text != "")
+            
+            if(Loaded == true)
             {
-                int result = DateTime.Compare(dateInvFrom.Value, dateInvTo.Value);
 
-                if (result > 0)
+                if (dateInvFrom.Value != null && dateInvTo.Value != null)
+                {
+                  
+                    if (dateInvTo.Value.Date < dateInvFrom.Value.Date)
+                    {
+                        MessageBox.Show("Set a valid range of dates for invoices", "Warning");
+                        SetInvDate();
+                    }
+                    else
+                    {
+                        dateRangeInv = "'" + dateInvFrom.Text + "' and '" + dateInvTo.Text + "'";
+                    }
+
+                }
+                else
                 {
                     MessageBox.Show("Set a valid range of dates for invoices", "Warning");
+
+                }
+
+                if (dateRepFrom.Value != null && dateRepTo.Value != null)
+                {
+
+                    if (dateRepTo.Value.Date < dateRepFrom.Value.Date)
+                    {
+                        MessageBox.Show("Set a valid range of dates for receipts", "Warning");
+                        SetRepDate();
+                    }
+                    else
+                    {
+                        dateRangeRep = "'" + dateRepFrom.Text + "' and '" + dateRepTo.Text + "'";
+                    }
                 }
                 else
-                {
-                    dateRangeInv = "'" + dateInvFrom.Text + "' and '" + dateInvTo.Text + "'";
-                }
-   
-            }
-            else
-            {
-                MessageBox.Show("Set a valid range of dates for invoices", "Warning");
-
-            }
-
-            if (dateRepFrom.Text != "" && dateRepTo.Text != "")
-            {
-
-                int result = DateTime.Compare(dateRepFrom.Value, dateRepTo.Value);
-
-                if (result > 0)
                 {
                     MessageBox.Show("Set a valid range of dates for receipts", "Warning");
+
                 }
-                else
-                {
-                    dateRangeRep = "'" + dateRepFrom.Text + "' and '" + dateRepTo.Text + "'";
-                }
-            }
-            else
-            {
-                MessageBox.Show("Set a valid range of dates for receipts", "Warning");
+
+                dateCollectOF = dateCollectOf.Text;
 
             }
 
-            dateCollectOF = dateCollectOf.Text;
+           
     }
 
         public void setMsgtext(string text)
@@ -144,34 +179,64 @@ namespace CollectionISP
 
         private void btnQuery_Click(object sender, EventArgs e)
         {
-            DataSet ouputPreview;
 
-            setMsgtext("Quering data, please wait...");
+            if(checkCollect.Checked || checkInvDS.Checked){
 
-            System.Threading.Thread.Sleep(2);
+                DataSet ouputPreview;
 
-            ouputPreview = dbquery.collectionQuery();
+                setMsgtext("Quering data, please wait...");
 
-            
-          // frmDataGrid tableGrid = new frmDataGrid();
-           frmRepView  viewReport = new frmRepView();
 
-           // int filled = tableGrid.fillGrid(ouputPreview.Tables["Joinedtable"]);
-            
-            if (ouputPreview.Tables["Joinedtable"].Rows.Count > 0)
-            {
+                if (checkCollect.Checked)
+                {
+                    
+                    ouputPreview = dbquery.collectionQuery();
 
-                viewReport.Show();
-                //tableGrid.Show();
-                setMsgtext("Done!");
+
+                    frmRepView viewReport = new frmRepView();
+
+                    if (ouputPreview.Tables["Joinedtable"].Rows.Count > 0)
+                    {
+
+                        viewReport.Show();
+                        //tableGrid.Show();
+                        setMsgtext("Done!");
+                    }
+                    else
+                    {
+                        setMsgtext("There's no data for this selection");
+                        MessageBox.Show("There's no data for this selection", "Warning");
+
+                    }
+                }
+
+                if (checkInvDS.Checked)
+                {
+                    ouputPreview = dbquery.DsQuery();
+
+                   
+
+                    frmReportViewDS viewReportDs = new frmReportViewDS();
+
+                    if (ouputPreview.Tables["DATASOURCE"].Rows.Count > 0)
+                    {
+
+                        viewReportDs.Show();
+                        setMsgtext("Done!");
+                    }
+                    else
+                    {
+                        setMsgtext("There's no data for this selection");
+                        MessageBox.Show("There's no data for this selection", "Warning");
+
+                    }
+
+                }
             }
-            else
-            {
-                setMsgtext("There's no data for this selection"); 
-                MessageBox.Show("There's no data for this selection", "Warning");
+            else{
 
-            }            
-                
+                setMsgtext("At least one report option is required");
+            }
             
         }
 
@@ -189,17 +254,12 @@ namespace CollectionISP
         {
             setDatesRange();
         }
-
-
-
+        
         private void dateRepTo_ValueChanged_1(object sender, EventArgs e)
         {
           setDatesRange();
         }
 
-        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
 
-        }
     }
 }
