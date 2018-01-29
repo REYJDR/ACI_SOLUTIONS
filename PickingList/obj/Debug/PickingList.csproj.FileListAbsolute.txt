@@ -774,8 +774,6 @@ D:\Github\ACI_SOLUTIONS\PickingList\obj\Debug\PickingList.pdb
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PickingList\obj\Debug\PickingList.frmDataGrid.resources
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PickingList\obj\Debug\PickingList.FrmInit.resources
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PickingList\obj\Debug\PickingList.Properties.Resources.resources
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PickingList\obj\Debug\PickingList.XtraReport_Delivery.resources
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PickingList\obj\Debug\PickingList.XtraReport_Sales.resources
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PickingList\obj\Debug\PickingList.csproj.GenerateResource.Cache
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PickingList\obj\Debug\PickingList.exe.licenses
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PickingList\obj\Debug\PickingList.csproj.CoreCompileInputs.cache
@@ -783,3 +781,4 @@ D:\Github\ACI_SOLUTIONS\PickingList\obj\Debug\PickingList.pdb
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PickingList\obj\Debug\PickingList.application
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PickingList\obj\Debug\PickingList.exe
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PickingList\obj\Debug\PickingList.pdb
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PickingList\obj\Debug\PickingList.XtraReport_standard.resources

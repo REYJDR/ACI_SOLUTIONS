@@ -14,12 +14,15 @@ namespace SftpFilesSync
         private int port;
         private string user;
         private string password;
+        private string ppk;
+        private string rePath;
 
         public string Hostaname { get => hostaname; set => hostaname = value; }
         public int Port { get => port; set => port = value; }
         public string User { get => user; set => user = value; }
         public string Password { get => password; set => password = value; }
-
+        public string Ppk { get => ppk; set => ppk = value; }
+        public string RePath { get => rePath; set => rePath = value; }
 
         public void SetValueOnFile()
         {
@@ -32,6 +35,8 @@ namespace SftpFilesSync
             file.WriteLine(port);
             file.WriteLine(User);
             file.WriteLine(Password);
+            file.WriteLine(Ppk);
+            file.WriteLine(RePath);
 
             // close the stream     
             file.Close();
@@ -50,6 +55,8 @@ namespace SftpFilesSync
                 port = Convert.ToInt32(file.ReadLine());
                 User = file.ReadLine();
                 Password = file.ReadLine();
+                Ppk = file.ReadLine();
+                RePath = file.ReadLine();
 
 
                 // close the stream
@@ -72,6 +79,8 @@ namespace SftpFilesSync
                 port = Convert.ToInt32(file.ReadLine());
                 User = file.ReadLine();
                 Password = file.ReadLine();
+                Ppk = file.ReadLine();
+                RePath = file.ReadLine();
 
                 strConn = "";
 

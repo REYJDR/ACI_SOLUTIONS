@@ -36,7 +36,9 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBoxRepType = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textInvTo = new System.Windows.Forms.TextBox();
             this.lblRefFrom = new System.Windows.Forms.TextBox();
+            this.textInvFrom = new System.Windows.Forms.TextBox();
             this.lblRefTo = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblDateFrom = new System.Windows.Forms.TextBox();
@@ -54,19 +56,24 @@
             this.textPass = new System.Windows.Forms.TextBox();
             this.textUser = new System.Windows.Forms.TextBox();
             this.textHostname = new System.Windows.Forms.TextBox();
-            this.dbQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.checkedListReport = new System.Windows.Forms.CheckedListBox();
+            this.btnDesigner = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.textInvFrom = new System.Windows.Forms.TextBox();
-            this.textInvTo = new System.Windows.Forms.TextBox();
+            this.dbQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnDelete = new System.Windows.Forms.Button();
             this.tabPrincipal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbQueryBindingSource)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbQueryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -79,6 +86,7 @@
             this.tabPrincipal.AccessibleName = "";
             this.tabPrincipal.Controls.Add(this.tabPage1);
             this.tabPrincipal.Controls.Add(this.tabPage2);
+            this.tabPrincipal.Controls.Add(this.tabPage3);
             this.tabPrincipal.Location = new System.Drawing.Point(-2, 0);
             this.tabPrincipal.Name = "tabPrincipal";
             this.tabPrincipal.SelectedIndex = 0;
@@ -98,7 +106,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Report Filter";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // groupBox3
             // 
@@ -113,9 +120,6 @@
             // comboBoxRepType
             // 
             this.comboBoxRepType.FormattingEnabled = true;
-            this.comboBoxRepType.Items.AddRange(new object[] {
-            "Delivery",
-            "Sales"});
             this.comboBoxRepType.Location = new System.Drawing.Point(9, 19);
             this.comboBoxRepType.Name = "comboBoxRepType";
             this.comboBoxRepType.Size = new System.Drawing.Size(162, 21);
@@ -135,6 +139,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Invoice #";
             // 
+            // textInvTo
+            // 
+            this.textInvTo.Location = new System.Drawing.Point(47, 65);
+            this.textInvTo.Name = "textInvTo";
+            this.textInvTo.Size = new System.Drawing.Size(135, 20);
+            this.textInvTo.TabIndex = 19;
+            // 
             // lblRefFrom
             // 
             this.lblRefFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -143,6 +154,13 @@
             this.lblRefFrom.Size = new System.Drawing.Size(35, 20);
             this.lblRefFrom.TabIndex = 5;
             this.lblRefFrom.Text = "From";
+            // 
+            // textInvFrom
+            // 
+            this.textInvFrom.Location = new System.Drawing.Point(47, 28);
+            this.textInvFrom.Name = "textInvFrom";
+            this.textInvFrom.Size = new System.Drawing.Size(135, 20);
+            this.textInvFrom.TabIndex = 18;
             // 
             // lblRefTo
             // 
@@ -316,9 +334,49 @@
             this.textHostname.Size = new System.Drawing.Size(159, 20);
             this.textHostname.TabIndex = 0;
             // 
-            // dbQueryBindingSource
+            // tabPage3
             // 
-            this.dbQueryBindingSource.DataSource = typeof(PickingList.DbQuery);
+            this.tabPage3.Controls.Add(this.btnDelete);
+            this.tabPage3.Controls.Add(this.groupBox5);
+            this.tabPage3.Controls.Add(this.btnDesigner);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(394, 196);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Report Designer";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.checkedListReport);
+            this.groupBox5.Location = new System.Drawing.Point(7, 6);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(193, 179);
+            this.groupBox5.TabIndex = 21;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Available desings";
+            // 
+            // checkedListReport
+            // 
+            this.checkedListReport.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListReport.CheckOnClick = true;
+            this.checkedListReport.FormattingEnabled = true;
+            this.checkedListReport.Location = new System.Drawing.Point(6, 19);
+            this.checkedListReport.Name = "checkedListReport";
+            this.checkedListReport.Size = new System.Drawing.Size(181, 150);
+            this.checkedListReport.TabIndex = 20;
+            this.checkedListReport.SelectedIndexChanged += new System.EventHandler(this.checkedListReport_SelectedIndexChanged);
+            // 
+            // btnDesigner
+            // 
+            this.btnDesigner.Location = new System.Drawing.Point(312, 162);
+            this.btnDesigner.Name = "btnDesigner";
+            this.btnDesigner.Size = new System.Drawing.Size(75, 23);
+            this.btnDesigner.TabIndex = 19;
+            this.btnDesigner.Text = "Edit/Create";
+            this.btnDesigner.UseVisualStyleBackColor = true;
+            this.btnDesigner.Click += new System.EventHandler(this.btnDesigner_Click_1);
             // 
             // statusStrip1
             // 
@@ -335,19 +393,19 @@
             this.StatusLabel.Name = "StatusLabel";
             this.StatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
-            // textInvFrom
+            // dbQueryBindingSource
             // 
-            this.textInvFrom.Location = new System.Drawing.Point(47, 28);
-            this.textInvFrom.Name = "textInvFrom";
-            this.textInvFrom.Size = new System.Drawing.Size(135, 20);
-            this.textInvFrom.TabIndex = 18;
+            this.dbQueryBindingSource.DataSource = typeof(PickingList.DbQuery);
             // 
-            // textInvTo
+            // btnDelete
             // 
-            this.textInvTo.Location = new System.Drawing.Point(47, 65);
-            this.textInvTo.Name = "textInvTo";
-            this.textInvTo.Size = new System.Drawing.Size(135, 20);
-            this.textInvTo.TabIndex = 19;
+            this.btnDelete.Location = new System.Drawing.Point(231, 162);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 22;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmInit
             // 
@@ -369,9 +427,11 @@
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbQueryBindingSource)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbQueryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,6 +469,11 @@
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
         private System.Windows.Forms.TextBox textInvTo;
         private System.Windows.Forms.TextBox textInvFrom;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.CheckedListBox checkedListReport;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button btnDesigner;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 

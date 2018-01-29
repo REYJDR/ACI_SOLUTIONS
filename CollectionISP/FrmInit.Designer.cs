@@ -32,15 +32,20 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.tabPrincipal = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dateCollectOf = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateRepTo = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dateRepFrom = new System.Windows.Forms.DateTimePicker();
-            this.btnQuery = new System.Windows.Forms.Button();
-            this.lblDateTo = new System.Windows.Forms.TextBox();
+            this.dateRepTo = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblDateFrom = new System.Windows.Forms.TextBox();
-            this.dateInvTo = new System.Windows.Forms.DateTimePicker();
             this.dateInvFrom = new System.Windows.Forms.DateTimePicker();
+            this.dateInvTo = new System.Windows.Forms.DateTimePicker();
+            this.lblDateTo = new System.Windows.Forms.TextBox();
+            this.btnQuery = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lblDbName = new System.Windows.Forms.Label();
             this.textBD = new System.Windows.Forms.TextBox();
@@ -53,18 +58,17 @@
             this.textHostname = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dateCollectOf = new System.Windows.Forms.DateTimePicker();
+            this.checkInvDS = new System.Windows.Forms.CheckBox();
+            this.checkCollect = new System.Windows.Forms.CheckBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tabPrincipal.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -85,6 +89,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
@@ -97,14 +102,51 @@
             this.tabPage1.Text = "Report Filter";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // groupBox3
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(6, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(35, 20);
-            this.textBox1.TabIndex = 16;
-            this.textBox1.Text = "To";
+            this.groupBox3.Controls.Add(this.dateCollectOf);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Location = new System.Drawing.Point(10, 103);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(150, 62);
+            this.groupBox3.TabIndex = 22;
+            this.groupBox3.TabStop = false;
+            // 
+            // dateCollectOf
+            // 
+            this.dateCollectOf.AllowDrop = true;
+            this.dateCollectOf.CustomFormat = "yyyy-MM-dd";
+            this.dateCollectOf.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateCollectOf.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateCollectOf.Location = new System.Drawing.Point(9, 35);
+            this.dateCollectOf.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
+            this.dateCollectOf.Name = "dateCollectOf";
+            this.dateCollectOf.Size = new System.Drawing.Size(93, 20);
+            this.dateCollectOf.TabIndex = 17;
+            this.dateCollectOf.Value = new System.DateTime(2018, 1, 7, 14, 53, 37, 0);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Collection of";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.dateRepFrom);
+            this.groupBox2.Controls.Add(this.dateRepTo);
+            this.groupBox2.Location = new System.Drawing.Point(167, 7);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(152, 95);
+            this.groupBox2.TabIndex = 19;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Receipts Date Range";
             // 
             // textBox2
             // 
@@ -114,6 +156,28 @@
             this.textBox2.Size = new System.Drawing.Size(35, 20);
             this.textBox2.TabIndex = 15;
             this.textBox2.Text = "From";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(6, 66);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(35, 20);
+            this.textBox1.TabIndex = 16;
+            this.textBox1.Text = "To";
+            // 
+            // dateRepFrom
+            // 
+            this.dateRepFrom.AllowDrop = true;
+            this.dateRepFrom.CustomFormat = "yyyy-MM-dd";
+            this.dateRepFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateRepFrom.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateRepFrom.Location = new System.Drawing.Point(47, 31);
+            this.dateRepFrom.Name = "dateRepFrom";
+            this.dateRepFrom.Size = new System.Drawing.Size(94, 20);
+            this.dateRepFrom.TabIndex = 13;
+            this.dateRepFrom.Value = new System.DateTime(2018, 1, 7, 14, 53, 17, 0);
+            this.dateRepFrom.ValueChanged += new System.EventHandler(this.dateRepFrom_ValueChanged);
             // 
             // dateRepTo
             // 
@@ -129,37 +193,18 @@
             this.dateRepTo.Value = new System.DateTime(2018, 1, 7, 14, 53, 37, 0);
             this.dateRepTo.ValueChanged += new System.EventHandler(this.dateRepTo_ValueChanged_1);
             // 
-            // dateRepFrom
+            // groupBox1
             // 
-            this.dateRepFrom.AllowDrop = true;
-            this.dateRepFrom.CustomFormat = "yyyy-MM-dd";
-            this.dateRepFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateRepFrom.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateRepFrom.Location = new System.Drawing.Point(47, 31);
-            this.dateRepFrom.Name = "dateRepFrom";
-            this.dateRepFrom.Size = new System.Drawing.Size(94, 20);
-            this.dateRepFrom.TabIndex = 13;
-            this.dateRepFrom.Value = new System.DateTime(2018, 1, 7, 14, 53, 17, 0);
-            this.dateRepFrom.ValueChanged += new System.EventHandler(this.dateRepFrom_ValueChanged);
-            // 
-            // btnQuery
-            // 
-            this.btnQuery.Location = new System.Drawing.Point(244, 177);
-            this.btnQuery.Name = "btnQuery";
-            this.btnQuery.Size = new System.Drawing.Size(75, 23);
-            this.btnQuery.TabIndex = 12;
-            this.btnQuery.Text = "Query";
-            this.btnQuery.UseVisualStyleBackColor = true;
-            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
-            // 
-            // lblDateTo
-            // 
-            this.lblDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateTo.Location = new System.Drawing.Point(6, 67);
-            this.lblDateTo.Name = "lblDateTo";
-            this.lblDateTo.Size = new System.Drawing.Size(35, 20);
-            this.lblDateTo.TabIndex = 3;
-            this.lblDateTo.Text = "To";
+            this.groupBox1.Controls.Add(this.lblDateFrom);
+            this.groupBox1.Controls.Add(this.dateInvFrom);
+            this.groupBox1.Controls.Add(this.dateInvTo);
+            this.groupBox1.Controls.Add(this.lblDateTo);
+            this.groupBox1.Location = new System.Drawing.Point(10, 7);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(150, 96);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Invoices  Date Range";
             // 
             // lblDateFrom
             // 
@@ -169,6 +214,19 @@
             this.lblDateFrom.Size = new System.Drawing.Size(35, 20);
             this.lblDateFrom.TabIndex = 2;
             this.lblDateFrom.Text = "From";
+            // 
+            // dateInvFrom
+            // 
+            this.dateInvFrom.AllowDrop = true;
+            this.dateInvFrom.CustomFormat = "yyyy-MM-dd";
+            this.dateInvFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateInvFrom.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateInvFrom.Location = new System.Drawing.Point(47, 29);
+            this.dateInvFrom.Name = "dateInvFrom";
+            this.dateInvFrom.Size = new System.Drawing.Size(94, 20);
+            this.dateInvFrom.TabIndex = 0;
+            this.dateInvFrom.Value = new System.DateTime(2018, 1, 7, 14, 53, 17, 0);
+            this.dateInvFrom.ValueChanged += new System.EventHandler(this.dateInvFrom_ValueChanged);
             // 
             // dateInvTo
             // 
@@ -184,18 +242,24 @@
             this.dateInvTo.Value = new System.DateTime(2018, 1, 7, 14, 53, 37, 0);
             this.dateInvTo.ValueChanged += new System.EventHandler(this.dateInvTo_ValueChanged);
             // 
-            // dateInvFrom
+            // lblDateTo
             // 
-            this.dateInvFrom.AllowDrop = true;
-            this.dateInvFrom.CustomFormat = "yyyy-MM-dd";
-            this.dateInvFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateInvFrom.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateInvFrom.Location = new System.Drawing.Point(47, 29);
-            this.dateInvFrom.Name = "dateInvFrom";
-            this.dateInvFrom.Size = new System.Drawing.Size(94, 20);
-            this.dateInvFrom.TabIndex = 0;
-            this.dateInvFrom.Value = new System.DateTime(2018, 1, 7, 14, 53, 17, 0);
-            this.dateInvFrom.ValueChanged += new System.EventHandler(this.dateInvFrom_ValueChanged);
+            this.lblDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateTo.Location = new System.Drawing.Point(6, 67);
+            this.lblDateTo.Name = "lblDateTo";
+            this.lblDateTo.Size = new System.Drawing.Size(35, 20);
+            this.lblDateTo.TabIndex = 3;
+            this.lblDateTo.Text = "To";
+            // 
+            // btnQuery
+            // 
+            this.btnQuery.Location = new System.Drawing.Point(244, 177);
+            this.btnQuery.Name = "btnQuery";
+            this.btnQuery.Size = new System.Drawing.Size(75, 23);
+            this.btnQuery.TabIndex = 12;
+            this.btnQuery.Text = "Query";
+            this.btnQuery.UseVisualStyleBackColor = true;
+            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
             // tabPage2
             // 
@@ -307,64 +371,41 @@
             this.StatusLabel.Name = "StatusLabel";
             this.StatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
-            // groupBox1
+            // checkInvDS
             // 
-            this.groupBox1.Controls.Add(this.lblDateFrom);
-            this.groupBox1.Controls.Add(this.dateInvFrom);
-            this.groupBox1.Controls.Add(this.dateInvTo);
-            this.groupBox1.Controls.Add(this.lblDateTo);
-            this.groupBox1.Location = new System.Drawing.Point(10, 7);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(150, 96);
-            this.groupBox1.TabIndex = 18;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Invoices  Date Range";
+            this.checkInvDS.AutoSize = true;
+            this.checkInvDS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkInvDS.Location = new System.Drawing.Point(6, 40);
+            this.checkInvDS.Name = "checkInvDS";
+            this.checkInvDS.Size = new System.Drawing.Size(139, 17);
+            this.checkInvDS.TabIndex = 23;
+            this.checkInvDS.Text = "Invoice data source";
+            this.checkInvDS.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // checkCollect
             // 
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.dateRepFrom);
-            this.groupBox2.Controls.Add(this.dateRepTo);
-            this.groupBox2.Location = new System.Drawing.Point(167, 7);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(152, 95);
-            this.groupBox2.TabIndex = 19;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Receipts Date Range";
+            this.checkCollect.AutoEllipsis = true;
+            this.checkCollect.AutoSize = true;
+            this.checkCollect.Checked = true;
+            this.checkCollect.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkCollect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkCollect.Location = new System.Drawing.Point(6, 18);
+            this.checkCollect.Name = "checkCollect";
+            this.checkCollect.Size = new System.Drawing.Size(82, 17);
+            this.checkCollect.TabIndex = 24;
+            this.checkCollect.Text = "Collection";
+            this.checkCollect.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // groupBox4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Collection of";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dateCollectOf);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Location = new System.Drawing.Point(10, 103);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(150, 62);
-            this.groupBox3.TabIndex = 22;
-            this.groupBox3.TabStop = false;
-            // 
-            // dateCollectOf
-            // 
-            this.dateCollectOf.AllowDrop = true;
-            this.dateCollectOf.CustomFormat = "yyyy-MM-dd";
-            this.dateCollectOf.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateCollectOf.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateCollectOf.Location = new System.Drawing.Point(9, 35);
-            this.dateCollectOf.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
-            this.dateCollectOf.Name = "dateCollectOf";
-            this.dateCollectOf.Size = new System.Drawing.Size(93, 20);
-            this.dateCollectOf.TabIndex = 17;
-            this.dateCollectOf.Value = new System.DateTime(2018, 1, 7, 14, 53, 37, 0);
+            this.groupBox4.Controls.Add(this.checkInvDS);
+            this.groupBox4.Controls.Add(this.checkCollect);
+            this.groupBox4.Location = new System.Drawing.Point(167, 103);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(152, 62);
+            this.groupBox4.TabIndex = 25;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Required reports";
             // 
             // frmInit
             // 
@@ -376,19 +417,20 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInit";
             this.Text = "Collection Report";
-            this.Load += new System.EventHandler(this.FrmInit_Load);
             this.tabPrincipal.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,6 +467,9 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DateTimePicker dateCollectOf;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkInvDS;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.CheckBox checkCollect;
     }
 }
 

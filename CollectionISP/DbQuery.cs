@@ -10,12 +10,83 @@ namespace CollectionISP
 {
     class DbQuery 
     {
-        
+        DataSet joinTbl = new DataSet();
 
-        public DataSet collectionQuery()
+        public DataSet DsQuery()
         {
             DbConnetionPervasive dbcon = new DbConnetionPervasive();
-            
+
+            joinTbl.Clear();
+
+            /*OBTENGO EL RANGO DE FECHA DESDE FrmInit  */
+            string dateRangeInv = frmInit.dateRangeInv;
+
+            DataTable tblDataInv = new DataTable("DATASOURCE");
+
+            tblDataInv.PrimaryKey = new DataColumn[] { tblDataInv.Columns["ID"] };
+            tblDataInv.Columns.Add("ID", typeof(Int32));
+            tblDataInv.Columns.Add("InvoiceNo", typeof(String));
+            tblDataInv.Columns.Add("Date", typeof(DateTime));
+            tblDataInv.Columns.Add("CustomerID", typeof(String));
+            tblDataInv.Columns.Add("Name", typeof(String));
+            tblDataInv.Columns.Add("Amount", typeof(Double));
+            tblDataInv.Columns.Add("address", typeof(String));
+            tblDataInv.Columns.Add("Tipo", typeof(String));
+
+            /*QUERY PARA LLENAR PREVIEW DEL PICKING LIST */
+            string sqlInvoice = "SELECT DISTINCT " +
+                                       " A.PostOrder as ID," +
+                                       " A.Reference as InvoiceNo, " +
+                                       " A.TransactionDate as Date, " +
+                                       " C.CustomerID, " +
+                                       " C.Customer_Bill_Name as Name, " +
+                                       " A.MainAmount as Amount, " +
+                                       " A.ShipToAddress1 as address, " +
+                                       " SUBSTRING(A.Reference, 1, 2) as TIPO " +
+                                       " FROM JrnlHdr A " +
+                                       " INNER JOIN JrnlRow  B ON A.PostOrder = B.PostOrder " +
+                                       " INNER JOIN Customers C ON C.CustomerRecordNumber = B.CustomerRecordNumber " +
+                                       " WHERE A.JrnlKey_Journal = '3' " +
+                                       " AND B.RowType = '0' " +
+                                       " AND A.TransactionDate between " +
+                                        dateRangeInv +
+                                       " AND (       A.Reference LIKE 'CD%'" +
+                                               " OR  A.Reference LIKE 'RS%'" +
+                                               " OR  A.Reference LIKE 'AP%'" +
+                                               " OR  A.Reference LIKE 'TT%'" +
+                                               " OR  A.Reference LIKE 'EAL%'" +
+                                               " OR  A.Reference LIKE 'RP%'" +
+                                               " OR  A.Reference LIKE 'PE%'" +
+                                               " OR  A.Reference LIKE 'INF%'" +
+                                               " OR  A.Reference LIKE 'ASA%' ) " +
+                                       " Order by A.Reference;";
+            try
+            {
+                /*EJECUTO EL METODO QUERY Y GUARDO EL RESULTADO EN LA VARIABLE DE TIPO DataTable*/
+                dbcon.Query(sqlInvoice).Fill(tblDataInv);
+            }
+            catch (Exception theException)
+            {
+                String errorMessage;
+                errorMessage = "Error: ";
+                errorMessage = String.Concat(errorMessage, theException.Message);
+                errorMessage = String.Concat(errorMessage, " Line: ");
+                errorMessage = String.Concat(errorMessage, theException.Source);
+
+                MessageBox.Show(errorMessage, "Error");
+            }
+
+
+            joinTbl.Tables.Add(tblDataInv);
+
+            return joinTbl;
+        }
+
+            public DataSet collectionQuery()
+        {
+            DbConnetionPervasive dbcon = new DbConnetionPervasive();
+
+            joinTbl.Clear();
 
             DataTable tblDataInv = new DataTable();
                 tblDataInv.PrimaryKey = new DataColumn[] { tblDataInv.Columns["ID"] };
@@ -26,6 +97,7 @@ namespace CollectionISP
                 tblDataInv.Columns.Add("Name", typeof(String));
                 tblDataInv.Columns.Add("Amount", typeof(Double));
                 tblDataInv.Columns.Add("address", typeof(String));
+                tblDataInv.Columns.Add("Tipo", typeof(String));
 
             DataTable tblDataAmountPaid = new DataTable();
                 tblDataAmountPaid.PrimaryKey = new DataColumn[] { tblDataAmountPaid.Columns["ID"] };
@@ -47,7 +119,8 @@ namespace CollectionISP
                                        " C.CustomerID, " +
                                        " C.Customer_Bill_Name as Name, " +
                                        " A.MainAmount as Amount, " +
-                                       " A.ShipToAddress1 as address " +
+                                       " A.ShipToAddress1 as address, " +
+                                       " SUBSTRING(A.Reference, 1, 2) as TIPO " +
                                        " FROM JrnlHdr A " +
                                        " INNER JOIN JrnlRow  B ON A.PostOrder = B.PostOrder " +
                                        " INNER JOIN Customers C ON C.CustomerRecordNumber = B.CustomerRecordNumber " +
@@ -64,7 +137,7 @@ namespace CollectionISP
                                                " OR  A.Reference LIKE 'PE%'" +
                                                " OR  A.Reference LIKE 'INF%'" +
                                                " OR  A.Reference LIKE 'ASA%' ) " +
-                                       " Order by C.Customer_Bill_Name;";
+                                       " Order by A.Reference;";
 
 
            
@@ -118,7 +191,7 @@ namespace CollectionISP
 
         private DataSet joinTbls(DataTable tblInv, DataTable tblRep)
         {
-            DataSet joinTbl = new DataSet();
+           
             
             DataTable jt = new DataTable("Joinedtable");
             DataRow row = null;

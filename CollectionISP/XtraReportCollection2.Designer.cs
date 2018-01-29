@@ -221,6 +221,8 @@
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource();
             this.xrControlStyle1 = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.xrLabel135 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel136 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -234,6 +236,8 @@
             // TopMargin
             // 
             this.TopMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel136,
+            this.xrLabel135,
             this.xrPanel4,
             this.xrLabel120,
             this.xrPanel3,
@@ -314,7 +318,7 @@
             this.xrLabel131.StylePriority.UseBorders = false;
             this.xrLabel131.StylePriority.UseTextAlignment = false;
             this.xrLabel131.Text = "xrLabel57";
-            this.xrLabel131.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel131.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel131.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel130
@@ -332,7 +336,7 @@
             this.xrLabel130.StylePriority.UseBorders = false;
             this.xrLabel130.StylePriority.UseTextAlignment = false;
             this.xrLabel130.Text = "xrLabel1";
-            this.xrLabel130.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel130.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel130.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel129
@@ -350,7 +354,7 @@
             this.xrLabel129.StylePriority.UseBorders = false;
             this.xrLabel129.StylePriority.UseTextAlignment = false;
             this.xrLabel129.Text = "xrLabel1";
-            this.xrLabel129.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel129.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel129.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel128
@@ -368,7 +372,7 @@
             this.xrLabel128.StylePriority.UseBorders = false;
             this.xrLabel128.StylePriority.UseTextAlignment = false;
             this.xrLabel128.Text = "xrLabel1";
-            this.xrLabel128.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel128.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel128.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel127
@@ -387,7 +391,7 @@
             this.xrLabel127.StylePriority.UseBorders = false;
             this.xrLabel127.StylePriority.UseTextAlignment = false;
             this.xrLabel127.Text = "xrLabel1";
-            this.xrLabel127.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel127.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel127.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel125
@@ -445,10 +449,10 @@
             // xrLabel120
             // 
             this.xrLabel120.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel120.LocationFloat = new DevExpress.Utils.PointFloat(12.50001F, 631.854F);
+            this.xrLabel120.LocationFloat = new DevExpress.Utils.PointFloat(12.50002F, 631.854F);
             this.xrLabel120.Name = "xrLabel120";
             this.xrLabel120.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel120.SizeF = new System.Drawing.SizeF(195.8333F, 23F);
+            this.xrLabel120.SizeF = new System.Drawing.SizeF(147.9167F, 23F);
             this.xrLabel120.StylePriority.UseFont = false;
             this.xrLabel120.Text = "PAST DUE AS OF";
             // 
@@ -501,7 +505,7 @@
             this.xrLabel145.StylePriority.UseBorders = false;
             this.xrLabel145.StylePriority.UseTextAlignment = false;
             this.xrLabel145.Text = "xrLabel1";
-            this.xrLabel145.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel145.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel145.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel119
@@ -518,7 +522,7 @@
             this.xrLabel119.StylePriority.UseBorders = false;
             this.xrLabel119.StylePriority.UseTextAlignment = false;
             this.xrLabel119.Text = "xrLabel1";
-            this.xrLabel119.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel119.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel119.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel144
@@ -535,7 +539,7 @@
             this.xrLabel144.StylePriority.UseBorders = false;
             this.xrLabel144.StylePriority.UseTextAlignment = false;
             this.xrLabel144.Text = "xrLabel1";
-            this.xrLabel144.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel144.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel144.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel143
@@ -552,7 +556,7 @@
             this.xrLabel143.StylePriority.UseBorders = false;
             this.xrLabel143.StylePriority.UseTextAlignment = false;
             this.xrLabel143.Text = "xrLabel57";
-            this.xrLabel143.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel143.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel143.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel115
@@ -569,7 +573,7 @@
             this.xrLabel115.StylePriority.UseBorders = false;
             this.xrLabel115.StylePriority.UseTextAlignment = false;
             this.xrLabel115.Text = "xrLabel1";
-            this.xrLabel115.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel115.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel115.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel104
@@ -588,7 +592,7 @@
             this.xrLabel104.StylePriority.UseBorders = false;
             this.xrLabel104.StylePriority.UseTextAlignment = false;
             this.xrLabel104.Text = "xrLabel1";
-            this.xrLabel104.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel104.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel104.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel105
@@ -607,7 +611,7 @@
             this.xrLabel105.StylePriority.UseBorders = false;
             this.xrLabel105.StylePriority.UseTextAlignment = false;
             this.xrLabel105.Text = "xrLabel1";
-            this.xrLabel105.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel105.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel105.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel106
@@ -626,7 +630,7 @@
             this.xrLabel106.StylePriority.UseBorders = false;
             this.xrLabel106.StylePriority.UseTextAlignment = false;
             this.xrLabel106.Text = "xrLabel1";
-            this.xrLabel106.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel106.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel106.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel107
@@ -645,7 +649,7 @@
             this.xrLabel107.StylePriority.UseBorders = false;
             this.xrLabel107.StylePriority.UseTextAlignment = false;
             this.xrLabel107.Text = "xrLabel1";
-            this.xrLabel107.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel107.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel107.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel108
@@ -664,7 +668,7 @@
             this.xrLabel108.StylePriority.UseBorders = false;
             this.xrLabel108.StylePriority.UseTextAlignment = false;
             this.xrLabel108.Text = "xrLabel1";
-            this.xrLabel108.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel108.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel108.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel109
@@ -683,7 +687,7 @@
             this.xrLabel109.StylePriority.UseBorders = false;
             this.xrLabel109.StylePriority.UseTextAlignment = false;
             this.xrLabel109.Text = "xrLabel1";
-            this.xrLabel109.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel109.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel109.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel110
@@ -702,7 +706,7 @@
             this.xrLabel110.StylePriority.UseBorders = false;
             this.xrLabel110.StylePriority.UseTextAlignment = false;
             this.xrLabel110.Text = "xrLabel1";
-            this.xrLabel110.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel110.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel110.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel111
@@ -721,7 +725,7 @@
             this.xrLabel111.StylePriority.UseBorders = false;
             this.xrLabel111.StylePriority.UseTextAlignment = false;
             this.xrLabel111.Text = "xrLabel1";
-            this.xrLabel111.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel111.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel111.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel112
@@ -740,7 +744,7 @@
             this.xrLabel112.StylePriority.UseBorders = false;
             this.xrLabel112.StylePriority.UseTextAlignment = false;
             this.xrLabel112.Text = "xrLabel1";
-            this.xrLabel112.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel112.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel112.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel113
@@ -759,7 +763,7 @@
             this.xrLabel113.StylePriority.UseBorders = false;
             this.xrLabel113.StylePriority.UseTextAlignment = false;
             this.xrLabel113.Text = "xrLabel1";
-            this.xrLabel113.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel113.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel113.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel114
@@ -778,7 +782,7 @@
             this.xrLabel114.StylePriority.UseBorders = false;
             this.xrLabel114.StylePriority.UseTextAlignment = false;
             this.xrLabel114.Text = "xrLabel1";
-            this.xrLabel114.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel114.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel114.TextFormatString = "{0:#,###.00}";
             // 
             // xrLine8
@@ -1110,7 +1114,7 @@
             this.xrLabel56.StylePriority.UseBorders = false;
             this.xrLabel56.StylePriority.UseTextAlignment = false;
             this.xrLabel56.Text = "xrLabel56";
-            this.xrLabel56.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel56.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel56.TextFormatString = "{0:#,###.00}";
             // 
             // xrPanel16
@@ -1323,7 +1327,7 @@
             this.xrLabel57.StylePriority.UseBorders = false;
             this.xrLabel57.StylePriority.UseTextAlignment = false;
             this.xrLabel57.Text = "xrLabel57";
-            this.xrLabel57.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel57.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel57.TextFormatString = "{0:#,###.00}";
             // 
             // xrPanel26
@@ -1387,7 +1391,7 @@
             this.xrLabel158.StylePriority.UseBorders = false;
             this.xrLabel158.StylePriority.UseTextAlignment = false;
             this.xrLabel158.Text = "xrLabel57";
-            this.xrLabel158.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel158.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel158.TextFormatString = "{0:#,###.00}";
             // 
             // xrPanel24
@@ -1421,7 +1425,7 @@
             this.xrLabel134.StylePriority.UseBorders = false;
             this.xrLabel134.StylePriority.UseTextAlignment = false;
             this.xrLabel134.Text = "xrLabel56";
-            this.xrLabel134.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel134.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel134.TextFormatString = "{0:#,###.00}";
             // 
             // xrPanel28
@@ -1632,7 +1636,7 @@
             this.xrLabel18.StylePriority.UseBorders = false;
             this.xrLabel18.StylePriority.UseTextAlignment = false;
             this.xrLabel18.Text = "xrLabel1";
-            this.xrLabel18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel18.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel12
@@ -1650,7 +1654,7 @@
             this.xrLabel12.StylePriority.UseBorders = false;
             this.xrLabel12.StylePriority.UseTextAlignment = false;
             this.xrLabel12.Text = "xrLabel1";
-            this.xrLabel12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel12.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel11
@@ -1668,7 +1672,7 @@
             this.xrLabel11.StylePriority.UseBorders = false;
             this.xrLabel11.StylePriority.UseTextAlignment = false;
             this.xrLabel11.Text = "xrLabel1";
-            this.xrLabel11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel11.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel10
@@ -1686,7 +1690,7 @@
             this.xrLabel10.StylePriority.UseBorders = false;
             this.xrLabel10.StylePriority.UseTextAlignment = false;
             this.xrLabel10.Text = "xrLabel1";
-            this.xrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel10.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel7
@@ -1703,7 +1707,7 @@
             this.xrLabel7.StylePriority.UseBorders = false;
             this.xrLabel7.StylePriority.UseTextAlignment = false;
             this.xrLabel7.Text = "xrLabel1";
-            this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel7.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel6
@@ -1720,7 +1724,7 @@
             this.xrLabel6.StylePriority.UseBorders = false;
             this.xrLabel6.StylePriority.UseTextAlignment = false;
             this.xrLabel6.Text = "xrLabel1";
-            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel6.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel5
@@ -1737,7 +1741,7 @@
             this.xrLabel5.StylePriority.UseBorders = false;
             this.xrLabel5.StylePriority.UseTextAlignment = false;
             this.xrLabel5.Text = "xrLabel1";
-            this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel5.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel4
@@ -1754,7 +1758,7 @@
             this.xrLabel4.StylePriority.UseBorders = false;
             this.xrLabel4.StylePriority.UseTextAlignment = false;
             this.xrLabel4.Text = "xrLabel1";
-            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel4.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel3
@@ -1771,7 +1775,7 @@
             this.xrLabel3.StylePriority.UseBorders = false;
             this.xrLabel3.StylePriority.UseTextAlignment = false;
             this.xrLabel3.Text = "xrLabel1";
-            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel3.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel2
@@ -1788,7 +1792,7 @@
             this.xrLabel2.StylePriority.UseBorders = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
             this.xrLabel2.Text = "xrLabel1";
-            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel2.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel1
@@ -1805,7 +1809,7 @@
             this.xrLabel1.StylePriority.UseBorders = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
             this.xrLabel1.Text = "xrLabel1";
-            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel1.TextFormatString = "{0:#,###.00}";
             // 
             // xrPanel30
@@ -1852,7 +1856,7 @@
             this.xrLabel60.StylePriority.UseBorders = false;
             this.xrLabel60.StylePriority.UseTextAlignment = false;
             this.xrLabel60.Text = "xrLabel1";
-            this.xrLabel60.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel60.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel60.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel61
@@ -1870,7 +1874,7 @@
             this.xrLabel61.StylePriority.UseBorders = false;
             this.xrLabel61.StylePriority.UseTextAlignment = false;
             this.xrLabel61.Text = "xrLabel1";
-            this.xrLabel61.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel61.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel61.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel62
@@ -1888,7 +1892,7 @@
             this.xrLabel62.StylePriority.UseBorders = false;
             this.xrLabel62.StylePriority.UseTextAlignment = false;
             this.xrLabel62.Text = "xrLabel1";
-            this.xrLabel62.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel62.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel62.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel63
@@ -1906,7 +1910,7 @@
             this.xrLabel63.StylePriority.UseBorders = false;
             this.xrLabel63.StylePriority.UseTextAlignment = false;
             this.xrLabel63.Text = "xrLabel1";
-            this.xrLabel63.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel63.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel63.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel64
@@ -1923,7 +1927,7 @@
             this.xrLabel64.StylePriority.UseBorders = false;
             this.xrLabel64.StylePriority.UseTextAlignment = false;
             this.xrLabel64.Text = "xrLabel1";
-            this.xrLabel64.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel64.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel64.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel65
@@ -1940,7 +1944,7 @@
             this.xrLabel65.StylePriority.UseBorders = false;
             this.xrLabel65.StylePriority.UseTextAlignment = false;
             this.xrLabel65.Text = "xrLabel1";
-            this.xrLabel65.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel65.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel65.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel66
@@ -1957,7 +1961,7 @@
             this.xrLabel66.StylePriority.UseBorders = false;
             this.xrLabel66.StylePriority.UseTextAlignment = false;
             this.xrLabel66.Text = "xrLabel1";
-            this.xrLabel66.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel66.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel66.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel67
@@ -1974,7 +1978,7 @@
             this.xrLabel67.StylePriority.UseBorders = false;
             this.xrLabel67.StylePriority.UseTextAlignment = false;
             this.xrLabel67.Text = "xrLabel1";
-            this.xrLabel67.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel67.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel67.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel68
@@ -1991,7 +1995,7 @@
             this.xrLabel68.StylePriority.UseBorders = false;
             this.xrLabel68.StylePriority.UseTextAlignment = false;
             this.xrLabel68.Text = "xrLabel1";
-            this.xrLabel68.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel68.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel68.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel69
@@ -2008,7 +2012,7 @@
             this.xrLabel69.StylePriority.UseBorders = false;
             this.xrLabel69.StylePriority.UseTextAlignment = false;
             this.xrLabel69.Text = "xrLabel1";
-            this.xrLabel69.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel69.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel69.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel70
@@ -2025,7 +2029,7 @@
             this.xrLabel70.StylePriority.UseBorders = false;
             this.xrLabel70.StylePriority.UseTextAlignment = false;
             this.xrLabel70.Text = "xrLabel1";
-            this.xrLabel70.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel70.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel70.TextFormatString = "{0:#,###.00}";
             // 
             // xrPanel31
@@ -2072,7 +2076,7 @@
             this.xrLabel72.StylePriority.UseBorders = false;
             this.xrLabel72.StylePriority.UseTextAlignment = false;
             this.xrLabel72.Text = "xrLabel1";
-            this.xrLabel72.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel72.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel72.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel81
@@ -2090,7 +2094,7 @@
             this.xrLabel81.StylePriority.UseBorders = false;
             this.xrLabel81.StylePriority.UseTextAlignment = false;
             this.xrLabel81.Text = "xrLabel1";
-            this.xrLabel81.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel81.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel81.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel80
@@ -2107,7 +2111,7 @@
             this.xrLabel80.StylePriority.UseBorders = false;
             this.xrLabel80.StylePriority.UseTextAlignment = false;
             this.xrLabel80.Text = "xrLabel1";
-            this.xrLabel80.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel80.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel80.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel79
@@ -2125,7 +2129,7 @@
             this.xrLabel79.StylePriority.UseBorders = false;
             this.xrLabel79.StylePriority.UseTextAlignment = false;
             this.xrLabel79.Text = "xrLabel1";
-            this.xrLabel79.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel79.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel79.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel78
@@ -2143,7 +2147,7 @@
             this.xrLabel78.StylePriority.UseBorders = false;
             this.xrLabel78.StylePriority.UseTextAlignment = false;
             this.xrLabel78.Text = "xrLabel1";
-            this.xrLabel78.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel78.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel78.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel77
@@ -2160,7 +2164,7 @@
             this.xrLabel77.StylePriority.UseBorders = false;
             this.xrLabel77.StylePriority.UseTextAlignment = false;
             this.xrLabel77.Text = "xrLabel1";
-            this.xrLabel77.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel77.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel77.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel76
@@ -2177,7 +2181,7 @@
             this.xrLabel76.StylePriority.UseBorders = false;
             this.xrLabel76.StylePriority.UseTextAlignment = false;
             this.xrLabel76.Text = "xrLabel1";
-            this.xrLabel76.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel76.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel76.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel75
@@ -2195,7 +2199,7 @@
             this.xrLabel75.StylePriority.UseBorders = false;
             this.xrLabel75.StylePriority.UseTextAlignment = false;
             this.xrLabel75.Text = "xrLabel1";
-            this.xrLabel75.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel75.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel75.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel74
@@ -2213,7 +2217,7 @@
             this.xrLabel74.StylePriority.UseBorders = false;
             this.xrLabel74.StylePriority.UseTextAlignment = false;
             this.xrLabel74.Text = "xrLabel1";
-            this.xrLabel74.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel74.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel74.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel73
@@ -2231,7 +2235,7 @@
             this.xrLabel73.StylePriority.UseBorders = false;
             this.xrLabel73.StylePriority.UseTextAlignment = false;
             this.xrLabel73.Text = "xrLabel1";
-            this.xrLabel73.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel73.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel73.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel82
@@ -2248,7 +2252,7 @@
             this.xrLabel82.StylePriority.UseBorders = false;
             this.xrLabel82.StylePriority.UseTextAlignment = false;
             this.xrLabel82.Text = "xrLabel1";
-            this.xrLabel82.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel82.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel82.TextFormatString = "{0:#,###.00}";
             // 
             // xrPanel32
@@ -2295,7 +2299,7 @@
             this.xrLabel21.StylePriority.UseBorders = false;
             this.xrLabel21.StylePriority.UseTextAlignment = false;
             this.xrLabel21.Text = "xrLabel1";
-            this.xrLabel21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel21.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel51
@@ -2313,7 +2317,7 @@
             this.xrLabel51.StylePriority.UseBorders = false;
             this.xrLabel51.StylePriority.UseTextAlignment = false;
             this.xrLabel51.Text = "xrLabel1";
-            this.xrLabel51.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel51.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel51.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel50
@@ -2331,7 +2335,7 @@
             this.xrLabel50.StylePriority.UseBorders = false;
             this.xrLabel50.StylePriority.UseTextAlignment = false;
             this.xrLabel50.Text = "xrLabel1";
-            this.xrLabel50.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel50.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel50.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel49
@@ -2349,7 +2353,7 @@
             this.xrLabel49.StylePriority.UseBorders = false;
             this.xrLabel49.StylePriority.UseTextAlignment = false;
             this.xrLabel49.Text = "xrLabel1";
-            this.xrLabel49.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel49.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel49.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel48
@@ -2367,7 +2371,7 @@
             this.xrLabel48.StylePriority.UseBorders = false;
             this.xrLabel48.StylePriority.UseTextAlignment = false;
             this.xrLabel48.Text = "xrLabel1";
-            this.xrLabel48.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel48.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel48.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel47
@@ -2385,7 +2389,7 @@
             this.xrLabel47.StylePriority.UseBorders = false;
             this.xrLabel47.StylePriority.UseTextAlignment = false;
             this.xrLabel47.Text = "xrLabel1";
-            this.xrLabel47.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel47.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel47.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel46
@@ -2403,7 +2407,7 @@
             this.xrLabel46.StylePriority.UseBorders = false;
             this.xrLabel46.StylePriority.UseTextAlignment = false;
             this.xrLabel46.Text = "xrLabel1";
-            this.xrLabel46.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel46.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel46.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel40
@@ -2421,7 +2425,7 @@
             this.xrLabel40.StylePriority.UseBorders = false;
             this.xrLabel40.StylePriority.UseTextAlignment = false;
             this.xrLabel40.Text = "xrLabel1";
-            this.xrLabel40.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel40.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel40.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel27
@@ -2439,7 +2443,7 @@
             this.xrLabel27.StylePriority.UseBorders = false;
             this.xrLabel27.StylePriority.UseTextAlignment = false;
             this.xrLabel27.Text = "xrLabel1";
-            this.xrLabel27.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel27.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel27.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel24
@@ -2457,7 +2461,7 @@
             this.xrLabel24.StylePriority.UseBorders = false;
             this.xrLabel24.StylePriority.UseTextAlignment = false;
             this.xrLabel24.Text = "xrLabel1";
-            this.xrLabel24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel24.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel52
@@ -2475,7 +2479,7 @@
             this.xrLabel52.StylePriority.UseBorders = false;
             this.xrLabel52.StylePriority.UseTextAlignment = false;
             this.xrLabel52.Text = "xrLabel1";
-            this.xrLabel52.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel52.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel52.TextFormatString = "{0:#,###.00}";
             // 
             // xrPanel33
@@ -2735,7 +2739,7 @@
             this.xrLabel154.StylePriority.UseBorders = false;
             this.xrLabel154.StylePriority.UseTextAlignment = false;
             this.xrLabel154.Text = "xrLabel1";
-            this.xrLabel154.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel154.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel154.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel83
@@ -2751,7 +2755,7 @@
             this.xrLabel83.StylePriority.UseBorders = false;
             this.xrLabel83.StylePriority.UseTextAlignment = false;
             this.xrLabel83.Text = "xrLabel1";
-            this.xrLabel83.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel83.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel83.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel71
@@ -2767,7 +2771,7 @@
             this.xrLabel71.StylePriority.UseBorders = false;
             this.xrLabel71.StylePriority.UseTextAlignment = false;
             this.xrLabel71.Text = "xrLabel1";
-            this.xrLabel71.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel71.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel71.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel58
@@ -2783,7 +2787,7 @@
             this.xrLabel58.StylePriority.UseBorders = false;
             this.xrLabel58.StylePriority.UseTextAlignment = false;
             this.xrLabel58.Text = "xrLabel1";
-            this.xrLabel58.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel58.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel58.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel19
@@ -2799,7 +2803,7 @@
             this.xrLabel19.StylePriority.UseBorders = false;
             this.xrLabel19.StylePriority.UseTextAlignment = false;
             this.xrLabel19.Text = "xrLabel1";
-            this.xrLabel19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel19.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel41
@@ -2899,7 +2903,7 @@
             this.xrLabel9.StylePriority.UseBorders = false;
             this.xrLabel9.StylePriority.UseTextAlignment = false;
             this.xrLabel9.Text = "xrLabel1";
-            this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel9.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel8
@@ -2915,7 +2919,7 @@
             this.xrLabel8.StylePriority.UseBorders = false;
             this.xrLabel8.StylePriority.UseTextAlignment = false;
             this.xrLabel8.Text = "xrLabel1";
-            this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel8.TextFormatString = "{0:#,###.00}";
             // 
             // xrPanel37
@@ -2951,7 +2955,7 @@
             this.xrLabel132.StylePriority.UseBorders = false;
             this.xrLabel132.StylePriority.UseTextAlignment = false;
             this.xrLabel132.Text = "xrLabel1";
-            this.xrLabel132.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel132.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel132.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel126
@@ -2967,7 +2971,7 @@
             this.xrLabel126.StylePriority.UseBorders = false;
             this.xrLabel126.StylePriority.UseTextAlignment = false;
             this.xrLabel126.Text = "xrLabel1";
-            this.xrLabel126.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel126.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel126.TextFormatString = "{0:#,###.00}";
             // 
             // xrPanel38
@@ -3003,7 +3007,7 @@
             this.xrLabel54.StylePriority.UseBorders = false;
             this.xrLabel54.StylePriority.UseTextAlignment = false;
             this.xrLabel54.Text = "xrLabel1";
-            this.xrLabel54.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel54.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel54.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel53
@@ -3019,7 +3023,7 @@
             this.xrLabel53.StylePriority.UseBorders = false;
             this.xrLabel53.StylePriority.UseTextAlignment = false;
             this.xrLabel53.Text = "xrLabel1";
-            this.xrLabel53.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel53.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel53.TextFormatString = "{0:#,###.00}";
             // 
             // xrPanel39
@@ -3095,7 +3099,7 @@
             this.xrLabel85.StylePriority.UseBorders = false;
             this.xrLabel85.StylePriority.UseTextAlignment = false;
             this.xrLabel85.Text = "xrLabel1";
-            this.xrLabel85.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel85.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel85.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel84
@@ -3112,7 +3116,7 @@
             this.xrLabel84.StylePriority.UseBorders = false;
             this.xrLabel84.StylePriority.UseTextAlignment = false;
             this.xrLabel84.Text = "xrLabel1";
-            this.xrLabel84.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel84.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel84.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel44
@@ -3153,16 +3157,16 @@
             this.xrLabel133.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[][\nStartsWith([InvoiceNo], \'CD\') Or\nStartsWith([InvoiceNo], \'BF\') ].Sum([Amount]" +
                     ")")});
-            this.xrLabel133.LocationFloat = new DevExpress.Utils.PointFloat(308.25F, 2.913391F);
+            this.xrLabel133.LocationFloat = new DevExpress.Utils.PointFloat(308.25F, 2.913411F);
             this.xrLabel133.Name = "xrLabel133";
             this.xrLabel133.NullValueText = "0.00";
             this.xrLabel133.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel133.ProcessNullValues = DevExpress.XtraReports.UI.ValueSuppressType.Suppress;
-            this.xrLabel133.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel133.SizeF = new System.Drawing.SizeF(100F, 25.91336F);
             this.xrLabel133.StylePriority.UseBorders = false;
             this.xrLabel133.StylePriority.UseTextAlignment = false;
             this.xrLabel133.Text = "xrLabel1";
-            this.xrLabel133.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel133.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel133.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel157
@@ -3176,11 +3180,11 @@
             this.xrLabel157.NullValueText = "0.00";
             this.xrLabel157.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel157.ProcessNullValues = DevExpress.XtraReports.UI.ValueSuppressType.Suppress;
-            this.xrLabel157.SizeF = new System.Drawing.SizeF(90F, 22.99999F);
+            this.xrLabel157.SizeF = new System.Drawing.SizeF(90F, 25.91336F);
             this.xrLabel157.StylePriority.UseBorders = false;
             this.xrLabel157.StylePriority.UseTextAlignment = false;
             this.xrLabel157.Text = "xrLabel1";
-            this.xrLabel157.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel157.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel157.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel86
@@ -3189,16 +3193,16 @@
             this.xrLabel86.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[][\n(StartsWith([InvoiceNo], \'CD\') Or\nStartsWith([InvoiceNo], \'BF\') ) And [Date] " +
                     "<= [CollectOf]].Sum([AmountPaid]*-1)")});
-            this.xrLabel86.LocationFloat = new DevExpress.Utils.PointFloat(418.25F, 4.807472F);
+            this.xrLabel86.LocationFloat = new DevExpress.Utils.PointFloat(418.25F, 4.807409F);
             this.xrLabel86.Name = "xrLabel86";
             this.xrLabel86.NullValueText = "0.00";
             this.xrLabel86.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel86.ProcessNullValues = DevExpress.XtraReports.UI.ValueSuppressType.Suppress;
-            this.xrLabel86.SizeF = new System.Drawing.SizeF(90F, 22.99999F);
+            this.xrLabel86.SizeF = new System.Drawing.SizeF(90F, 25.91336F);
             this.xrLabel86.StylePriority.UseBorders = false;
             this.xrLabel86.StylePriority.UseTextAlignment = false;
             this.xrLabel86.Text = "xrLabel1";
-            this.xrLabel86.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel86.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel86.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel55
@@ -3207,16 +3211,16 @@
             this.xrLabel55.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[][\n(StartsWith([InvoiceNo], \'CD\') Or\nStartsWith([InvoiceNo], \'BF\') ) And [Date] " +
                     "<= [CollectOf]].Sum([Amount]+[AmountPaid])")});
-            this.xrLabel55.LocationFloat = new DevExpress.Utils.PointFloat(552.3333F, 4.807631F);
+            this.xrLabel55.LocationFloat = new DevExpress.Utils.PointFloat(552.3333F, 4.8076F);
             this.xrLabel55.Name = "xrLabel55";
             this.xrLabel55.NullValueText = "0.00";
             this.xrLabel55.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel55.ProcessNullValues = DevExpress.XtraReports.UI.ValueSuppressType.Suppress;
-            this.xrLabel55.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel55.SizeF = new System.Drawing.SizeF(100F, 25.91336F);
             this.xrLabel55.StylePriority.UseBorders = false;
             this.xrLabel55.StylePriority.UseTextAlignment = false;
             this.xrLabel55.Text = "xrLabel1";
-            this.xrLabel55.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel55.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel55.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel20
@@ -3230,11 +3234,11 @@
             this.xrLabel20.NullValueText = "0.00";
             this.xrLabel20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel20.ProcessNullValues = DevExpress.XtraReports.UI.ValueSuppressType.Suppress;
-            this.xrLabel20.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel20.SizeF = new System.Drawing.SizeF(100F, 25.91337F);
             this.xrLabel20.StylePriority.UseBorders = false;
             this.xrLabel20.StylePriority.UseTextAlignment = false;
             this.xrLabel20.Text = "xrLabel1";
-            this.xrLabel20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrLabel20.TextFormatString = "{0:#,###.00}";
             // 
             // xrLabel45
@@ -3359,6 +3363,34 @@
             // xrControlStyle1
             // 
             this.xrControlStyle1.Name = "xrControlStyle1";
+            // 
+            // xrLabel135
+            // 
+            this.xrLabel135.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CollectOf]")});
+            this.xrLabel135.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel135.LocationFloat = new DevExpress.Utils.PointFloat(0F, 23F);
+            this.xrLabel135.Name = "xrLabel135";
+            this.xrLabel135.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel135.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel135.StylePriority.UseFont = false;
+            this.xrLabel135.Text = "xrLabel135";
+            this.xrLabel135.TextFormatString = "{0:MMMM \'de\' yyyy}";
+            // 
+            // xrLabel136
+            // 
+            this.xrLabel136.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CollectOf]")});
+            this.xrLabel136.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel136.LocationFloat = new DevExpress.Utils.PointFloat(160.4167F, 631.854F);
+            this.xrLabel136.Name = "xrLabel136";
+            this.xrLabel136.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel136.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel136.StylePriority.UseFont = false;
+            this.xrLabel136.StylePriority.UseTextAlignment = false;
+            this.xrLabel136.Text = "xrLabel136";
+            this.xrLabel136.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.xrLabel136.TextFormatString = "{0:MMMM}";
             // 
             // XtraReportCollection2
             // 
@@ -3573,5 +3605,7 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel133;
         private DevExpress.XtraReports.UI.XRLabel xrLabel157;
         private DevExpress.XtraReports.UI.XRControlStyle xrControlStyle1;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel136;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel135;
     }
 }

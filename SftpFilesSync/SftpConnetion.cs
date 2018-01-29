@@ -7,15 +7,18 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using Renci.SshNet;
 using System.IO;
+using System.Net;
 
 namespace SftpFilesSync
 {
     class SftpConnection
     {
         SftpParam param = new SftpParam();
+        
 
         public void StartConn()
         {
+            param.GetValueFromFile();
 
             try
             {
@@ -58,28 +61,72 @@ namespace SftpFilesSync
 
         }
 
-        public void TestConn()
+        public void TestConn(bool isSSH)
         {
 
             try
             {
+                param.GetValueFromFile();
 
-                using (SftpClient client = new SftpClient(param.Hostaname, param.Port, param.User, param.Password))
+                var methods = new List<AuthenticationMethod>();
+
+                if (isSSH == true)
                 {
-                    client.Connect();
+                    PrivateKeyFile keyFile = new PrivateKeyFile(@param.Ppk, @param.Password);
 
-                    if (client.IsConnected)
+                    var keyFiles = new[] { keyFile };
+
+                    methods.Add(new PrivateKeyAuthenticationMethod(param.User, keyFiles));
+                    methods.Add(new PasswordAuthenticationMethod(param.User, param.Password));
+
+                    ConnectionInfo con = new ConnectionInfo(param.Hostaname, param.User, methods.ToArray());
+                    using (SftpClient client = new SftpClient(con))
                     {
-                        MessageBox.Show("SFTP CONNECTION SUCCESSFULL");
-                        client.Disconnect();
-                    }else{
+                        client.Connect();
 
-                        MessageBox.Show("SFTP CONNECTION FAILED");
+                        if (client.IsConnected)
+                        {
+                            MessageBox.Show("SFTP CONNECTION SUCCESSFULL");
+                            client.Disconnect();
+                        }
+                        else
+                        {
+                            MessageBox.Show("SFTP CONNECTION FAILED");
 
+                        }
                     }
+                }
+                else
+                {
 
-                   
-                  }
+                    
+
+
+             /*       using (FTPClient ftpClient = new FTPClient(param.Use, param.Password, param.Hostaname, param.Port);)
+                    {
+                        client.Connect();
+
+                        if (client.IsConnected)
+                        {
+                            MessageBox.Show("SFTP CONNECTION SUCCESSFULL");
+                            client.Disconnect();
+                        }
+                        else
+                        {
+
+                            MessageBox.Show("SFTP CONNECTION FAILED");
+
+                        }
+
+
+                    }*/
+                }
+
+                
+
+            
+
+
 
             }
             catch (Exception theException)

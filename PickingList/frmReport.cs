@@ -19,36 +19,17 @@ namespace PickingList
         {
             InitializeComponent();
 
-            XtraReport_Sales salesRep = new XtraReport_Sales();
-            XtraReport_Delivery deliveryRep = new XtraReport_Delivery();
+            XtraReport_standard salesRep = new XtraReport_standard();
 
-            if (docview == "Sales")
-            {
+            string ReportName;
+
+                ReportName = String.Concat(docview, ".repx");
+                salesRep.LoadLayout(ReportName);
                 salesRep.CreateDocument();
                 documentViewer1.DocumentSource = salesRep;
-            }
-            if (docview == "Delivery")
-            {
-
-                deliveryRep.CreateDocument();
-                documentViewer1.DocumentSource = deliveryRep;
-            }
-            
-        }
-
-        private void documentViewer1_Load(object sender, EventArgs e)
-        {
 
         }
 
-        private void barDockControlRight_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void barDockControlTop_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
