@@ -116,7 +116,6 @@
             this.documentViewer1.ShowPageMargins = false;
             this.documentViewer1.Size = new System.Drawing.Size(735, 466);
             this.documentViewer1.TabIndex = 0;
-            this.documentViewer1.Load += new System.EventHandler(this.documentViewer1_Load);
             // 
             // documentViewerBarManager1
             // 
@@ -696,7 +695,6 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.documentViewerBarManager1;
             this.barDockControlTop.Size = new System.Drawing.Size(735, 53);
-            this.barDockControlTop.Click += new System.EventHandler(this.barDockControlTop_Click);
             // 
             // barDockControlBottom
             // 
@@ -721,7 +719,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(735, 53);
             this.barDockControlRight.Manager = this.documentViewerBarManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 466);
-            this.barDockControlRight.Click += new System.EventHandler(this.barDockControlRight_Click);
             // 
             // printPreviewBarCheckItem1
             // 

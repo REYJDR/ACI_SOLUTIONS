@@ -13,6 +13,7 @@ using System.Data.SqlClient;
 using System.Data.Odbc;
 using System.Data.OleDb;
 using DevExpress.XtraReports.UI;
+using DevExpress.XtraReports.UserDesigner;
 
 
 namespace PickingList
@@ -34,6 +35,28 @@ namespace PickingList
         {
             InitializeComponent();
             InitValue();
+            InitDesignerRepVal();
+        }
+
+        private void InitDesignerRepVal()
+        {
+
+            checkedListReport.Items.Clear();
+            comboBoxRepType.Items.Clear();
+
+            string[] files = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.repx");
+            string filename;
+
+            for (int i = 0; i < files.Length; i++)
+            {
+
+                  filename = Path.GetFileNameWithoutExtension(files[i]);
+                  checkedListReport.Items.Add(filename);
+                  comboBoxRepType.Items.Add(filename);
+
+
+            }
+                
         }
 
         private void InitValue()
@@ -89,16 +112,6 @@ namespace PickingList
         }
 
 
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextRefFrom_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void dateTimeFrom_ValueChanged(object sender, EventArgs e)
         {
@@ -175,16 +188,6 @@ namespace PickingList
 
         }
 
-        private void comboBoxFrom_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void comboBoxRepType_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -194,42 +197,152 @@ namespace PickingList
 
             string reportType = comboBoxRepType.SelectedItem.ToString();
 
+            frmReport.docview = reportType;
+            
 
-            if (reportType == "Sales")
-            {
+        }
 
-                frmReport.docview = "Sales";
+  
+        private void btnDesigner_Click_1(object sender, EventArgs e)
+        {
+
+            XtraReport_standard report = new XtraReport_standard();
+            ReportDesignTool dt = new ReportDesignTool(report);
+
+             string ReportName = GetReportName();
+
+             if (ReportName != "")
+             {
+                 ReportName = String.Concat(ReportName, ".repx");
+                 report.LoadLayout(ReportName);
+                 report.CreateDocument();
+
+
             }
             else
             {
 
-                frmReport.docview = "Delivery";
+                report.CreateDocument();
+
             }
 
+            // Create a new End-User Report Designer form.
+            XRDesignForm designForm = new XRDesignForm();
+
+            // Handle the DesignPanelLoaded event before opening a report in the Report Designer
+            designForm.FormClosed += DesignMdiController_FormClosed;
+
+            // Create a new blank report and show it the Report Designer dialog window.
+            designForm.OpenReport(report);
+            designForm.Show();
+
         }
 
-        private void comboBoxFrom_SelectedIndexChanged_1(object sender, EventArgs e)
+        public XtraReport report;
+
+        void DesignMdiController_FormClosed(object sender, FormClosedEventArgs e)
         {
+            this.InitDesignerRepVal();
+            this.Refresh();
+        }
+
+
+
+        private void checkedListReport_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (checkedListReport.CheckedItems.Count >= 1)
+            {
+                for(int i = 0; i+1 <= checkedListReport.Items.Count; i++){
+
+                    if( checkedListReport.SelectedIndex.ToString() != checkedListReport.Items[i].ToString())
+                    {
+
+                        checkedListReport.SetItemChecked(i, false);
+
+                    }
+
+                }
+
+            }
+
 
         }
 
-        private void btnDesigner_Click(object sender, EventArgs e)
+        private string GetReportName()
         {
+          string reportName = "";
+
+           
+            if (checkedListReport.CheckedItems.Count >= 1)
+            {
+                for (int i = 0; i+1 <= checkedListReport.Items.Count; i++)
+                {
+                    if (checkedListReport.GetItemCheckState(i).ToString() == "Checked")
+                    {
+
+                      reportName = checkedListReport.Items[i].ToString();
+
+                      
+                    }
+                    
+
+                }
+
+            }
+
+            return reportName;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            string reportName = GetReportName();
+            string reportToDelete = String.Concat(reportName, ".repx");
+
             
-                XtraReport_Delivery report = new XtraReport_Delivery();
-                ReportDesignTool dt = new ReportDesignTool(report);
+            try
+            {
 
-                // Invoke the standard End-User Designer form. 
-                dt.ShowDesigner();
+                if (reportName != "")
+                {
 
-                // Invoke the standard End-User Designer form modally. 
-              //  dt.ShowDesignerDialog();
+                    DialogResult dr = MessageBox.Show("Do you want to delete this report desing ?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
 
-                // Invoke the Ribbon End-User Designer form. 
-               // dt.ShowRibbonDesigner();
+                    if (dr == DialogResult.Yes)
+                    {
+                        if(File.Exists(reportToDelete))
+{
+                            File.Delete(reportToDelete);
+                            InitDesignerRepVal();
+                        }
 
-                // Invoke the Ribbon End-User Designer form modally. 
-              //  dt.ShowRibbonDesignerDialog();
+                    }
+
+
+                }
+                else
+                {
+                    MessageBox.Show("A report design must be selected", "Warning");
+
+                }
+
+
+                
+            }
+            catch (Exception theException)
+            {
+                String errorMessage;
+                errorMessage = "Error: ";
+                errorMessage = String.Concat(errorMessage, theException.Message);
+                errorMessage = String.Concat(errorMessage, " Line: ");
+                errorMessage = String.Concat(errorMessage, theException.Source);
+
+                MessageBox.Show(errorMessage, "Error");
+            }
+
+
 
         }
     }

@@ -56,25 +56,24 @@
             this.textPass = new System.Windows.Forms.TextBox();
             this.textUser = new System.Windows.Forms.TextBox();
             this.textHostname = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.checkedListReport = new System.Windows.Forms.CheckedListBox();
+            this.btnDesigner = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.dbQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnDesigner = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.tabPrincipal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbQueryBindingSource)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -107,7 +106,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Report Filter";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // groupBox3
             // 
@@ -122,9 +120,6 @@
             // comboBoxRepType
             // 
             this.comboBoxRepType.FormattingEnabled = true;
-            this.comboBoxRepType.Items.AddRange(new object[] {
-            "Delivery",
-            "Sales"});
             this.comboBoxRepType.Location = new System.Drawing.Point(9, 19);
             this.comboBoxRepType.Name = "comboBoxRepType";
             this.comboBoxRepType.Size = new System.Drawing.Size(162, 21);
@@ -339,6 +334,50 @@
             this.textHostname.Size = new System.Drawing.Size(159, 20);
             this.textHostname.TabIndex = 0;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.btnDelete);
+            this.tabPage3.Controls.Add(this.groupBox5);
+            this.tabPage3.Controls.Add(this.btnDesigner);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(394, 196);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Report Designer";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.checkedListReport);
+            this.groupBox5.Location = new System.Drawing.Point(7, 6);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(193, 179);
+            this.groupBox5.TabIndex = 21;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Available desings";
+            // 
+            // checkedListReport
+            // 
+            this.checkedListReport.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListReport.CheckOnClick = true;
+            this.checkedListReport.FormattingEnabled = true;
+            this.checkedListReport.Location = new System.Drawing.Point(6, 19);
+            this.checkedListReport.Name = "checkedListReport";
+            this.checkedListReport.Size = new System.Drawing.Size(181, 150);
+            this.checkedListReport.TabIndex = 20;
+            this.checkedListReport.SelectedIndexChanged += new System.EventHandler(this.checkedListReport_SelectedIndexChanged);
+            // 
+            // btnDesigner
+            // 
+            this.btnDesigner.Location = new System.Drawing.Point(312, 162);
+            this.btnDesigner.Name = "btnDesigner";
+            this.btnDesigner.Size = new System.Drawing.Size(75, 23);
+            this.btnDesigner.TabIndex = 19;
+            this.btnDesigner.Text = "Edit/Create";
+            this.btnDesigner.UseVisualStyleBackColor = true;
+            this.btnDesigner.Click += new System.EventHandler(this.btnDesigner_Click_1);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -358,63 +397,15 @@
             // 
             this.dbQueryBindingSource.DataSource = typeof(PickingList.DbQuery);
             // 
-            // tabPage3
+            // btnDelete
             // 
-            this.tabPage3.Controls.Add(this.checkedListBox1);
-            this.tabPage3.Controls.Add(this.groupBox5);
-            this.tabPage3.Controls.Add(this.btnDesigner);
-            this.tabPage3.Controls.Add(this.groupBox4);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(394, 196);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Report Designer";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(178, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.comboBox1);
-            this.groupBox4.Location = new System.Drawing.Point(10, 6);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(190, 54);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Select Report ";
-            // 
-            // btnDesigner
-            // 
-            this.btnDesigner.Location = new System.Drawing.Point(312, 151);
-            this.btnDesigner.Name = "btnDesigner";
-            this.btnDesigner.Size = new System.Drawing.Size(75, 23);
-            this.btnDesigner.TabIndex = 19;
-            this.btnDesigner.Text = "Designer";
-            this.btnDesigner.UseVisualStyleBackColor = true;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(245, 25);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
-            this.checkedListBox1.TabIndex = 20;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Location = new System.Drawing.Point(7, 66);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(200, 119);
-            this.groupBox5.TabIndex = 21;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Desings";
+            this.btnDelete.Location = new System.Drawing.Point(231, 162);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 22;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmInit
             // 
@@ -436,11 +427,11 @@
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbQueryBindingSource)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,11 +470,10 @@
         private System.Windows.Forms.TextBox textInvTo;
         private System.Windows.Forms.TextBox textInvFrom;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox checkedListReport;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btnDesigner;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 

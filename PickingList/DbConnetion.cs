@@ -10,11 +10,11 @@ namespace PickingList
 {
     class DbConnection
     {
-        DbParam param = new DbParam();
+       
         
         public SqlConnection StartConn()
         {
-
+             DbParam param = new DbParam();
         
             SqlConnection con = new SqlConnection(param.ConString());
 
@@ -42,6 +42,7 @@ namespace PickingList
 
         public void Closed()
         {
+            DbParam param = new DbParam();
 
             SqlConnection con = new SqlConnection(param.ConString());
             con.Close();

@@ -10,13 +10,13 @@ namespace PickingList
 {
     class DbQuery 
     {
+        DbConnetionPervasive dbcon = new DbConnetionPervasive();
 
         public static DataTable queryTable;
 
-        public DataTable  CompanyName()
+        public DataTable CompanyName()
         {
       
-            DbConnetionPervasive dbcon = new DbConnetionPervasive();
 
             DataTable soData = new DataTable();
 
@@ -27,13 +27,11 @@ namespace PickingList
 
             return soData;
         }
-
         
         public DataTable SOCatalog()
         {
            
-            DbConnetionPervasive dbcon = new DbConnetionPervasive();
-
+          
             DataTable soData = new DataTable();
 
             /*OBTENGO EL RANGO DE FECHA DE FrmInit */
@@ -60,8 +58,7 @@ namespace PickingList
 
         public DataTable invQuery()
         {
-            DbConnetionPervasive dbcon = new DbConnetionPervasive();
-
+           
             DataTable invData = new DataTable();
 
             /*OBTENGO EL RANGO DE FECHA DE FrmInit y el rango de invoice */
@@ -93,13 +90,9 @@ namespace PickingList
             
             return invData;
         }
-
-
-
+        
         public void repQuery(DataTable data)
         {
-
-         DbConnetionPervasive dbcon = new DbConnetionPervasive();
 
          DataTable repData = new DataTable();
 
@@ -162,20 +155,18 @@ namespace PickingList
             
         }
 
-  
-
         public DataSet SetData()
         {
-
-            DateTime rawDate;
-            string date;
-
             DataSet repPreview = new DataSet();
-
-            DataTable tableRep = queryTable;
-
             try
             {
+
+                DateTime rawDate;
+                string date;
+
+                
+                //DataTable tableRep = queryTable;
+
                 DataTable resTable = new DataTable("Result");
                 resTable.Columns.Add("CompanyName", typeof(String));
                 resTable.Columns.Add("InvoiceNo", typeof(String));
@@ -192,33 +183,38 @@ namespace PickingList
 
                 repPreview.Tables.Add(resTable);
 
-                for (int i = 0; i < tableRep.Rows.Count; i++)
+             
+                if(queryTable != null)
                 {
+                    for (int i = 0; i < queryTable.Rows.Count; i++)
+                    {
 
-                    resTable.NewRow();
+                        resTable.NewRow();
 
-                    rawDate = Convert.ToDateTime(tableRep.Rows[i].Field<DateTime>(1));
-                    date = rawDate.ToString("yyyy-MM-dd");
+                        rawDate = Convert.ToDateTime(queryTable.Rows[i].Field<DateTime>(1));
+                        date = rawDate.ToString("yyyy-MM-dd");
 
-                   DataTable CompanyName = this.CompanyName();
-
-
-                    resTable.Rows.Add(
-                           CompanyName.Rows[0].Field<string>(0),
-                           tableRep.Rows[i].Field<string>(0),
-                           date,                    
-                           tableRep.Rows[i].Field<string>(2),
-                           tableRep.Rows[i].Field<string>(3),
-                           tableRep.Rows[i].Field<decimal>(4),
-                           tableRep.Rows[i].Field<string>(5),
-                           tableRep.Rows[i].Field<string>(6),
-                           tableRep.Rows[i].Field<string>(7),
-                           tableRep.Rows[i].Field<decimal>(8),
-                           tableRep.Rows[i].Field<decimal>(9),
-                           tableRep.Rows[i].Field<string>(10) );
+                        DataTable CompanyName = this.CompanyName();
 
 
-            }
+                        resTable.Rows.Add(
+                        CompanyName.Rows[0].Field<string>(0),
+                        queryTable.Rows[i].Field<string>(0),
+                        date,
+                        queryTable.Rows[i].Field<string>(2),
+                        queryTable.Rows[i].Field<string>(3),
+                        queryTable.Rows[i].Field<decimal>(4),
+                        queryTable.Rows[i].Field<string>(5),
+                        queryTable.Rows[i].Field<string>(6),
+                        queryTable.Rows[i].Field<string>(7),
+                        queryTable.Rows[i].Field<decimal>(8),
+                        queryTable.Rows[i].Field<decimal>(9),
+                        queryTable.Rows[i].Field<string>(10));
+
+                    }
+
+                }
+
             }
             catch (Exception theException)
             {
