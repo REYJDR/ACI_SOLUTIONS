@@ -40,11 +40,19 @@ namespace PickingList
 
         private void InitDesignerRepVal()
         {
+            bool exists = Directory.Exists(@"C:\\ReportDesigner\");
+
+            if (!exists)
+            {
+                Directory.CreateDirectory(@"C:\\ReportDesigner\");
+            }
+                
 
             checkedListReport.Items.Clear();
             comboBoxRepType.Items.Clear();
 
-            string[] files = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.repx");
+            string[] files = Directory.GetFiles(@"C:\\ReportDesigner\", "*.repx");
+
             string filename;
 
             for (int i = 0; i < files.Length; i++)
@@ -213,7 +221,7 @@ namespace PickingList
 
              if (ReportName != "")
              {
-                 ReportName = String.Concat(ReportName, ".repx");
+                 ReportName = String.Concat(@"C:\\ReportDesigner\", ReportName,".repx");
                  report.LoadLayout(ReportName);
                  report.CreateDocument();
 
@@ -229,9 +237,12 @@ namespace PickingList
             // Create a new End-User Report Designer form.
             XRDesignForm designForm = new XRDesignForm();
 
+            DevExpress.XtraReports.Configuration.Settings.Default.StorageOptions.RootDirectory = @"C:\\ReportDesigner";
+
+
             // Handle the DesignPanelLoaded event before opening a report in the Report Designer
             designForm.FormClosed += DesignMdiController_FormClosed;
-
+           
             // Create a new blank report and show it the Report Designer dialog window.
             designForm.OpenReport(report);
             designForm.Show();
@@ -245,6 +256,7 @@ namespace PickingList
             this.InitDesignerRepVal();
             this.Refresh();
         }
+
 
 
 
@@ -345,6 +357,13 @@ namespace PickingList
 
 
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            
+            InitDesignerRepVal();
+            
         }
     }
 }

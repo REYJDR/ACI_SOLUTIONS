@@ -11,7 +11,8 @@ namespace PickingList
         public XtraReport_standard()
         {
             InitializeComponent();
-        }
+
+             }
 
     }
 }
