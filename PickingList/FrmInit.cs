@@ -251,13 +251,14 @@ namespace PickingList
         private void checkedListReport_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (checkedListReport.CheckedItems.Count >= 1)
+            if (checkedListReport.CheckedItems.Count >= 1) //leo que la lista tenga al menos un checkbox tildado
             {
-                for(int i = 0; i+1 <= checkedListReport.Items.Count; i++){
-
-                    if( checkedListReport.SelectedIndex.ToString() != checkedListReport.Items[i].ToString())
-                    {
-
+                //leo segun la cantidad total de items que tenga la lista
+                for (int i = 0; i+1 <= checkedListReport.Items.Count; i++){ 
+                    //comparo el valor del item que acabo de check con el que estoy leyendo.
+                    if ( checkedListReport.SelectedIndex.ToString() != checkedListReport.Items[i].ToString()) {
+                      
+                        // si los valores difieren cambio el estado del check 
                         checkedListReport.SetItemChecked(i, false);
 
                     }
