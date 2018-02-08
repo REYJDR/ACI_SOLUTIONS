@@ -135,14 +135,11 @@ namespace PickingList
                                 " AND B.Amount < '0'" +
                                 " Order by A.Reference; ";
 
+                
 
-                dbcon.StartConn();
-
-                if (dbcon.StartConn().State == System.Data.ConnectionState.Open)
-                {
                     /*EJECUTO EL METODO QUERY Y GUARDO EL RESULTADO EN LA VARIABLE DE TIPO DataTable*/
                     dbcon.Query(sqlRep).Fill(repData);
-                }
+                
 
             }
 
@@ -150,7 +147,7 @@ namespace PickingList
             queryTable = repData;
 
             //Seteo el DataSet
-            SetData();
+             SetData();
            
             
         }

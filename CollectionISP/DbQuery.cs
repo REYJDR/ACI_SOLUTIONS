@@ -157,14 +157,18 @@ namespace CollectionISP
             try
             {
                 /*INICIA CONEXION A DB*/
-              //  dbcon.StartConn();
+                if(dbcon.StartConn().State == System.Data.ConnectionState.Open)
+                {
+                    /*EJECUTO EL METODO QUERY Y GUARDO EL RESULTADO EN LA VARIABLE DE TIPO DataTable*/
+                    dbcon.Query(sqlInvoice).Fill(tblDataInv);
 
-                /*EJECUTO EL METODO QUERY Y GUARDO EL RESULTADO EN LA VARIABLE DE TIPO DataTable*/
-                dbcon.Query(sqlInvoice).Fill(tblDataInv);
 
+                   /*EJECUTO EL METODO QUERY Y GUARDO EL RESULTADO EN LA VARIABLE DE TIPO DataTable*/
+                    dbcon.Query(sqlAmountPaid).Fill(tblDataAmountPaid);
 
-                /*EJECUTO EL METODO QUERY Y GUARDO EL RESULTADO EN LA VARIABLE DE TIPO DataTable*/
-                dbcon.Query(sqlAmountPaid).Fill(tblDataAmountPaid);
+                }
+
+                
 
   
             }

@@ -14,7 +14,7 @@ namespace PickingList
         
         public SqlConnection StartConn()
         {
-             DbParam param = new DbParam();
+            DbParam param = new DbParam();
         
             SqlConnection con = new SqlConnection(param.ConString());
 

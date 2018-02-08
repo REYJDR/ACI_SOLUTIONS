@@ -56,13 +56,13 @@
             this.textUser = new System.Windows.Forms.TextBox();
             this.textHostname = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.checkedListReport = new System.Windows.Forms.CheckedListBox();
             this.btnDesigner = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button1 = new System.Windows.Forms.Button();
             this.dbQueryBindingSource = new System.Windows.Forms.BindingSource();
             this.tabPrincipal.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -110,7 +110,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.comboBoxRepType);
-            this.groupBox3.Location = new System.Drawing.Point(6, 113);
+            this.groupBox3.Location = new System.Drawing.Point(15, 112);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(187, 48);
             this.groupBox3.TabIndex = 17;
@@ -348,6 +348,16 @@
             this.tabPage3.Text = "Report Designer";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(308, 45);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(308, 74);
@@ -403,16 +413,6 @@
             // 
             this.StatusLabel.Name = "StatusLabel";
             this.StatusLabel.Size = new System.Drawing.Size(0, 17);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(308, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // dbQueryBindingSource
             // 

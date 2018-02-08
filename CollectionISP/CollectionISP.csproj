@@ -142,11 +142,13 @@
     <Compile Include="XtraReportCollection.Designer.cs">
       <DependentUpon>XtraReportCollection.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportCollection2.cs">
+    <Compile Include="C:\ReportDesigner\XtraReportCollection2.cs">
       <SubType>Component</SubType>
+      <Link>XtraReportCollection2.cs</Link>
     </Compile>
-    <Compile Include="XtraReportCollection2.Designer.cs">
+    <Compile Include="C:\ReportDesigner\XtraReportCollection2.Designer.cs">
       <DependentUpon>XtraReportCollection2.cs</DependentUpon>
+      <Link>XtraReportCollection2.Designer.cs</Link>
     </Compile>
     <EmbeddedResource Include="frmReportViewDS.resx">
       <DependentUpon>frmReportViewDS.cs</DependentUpon>
@@ -173,8 +175,9 @@
     <EmbeddedResource Include="XtraReportCollection.resx">
       <DependentUpon>XtraReportCollection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="XtraReportCollection2.resx">
+    <EmbeddedResource Include="C:\ReportDesigner\XtraReportCollection2.resx">
       <DependentUpon>XtraReportCollection2.cs</DependentUpon>
+      <Link>XtraReportCollection2.resx</Link>
     </EmbeddedResource>
     <None Include="CollectionISP_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">

@@ -16,3 +16,13 @@
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\obj\Debug\SftpFilesSync.pdb
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\Debug\Renci.SshNet.dll
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\Debug\Renci.SshNet.xml
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\Debug\ComponentPro.Common.dll
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\Debug\ComponentPro.FileSync.dll
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\Debug\ComponentPro.FileSystem.dll
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\Debug\ComponentPro.Ftp.dll
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\Debug\ComponentPro.Network.dll
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\Debug\ComponentPro.Common.xml
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\Debug\ComponentPro.FileSync.xml
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\Debug\ComponentPro.FileSystem.xml
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\Debug\ComponentPro.Ftp.xml
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\Debug\ComponentPro.Network.xml

@@ -1,0 +1,969 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ComponentPro.FileSync</name>
+    </assembly>
+    <members>
+        <member name="T:ComponentPro.IO.Synchronization.FolderSyncProgressionEventArgs">
+            <summary>
+            Provides information on the progression of the synchronization of the folder - for <see cref="E:ComponentPro.IO.Synchronization.Synchronizer.FolderSynchronizationProgression"/> event.
+            </summary>
+        </member>
+        <member name="T:ComponentPro.IO.Synchronization.SyncEventArgs">
+            <summary>
+            Provides information on the synchronization being performed.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncEventArgs.IsFirstSynchronization">
+            <summary>
+            Gets a boolean value indicating whether this is the first synchronization with the current items.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncEventArgs.IsPartOfAFolderSynchronization">
+            <summary>
+            Gets a boolean value indicating whether the current synchronization is part of a larger synchronization job where folders are being synchronized.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncEventArgs.Options">
+            <summary>
+            Gets or set the <see cref="T:ComponentPro.IO.Synchronization.SyncOptions"/> that will be used for the current synchronization job.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncEventArgs.UserData">
+            <summary>
+            Gets or sets the opaque data that will be sent back to the event handler whenever an event is raised.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.FolderSyncProgressionEventArgs.Abort">
+            <summary>
+            Gets or sets a boolean value indicating whether the entire synchronization should be aborted.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.FolderSyncProgressionEventArgs.Cancel">
+            <summary>
+            Gets or sets a boolean value indicating whether the impending synchronization of the current file should be canceled.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.FolderSyncProgressionEventArgs.CurrentFile">
+            <summary>
+            Gets a <see cref="T:ComponentPro.IO.FileInfoBase"/> object representing the file that is about to be synchronized as part of an ongoing folder synchronization.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.FolderSyncProgressionEventArgs.SearchCondition">
+            <summary>
+            An array of <see cref="T:ComponentPro.IO.SearchCondition"/> objects. These filters will be applied to each item in the <see cref="P:ComponentPro.IO.Synchronization.FolderSyncProgressionEventArgs.Items"/> array before synchronization begins.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.FolderSyncProgressionEventArgs.IrrelevantItemIndexes">
+            <summary>
+            An array of integers containing indexes of the <see cref="P:ComponentPro.IO.Synchronization.FolderSyncProgressionEventArgs.Items"/> array that specify items who should be considered irrelevant when trying to designate a master item.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.FolderSyncProgressionEventArgs.Items">
+            <summary>
+            An array of <see cref="T:ComponentPro.IO.FileInfoBase"/> containing the items to be synchronized.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.FolderSyncProgressionEventArgs.MasterItemIndex">
+            <summary>
+            Gets or sets the index of the item to be used as the master during the synchronization process.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.FolderSyncProgressionEventArgs.MetaDataItem">
+            <summary>
+            A <see cref="T:ComponentPro.IO.FileInfoBase"/> object representing the location where meta data, if enabled, can be accessed.
+            </summary>
+        </member>
+        <member name="T:ComponentPro.IO.Synchronization.GetSyncFileFromFolderEventArgs">
+            <summary>
+            Provides information on the retrieval of a synchronization file from a folder - for <see cref="E:ComponentPro.IO.Synchronization.Synchronizer.GettingSynchronizationFileFromFolder"/> event.
+            </summary>    
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.GetSyncFileFromFolderEventArgs.Folder">
+            <summary>
+            Gets the folder from which a file to be synchronized must be selected.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.GetSyncFileFromFolderEventArgs.Items">
+            <summary>
+            Gets the <see cref="T:ComponentPro.IO.FileInfoBase"/> objects representing the items to be processed.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.GetSyncFileFromFolderEventArgs.LastSynchronizationDate">
+            <summary>
+            Gets the date and time of the last synchronization.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.GetSyncFileFromFolderEventArgs.MasterItem">
+            <summary>
+            Gets the <see cref="T:ComponentPro.IO.FileInfoBase"/> to be used as the master during the <see cref="E:ComponentPro.IO.Synchronization.Synchronizer.GettingSynchronizationFileFromFolder"/> event of the synchronization process.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.GetSyncFileFromFolderEventArgs.MasterItemIndex">
+            <summary>
+            Gets the <see cref="T:ComponentPro.IO.FileInfoBase"/> to be used as the master during the <see cref="E:ComponentPro.IO.Synchronization.Synchronizer.GettingSynchronizationFileFromFolder"/> event of the synchronization process.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.GetSyncFileFromFolderEventArgs.SynchronizationFile">
+            <summary>
+            An <see cref="T:ComponentPro.IO.FileInfoBase"/> object from the folder specified by the Folder property, representing the file that will be synchronized.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.GetSyncFileFromFolderEventArgs.SynchronizationSessionName">
+            <summary>
+            Gets or sets the name of the synchronization session.
+            </summary>
+        </member>
+        <member name="T:ComponentPro.IO.Synchronization.SyncAction">
+            <summary>
+            A value representing the action to be taken during the synchronization process. 
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncAction.CreateOrOverwriteWithMaster">
+            <summary>
+            The file or folder will be created or overwritten with the master's data.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncAction.Resume">
+            <summary>
+            Resumes previously interrupted transfer of the file.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncAction.Delete">
+            <summary>
+            The file or folder will be deleted.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncAction.None">
+            <summary>
+            No action will be taken on this file or folder.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncAction.OverwriteAttributesOnly">
+            <summary>
+            The file's attributes will be overwritten with the master file's attributes.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncAction.Process">
+            <summary>
+            This file will be processed by the synchronization algorithm.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncAction.SuspendedCreateOrOverwrite">
+            <summary>
+            The file or folder was to be be created or overwritten with the master's data, 
+            but options and/or other factors have overriden the decision, so no action will be taken on this item.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncAction.SuspendedDelete">
+            <summary>
+            The file or folder was to be deleted, but options and/or other factors have overriden the decision, 
+            so no action will be taken on this item.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncAction.SuspendedResume">
+            <summary>
+            The file was to be resumed transfer, but options and/or other factors have overriden the decision, 
+            so no action will be taken on this file.
+            </summary>
+        </member>
+        <member name="T:ComponentPro.IO.Synchronization.SyncAnalysisEventArgs">
+            <summary>
+            Provides information on the analysis being performed for the synchronization.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncAnalysisEventArgs.Actions">
+            <summary>
+            Gets the actions to be performed on the files during the synchronization.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncAnalysisEventArgs.Cancel">
+            <summary>
+            Gets or sets a boolean value indicating whether the synchronization should be canceled.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncAnalysisEventArgs.ConflictReasons">
+            <summary>
+            Gets the reasons for any conflicts that arose during the conflict detection of the synchronization.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncAnalysisEventArgs.Files">
+            <summary>
+            Gets the files that are to be analyzed.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncAnalysisEventArgs.HasConflicts">
+            <summary>
+            Gets a boolean value indicating whether ConflictReasons contains one or more values that denote a conflict.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncAnalysisEventArgs.LastSynchronizationDate">
+            <summary>
+            Gets the date and time of the last synchronization.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncAnalysisEventArgs.MasterFile">
+            <summary>
+            Gets or sets the master file, in relation to Files.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncAnalysisEventArgs.MasterFileIndex">
+            <summary>
+            Gets or sets the index of the master file, in relation to Files.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncAnalysisEventArgs.PerformsActions">
+            <summary>
+            Gets a boolean value indicating whether <see cref="P:ComponentPro.IO.Synchronization.SyncAnalysisEventArgs.Actions"/> contains one or more values that denote actions other than doing nothing or suspended action.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncAnalysisEventArgs.PerformsActionsOrSuspendedActions">
+            <summary>
+            Gets a boolean value indicating whether <see cref="P:ComponentPro.IO.Synchronization.SyncAnalysisEventArgs.Actions"/> contains one or more values that denote actions other than <see cref="F:ComponentPro.IO.Synchronization.SyncAction.None"/>.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncAnalysisEventArgs.SynchronizationSessionName">
+            <summary>
+            Gets the name of the synchronization session.
+            </summary>
+        </member>
+        <member name="T:ComponentPro.IO.Synchronization.SyncCompareFileDataEventArgs">
+            <summary>
+            Provides information on the comparison of file data during the synchronization.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncCompareFileDataEventArgs.AllowComparison">
+            <summary>
+            Gets or sets a value indicating whether to allow the component to compare files.
+            </summary>
+            <value><c>true</c> if the component will compare files; <c>false</c> otherwise.</value>
+            <remarks>
+            Set this property to <c>false</c>, if all the values in <see cref="P:ComponentPro.IO.Synchronization.SyncCompareFileDataEventArgs.ComparisonResults"/> will be considered the final results on equality against the master file.
+            When set to <c>true</c>, all the files in <see cref="P:ComponentPro.IO.Synchronization.SyncCompareFileDataEventArgs.FilesToCompare"/> will be compared to the master file.
+            </remarks>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncCompareFileDataEventArgs.Files">
+            <summary>
+            Gets the files that are to be processed.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncCompareFileDataEventArgs.ComparisonResults">
+            <summary>
+            Gets or sets an array of boolean values indicating whether the Files are equal or not to the master file.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncCompareFileDataEventArgs.FilesToCompare">
+            <summary>
+            Gets or sets an array of boolean values indicating whether the Files are equal or not to the master file.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncCompareFileDataEventArgs.LastSynchronizationDate">
+            <summary>
+            Gets the date and time when the last synchronization was performed.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncCompareFileDataEventArgs.MasterFile">
+            <summary>
+            Gets the master file, in relation to <see cref="P:ComponentPro.IO.Synchronization.SyncCompareFileDataEventArgs.Files"/>. 
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncCompareFileDataEventArgs.MasterFileIndex">
+            <summary>
+            Gets the index of the master file, in relation to Files.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncCompareFileDataEventArgs.SynchronizationSessionName">
+            <summary>
+            Gets or sets the name of the synchronization session.
+            </summary>
+        </member>
+        <member name="T:ComponentPro.IO.Synchronization.SyncConflictEventArgs">
+            <summary>
+            Provides information on conflicts that occur during the synchronization.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncConflictEventArgs.Actions">
+            <summary>
+            Gets the actions to be performed on the files during the synchronization.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncConflictEventArgs.Cancel">
+            <summary>
+            Gets or sets a boolean value indicating whether the synchronization should be canceled.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncConflictEventArgs.ChosenMasterFile">
+            <summary>
+            Gets or sets the master file, in relation to <see cref="P:ComponentPro.IO.Synchronization.SyncConflictEventArgs.Files"/>, to be used to resolve the potential conflict among the files being synchronized.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncConflictEventArgs.ChosenMasterFileIndex">
+            <summary>
+            Gets or sets the index of the master file, in relation to Files, to be used to resolve the potential conflict between files to synchronize.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncConflictEventArgs.ConflictReasons">
+            <summary>
+            Gets the reasons for any conflicts that arise during the synchronization.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncConflictEventArgs.Files">
+            <summary>
+            Gets the files that are to be processed.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncConflictEventArgs.HasConflicts">
+            <summary>
+            Gets a boolean value indicating whether ConflictReasons contains one or more values that indicate a conflict.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncConflictEventArgs.LastSynchronizationDate">
+            <summary>
+            Gets the date and time of the last synchronization.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncConflictEventArgs.OriginalMasterFile">
+            <summary>
+            Gets the master file as determined by the synchronization algorithm.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncConflictEventArgs.OriginalMasterFileIndex">
+            <summary>
+            Gets the index of the master file as determined by the synchronization algorithm. in relation to <see cref="P:ComponentPro.IO.Synchronization.SyncConflictEventArgs.Files"/>.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncConflictEventArgs.SynchronizationSessionName">
+            <summary>
+            Gets or sets the name of the synchronization session.
+            </summary>
+        </member>
+        <member name="T:ComponentPro.IO.Synchronization.SyncConflictReason">
+            <summary>
+            A value representing one or more reasons for conflicts between files during a synchronization.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncConflictReason.ModifiedAfterLastSynchronization">
+            <summary>
+            The file was modified after the last synchronization.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncConflictReason.MoreRecentThanMaster">
+            <summary>
+            The file is more recent than the master file.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncConflictReason.NoConflict">
+            <summary>
+            No conflict has been detected.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncConflictReason.SameDateAsMasterDifferentData">
+            <summary>
+            The file's date is the same as the master file's date, but its data is different.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncConflictReason.Resumable">
+            <summary>
+            The destination file's resumable.
+            </summary>
+        </member>
+        <member name="T:ComponentPro.IO.Synchronization.SyncFolderAnalysisEventArgs">
+            <summary>
+            Provides information on the analysis being performed for the impending creation or deletion of folders during a folder synchronization.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncFolderAnalysisEventArgs.Actions">
+            <summary>
+            Gets the actions to be performed on the folders during the synchronization.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncFolderAnalysisEventArgs.Folders">
+            <summary>
+            Gets the folders that have been analysed.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncFolderAnalysisEventArgs.MasterFolder">
+            <summary>
+            Gets the master folder, in relation to <see cref="P:ComponentPro.IO.Synchronization.SyncFolderAnalysisEventArgs.Folders"/>.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncFolderAnalysisEventArgs.MasterFolderIndex">
+            <summary>
+            Gets the index of the master folder, in relation to <see cref="P:ComponentPro.IO.Synchronization.SyncFolderAnalysisEventArgs.Folders"/>.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncFolderAnalysisEventArgs.SynchronizationSessionName">
+            <summary>
+            Gets the name of the synchronization session.
+            </summary>
+        </member>
+        <member name="T:ComponentPro.IO.Synchronization.SyncMetaDataEventArgs">
+            <summary>
+            Provides information on the meta data during the synchronization. 
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncMetaDataEventArgs.AllowMetaDataFileDataAccess">
+            <summary>
+            Gets or sets a boolean value indicating whether or not the synchronization operation is allowed to access the metadata found in <see cref="P:ComponentPro.IO.Synchronization.SyncMetaDataEventArgs.MetaDataFile"/> itself. The default value is <c>true</c>.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncMetaDataEventArgs.LastSynchronizationDate">
+            <summary>
+            Gets or sets the date and time of the last synchronization.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncMetaDataEventArgs.MetaDataFile">
+            <summary>
+            Gets or sets the meta data file to be used for the synchronization session.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncMetaDataEventArgs.MetaDataItem">
+            <summary>
+            Gets or sets the <see cref="T:ComponentPro.IO.FileInfoBase"/> object representing a meta data item.  
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncMetaDataEventArgs.MetaDataXmlReader">
+            <summary>
+            Gets or sets the meta data reader.  
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncMetaDataEventArgs.MetaDataXmlWriter">
+            <summary>
+            Gets or sets the meta data writer.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.SyncMetaDataEventArgs.SynchronizationSessionName">
+            <summary>
+            Gets or sets the name of the synchronization session.
+            </summary>
+        </member>
+        <member name="T:ComponentPro.IO.Synchronization.LoadingSyncMetaDataEventArgs">
+            <summary>
+            Provides information on the loading of meta data during the synchronization.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.LoadingSyncMetaDataEventArgs.Cancel">
+            <summary>
+            Gets or sets a boolean value indicating whether the synchronization should be canceled.
+            </summary>
+        </member>
+        <member name="T:ComponentPro.IO.Synchronization.SyncOptions">
+            <summary>
+            Represents the options used during the synchronization.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncOptions.AllowCreations">
+            <summary>
+            Gets or sets a boolean value indicating whether new files can be created during the synchronization process.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncOptions.AllowResuming">
+            <summary>
+            Gets or sets a boolean value indicating whether broken files due to a previous interrupted file transfer can be resumed during the synchronization process.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncOptions.AllowDeletions">
+            <summary>
+            Gets or sets a boolean value indicating whether deletions will be allowed during the synchronization.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncOptions.AutoConflictResolution">
+            <summary>
+            Gets or sets a boolean value indicating whether conflicts should be resolved automatically.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncOptions.BuildDirectoryTree">
+            <summary>
+            Gets or sets a boolean value indicating whether to build directory structure before synchronizing folders. If <c>true</c> is used, <see cref="E:ComponentPro.IO.Synchronization.Synchronizer.Progress"/> event will report the total progress percentage correctly.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncOptions.Comparer">
+            <summary>
+            Gets or sets the file comparer used to detect conflicts between files. For example:<see cref="T:ComponentPro.IO.FileContentComparer"/> - compare file data, <see cref="T:ComponentPro.IO.FileChecksumComparer"/> - compare file checksums, <see cref="T:ComponentPro.IO.FileLastWriteTimeComparer"/> - compare last write time of files, etc.
+            </summary>
+            <remarks>
+            The default value is <see cref="P:ComponentPro.IO.FileComparers.FileContentComparer"/>.
+            </remarks>
+            <seealso cref="T:ComponentPro.IO.FileContentComparer"/>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncOptions.PerformRefresh">
+            <summary>
+            Gets or sets a boolean value indicating whether the <see cref="M:ComponentPro.IO.FileInfoBase.Refresh"/> method should be called before 
+            using an item's dates and attribute in the synchronization.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncOptions.PreviewOnly">
+            <summary>
+            Gets or sets a boolean value indicating whether the synchronization will be performed in preview-mode only, that is, without making any changes to files.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncOptions.PerformSecondSyncOnUnnecessaryFolders">
+            <summary>
+            Gets or sets a boolean value indicating whether to perform 2nd synchronization round for unnecessary folders. The default value is <c>true</c>.
+            </summary>        
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncOptions.Recursive">
+            <summary>
+            Gets or sets a boolean value indicating whether to recurse into subfolders. 
+            <c>true</c> if files and folders contained in the subfolders should be synchronized; 
+            <c>false</c> if only files that are immediate children of a folder should be synchronized.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncOptions.UseMetaData">
+            <summary>
+            Gets or sets a boolean value indicating whether meta data should be used during the synchronization.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncOptions.TimeResolution">
+            <summary>
+            Gets or sets the granularity for time comparisons.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncOptions.Default">
+            <summary>
+            Gets the default synchronization options.
+            </summary>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.SyncOptions.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ComponentPro.IO.Synchronization.SyncOptions"/> class.
+            </summary>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.SyncOptions.#ctor(ComponentPro.IO.Synchronization.SyncOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ComponentPro.IO.Synchronization.SyncOptions"/> class using the values of the supplied SynchronizationOptions object.
+            </summary>
+            <param name="options">The source options.</param>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.SyncOptions.Clone">
+            <summary>
+            Creates a copy of this <see cref="T:ComponentPro.IO.Synchronization.SyncOptions"/> object.
+            </summary>
+            <returns>The newly created <see cref="T:ComponentPro.IO.Synchronization.SyncOptions"/> instance.</returns>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.SyncOptions.CopyTo(ComponentPro.IO.Synchronization.SyncOptions)">
+            <summary>
+            Copies the values of the current <see cref="T:ComponentPro.IO.Synchronization.SyncOptions"/> object to the supplied <see cref="T:ComponentPro.IO.Synchronization.SyncOptions"/> object.
+            </summary>
+            <param name="options">The source options.</param>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.SyncOptions.Reset">
+            <summary>
+            Resets the values of the current <see cref="T:ComponentPro.IO.Synchronization.SyncOptions"/> object to the values found in the Default object.
+            </summary>
+        </member>
+        <member name="T:ComponentPro.IO.Synchronization.SyncResult">
+            <summary>
+            Defines synchronization results.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncResult.AllFilesEqual">
+            <summary>
+            All files have the same data and last write time.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncResult.Canceled">
+            <summary>
+            The synchronization was canceled.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncResult.ConflictsDetected">
+            <summary>
+            Conflicts between files were detected during the synchronization.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncResult.FileSynchronization">
+            <summary>
+            The synchronization involved files.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncResult.FolderSynchronization">
+            <summary>
+            The synchronization involved the contents of folders.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncResult.IrrelevantItemNotFound">
+            <summary>
+            A <see cref="T:ComponentPro.IO.FileInfoBase"/> specified as an irrelevant item for determining the synchronization's master item could not be found among the items to synchronize.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncResult.ItemsSynchronized">
+            <summary>
+            One or more items (files or folders) were successfully synchronized.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncResult.MasterItemNotFound">
+            <summary>
+            A master <see cref="T:ComponentPro.IO.FileInfoBase"/> manually specified as the master item in the synchronization could not be found among the items to synchronize.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncResult.MetadataLoaded">
+            <summary>
+            Metadata about previous synchronizations has been located and loaded for use in the current synchronization.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncResult.NoActionTaken">
+            <summary>
+            No actions were taken on any file, because all files were up to date, the synchronization was just a preview, 
+            or no master file could be selected due to conflicts. For a folder synchronization, this bit will only be set if all file synchronizations inside the folders take no action.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncResult.NoMasterItemChosen">
+            <summary>
+            A master <see cref="T:ComponentPro.IO.FileInfoBase"/> among the items to synchronize could not be chosen, 
+            perhaps because all files were equal or because of possible conflicts between files. This bit can only be set when a file synchronization is performed.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncResult.None">
+            <summary>
+            No meaningful result.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncResult.Preview">
+            <summary>
+            For preview only.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncResult.SomeActionsSuspended">
+            <summary>
+            Actions were suspended on one or more of the files or folders to be synchronized.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncResult.SomeItemsDeleted">
+            <summary>
+            One or more items (files or folders) were deleted as part of the synchronization.
+            </summary>
+        </member>
+        <member name="F:ComponentPro.IO.Synchronization.SyncResult.SomeItemsFiltered">
+            <summary>
+            One or more items (files or folders) were filtered out of the synchronization because of a <see cref="T:ComponentPro.IO.SearchCondition"/> object or because the item was null.
+            </summary>
+        </member>
+        <member name="T:ComponentPro.IO.Synchronization.Synchronizer">
+            <summary>
+            Contains members and properties used to perform file and folder synchronizations.
+            </summary>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.OnAnalysis(System.Object,ComponentPro.IO.Synchronization.SyncAnalysisEventArgs)">
+            <summary>
+            Raises the <see cref="E:ComponentPro.IO.Synchronization.Synchronizer.Analysis"/> event.
+            </summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">An <see cref="T:ComponentPro.IO.Synchronization.SyncAnalysisEventArgs"/> event data.</param>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.OnCompareFileData(System.Object,ComponentPro.IO.Synchronization.SyncCompareFileDataEventArgs)">
+            <summary>
+            Raises the <see cref="E:ComponentPro.IO.Synchronization.Synchronizer.CompareFileData"/> event.
+            </summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">An <see cref="T:ComponentPro.IO.Synchronization.SyncCompareFileDataEventArgs"/> event data.</param>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.OnConflict(System.Object,ComponentPro.IO.Synchronization.SyncConflictEventArgs)">
+            <summary>
+            Raises the <see cref="E:ComponentPro.IO.Synchronization.Synchronizer.Conflict"/> event.
+            </summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">An <see cref="T:ComponentPro.IO.Synchronization.SyncConflictEventArgs"/> event data.</param>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.OnFolderOperationAnalysis(System.Object,ComponentPro.IO.Synchronization.SyncFolderAnalysisEventArgs)">
+            <summary>
+            Raises the <see cref="E:ComponentPro.IO.Synchronization.Synchronizer.FolderOperationAnalysis"/> event.
+            </summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">An <see cref="T:ComponentPro.IO.Synchronization.SyncFolderAnalysisEventArgs"/> event data.</param>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.OnFolderSynchronizationProgression(System.Object,ComponentPro.IO.Synchronization.FolderSyncProgressionEventArgs)">
+            <summary>
+            Raises the <see cref="E:ComponentPro.IO.Synchronization.Synchronizer.FolderSynchronizationProgression"/> event.
+            </summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">An <see cref="T:ComponentPro.IO.Synchronization.FolderSyncProgressionEventArgs"/> event data.</param>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.OnGettingSynchronizationFileFromFolder(System.Object,ComponentPro.IO.Synchronization.GetSyncFileFromFolderEventArgs)">
+            <summary>
+            Raises the <see cref="E:ComponentPro.IO.Synchronization.Synchronizer.GettingSynchronizationFileFromFolder"/> event.
+            </summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">An <see cref="T:ComponentPro.IO.Synchronization.GetSyncFileFromFolderEventArgs"/> event data.</param>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.OnLoadingMetaData(System.Object,ComponentPro.IO.Synchronization.LoadingSyncMetaDataEventArgs)">
+            <summary>
+            Raises the <see cref="E:ComponentPro.IO.Synchronization.Synchronizer.LoadingMetaData"/> event.
+            </summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">An <see cref="T:ComponentPro.IO.Synchronization.LoadingSyncMetaDataEventArgs"/> event data.</param>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.OnMetaDataLoaded(System.Object,ComponentPro.IO.Synchronization.LoadingSyncMetaDataEventArgs)">
+            <summary>
+            Raises the <see cref="E:ComponentPro.IO.Synchronization.Synchronizer.MetaDataLoaded"/> event.
+            </summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">An <see cref="T:ComponentPro.IO.Synchronization.LoadingSyncMetaDataEventArgs"/> event data.</param>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.OnMetaDataSaved(System.Object,ComponentPro.IO.Synchronization.SyncMetaDataEventArgs)">
+            <summary>
+            Raises the <see cref="E:ComponentPro.IO.Synchronization.Synchronizer.MetaDataSaved"/> event.
+            </summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">An <see cref="T:ComponentPro.IO.Synchronization.SyncMetaDataEventArgs"/> event data.</param>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.OnSavingMetaData(System.Object,ComponentPro.IO.Synchronization.SyncMetaDataEventArgs)">
+            <summary>
+            Raises the <see cref="E:ComponentPro.IO.Synchronization.Synchronizer.SavingMetaData"/> event.
+            </summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">An <see cref="T:ComponentPro.IO.Synchronization.SyncMetaDataEventArgs"/> event data.</param>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.OnProgress(System.Object,ComponentPro.IO.FileSystemProgressEventArgs)">
+            <summary>
+            Raises the <see cref="E:ComponentPro.IO.Synchronization.Synchronizer.Progress"/> event.
+            </summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">An <see cref="T:ComponentPro.IO.FileSystemProgressEventArgs"/> event data.</param>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.OnSynchronizeCompleted(System.Object,ComponentPro.ExtendedAsyncCompletedEventArgs{ComponentPro.IO.Synchronization.SyncResult})">
+            <summary>
+            Raises the <see cref="E:ComponentPro.IO.Synchronization.Synchronizer.SynchronizeCompleted"/> event.
+            </summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">An <see cref="T:System.ComponentModel.AsyncCompletedEventArgs"/> that contains event data.</param>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.SynchronizeAsync(ComponentPro.IO.Synchronization.SyncOptions,System.Int32,ComponentPro.IO.FileInfoBase,System.Collections.IList,System.Collections.IList,ComponentPro.IO.SearchCondition,ComponentPro.ExtendedAsyncCompletedEventHandler{ComponentPro.IO.Synchronization.SyncResult},System.Object)">
+            <summary>
+            Asynchronously synchronizes the specified items.
+            </summary>
+            <param name="masterItemIndex">A value used to specify the index of the master item for the synchronization. The master item is the item that will be considered to be up to date and used to replace other items.</param>
+            <param name="searchCondition">The search condition used to filter the specified synchronization items. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="irrelevantItemIndexes">An array of integers that contains indexes into the item list. These indexes identify items in the item list that should be considered irrelevant. An irrelevant item will still participate in the synchronization as normal. But it will be excluded from being selected as the master item.</param>
+            <param name="metaDataItem">A <see cref="T:ComponentPro.IO.FileInfoBase"/> object representing the location where meta data, if enabled, can be accessed. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="options">A <see cref="T:ComponentPro.IO.Synchronization.SyncOptions"/> object representing the options to use during the synchronization process. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="items">A list of <see cref="T:ComponentPro.IO.FileInfoBase"/> objects to be synchronized.</param>
+            <param name="callback">An optional asynchronous callback to be invoked when this operation completes. This parameter can be null.</param>
+            <param name="userState">A user-provided object that identifies this particular asynchronous operation.</param>
+            <returns>An object that references the asynchronous operation.</returns>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.SynchronizeAsync(ComponentPro.IO.Synchronization.SyncOptions,System.Int32,ComponentPro.IO.FileInfoBase,System.Collections.IList,System.Collections.IList,ComponentPro.IO.SearchCondition,System.Object)">
+            <summary>
+            Asynchronously synchronizes the specified items.
+            </summary>
+            <param name="masterItemIndex">A value used to specify the index of the master item for the synchronization. The master item is the item that will be considered to be up to date and used to replace other items.</param>
+            <param name="searchCondition">The search condition used to filter the specified synchronization items. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="irrelevantItemIndexes">An array of integers that contains indexes into the item list. These indexes identify items in the item list that should be considered irrelevant. An irrelevant item will still participate in the synchronization as normal. But it will be excluded from being selected as the master item.</param>
+            <param name="metaDataItem">A <see cref="T:ComponentPro.IO.FileInfoBase"/> object representing the location where meta data, if enabled, can be accessed. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="options">A <see cref="T:ComponentPro.IO.Synchronization.SyncOptions"/> object representing the options to use during the synchronization process. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="items">A list of <see cref="T:ComponentPro.IO.FileInfoBase"/> objects to be synchronized.</param>
+            <param name="userState">A user-provided object that identifies this particular asynchronous operation.</param>
+            <returns>An object that references the asynchronous operation.</returns>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.SynchronizeAsync(ComponentPro.IO.FileInfoBase,ComponentPro.IO.Synchronization.SyncOptions,ComponentPro.IO.SearchCondition,ComponentPro.IO.FileInfoBase[],ComponentPro.ExtendedAsyncCompletedEventHandler{ComponentPro.IO.Synchronization.SyncResult},System.Object)">
+            <summary>
+            Asynchronously synchronizes the specified items.
+            </summary>
+            <param name="masterItem">A value used to specify the <see cref="T:ComponentPro.IO.FileInfoBase"/> that is the master item for the synchronization. The master item is the item that will be considered to be up to date and used to replace other items. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="searchCondition">The search condition used to filter the specified synchronization items. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="options">A <see cref="T:ComponentPro.IO.Synchronization.SyncOptions"/> object representing the options to use during the synchronization process. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="items">A list of <see cref="T:ComponentPro.IO.FileInfoBase"/> objects to be synchronized.</param>
+            <param name="callback">An optional asynchronous callback to be invoked when this operation completes. This parameter can be null.</param>
+            <param name="userState">A user-provided object that identifies this particular asynchronous operation.</param>
+            <returns>An object that references the asynchronous operation.</returns>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.SynchronizeAsync(ComponentPro.IO.FileInfoBase,ComponentPro.IO.Synchronization.SyncOptions,ComponentPro.IO.SearchCondition,ComponentPro.IO.FileInfoBase[],System.Object)">
+            <summary>
+            Asynchronously synchronizes the specified items.
+            </summary>
+            <param name="masterItem">A value used to specify the <see cref="T:ComponentPro.IO.FileInfoBase"/> that is the master item for the synchronization. The master item is the item that will be considered to be up to date and used to replace other items. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="searchCondition">The search condition used to filter the specified synchronization items. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="options">A <see cref="T:ComponentPro.IO.Synchronization.SyncOptions"/> object representing the options to use during the synchronization process. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="items">A list of <see cref="T:ComponentPro.IO.FileInfoBase"/> objects to be synchronized.</param>
+            <param name="userState">A user-provided object that identifies this particular asynchronous operation.</param>
+            <returns>An object that references the asynchronous operation.</returns>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.Synchronize(ComponentPro.IO.SearchCondition,ComponentPro.IO.FileInfoBase[])">
+            <summary>
+            Synchronizes the specified items.
+            </summary>
+            <param name="searchCondition">The search condition used to filter the specified synchronization items. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="items">A list of <see cref="T:ComponentPro.IO.FileInfoBase"/> objects to be synchronized.</param>
+            <returns>
+            A <see cref="T:ComponentPro.IO.Synchronization.SyncResult"/> value that specifies one or more results from the synchronization. The value is a set of flags. 
+            When the <see cref="F:ComponentPro.IO.Synchronization.SyncResult.ItemsSynchronized"/> bit is set, the synchronization was successful; otherwise, no files were synchronized, indicating some kind of failure.
+            </returns>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.Synchronize(ComponentPro.IO.SearchCondition,System.Int32,ComponentPro.IO.FileInfoBase[])">
+            <summary>
+            Synchronizes the specified items, using the <paramref name="masterItemIndex"/> parameter as the index of master item in the <paramref name="items"/> list.
+            </summary>
+            <param name="searchCondition">The search condition used to filter the specified synchronization items. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="masterItemIndex">A value used to specify the index of the master item for the synchronization. The master item is the item that will be considered to be up to date and used to replace other items.</param>
+            <param name="items">A list of <see cref="T:ComponentPro.IO.FileInfoBase"/> objects to be synchronized.</param>
+            <returns>
+            A <see cref="T:ComponentPro.IO.Synchronization.SyncResult"/> value that specifies one or more results from the synchronization. The value is a set of flags. 
+            When the <see cref="F:ComponentPro.IO.Synchronization.SyncResult.ItemsSynchronized"/> bit is set, the synchronization was successful; otherwise, no files were synchronized, indicating some kind of failure.
+            </returns>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.Synchronize(ComponentPro.IO.FileInfoBase,ComponentPro.IO.Synchronization.SyncOptions,ComponentPro.IO.SearchCondition,ComponentPro.IO.FileInfoBase[])">
+            <summary>
+            Synchronizes the specified items.
+            </summary>
+            <param name="searchCondition">The search condition used to filter the specified synchronization items. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="masterItem">A value used to specify the <see cref="T:ComponentPro.IO.FileInfoBase"/> that is the master item for the synchronization. The master item is the item that will be considered to be up to date and used to replace other items. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="items">A list of <see cref="T:ComponentPro.IO.FileInfoBase"/> objects to be synchronized.</param>
+            <param name="options">A <see cref="T:ComponentPro.IO.Synchronization.SyncOptions"/> object representing the options to use during the synchronization process. Can be a null reference (Nothing in Visual Basic).</param>
+            <returns>
+            A <see cref="T:ComponentPro.IO.Synchronization.SyncResult"/> value that specifies one or more results from the synchronization. The value is a set of flags. 
+            When the <see cref="F:ComponentPro.IO.Synchronization.SyncResult.ItemsSynchronized"/> bit is set, the synchronization was successful; otherwise, no files were synchronized, indicating some kind of failure.
+            </returns>
+            <example source="$ComponentPro.Ftp/Synchronize#Dirs, $ComponentPro.Sftp/Synchronize#Files, $ComponentPro.Zip/Synchronize#Dirs"/>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.Synchronize(ComponentPro.IO.SearchCondition,System.Object,ComponentPro.IO.FileInfoBase[])">
+            <summary>
+            Synchronizes the specified items.
+            </summary>
+            <param name="searchCondition">The search condition used to filter the specified synchronization items. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="items">A list of <see cref="T:ComponentPro.IO.FileInfoBase"/> objects to be synchronized.</param>
+            <param name="syncEventsUserData">Opaque data that is sent back to the event handler when a synchronization event is raised.</param>
+            <returns>
+            A <see cref="T:ComponentPro.IO.Synchronization.SyncResult"/> value that specifies one or more results from the synchronization. The value is a set of flags. 
+            When the <see cref="F:ComponentPro.IO.Synchronization.SyncResult.ItemsSynchronized"/> bit is set, the synchronization was successful; otherwise, no files were synchronized, indicating some kind of failure.
+            </returns>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.Synchronize(ComponentPro.IO.SearchCondition,System.Int32,System.Object,ComponentPro.IO.FileInfoBase[])">
+            <summary>
+            Synchronizes the specified items.
+            </summary>
+            <param name="searchCondition">The search condition used to filter the specified synchronization items. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="items">A list of <see cref="T:ComponentPro.IO.FileInfoBase"/> objects to be synchronized.</param>
+            <param name="masterItemIndex">A value used to specify the index of the master item for the synchronization. The master item is the item that will be considered to be up to date and used to replace other items.</param>
+            <param name="syncEventsUserData">Opaque data that is sent back to the event handler when a synchronization event is raised.</param>
+            <returns>
+            A <see cref="T:ComponentPro.IO.Synchronization.SyncResult"/> value that specifies one or more results from the synchronization. The value is a set of flags. 
+            When the <see cref="F:ComponentPro.IO.Synchronization.SyncResult.ItemsSynchronized"/> bit is set, the synchronization was successful; otherwise, no files were synchronized, indicating some kind of failure.
+            </returns>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.Synchronize(System.Object,ComponentPro.IO.FileInfoBase,ComponentPro.IO.Synchronization.SyncOptions,ComponentPro.IO.SearchCondition,ComponentPro.IO.FileInfoBase[])">
+            <summary>
+            Synchronizes the specified items.
+            </summary>
+            <param name="syncEventsUserData">Opaque data that is sent back to the event handler when a synchronization event is raised.</param>
+            <param name="masterItem">A value used to specify the <see cref="T:ComponentPro.IO.FileInfoBase"/> that is the master item for the synchronization. The master item is the item that will be considered to be up to date and used to replace other items. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="searchCondition">The search condition used to filter the specified synchronization items. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="options">A <see cref="T:ComponentPro.IO.Synchronization.SyncOptions"/> object representing the options to use during the synchronization process. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="items">A list of <see cref="T:ComponentPro.IO.FileInfoBase"/> objects to be synchronized.</param>
+            <returns>
+            A <see cref="T:ComponentPro.IO.Synchronization.SyncResult"/> value that specifies one or more results from the synchronization. The value is a set of flags. 
+            When the <see cref="F:ComponentPro.IO.Synchronization.SyncResult.ItemsSynchronized"/> bit is set, the synchronization was successful; otherwise, no files were synchronized, indicating some kind of failure.
+            </returns>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.Synchronize(ComponentPro.IO.Synchronization.SyncOptions,System.Int32,ComponentPro.IO.FileInfoBase,System.Collections.IList,System.Collections.IList,ComponentPro.IO.SearchCondition,System.Object)">
+            <summary>
+            Synchronizes the specified items.
+            </summary>
+            <param name="syncEventsUserData">Opaque data that is sent back to the event handler when a synchronization event is raised.</param>
+            <param name="masterItemIndex">A value used to specify the index of the master item for the synchronization. The master item is the item that will be considered to be up to date and used to replace other items.</param>
+            <param name="searchCondition">The search condition used to filter the specified synchronization items. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="irrelevantItemIndexes">An array of integers that contains indexes into the item list. These indexes identify items in the item list that should be considered irrelevant. An irrelevant item will still participate in the synchronization as normal. But it will be excluded from being selected as the master item.</param>
+            <param name="metaDataItem">A <see cref="T:ComponentPro.IO.FileInfoBase"/> object representing the location where meta data, if enabled, can be accessed. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="options">A <see cref="T:ComponentPro.IO.Synchronization.SyncOptions"/> object representing the options to use during the synchronization process. Can be a null reference (Nothing in Visual Basic).</param>
+            <param name="items">A list of <see cref="T:ComponentPro.IO.FileInfoBase"/> objects to be synchronized.</param>
+            <returns>
+            A <see cref="T:ComponentPro.IO.Synchronization.SyncResult"/> value that specifies one or more results from the synchronization. The value is a set of flags. 
+            When the <see cref="F:ComponentPro.IO.Synchronization.SyncResult.ItemsSynchronized"/> bit is set, the synchronization was successful; otherwise, no files were synchronized, indicating some kind of failure.
+            </returns>
+        </member>
+        <member name="M:ComponentPro.IO.Synchronization.Synchronizer.ContainsFolder(System.Collections.IList)">
+            <summary>
+            Determines whether the synchronization is being performed on a folder.
+            </summary>
+            <param name="items">An <see cref="T:System.Collections.IList"/>-implementing object representing the items being synchronized.</param>
+            <returns><c>true</c> if the items being synchronized are a folder; <c>false</c> otherwise.</returns>
+        </member>
+        <member name="E:ComponentPro.IO.Synchronization.Synchronizer.Analysis">
+            <summary>
+            Occurs when the analysis is being performed.
+            </summary>
+        </member>
+        <member name="E:ComponentPro.IO.Synchronization.Synchronizer.CompareFileData">
+            <summary>
+            Occurs when the file data is compared.
+            </summary>
+        </member>
+        <member name="E:ComponentPro.IO.Synchronization.Synchronizer.Conflict">
+            <summary>
+            Occurs when there is a conflict.
+            </summary>
+        </member>
+        <member name="E:ComponentPro.IO.Synchronization.Synchronizer.FolderOperationAnalysis">
+            <summary>
+            Occurs when the analysis is being performed.
+            </summary>
+        </member>
+        <member name="E:ComponentPro.IO.Synchronization.Synchronizer.FolderSynchronizationProgression">
+            <summary>
+            Occurs every time a <see cref="T:ComponentPro.IO.FileInfoBase"/> object, from a folder being synchronized, is about to be synchronized, providing, if enabled, progression information to the event handler.
+            </summary>
+        </member>
+        <member name="E:ComponentPro.IO.Synchronization.Synchronizer.GettingSynchronizationFileFromFolder">
+            <summary>
+            Occurs when the synchronization file is being gotten from the folder.
+            </summary>
+        </member>
+        <member name="E:ComponentPro.IO.Synchronization.Synchronizer.LoadingMetaData">
+            <summary>
+            Occurs when the meta data is being loaded.
+            </summary>
+        </member>
+        <member name="E:ComponentPro.IO.Synchronization.Synchronizer.MetaDataLoaded">
+            <summary>
+            Occurs when the meta data has been loaded.
+            </summary>
+        </member>
+        <member name="E:ComponentPro.IO.Synchronization.Synchronizer.MetaDataSaved">
+            <summary>
+            Occurs when the meta data has been saved.
+            </summary>
+        </member>
+        <member name="E:ComponentPro.IO.Synchronization.Synchronizer.SavingMetaData">
+            <summary>
+            Occurs when the meta data is being saved.
+            </summary>
+        </member>
+        <member name="E:ComponentPro.IO.Synchronization.Synchronizer.Progress">
+            <summary>
+            Occurs periodically during the synchronization of <see cref="T:ComponentPro.IO.FileInfoBase"/> objects providing progression information to the event handler.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.Synchronizer.InvokeFromCurrentThreads">
+            <summary>
+            Gets a value indicating whether to raise events from the current thread or 
+            to use a <see cref="T:System.Threading.SynchronizationContext" /> object available when an asynchronous operation was started.
+            The default value is <c>false</c>.
+            </summary>
+            <value><c>true</c> to raise events directly from the current working thread; 
+            <c>false</c> to raise them using a <see cref="T:System.Threading.SynchronizationContext" /> object.</value>
+            <remarks>
+            Synchronous methods always raise events from the current working thread.
+            </remarks>
+        </member>
+        <member name="E:ComponentPro.IO.Synchronization.Synchronizer.SynchronizeCompleted">
+            <summary>
+            Occurs when an asynchronous <see cref="O:SynchronizeAsync"/> operation completes.
+            </summary>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.Synchronizer.TraceSource">
+            <summary>
+            Gets or sets the source object for all log messages generated by this object. If not set, the property returns the current object.
+            </summary>
+            <remarks>
+            It is handy to set this property to a different object other than this object in some situation where all log messages should come from a single source.
+            For example, in a build system, uploading files is just a child task of a main one, by assigning this property to the main task, 
+            you can categorize all messages that come from the main task.
+            </remarks>
+        </member>
+        <member name="P:ComponentPro.IO.Synchronization.Synchronizer.TraceListenerManager">
+            <summary>
+            Gets or sets the <see cref="P:ComponentPro.IO.Synchronization.Synchronizer.TraceListenerManager"/> object to which the log messages generated by this object are sent. 
+            If not set, the <see cref="F:ComponentPro.Diagnostics.XTrace.Default"/> trace listener manager is used. If this property is set to null, all messages from this object wont be logged.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -23,7 +23,7 @@ namespace PickingList
 
             string ReportName;
 
-                ReportName = String.Concat(docview, ".repx");
+                ReportName = String.Concat(@"C:\\ReportDesigner\",docview, ".repx");
                 salesRep.LoadLayout(ReportName);
                 salesRep.CreateDocument();
                 documentViewer1.DocumentSource = salesRep;

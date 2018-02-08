@@ -32,6 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ComponentPro.Common, Version=6.8.40.4155, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL" />
+    <Reference Include="ComponentPro.FileSync, Version=6.8.40.4155, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL" />
+    <Reference Include="ComponentPro.FileSystem, Version=6.8.40.4155, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL" />
+    <Reference Include="ComponentPro.Ftp, Version=6.8.40.4155, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL" />
+    <Reference Include="ComponentPro.Network, Version=6.8.40.4155, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationCore" />
