@@ -5,124 +5,173 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SftpFilesSync
+namespace AciWebFilesSync
 {
     public partial class FrmInit : Form
     {
-        private SftpParam conParams;
+        private SyncParam conParams;
 
-        SftpConnection Sftp = new SftpConnection();
+        SyncConnection Conn = new SyncConnection();
 
         OpenFileDialog of = new OpenFileDialog();
+
+     
+        public static bool cancelState = false;
 
         public FrmInit()
         {
             InitializeComponent();
             InitValue();
+            InitBgWork();
+
+  
         }
 
+        /*Background Worker*/
+        private void InitBgWork()
+        {
+            backgroundWorker.DoWork += backgroundWorker_DoWork;
+            backgroundWorker.ProgressChanged += backgroundWorker_ProgressChanged;
+            backgroundWorker.WorkerReportsProgress = true;
+            backgroundWorker.WorkerSupportsCancellation = true;
+            backgroundWorker.RunWorkerCompleted += backgroundWorker_RunWorkerCompleted;
+        }
+
+        private void backgroundWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+
+                Conn.StartSync(sender as BackgroundWorker);//ACTIVA EL PROCESO EN FONDO
+
+  
+        }
+
+        private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Cancelled)
+            {
+                setMsgtext("Process was canceled", 0);
+            }
+            else
+            {
+                if (!backgroundWorker.IsBusy)
+                {
+                    setMsgtext("Process was completed", 0);
+
+                    if (!backgroundWorker.CancellationPending)
+                    {
+                        
+                        Thread.Sleep(5000);
+                        backgroundWorker.RunWorkerAsync();
+
+                    }
+                    
+                }
+            }
+
+            
+        }
+
+        private void backgroundWorker_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
+        {
+            setMsgtext(e.UserState.ToString(), e.ProgressPercentage);
+
+        }
+        /* Background Worker*/
+         
         private void InitValue()
         {
-            conParams = new SftpParam();
+            conParams = new SyncParam();
             conParams.GetValueFromFile();
 
             textServer.Text = conParams.Hostaname;
             textPort.Text = Convert.ToString(conParams.Port);
             textUser.Text = conParams.User;
             textPass.Text = conParams.Password;
-            textPPK.Text = conParams.Ppk;
             textRePath.Text = conParams.RePath;
+            textLoPath.Text = conParams.LoPath;
 
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+           
 
         }
-        private void button1_Click(object sender, EventArgs e)
+    
+        private void btnLoPath_Click(object sender, EventArgs e)
+        {
+            var fbd = new FolderBrowserDialog();
+
+            fbd.ShowDialog();
+
+            textLoPath.Text = fbd.SelectedPath;
+        }
+
+        public  void setMsgtext(string text, int porcentage)
+        {
+
+            StatusLabel.Text = text;
+            progressBar.Value = porcentage;
+            statusStrip1.Refresh();
+
+           /* if (porcentage == 100 && cancelState != true)
+            {
+                backgroundWorker.CancelAsync();
+                Thread.Sleep(5000);
+                backgroundWorker.RunWorkerAsync();
+            }*/
+            
+        }
+
+        private void btnConnect_Click(object sender, EventArgs e)
         {
             /*INI READ AND SAVE CONNECTION PARAMETERS*/
             conParams.Hostaname = textServer.Text;
             conParams.User = textUser.Text;
             conParams.Password = textPass.Text;
             conParams.Port = Convert.ToInt32(textPort.Text);
-            conParams.Ppk = textPPK.Text;
             conParams.RePath = textRePath.Text;
+            conParams.LoPath = textLoPath.Text;
             /*END READ AND SAVE CONNECTION PARAMETERS*/
 
             /*Save params values */
             conParams.SetValueOnFile();
 
-            //abre  Sftp CONNETION
-            if (checkBox1.Checked) {
+            btnCancel.Enabled = true;
+            btnConnect.Enabled = false;
 
-                Sftp.TestConn(true);
+            groupBox2.Enabled = false;
+            groupBox3.Enabled = false;
 
-            } else {
+            progressBar.Enabled = true;
 
-                Sftp.TestConn(false);
-            }
+            cancelState = false;
 
-
-
-            /*Abre conexion para test*/
-
-
-            /*   if (dbConn.StartConn().State == System.Data.ConnectionState.Open)
-               {
-                   setMsgtext("Test de conexión exitoso");
-                   MessageBox.Show("Test de conexión exitoso", "Test de conexión");
-
-
-                   //dbConn.Closed();
-               } 
-           */
-
-
-
-
-
-        }
-
-        private void btnPPK_Click(object sender, EventArgs e)
-        {
-
-            of.Filter = "PrivateKey (.ppk)| *.ppk*";
-            of.ShowDialog();
-
-            textPPK.Text = of.FileName;
-
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked)
+            if (!backgroundWorker.IsBusy)
             {
-                textPPK.Enabled = true;
-                textPort.Text = "22";
-            }
-            else
-            {
-
-                textPPK.Enabled = false;
-                textPort.Text = "21";
+                backgroundWorker.RunWorkerAsync();
             }
            
-        }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
+
 
         }
 
-        private void FrmInit_Load(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
+           
+            backgroundWorker.CancelAsync();
 
-        }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
+            btnCancel.Enabled = false;
+            btnConnect.Enabled = true;
+            groupBox2.Enabled = true;
+            groupBox3.Enabled = true;
 
+            setMsgtext("Process was canceled", 0);
+            cancelState = true;
+           
         }
     }
 }

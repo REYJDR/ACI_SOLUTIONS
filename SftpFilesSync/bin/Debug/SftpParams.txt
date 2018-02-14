@@ -3,4 +3,5 @@
 daoutel
 DAOUTEL2018
 \\Mac\Home\Downloads\ACI_SFTPSYNC_OpenSSH.ppk
-public_html/delifish
+\\Mac\Home\Desktop\delifish\FISCAL
+\\Mac\Home\Desktop\delifish2

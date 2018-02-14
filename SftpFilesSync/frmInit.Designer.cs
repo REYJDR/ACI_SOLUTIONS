@@ -1,4 +1,4 @@
-﻿namespace SftpFilesSync
+﻿namespace AciWebFilesSync
 {
     partial class FrmInit
     {
@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInit));
             this.entityServerModeSource1 = new DevExpress.Data.Linq.EntityServerModeSource();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnConnect = new System.Windows.Forms.Button();
             this.textServer = new System.Windows.Forms.TextBox();
             this.textUser = new System.Windows.Forms.TextBox();
             this.textPass = new System.Windows.Forms.TextBox();
@@ -39,30 +39,33 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textPort = new System.Windows.Forms.TextBox();
-            this.btnPPK = new System.Windows.Forms.Button();
-            this.textPPK = new System.Windows.Forms.TextBox();
-            this.lblPPK = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textRePath = new System.Windows.Forms.TextBox();
+            this.btnLoPath = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textLoPath = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textRePath = new System.Windows.Forms.TextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.entityServerModeSource1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnConnect
             // 
-            this.button1.Location = new System.Drawing.Point(391, 258);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Connect";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnConnect.Location = new System.Drawing.Point(12, 226);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(75, 23);
+            this.btnConnect.TabIndex = 0;
+            this.btnConnect.Text = "Sync";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // textServer
             // 
@@ -92,9 +95,9 @@
             this.lblHostname.AutoSize = true;
             this.lblHostname.Location = new System.Drawing.Point(12, 21);
             this.lblHostname.Name = "lblHostname";
-            this.lblHostname.Size = new System.Drawing.Size(68, 13);
+            this.lblHostname.Size = new System.Drawing.Size(55, 13);
             this.lblHostname.TabIndex = 4;
-            this.lblHostname.Text = "SFTP Server";
+            this.lblHostname.Text = "Hostname";
             // 
             // label2
             // 
@@ -130,58 +133,6 @@
             this.textPort.Size = new System.Drawing.Size(36, 20);
             this.textPort.TabIndex = 8;
             // 
-            // btnPPK
-            // 
-            this.btnPPK.Location = new System.Drawing.Point(403, 42);
-            this.btnPPK.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            this.btnPPK.Name = "btnPPK";
-            this.btnPPK.Size = new System.Drawing.Size(32, 20);
-            this.btnPPK.TabIndex = 9;
-            this.btnPPK.Text = "...";
-            this.btnPPK.UseVisualStyleBackColor = true;
-            this.btnPPK.Click += new System.EventHandler(this.btnPPK_Click);
-            // 
-            // textPPK
-            // 
-            this.textPPK.Enabled = false;
-            this.textPPK.Location = new System.Drawing.Point(82, 42);
-            this.textPPK.Name = "textPPK";
-            this.textPPK.Size = new System.Drawing.Size(311, 20);
-            this.textPPK.TabIndex = 10;
-            // 
-            // lblPPK
-            // 
-            this.lblPPK.AutoSize = true;
-            this.lblPPK.Location = new System.Drawing.Point(12, 45);
-            this.lblPPK.Name = "lblPPK";
-            this.lblPPK.Size = new System.Drawing.Size(61, 13);
-            this.lblPPK.TabIndex = 11;
-            this.lblPPK.Text = "Private Key";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(14, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(105, 17);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "SSH Connection";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lblPPK);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.btnPPK);
-            this.groupBox1.Controls.Add(this.textPPK);
-            this.groupBox1.Location = new System.Drawing.Point(12, 114);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(454, 74);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lblHostname);
@@ -200,20 +151,43 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnLoPath);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.textLoPath);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.textRePath);
-            this.groupBox3.Location = new System.Drawing.Point(12, 203);
+            this.groupBox3.Location = new System.Drawing.Point(12, 114);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(454, 49);
+            this.groupBox3.Size = new System.Drawing.Size(454, 86);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             // 
-            // textRePath
+            // btnLoPath
             // 
-            this.textRePath.Location = new System.Drawing.Point(82, 20);
-            this.textRePath.Name = "textRePath";
-            this.textRePath.Size = new System.Drawing.Size(311, 20);
-            this.textRePath.TabIndex = 1;
+            this.btnLoPath.Location = new System.Drawing.Point(403, 49);
+            this.btnLoPath.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLoPath.Name = "btnLoPath";
+            this.btnLoPath.Size = new System.Drawing.Size(32, 20);
+            this.btnLoPath.TabIndex = 19;
+            this.btnLoPath.Text = "...";
+            this.btnLoPath.UseVisualStyleBackColor = true;
+            this.btnLoPath.Click += new System.EventHandler(this.btnLoPath_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 52);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 13);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Local path";
+            // 
+            // textLoPath
+            // 
+            this.textLoPath.Location = new System.Drawing.Point(82, 49);
+            this.textLoPath.Name = "textLoPath";
+            this.textLoPath.Size = new System.Drawing.Size(311, 20);
+            this.textLoPath.TabIndex = 17;
             // 
             // label4
             // 
@@ -223,36 +197,76 @@
             this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 16;
             this.label4.Text = "Remote path";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // textRePath
+            // 
+            this.textRePath.Location = new System.Drawing.Point(82, 20);
+            this.textRePath.Name = "textRePath";
+            this.textRePath.Size = new System.Drawing.Size(311, 20);
+            this.textRePath.TabIndex = 1;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 256);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(478, 22);
+            this.statusStrip1.TabIndex = 16;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(0, 17);
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(274, 262);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(191, 10);
+            this.progressBar.TabIndex = 17;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(391, 226);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 18;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // FrmInit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 293);
+            this.ClientSize = new System.Drawing.Size(478, 278);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.progressBar);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnConnect);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmInit";
-            this.Text = "ACI SFTP SYNC";
-            this.Load += new System.EventHandler(this.FrmInit_Load);
+            this.Text = "ACIWEB SYNC";
             ((System.ComponentModel.ISupportInitialize)(this.entityServerModeSource1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private DevExpress.Data.Linq.EntityServerModeSource entityServerModeSource1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.TextBox textServer;
         private System.Windows.Forms.TextBox textUser;
         private System.Windows.Forms.TextBox textPass;
@@ -261,14 +275,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textPort;
-        private System.Windows.Forms.Button btnPPK;
-        private System.Windows.Forms.TextBox textPPK;
-        private System.Windows.Forms.Label lblPPK;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textRePath;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnLoPath;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textLoPath;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
