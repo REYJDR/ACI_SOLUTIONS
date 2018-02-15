@@ -26,9 +26,9 @@ namespace AciWebFilesSync
 
         public void SetValueOnFile()
         {
-            File.WriteAllText("SyncParams.txt", string.Empty);
+            File.WriteAllText(@"C://AciwebSync/SyncParams.txt", string.Empty);
 
-            TextWriter file = new StreamWriter("SyncParams.txt");
+            TextWriter file = new StreamWriter(@"C://AciwebSync/SyncParams.txt");
 
             // write lines of text to the file
             file.WriteLine(Hostaname);
@@ -46,10 +46,10 @@ namespace AciWebFilesSync
         public void GetValueFromFile()
         {
 
-            if (File.Exists("SyncParams.txt"))
+            if (File.Exists(@"C://AciwebSync/SyncParams.txt"))
             {
                 // create reader & open file
-                TextReader file = new StreamReader("SyncParams.txt");
+                TextReader file = new StreamReader(@"C://AciwebSync/SyncParams.txt");
 
                 Hostaname = file.ReadLine();
                 port = Convert.ToInt32(file.ReadLine());
@@ -69,10 +69,10 @@ namespace AciWebFilesSync
             string strConn = "";
 
             // create reader & open file
-            if (File.Exists("SyncParams.txt"))
+            if (File.Exists(@"C://AciwebSync/SyncParams.txt"))
             {
 
-                TextReader file = new StreamReader("SyncParams.txt");
+                TextReader file = new StreamReader(@"C://AciwebSync/SyncParams.txt");
 
                 Hostaname = file.ReadLine();
                 port = Convert.ToInt32(file.ReadLine());

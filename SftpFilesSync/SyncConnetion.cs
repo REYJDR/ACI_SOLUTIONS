@@ -98,39 +98,27 @@ namespace AciWebFilesSync
                         SyncOperationStatistics syncStats = agent.Synchronize();
 
                    
-                        //Escribe log del proceso.
-                        if (!File.Exists(@"C://AciwebSync/AciSync.log"))
-                            {
-                                if (!Directory.Exists(@"C://AciwebSync/AciSync.log"))
-                                {
-                                    Directory.CreateDirectory(@"C://AciwebSync/");
-                                }
+                   
+                    //Escribe log del proceso.
+                    if(syncStats.UploadChangesTotal > 0 || syncStats.DownloadChangesTotal > 0)
+                    {
+                        string log = "Start Time: " + syncStats.SyncStartTime + " Uploaded: " + syncStats.UploadChangesTotal + " Downloaded: " + syncStats.DownloadChangesTotal + " Complete Time: " + syncStats.SyncEndTime;
+                        SetLog(log, "Sync");
 
-                                File.AppendAllText(@"C://AciwebSync/AciSync.log", string.Empty);
-                            } 
-                        
-
-                            TextWriter file = new StreamWriter(@"C://AciwebSync/AciSync.log");
-
-                            // write lines of text to the file
-                            file.WriteLine("******************************************");
-                            file.WriteLine("Start Time: " + syncStats.SyncStartTime);
-                            file.WriteLine("Total Changes Uploaded: " + syncStats.UploadChangesTotal);
-                            file.WriteLine("Total Changes Downloaded: " + syncStats.DownloadChangesTotal);
-                            file.WriteLine("Complete Time: " + syncStats.SyncEndTime);
-                            file.WriteLine("******************************************");
-                            file.Close();
-                        // close the stream     
-
+                    }
                     
+                    // close the stream     
+
+
 
 
                 }
 
                 void agent_SessionProgress(object sender, SyncStagedProgressEventArgs args)
                 {
+                 
                     
-                        if(args.TotalWork > 0)
+                    if (args.TotalWork > 0)
                         {
                           porcentage = Convert.ToInt32(100 * args.CompletedWork / args.TotalWork);
                           bw.ReportProgress(porcentage, "Syncronizing");
@@ -157,8 +145,33 @@ namespace AciWebFilesSync
 
                 MessageBox.Show(errorMessage, "Error");
 
+                SetLog(errorMessage, "Error");
+            }
+
+
+        }
+
+        public void SetLog(string msg, string type)
+        {
+            //Escribe log del proceso.
+            if (!File.Exists(@"C://AciwebSync/AciSync.log"))
+            {
+                if (!Directory.Exists(@"C://AciwebSync/AciSync.log"))
+                {
+                    Directory.CreateDirectory(@"C://AciwebSync/");
+                }
+                File.WriteAllText(@"C://AciwebSync/AciSync.log", string.Empty);
 
             }
+
+            // write lines of text to the file
+            TextWriter file = new StreamWriter(@"C://AciwebSync/AciSync.log",true);
+
+            file.WriteLine("******************************************");
+            file.WriteLine(DateTime.Now + " " +type + ": " + msg);
+            file.WriteLine("******************************************");
+            file.Close();
+            // close the stream     
 
 
         }

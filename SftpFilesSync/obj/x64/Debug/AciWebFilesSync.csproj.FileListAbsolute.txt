@@ -1,12 +1,6 @@
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\obj\x64\Debug\AciWebFilesSync.FrmInit.resources
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\obj\x64\Debug\SftpFilesSync.Properties.Resources.resources
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\obj\x64\Debug\AciWebFilesSync.csproj.GenerateResource.Cache
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\obj\x64\Debug\AciWebFilesSync.csproj.CoreCompileInputs.cache
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\obj\x64\Debug\SftpFilesSync.exe
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\obj\x64\Debug\SftpFilesSync.pdb
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\x64\Debug\SftpFilesSync.exe.config
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\x64\Debug\SftpFilesSync.exe
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\x64\Debug\SftpFilesSync.pdb
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\x64\Debug\ComponentPro.Common.dll
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\x64\Debug\ComponentPro.FileSync.dll
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\x64\Debug\ComponentPro.FileSystem.dll
@@ -43,3 +37,14 @@
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\x64\Debug\ja\DevExpress.Data.v17.2.resources.dll
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\x64\Debug\ru\DevExpress.Data.v17.2.resources.dll
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\obj\x64\Debug\AciWebFilesSync.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\x64\Debug\ACIWEBFilesSync.exe.config
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\x64\Debug\ACIWEBFilesSync.exe
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\x64\Debug\ACIWEBFilesSync.pdb
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\obj\x64\Debug\ACIWEBFilesSync.Properties.Resources.resources
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\obj\x64\Debug\ACIWEBFilesSync.exe
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\obj\x64\Debug\ACIWEBFilesSync.pdb
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\x64\Debug\ACIWEBFilesSync.exe.manifest
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\bin\x64\Debug\ACIWEBFilesSync.application
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\obj\x64\Debug\ACIWEBFilesSync.TrustInfo.xml
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\obj\x64\Debug\ACIWEBFilesSync.exe.manifest
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\SftpFilesSync\obj\x64\Debug\ACIWEBFilesSync.application

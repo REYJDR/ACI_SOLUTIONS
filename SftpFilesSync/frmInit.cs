@@ -54,19 +54,32 @@ namespace AciWebFilesSync
             if (e.Cancelled)
             {
                 setMsgtext("Process was canceled", 0);
+                Conn.SetLog("Process was canceled by program", "Sync");
             }
             else
             {
                 if (!backgroundWorker.IsBusy)
                 {
-                    setMsgtext("Process was completed", 0);
+                   
 
-                    if (!backgroundWorker.CancellationPending)
+                    if (!cancelState)
                     {
-                        
+                        setMsgtext("Process was completed", 0);
+                       
                         Thread.Sleep(5000);
                         backgroundWorker.RunWorkerAsync();
 
+                    }
+
+                    if(cancelState == true)
+                    {
+                        cancelState = false;
+                        setMsgtext("Process was stopped", 0);
+                        Conn.SetLog("Process was stopped by user", "Sync");
+                        btnConnect.Enabled = true;
+                        groupBox2.Enabled = true;
+                        groupBox3.Enabled = true;
+                        
                     }
                     
                 }
@@ -110,17 +123,13 @@ namespace AciWebFilesSync
 
         public  void setMsgtext(string text, int porcentage)
         {
-
-            StatusLabel.Text = text;
-            progressBar.Value = porcentage;
-            statusStrip1.Refresh();
-
-           /* if (porcentage == 100 && cancelState != true)
+            if(!cancelState)
             {
-                backgroundWorker.CancelAsync();
-                Thread.Sleep(5000);
-                backgroundWorker.RunWorkerAsync();
-            }*/
+                StatusLabel.Text = text;
+                progressBar.Value = porcentage;
+                statusStrip1.Refresh();
+
+            }
             
         }
 
@@ -162,14 +171,10 @@ namespace AciWebFilesSync
         {
            
             backgroundWorker.CancelAsync();
-
-
             btnCancel.Enabled = false;
-            btnConnect.Enabled = true;
-            groupBox2.Enabled = true;
-            groupBox3.Enabled = true;
 
-            setMsgtext("Process was canceled", 0);
+
+            setMsgtext("Stopping process...", 0);
             cancelState = true;
            
         }

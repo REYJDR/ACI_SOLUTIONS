@@ -202,7 +202,7 @@
             // 
             this.textRePath.Location = new System.Drawing.Point(82, 20);
             this.textRePath.Name = "textRePath";
-            this.textRePath.Size = new System.Drawing.Size(311, 20);
+            this.textRePath.Size = new System.Drawing.Size(353, 20);
             this.textRePath.TabIndex = 1;
             // 
             // statusStrip1
@@ -249,8 +249,12 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnConnect);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(494, 317);
+            this.MinimumSize = new System.Drawing.Size(494, 317);
             this.Name = "FrmInit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ACIWEB SYNC";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)(this.entityServerModeSource1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
