@@ -18,8 +18,8 @@ namespace AciWebFilesSync
     class SyncConnection
     {
         SyncParam param = new SyncParam();
-
-
+       
+       
         public void StartSync(BackgroundWorker bw)
         {
 
@@ -28,131 +28,151 @@ namespace AciWebFilesSync
                 param.GetValueFromFile();
 
                 var methods = new List<AuthenticationMethod>();
-                int porcentage = 0;
+                
 
                 bw.ReportProgress(0, "Reading directory...");
 
-                var clientParams = new WebDavClientParams {
-                          BaseAddress = new Uri(String.Concat(param.Hostaname,":",param.Port)),
-                          Credentials = new NetworkCredential(param.User, param.Password)
-                    };
-                using (WebDavClient session = new WebDavClient(clientParams))
+                try
+                {
+                    DirectoryInfo dirInfo = new DirectoryInfo(string.Concat(param.RootPath, param.RePath));
+
+                    if (!dirInfo.Exists)
                     {
-    
-      
-                        Guid sourceId = GetSyncID(String.Concat(param.RePath, "/File.ID"));
-                        Guid destId = GetSyncID(String.Concat(param.LoPath, "/File.ID"));
+                        string mapping = "net use * https://" + param.Hostaname + ":" + param.Port + "/" + param.RePath + " /User:" + param.User + " " + param.Password;
+                        System.Diagnostics.Process.Start(mapping);
 
-                        // Set options for the synchronization session. In this case, options specify
-                        // that the application will explicitly call FileSyncProvider.DetectChanges, and
-                        // that items should be moved to the Recycle Bin instead of being permanently deleted.
-                        FileSyncOptions options = FileSyncOptions.ExplicitDetectChanges |
-                        FileSyncOptions.RecycleDeletedFiles | FileSyncOptions.RecyclePreviousFileOnUpdates |
-                        FileSyncOptions.RecycleConflictLoserFiles;
-
-                        FileSyncScopeFilter filter = new FileSyncScopeFilter();
-                        filter.FileNameExcludes.Add("*.metadata");
-                        filter.FileNameExcludes.Add("File.ID");
-
-                        //create a FileSyncProvider object by passing the SyncID and the
-                        //source location.
-                        FileSyncProvider sourceReplica = new FileSyncProvider(sourceId, param.RePath, filter, options);
+                    }
 
 
-                        //create a FileSyncProvider object by passing the SyncID and the
-                        //destination location.
-                        FileSyncProvider destReplica = new FileSyncProvider(destId, param.LoPath, filter, options);
+                    string RemotePath = param.RootPath + param.RePath + "File.ID";
 
-                        //DETECT CHANGES
-                        sourceReplica.DetectChanges();
-                        destReplica.DetectChanges();
-                       
-                        //Initialize the agent which actually performs the
-                        //synchronization.
-                        // SyncAgent agent = new SyncAgent();
-                        SyncOrchestrator agent = new SyncOrchestrator();
+                    string LocalPath = param.LoPath + "File.ID";
+                    Guid sourceId = GetSyncID(RemotePath);
+                    Guid destId = GetSyncID(LocalPath);
+
+                    // Set options for the synchronization session. In this case, options specify
+                    // that the application will explicitly call FileSyncProvider.DetectChanges, and
+                    // that items should be moved to the Recycle Bin instead of being permanently deleted.
+                    FileSyncOptions options = FileSyncOptions.ExplicitDetectChanges |
+                    FileSyncOptions.RecycleDeletedFiles | FileSyncOptions.RecyclePreviousFileOnUpdates |
+                    FileSyncOptions.RecycleConflictLoserFiles;
+
+                    FileSyncScopeFilter filter = new FileSyncScopeFilter();
+                    filter.FileNameExcludes.Add("*.metadata");
+                    filter.FileNameExcludes.Add("File.ID");
+
+                    //create a FileSyncProvider object by passing the SyncID and the
+                    //source location.
+                    FileSyncProvider sourceReplica = new FileSyncProvider(sourceId, string.Concat(param.RootPath, param.RePath), filter, options);
+
+
+                    //create a FileSyncProvider object by passing the SyncID and the
+                    //destination location.
+                    FileSyncProvider destReplica = new FileSyncProvider(destId, param.LoPath, filter, options);
+
+                    //DETECT CHANGES
+                    sourceReplica.DetectChanges();
+                    destReplica.DetectChanges();
+
+                    //Initialize the agent which actually performs the
+                    //synchronization.
+                    // SyncAgent agent = new SyncAgent();
+                    SyncOrchestrator agent = new SyncOrchestrator();
 
 
 
-                        //assign the source replica as the Local Provider and the
-                        //destination replica as the Remote provider so that the agent
-                        //knows which is the source and which one is the destination.
-                        agent.LocalProvider = sourceReplica;
-                        agent.RemoteProvider = destReplica;
+                    //assign the source replica as the Local Provider and the
+                    //destination replica as the Remote provider so that the agent
+                    //knows which is the source and which one is the destination.
+                    agent.LocalProvider = sourceReplica;
+                    agent.RemoteProvider = destReplica;
 
 
-                        //Set the direction of synchronization from Source to destination
-                        //as this is a one way synchronization. You may use
-                        //SyncDirection.Download if you want the Local replica to be
-                        //treated as Destination and the Remote replica to be the source;
-                        //use SyncDirection.DownloadAndUpload or
-                        //SyncDirection.UploadAndDownload for two way synchronization.
-                        agent.Direction = SyncDirectionOrder.DownloadAndUpload;
+                    //Set the direction of synchronization from Source to destination
+                    //as this is a one way synchronization. You may use
+                    //SyncDirection.Download if you want the Local replica to be
+                    //treated as Destination and the Remote replica to be the source;
+                    //use SyncDirection.DownloadAndUpload or
+                    //SyncDirection.UploadAndDownload for two way synchronization.
+                    agent.Direction = SyncDirectionOrder.DownloadAndUpload;
 
-                    
-                        agent.SessionProgress += new EventHandler<SyncStagedProgressEventArgs>(agent_SessionProgress);
 
-                        //make a call to the Synchronize method for starting the
-                        //synchronization process.
+                    agent.SessionProgress += new EventHandler<SyncStagedProgressEventArgs>(agent_SessionProgress);
 
-                        SyncOperationStatistics syncStats = agent.Synchronize();
+                    //make a call to the Synchronize method for starting the
+                    //synchronization process.
 
-                   
-                   
+                    SyncOperationStatistics syncStats = agent.Synchronize();
+
+
+
                     //Escribe log del proceso.
-                    if(syncStats.UploadChangesTotal > 0 || syncStats.DownloadChangesTotal > 0)
+                    if (syncStats.UploadChangesTotal > 0 || syncStats.DownloadChangesTotal > 0)
                     {
                         string log = "Start Time: " + syncStats.SyncStartTime + " Uploaded: " + syncStats.UploadChangesTotal + " Downloaded: " + syncStats.DownloadChangesTotal + " Complete Time: " + syncStats.SyncEndTime;
                         SetLog(log, "Sync");
 
                     }
-                    
+
                     // close the stream     
 
 
 
+                    void agent_SessionProgress(object sender, SyncStagedProgressEventArgs args)
+                    {
 
-                }
+                        int porcentage = 0;
 
-                void agent_SessionProgress(object sender, SyncStagedProgressEventArgs args)
-                {
-                 
-                    
-                    if (args.TotalWork > 0)
+                        if (args.TotalWork > 0)
                         {
-                          porcentage = Convert.ToInt32(100 * args.CompletedWork / args.TotalWork);
-                          bw.ReportProgress(porcentage, "Syncronizing");
+                            porcentage = Convert.ToInt32(100 * args.CompletedWork / args.TotalWork);
+                            bw.ReportProgress(porcentage, "Syncronizing");
                         }
 
                         if (args.TotalWork == 0)
                         {
-                        
+
                             bw.ReportProgress(0, "Syncronized");
 
                         }
 
+                    }
+
+
+                }
+                catch (Exception theException)
+                {
+                    String errorMessage;
+                    errorMessage = "Error: ";
+                    errorMessage = String.Concat(errorMessage, theException.Message);
+                    errorMessage = String.Concat(errorMessage, " Line: ");
+                    errorMessage = String.Concat(errorMessage, theException.Source);
+
+                    SetLog(errorMessage, "Error");
                 }
 
 
+
+
             }
-            catch (Exception theException)
-            {
-                String errorMessage;
-                errorMessage = "Error: ";
-                errorMessage = String.Concat(errorMessage, theException.Message);
-                errorMessage = String.Concat(errorMessage, " Line: ");
-                errorMessage = String.Concat(errorMessage, theException.Source);
+                catch (Exception theException)
+                {
+                    String errorMessage;
+                    errorMessage = "Error: ";
+                    errorMessage = String.Concat(errorMessage, theException.Message);
+                    errorMessage = String.Concat(errorMessage, " Line: ");
+                    errorMessage = String.Concat(errorMessage, theException.Source);
 
-                MessageBox.Show(errorMessage, "Error");
+                    SetLog(errorMessage, "Error");
+                }
 
-                SetLog(errorMessage, "Error");
-            }
-
-
+                
         }
 
         public void SetLog(string msg, string type)
         {
+            FrmInit frmInit = new FrmInit();
+
             //Escribe log del proceso.
             if (!File.Exists(@"C://AciwebSync/AciSync.log"))
             {
@@ -164,13 +184,8 @@ namespace AciWebFilesSync
 
             }
 
-            // write lines of text to the file
-            TextWriter file = new StreamWriter(@"C://AciwebSync/AciSync.log",true);
-
-            file.WriteLine("******************************************");
-            file.WriteLine(DateTime.Now + " " +type + ": " + msg);
-            file.WriteLine("******************************************");
-            file.Close();
+            string content = "***" + DateTime.Now + " " + type + ": " + msg+"\r\n";
+            File.AppendAllText(@"C://AciwebSync/AciSync.log", content);
             // close the stream     
 
 

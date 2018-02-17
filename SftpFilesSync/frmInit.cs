@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace AciWebFilesSync
 {
@@ -41,7 +43,7 @@ namespace AciWebFilesSync
             backgroundWorker.RunWorkerCompleted += backgroundWorker_RunWorkerCompleted;
         }
 
-        private void backgroundWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
 
                 Conn.StartSync(sender as BackgroundWorker);//ACTIVA EL PROCESO EN FONDO
@@ -64,7 +66,7 @@ namespace AciWebFilesSync
 
                     if (!cancelState)
                     {
-                        setMsgtext("Process was completed", 0);
+                        setMsgtext("Process Running...", 0);
                        
                         Thread.Sleep(5000);
                         backgroundWorker.RunWorkerAsync();
@@ -88,10 +90,10 @@ namespace AciWebFilesSync
             
         }
 
-        private void backgroundWorker_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
+        private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             setMsgtext(e.UserState.ToString(), e.ProgressPercentage);
-
+          
         }
         /* Background Worker*/
          
@@ -107,8 +109,12 @@ namespace AciWebFilesSync
             textRePath.Text = conParams.RePath;
             textLoPath.Text = conParams.LoPath;
 
+            btnCancel.Enabled = false;
+
+            displayTextBox.ReadOnly = true;
+
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-           
+
 
         }
     
@@ -130,22 +136,14 @@ namespace AciWebFilesSync
                 statusStrip1.Refresh();
 
             }
-            
+
+            setDisplayLog();
+
+
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            /*INI READ AND SAVE CONNECTION PARAMETERS*/
-            conParams.Hostaname = textServer.Text;
-            conParams.User = textUser.Text;
-            conParams.Password = textPass.Text;
-            conParams.Port = Convert.ToInt32(textPort.Text);
-            conParams.RePath = textRePath.Text;
-            conParams.LoPath = textLoPath.Text;
-            /*END READ AND SAVE CONNECTION PARAMETERS*/
-
-            /*Save params values */
-            conParams.SetValueOnFile();
 
             btnCancel.Enabled = true;
             btnConnect.Enabled = false;
@@ -153,18 +151,19 @@ namespace AciWebFilesSync
             groupBox2.Enabled = false;
             groupBox3.Enabled = false;
 
+            ((Control)this.tabPage2).Enabled = false;
+
             progressBar.Enabled = true;
 
             cancelState = false;
+
+            Conn.SetLog("Process Started", "Sync");
 
             if (!backgroundWorker.IsBusy)
             {
                 backgroundWorker.RunWorkerAsync();
             }
-           
-
-
-
+ 
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -172,11 +171,56 @@ namespace AciWebFilesSync
            
             backgroundWorker.CancelAsync();
             btnCancel.Enabled = false;
-
-
             setMsgtext("Stopping process...", 0);
+            Conn.SetLog("Process Stopped by user", "Sync");
             cancelState = true;
-           
+            ((Control)this.tabPage2).Enabled = true;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+
+            /*INI READ AND SAVE CONNECTION PARAMETERS*/
+            conParams.Hostaname = textServer.Text;
+            conParams.User = textUser.Text;
+            conParams.Password = textPass.Text;
+            conParams.Port = Convert.ToInt32(textPort.Text);
+            conParams.RootPath = string.Concat("\\\\", textServer.Text, "@SSL@", Convert.ToInt32(textPort.Text), "\\DavWWWRoot");
+            conParams.LoPath = textLoPath.Text;
+
+        
+            if (textRePath.Text == "")
+            {
+                conParams.RePath = "\\";
+            }
+            else
+            {
+                conParams.RePath = textRePath.Text;
+            }
+            /*END READ AND SAVE CONNECTION PARAMETERS*/
+
+            /*Save params values */
+            conParams.SetValueOnFile();
+
+            InitValue();
+
+        }
+
+        public void setDisplayLog() {
+
+            using (StreamReader sr = File.OpenText(@"C://AciwebSync/AciSync.log"))
+            {
+                string msg = File.ReadAllText(@"C://AciwebSync/AciSync.log");
+                displayTextBox.Text = msg;
+                displayTextBox.SelectionStart = displayTextBox.Text.Length;
+                displayTextBox.ScrollToCaret();
+            }
+
+
+
+
+
         }
     }
 }

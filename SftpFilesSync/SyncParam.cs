@@ -16,6 +16,7 @@ namespace AciWebFilesSync
         private string password;
         private string rePath;
         private string loPath;
+        private string rootPath;
 
         public string Hostaname { get => hostaname; set => hostaname = value; }
         public int Port { get => port; set => port = value; }
@@ -23,6 +24,7 @@ namespace AciWebFilesSync
         public string Password { get => password; set => password = value; }
         public string RePath { get => rePath; set => rePath = value; }
         public string LoPath { get => loPath; set => loPath = value; }
+        public string RootPath { get => rootPath; set => rootPath = value; }
 
         public void SetValueOnFile()
         {
@@ -35,6 +37,7 @@ namespace AciWebFilesSync
             file.WriteLine(port);
             file.WriteLine(User);
             file.WriteLine(Password);
+            file.WriteLine(RootPath);
             file.WriteLine(RePath);
             file.WriteLine(LoPath);
 
@@ -55,6 +58,7 @@ namespace AciWebFilesSync
                 port = Convert.ToInt32(file.ReadLine());
                 User = file.ReadLine();
                 Password = file.ReadLine();
+                RootPath = file.ReadLine();
                 RePath = file.ReadLine();
                 LoPath = file.ReadLine();
 
@@ -78,6 +82,7 @@ namespace AciWebFilesSync
                 port = Convert.ToInt32(file.ReadLine());
                 User = file.ReadLine();
                 Password = file.ReadLine();
+                RootPath = file.ReadLine();
                 RePath = file.ReadLine();
                 LoPath = file.ReadLine();
                 strConn = "";
