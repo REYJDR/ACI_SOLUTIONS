@@ -1795,14 +1795,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PickingList.exe" size="63456">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PickingList.exe" size="64480">
       <assemblyIdentity name="PickingList" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bMpK3H70zwvWi0F/k0ren2Y0yG1X5cz1g5ef263TeIg=</dsig:DigestValue>
+        <dsig:DigestValue>PMaiPcz9rpVtzKhG+6Hf/8ULL7hTHVoam4Rf+7kWZ+o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

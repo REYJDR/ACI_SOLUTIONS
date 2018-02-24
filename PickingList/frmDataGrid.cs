@@ -27,7 +27,7 @@ namespace PickingList
             dataGridPre.DataSource = data;
             dataGridPre.AutoResizeColumns();
 
-            FitDataGrid(dataGridPre);
+          //  FitDataGrid(dataGridPre);
 
             /*setear columnas como NO editable excepto la columna de chackbox */
             dataGridPre.ReadOnly = false;

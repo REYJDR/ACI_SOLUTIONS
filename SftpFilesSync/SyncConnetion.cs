@@ -38,7 +38,7 @@ namespace AciWebFilesSync
 
                     if (!dirInfo.Exists)
                     {
-                        string mapping = "net use * https://" + param.Hostaname + ":" + param.Port + "/" + param.RePath + " /User:" + param.User + " " + param.Password;
+                        string mapping = "net use * https://" + param.Hostaname + ":" + param.Port + param.RePath + " /User:" + param.User + " " + param.Password;
                         System.Diagnostics.Process.Start(mapping);
 
                     }

@@ -65,29 +65,48 @@ namespace PickingList
             string dateRange = FrmInit.dateRange;
             string invRange = FrmInit.invRange;
 
-            /*QUERY PARA LLENAR PREVIEW DEL PICKING LIST */
-                string sqlInv = "SELECT DISTINCT C.Reference as InvoiceNo," +
-                           " C.TransactionDate as Date," +
-                           " B.CustomerID as CustomerID," +
-                           " B.Customer_Bill_Name as Name " +
-                           " FROM JrnlRow A" +
-                           " INNER JOIN Customers B ON B.CustomerRecordNumber = A.CustomerRecordNumber" +
-                           " INNER JOIN JrnlHdr C ON A.PostOrder = C.PostOrder" +
-                           " WHERE A.Journal = '3' " +
-                           " AND A.RowType = '0' " +
-                           " AND C.MainAmount > '0'" +
-                           " AND A.RowDate between " +
-                           dateRange + invRange+ ";";
-
-            /*INICIA CONEXION A DB*/
-            dbcon.StartConn();
-
-            if (dbcon.StartConn().State == System.Data.ConnectionState.Open)
+            try
             {
-                /*EJECUTO EL METODO QUERY Y GUARDO EL RESULTADO EN LA VARIABLE DE TIPO DataTable*/
-                dbcon.Query(sqlInv).Fill(invData);
+
+                /*QUERY PARA LLENAR PREVIEW DEL PICKING LIST */
+                string sqlInv = "SELECT DISTINCT C.Reference as InvoiceNo," +
+                               " C.TransactionDate as Date," +
+                               " B.CustomerID as CustomerID," +
+                               " B.Customer_Bill_Name as Name " +
+                               " FROM JrnlRow A" +
+                               " INNER JOIN Customers B ON B.CustomerRecordNumber = A.CustomerRecordNumber" +
+                               " INNER JOIN JrnlHdr C ON A.PostOrder = C.PostOrder" +
+                               " WHERE A.Journal = '3' " +
+                               " AND A.RowType = '0' " +
+                               " AND C.MainAmount > '0'" +
+                               " AND A.RowDate between " +
+                               dateRange + invRange + ";";
+
+                /*INICIA CONEXION A DB*/
+                dbcon.StartConn();
+
+                if (dbcon.StartConn().State == System.Data.ConnectionState.Open)
+                {
+                    /*EJECUTO EL METODO QUERY Y GUARDO EL RESULTADO EN LA VARIABLE DE TIPO DataTable*/
+                    dbcon.Query(sqlInv).Fill(invData);
+                }
+
+
+
+
             }
-            
+            catch (Exception theException)
+            {
+                String errorMessage;
+                errorMessage = "Error: ";
+                errorMessage = String.Concat(errorMessage, theException.Message);
+                errorMessage = String.Concat(errorMessage, " Line: ");
+                errorMessage = String.Concat(errorMessage, theException.Source);
+
+                MessageBox.Show(errorMessage, "Error");
+            }
+
+           
             return invData;
         }
         
@@ -122,9 +141,17 @@ namespace PickingList
                                 "D.SalesDescription," +
                                 "D.Weight," +
                                 "B.Amount,"+
-                                "D.StockingUM as Unit"+
+                                "D.StockingUM as Unit, "+
+                                "E.JobDescription, "+
+                                "F.PhaseDescription, " +
+                                "G.EmployeeID, " +
+                                "G.EmployeeName, " +
+                                "C.Customer_Type "+
                                 " FROM JrnlHdr A" +
                                 " INNER JOIN JrnlRow B ON A.PostOrder = B.PostOrder" +
+                                " LEFT JOIN Jobs E ON E.JobRecordNumber = B.JobRecordNumber " +
+                                " LEFT JOIN Phase F ON F.PhaseRecordNumber = B.PhaseRecordNumber " +
+                                " LEFT JOIN Employee G on G.EmpRecordNumber = B.EmpRecordNumber" +
                                 " INNER JOIN Customers C ON C.CustomerRecordNumber = B.CustomerRecordNumber" +
                                 " INNER JOIN LineItem D ON D.ItemRecordNumber = B.ItemRecordNumber" +
                                 " WHERE A.JrnlKey_Journal = '3'" +
@@ -177,7 +204,13 @@ namespace PickingList
                 resTable.Columns.Add("Weight", typeof(Decimal));
                 resTable.Columns.Add("Amount", typeof(Decimal));
                 resTable.Columns.Add("Unit", typeof(String));
+                resTable.Columns.Add("JobDescription", typeof(String));
+                resTable.Columns.Add("PhaseDescription", typeof(String));
+                resTable.Columns.Add("EmployeeID", typeof(String));
+                resTable.Columns.Add("EmployeeName", typeof(String));
+                resTable.Columns.Add("CustomerType", typeof(String));
 
+  
                 repPreview.Tables.Add(resTable);
 
              
@@ -206,9 +239,14 @@ namespace PickingList
                         queryTable.Rows[i].Field<string>(7),
                         queryTable.Rows[i].Field<decimal>(8),
                         queryTable.Rows[i].Field<decimal>(9),
-                        queryTable.Rows[i].Field<string>(10));
+                        queryTable.Rows[i].Field<string>(10),
+                        queryTable.Rows[i].Field<string>(11),
+                        queryTable.Rows[i].Field<string>(12),
+                        queryTable.Rows[i].Field<string>(13),
+                        queryTable.Rows[i].Field<string>(14),
+                        queryTable.Rows[i].Field<string>(15));
 
-                    }
+                }
 
                 }
 
