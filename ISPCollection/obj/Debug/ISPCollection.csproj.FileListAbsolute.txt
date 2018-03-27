@@ -184,7 +184,6 @@
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\obj\Debug\ISPCollection.frmRepView.resources
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\obj\Debug\ISPCollection.exe.licenses
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\obj\Debug\ISPCollection.XtraReport_std.resources
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\obj\Debug\ISPCollection.csprojResolveAssemblyReference.cache
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\bin\Debug\ISPCollection.exe.manifest
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\bin\Debug\ISPCollection.application
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\obj\Debug\ISPCollection.exe.manifest

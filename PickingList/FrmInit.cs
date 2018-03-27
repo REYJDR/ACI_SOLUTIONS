@@ -24,12 +24,16 @@ namespace PickingList
 
         public static string invRange;
 
+        public static bool ncCheck;
+
         private DbParam conParams;
 
         DbQuery dbquery = new DbQuery();
 
         OpenFileDialog of = new OpenFileDialog();
-        
+
+        bool Loaded;
+
 
         public FrmInit()
         {
@@ -77,8 +81,20 @@ namespace PickingList
             textUser.Text = conParams.User;
             textPass.Text = conParams.Password;
 
+            SetInvDate();
 
         }
+
+        public void SetInvDate()
+        {
+            Loaded = false;
+            dateTimeTo.Value = DateTime.Now;
+            dateTimeFrom.Value = DateTime.Now;
+            Loaded = true;
+
+        }
+
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -119,8 +135,6 @@ namespace PickingList
 
         }
 
-
-
         private void dateTimeFrom_ValueChanged(object sender, EventArgs e)
         {
             setRefCat();
@@ -132,8 +146,6 @@ namespace PickingList
         private void dateTimeTo_ValueChanged(object sender, EventArgs e)
         {
             setRefCat();
-
-
 
         }
 
@@ -154,14 +166,23 @@ namespace PickingList
 
         private void btnQuery_Click(object sender, EventArgs e)
         {
+            setRefCat();
 
-            if(comboBoxRepType.SelectedIndex == -1)
+            if (comboBoxRepType.SelectedIndex == -1)
             {
                 setMsgtext("Please select a Report Type");
                 MessageBox.Show("Please select a Report Type");
             }
             else
-            { 
+            {
+                        if (checkBox1.Checked)
+                        {
+                            ncCheck = true;
+                        }
+                        else
+                        {
+                            ncCheck = false;
+                        }
 
                         if (textInvFrom.Text != "" )
                         {
@@ -364,6 +385,11 @@ namespace PickingList
             
             InitDesignerRepVal();
             
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

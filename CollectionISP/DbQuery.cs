@@ -21,6 +21,7 @@ namespace CollectionISP
             /*OBTENGO EL RANGO DE FECHA DESDE FrmInit  */
             string dateRangeInv = frmInit.dateRangeInv;
 
+
             DataTable tblDataInv = new DataTable("DATASOURCE");
 
             tblDataInv.PrimaryKey = new DataColumn[] { tblDataInv.Columns["ID"] };

@@ -26,7 +26,7 @@
     <ProductName>PickingList Rerport</ProductName>
     <PublisherName>DAOUTEL</PublisherName>
     <SuiteName>ACI SOLUTIONS</SuiteName>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -52,7 +52,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>apcon_icon 16x16.ico</ApplicationIcon>
+    <ApplicationIcon>apcon_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>5EB5BC2D5B2EFD17E17827B2C0F59E30EDC41A53</ManifestCertificateThumbprint>
@@ -171,6 +171,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="apcon_icon 16x16.ico" />
+    <Content Include="apcon_icon.ico" />
+    <Content Include="favicon.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

@@ -14,6 +14,9 @@ namespace PickingList
 
         public static DataTable queryTable;
 
+        bool nc = FrmInit.ncCheck;
+        string onlyFact = " ";
+
         public DataTable CompanyName()
         {
       
@@ -36,6 +39,8 @@ namespace PickingList
 
             /*OBTENGO EL RANGO DE FECHA DE FrmInit */
             string dateRange = FrmInit.dateRange;
+
+           
 
             /*QUERY PARA LLENAR CATALOGO DE REFERENCIAS DE FACTURAS */
             string sqlSo = "SELECT DISTINCT InvNumForThisTrx FROM JrnlRow " +
@@ -64,9 +69,22 @@ namespace PickingList
             /*OBTENGO EL RANGO DE FECHA DE FrmInit y el rango de invoice */
             string dateRange = FrmInit.dateRange;
             string invRange = FrmInit.invRange;
+           
+   
+
 
             try
             {
+                if (nc == true)
+                {
+                   
+                    onlyFact = " ";
+                }
+                else
+                {
+                    onlyFact = " AND C.MainAmount > '0'";
+
+                }
 
                 /*QUERY PARA LLENAR PREVIEW DEL PICKING LIST */
                 string sqlInv = "SELECT DISTINCT C.Reference as InvoiceNo," +
@@ -78,9 +96,10 @@ namespace PickingList
                                " INNER JOIN JrnlHdr C ON A.PostOrder = C.PostOrder" +
                                " WHERE A.Journal = '3' " +
                                " AND A.RowType = '0' " +
-                               " AND C.MainAmount > '0'" +
+                                 onlyFact +
+                               " AND  C.Reference <> '' " +
                                " AND A.RowDate between " +
-                               dateRange + invRange + ";";
+                               dateRange + invRange + " ; ";
 
                 /*INICIA CONEXION A DB*/
                 dbcon.StartConn();
@@ -124,6 +143,16 @@ namespace PickingList
 
             foreach (DataRow row in data.Rows)
             {
+                if (nc == true)
+                {
+                   
+                    onlyFact = " ";
+                }
+                else
+                {
+                    onlyFact = " AND B.Amount < '0' " ;
+
+                }
 
                 invNum = Convert.ToString(row[0]);
                 rawDate = Convert.ToDateTime(row[1]);
@@ -151,15 +180,15 @@ namespace PickingList
                                 " INNER JOIN JrnlRow B ON A.PostOrder = B.PostOrder" +
                                 " LEFT JOIN Jobs E ON E.JobRecordNumber = B.JobRecordNumber " +
                                 " LEFT JOIN Phase F ON F.PhaseRecordNumber = B.PhaseRecordNumber " +
-                                " LEFT JOIN Employee G on G.EmpRecordNumber = B.EmpRecordNumber" +
+                                " LEFT JOIN Employee G on G.EmpRecordNumber = A.EmpRecordNumber" +
                                 " INNER JOIN Customers C ON C.CustomerRecordNumber = B.CustomerRecordNumber" +
                                 " INNER JOIN LineItem D ON D.ItemRecordNumber = B.ItemRecordNumber" +
                                 " WHERE A.JrnlKey_Journal = '3'" +
                                 " AND B.RowType = '0'" +
                                 " AND A.TransactionDate ='" + date + "'" +
                                 " AND A.Reference = '" + invNum + "'" +
-                                " AND C.CustomerID = '" + cusID + "'" +
-                                " AND B.Amount < '0'" +
+                                " AND C.CustomerID = '" + cusID + "' " +
+                                onlyFact +
                                 " Order by A.Reference; ";
 
                 

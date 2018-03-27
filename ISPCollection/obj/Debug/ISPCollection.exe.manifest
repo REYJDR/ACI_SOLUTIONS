@@ -1783,14 +1783,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ISPCollection.exe" size="270320">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ISPCollection.exe" size="268272">
       <assemblyIdentity name="ISPCollection" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sV5Bfu6m6wCF578dkRpsowIdWWNFbPHpMFEV0ufOx4I=</dsig:DigestValue>
+        <dsig:DigestValue>crCYTnjAscG4mRVidSVodrBBqbe0ycWKDtF+b2yVI7s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
