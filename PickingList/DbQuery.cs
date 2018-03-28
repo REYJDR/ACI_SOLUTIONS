@@ -14,7 +14,7 @@ namespace PickingList
 
         public static DataTable queryTable;
 
-        bool nc = FrmInit.ncCheck;
+        bool nc;
         string onlyFact = " ";
 
         public DataTable CompanyName()
@@ -69,8 +69,10 @@ namespace PickingList
             /*OBTENGO EL RANGO DE FECHA DE FrmInit y el rango de invoice */
             string dateRange = FrmInit.dateRange;
             string invRange = FrmInit.invRange;
-           
-   
+
+            nc = FrmInit.ncCheck;
+
+
 
 
             try
@@ -139,7 +141,9 @@ namespace PickingList
             DateTime rawDate;
             string invNum;
             string cusID;
-            
+
+            nc = FrmInit.ncCheck;
+
 
             foreach (DataRow row in data.Rows)
             {
