@@ -113,11 +113,11 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(267, 122);
+            this.checkBox1.Location = new System.Drawing.Point(298, 123);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(114, 17);
+            this.checkBox1.Size = new System.Drawing.Size(89, 17);
             this.checkBox1.TabIndex = 18;
-            this.checkBox1.Text = "With Credits Notes";
+            this.checkBox1.Text = "Credits Notes";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
@@ -245,7 +245,7 @@
             // 
             // btnQuery
             // 
-            this.btnQuery.Location = new System.Drawing.Point(312, 162);
+            this.btnQuery.Location = new System.Drawing.Point(312, 167);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(75, 23);
             this.btnQuery.TabIndex = 12;
@@ -441,7 +441,7 @@
             this.Controls.Add(this.tabPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmInit";
-            this.Text = "Picking List v2.0.0.7";
+            this.Text = "Picking List v2.0.0.9";
             this.Load += new System.EventHandler(this.FrmInit_Load);
             this.tabPrincipal.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

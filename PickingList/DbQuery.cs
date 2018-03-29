@@ -179,7 +179,8 @@ namespace PickingList
                                 "F.PhaseDescription, " +
                                 "G.EmployeeID, " +
                                 "G.EmployeeName, " +
-                                "C.Customer_Type "+
+                                "C.Customer_Type, "+
+                                "B.RowNumber" +
                                 " FROM JrnlHdr A" +
                                 " INNER JOIN JrnlRow B ON A.PostOrder = B.PostOrder" +
                                 " LEFT JOIN Jobs E ON E.JobRecordNumber = B.JobRecordNumber " +

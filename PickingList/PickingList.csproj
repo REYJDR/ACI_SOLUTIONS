@@ -23,10 +23,10 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\Mac\Home\Documents\GitHub\DEPLOY_PICKINGLIST\</InstallUrl>
-    <ProductName>PickingList Rerport</ProductName>
+    <ProductName>PickingList</ProductName>
     <PublisherName>DAOUTEL</PublisherName>
     <SuiteName>ACI SOLUTIONS</SuiteName>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
