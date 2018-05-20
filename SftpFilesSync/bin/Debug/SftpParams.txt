@@ -1,7 +1,0 @@
-107.180.12.15
-22
-daoutel
-DAOUTEL2018
-\\Mac\Home\Downloads\ACI_SFTPSYNC_OpenSSH.ppk
-\\Mac\Home\Desktop\delifish\FISCAL
-\\Mac\Home\Desktop\delifish2
