@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PickingList", "PickingList\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collection", "ISPCollection\Collection.csproj", "{20B56CCB-E3DA-4F51-8FD5-2E53D4853FDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PastDue", "PastDue\PastDue.csproj", "{09EBA98D-93A7-4BCD-B0F2-0CEDB4B2DAFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,14 @@ Global
 		{20B56CCB-E3DA-4F51-8FD5-2E53D4853FDA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{20B56CCB-E3DA-4F51-8FD5-2E53D4853FDA}.Release|x64.ActiveCfg = Release|Any CPU
 		{20B56CCB-E3DA-4F51-8FD5-2E53D4853FDA}.Release|x64.Build.0 = Release|Any CPU
+		{09EBA98D-93A7-4BCD-B0F2-0CEDB4B2DAFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09EBA98D-93A7-4BCD-B0F2-0CEDB4B2DAFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09EBA98D-93A7-4BCD-B0F2-0CEDB4B2DAFC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{09EBA98D-93A7-4BCD-B0F2-0CEDB4B2DAFC}.Debug|x64.Build.0 = Debug|Any CPU
+		{09EBA98D-93A7-4BCD-B0F2-0CEDB4B2DAFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09EBA98D-93A7-4BCD-B0F2-0CEDB4B2DAFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09EBA98D-93A7-4BCD-B0F2-0CEDB4B2DAFC}.Release|x64.ActiveCfg = Release|Any CPU
+		{09EBA98D-93A7-4BCD-B0F2-0CEDB4B2DAFC}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

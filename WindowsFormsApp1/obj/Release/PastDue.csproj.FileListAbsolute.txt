@@ -1,0 +1,8 @@
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\WindowsFormsApp1\obj\Release\PastDue.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\WindowsFormsApp1\obj\Release\PickingList.FrmInit.resources
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\WindowsFormsApp1\obj\Release\WindowsFormsApp1.Properties.Resources.resources
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\WindowsFormsApp1\obj\Release\PastDue.csproj.GenerateResource.Cache
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\WindowsFormsApp1\obj\Release\PastDue.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\WindowsFormsApp1\obj\Release\PickingList.frmReport.resources
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\WindowsFormsApp1\obj\Release\PickingList.XtraReport_standard.resources
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\WindowsFormsApp1\obj\Release\WindowsFormsApp1.exe.licenses

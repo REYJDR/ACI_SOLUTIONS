@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PickingList.Properties
+namespace PastDue.Properties
 {
 
 

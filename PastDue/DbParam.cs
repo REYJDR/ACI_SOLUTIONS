@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace PickingList
+namespace PastDue
 {
     class DbParam
     {
@@ -23,9 +23,18 @@ namespace PickingList
 
         public void SetValueOnFile()
         {
-            File.WriteAllText("DbParams.txt", string.Empty);
 
-            TextWriter file = new StreamWriter("DbParams.txt");
+            bool exists = Directory.Exists(@"C:\\ACIDesktopReport\DBConfig\");
+
+            if (!exists)
+            {
+                Directory.CreateDirectory(@"C:\\ACIDesktopReport\DBConfig\");
+            }
+
+
+            File.WriteAllText(@"C:\\ACIDesktopReport\DBConfig\DbParams.txt", string.Empty);
+
+            TextWriter file = new StreamWriter(@"C:\\ACIDesktopReport\DBConfig\DbParams.txt");
 
             // write lines of text to the file
             file.WriteLine(Hostaname);
@@ -41,10 +50,10 @@ namespace PickingList
         public void GetValueFromFile()
         {
 
-            if (File.Exists("DbParams.txt"))
+            if (File.Exists(@"C:\\ACIDesktopReport\DBConfig\DbParams.txt"))
             {
                 // create reader & open file
-                TextReader file = new StreamReader("DbParams.txt");
+                TextReader file = new StreamReader(@"C:\\ACIDesktopReport\DBConfig\DbParams.txt");
 
                 Hostaname = file.ReadLine();
                 dbname = file.ReadLine();
@@ -63,10 +72,10 @@ namespace PickingList
             string strConn = "";
 
             // create reader & open file
-            if (File.Exists("DbParams.txt"))
+            if (File.Exists(@"C:\\ACIDesktopReport\DBConfig\DbParams.txt"))
             {
 
-                TextReader file = new StreamReader("DbParams.txt");
+                TextReader file = new StreamReader(@"C:\\ACIDesktopReport\DBConfig\DbParams.txt");
 
                 Hostaname = file.ReadLine();
                 dbname = file.ReadLine();

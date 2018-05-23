@@ -1,0 +1,15 @@
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\UPLOADER\bin\Release\UPLOADER.exe.config
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\UPLOADER\bin\Release\UPLOADER.exe.manifest
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\UPLOADER\bin\Release\UPLOADER.application
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\UPLOADER\bin\Release\UPLOADER.exe
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\UPLOADER\bin\Release\UPLOADER.pdb
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\UPLOADER\obj\Release\Uploader.csproj.ResolveComReference.cache
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\UPLOADER\obj\Release\UPLOADER.FrmGrid.resources
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\UPLOADER\obj\Release\UPLOADER.FrmInit.resources
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\UPLOADER\obj\Release\UPLOADER.Properties.Resources.resources
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\UPLOADER\obj\Release\Uploader.csproj.GenerateResource.Cache
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\UPLOADER\obj\Release\Uploader.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\UPLOADER\obj\Release\UPLOADER.exe.manifest
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\UPLOADER\obj\Release\UPLOADER.application
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\UPLOADER\obj\Release\UPLOADER.exe
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\UPLOADER\obj\Release\UPLOADER.pdb

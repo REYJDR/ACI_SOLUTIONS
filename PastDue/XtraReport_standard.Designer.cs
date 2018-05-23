@@ -1,4 +1,4 @@
-﻿namespace PickingList
+﻿namespace PastDue
 {
     partial class XtraReport_standard
     {
@@ -73,7 +73,7 @@
             // objectDataSource1
             // 
             this.objectDataSource1.DataMember = "SetData";
-            this.objectDataSource1.DataSource = typeof(PickingList.DbQuery);
+            this.objectDataSource1.DataSource = typeof(PastDue.DbQuery);
             this.objectDataSource1.Name = "objectDataSource1";
             // 
             // xrPageInfo1

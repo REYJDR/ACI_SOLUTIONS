@@ -16,13 +16,13 @@ using DevExpress.XtraReports.UI;
 using DevExpress.XtraReports.UserDesigner;
 
 
-namespace PickingList
+namespace PastDue
 {
     public partial class FrmInit : Form
     {
-        public static string dateRange;
+        public static string date;
 
-        public static string invRange;
+        public static string custId;
 
         public static bool ncCheck;
 
@@ -44,31 +44,31 @@ namespace PickingList
 
         private void InitDesignerRepVal()
         {
-            bool exists = Directory.Exists(@"C:\\ReportDesigner\");
+            bool exists = Directory.Exists(@"C:\\ACIDesktopReport\ReportDesigner\");
 
             if (!exists)
             {
-                Directory.CreateDirectory(@"C:\\ReportDesigner\");
+                Directory.CreateDirectory(@"C:\\ACIDesktopReport\ReportDesigner\");
             }
-                
+
 
             checkedListReport.Items.Clear();
             comboBoxRepType.Items.Clear();
 
-            string[] files = Directory.GetFiles(@"C:\\ReportDesigner\", "*.repx");
+            string[] files = Directory.GetFiles(@"C:\\ACIDesktopReport\ReportDesigner\", "*.repx");
 
             string filename;
 
             for (int i = 0; i < files.Length; i++)
             {
 
-                  filename = Path.GetFileNameWithoutExtension(files[i]);
-                  checkedListReport.Items.Add(filename);
-                  comboBoxRepType.Items.Add(filename);
+                filename = Path.GetFileNameWithoutExtension(files[i]);
+                checkedListReport.Items.Add(filename);
+                comboBoxRepType.Items.Add(filename);
 
 
             }
-                
+
         }
 
         private void InitValue()
@@ -88,8 +88,7 @@ namespace PickingList
         public void SetInvDate()
         {
             Loaded = false;
-            dateTimeTo.Value = DateTime.Now;
-            dateTimeFrom.Value = DateTime.Now;
+            dateTime.Value = DateTime.Now;
             Loaded = true;
 
         }
@@ -135,24 +134,16 @@ namespace PickingList
 
         }
 
-        private void dateTimeFrom_ValueChanged(object sender, EventArgs e)
+        private void dateTime_ValueChanged(object sender, EventArgs e)
         {
             setRefCat();
-
-
-
         }
 
-        private void dateTimeTo_ValueChanged(object sender, EventArgs e)
-        {
-            setRefCat();
-
-        }
 
         private void setRefCat()
         {
 
-            dateRange = "'"+dateTimeFrom.Text+ "' and '" + dateTimeTo.Text+"'";
+            date = "'" + dateTime.Text + "'";
 
         }
 
@@ -166,6 +157,10 @@ namespace PickingList
 
         private void btnQuery_Click(object sender, EventArgs e)
         {
+            DbQuery repQuery = new DbQuery();
+
+            setMsgtext("Quering data...");
+
             setRefCat();
 
             if (comboBoxRepType.SelectedIndex == -1)
@@ -175,48 +170,34 @@ namespace PickingList
             }
             else
             {
-                        if (checkBox1.Checked)
-                        {
-                            ncCheck = true;
-                        }
-                        else
-                        {
-                            ncCheck = false;
-                        }
 
-                        if (textInvFrom.Text != "" )
-                        {
 
-                            if (textInvTo.Text != "")
-                            {
+                if (textCustId.Text != "")
+                {
 
-                            invRange = " and A.InvNumForThisTrx between '" + textInvFrom.Text + "' and '" + textInvTo.Text + "'";
+                  custId = " and C.CustomerID = '" + textCustId.Text + "'";
 
-                            }
-                            else
-                            {
-                            invRange = " and A.InvNumForThisTrx = '" + textInvFrom.Text + "'";
-                            }
+                }
+                else
+                {
+                    custId  = "";
+                }
 
-                        }
-                        else
-                        {
-                        invRange = "";
-                        }
 
-            
-                        DataTable ouputPreview = dbquery.invQuery();
-
-                        frmDataGrid tableGrid = new frmDataGrid();
-
-                        tableGrid.Show();
-
-                        tableGrid.fillGrid(ouputPreview);
+                repQuery.repQuery();
+                setMsgtext("Done");
+                PrintReport();
 
             }
 
         }
 
+        private void PrintReport()
+        {
+            frmReport repViewer = new frmReport();
+
+            repViewer.Show();
+        }
 
         private void comboBoxRepType_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -227,24 +208,24 @@ namespace PickingList
             string reportType = comboBoxRepType.SelectedItem.ToString();
 
             frmReport.docview = reportType;
-            
+
 
         }
 
-  
+
         private void btnDesigner_Click_1(object sender, EventArgs e)
         {
 
             XtraReport_standard report = new XtraReport_standard();
             ReportDesignTool dt = new ReportDesignTool(report);
 
-             string ReportName = GetReportName();
+            string ReportName = GetReportName();
 
-             if (ReportName != "")
-             {
-                 ReportName = String.Concat(@"C:\\ReportDesigner\", ReportName,".repx");
-                 report.LoadLayout(ReportName);
-                 report.CreateDocument();
+            if (ReportName != "")
+            {
+                ReportName = String.Concat(@"C:\\ACIDesktopReport\ReportDesigner\", ReportName, ".repx");
+                report.LoadLayout(ReportName);
+                report.CreateDocument();
 
 
             }
@@ -258,12 +239,12 @@ namespace PickingList
             // Create a new End-User Report Designer form.
             XRDesignForm designForm = new XRDesignForm();
 
-            DevExpress.XtraReports.Configuration.Settings.Default.StorageOptions.RootDirectory = @"C:\\ReportDesigner";
+            DevExpress.XtraReports.Configuration.Settings.Default.StorageOptions.RootDirectory = @"C:\\ACIDesktopReport\ReportDesigner";
 
 
             // Handle the DesignPanelLoaded event before opening a report in the Report Designer
             designForm.FormClosed += DesignMdiController_FormClosed;
-           
+
             // Create a new blank report and show it the Report Designer dialog window.
             designForm.OpenReport(report);
             designForm.Show();
@@ -287,10 +268,12 @@ namespace PickingList
             if (checkedListReport.CheckedItems.Count >= 1) //leo que la lista tenga al menos un checkbox tildado
             {
                 //leo segun la cantidad total de items que tenga la lista
-                for (int i = 0; i+1 <= checkedListReport.Items.Count; i++){ 
+                for (int i = 0; i + 1 <= checkedListReport.Items.Count; i++)
+                {
                     //comparo el valor del item que acabo de check con el que estoy leyendo.
-                    if ( checkedListReport.SelectedIndex.ToString() != checkedListReport.Items[i].ToString()) {
-                      
+                    if (checkedListReport.SelectedIndex.ToString() != checkedListReport.Items[i].ToString())
+                    {
+
                         // si los valores difieren cambio el estado del check 
                         checkedListReport.SetItemChecked(i, false);
 
@@ -305,21 +288,21 @@ namespace PickingList
 
         private string GetReportName()
         {
-          string reportName = "";
+            string reportName = "";
 
-           
+
             if (checkedListReport.CheckedItems.Count >= 1)
             {
-                for (int i = 0; i+1 <= checkedListReport.Items.Count; i++)
+                for (int i = 0; i + 1 <= checkedListReport.Items.Count; i++)
                 {
                     if (checkedListReport.GetItemCheckState(i).ToString() == "Checked")
                     {
 
-                      reportName = checkedListReport.Items[i].ToString();
+                        reportName = checkedListReport.Items[i].ToString();
 
-                      
+
                     }
-                    
+
 
                 }
 
@@ -335,7 +318,7 @@ namespace PickingList
             string reportName = GetReportName();
             string reportToDelete = String.Concat(reportName, ".repx");
 
-            
+
             try
             {
 
@@ -346,8 +329,8 @@ namespace PickingList
 
                     if (dr == DialogResult.Yes)
                     {
-                        if(File.Exists(reportToDelete))
-{
+                        if (File.Exists(reportToDelete))
+                        {
                             File.Delete(reportToDelete);
                             InitDesignerRepVal();
                         }
@@ -363,7 +346,7 @@ namespace PickingList
                 }
 
 
-                
+
             }
             catch (Exception theException)
             {
@@ -382,12 +365,12 @@ namespace PickingList
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            
+
             InitDesignerRepVal();
-            
+
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void textCustId_TextChanged(object sender, EventArgs e)
         {
 
         }

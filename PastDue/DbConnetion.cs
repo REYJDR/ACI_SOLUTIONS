@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace PickingList
+namespace PastDue
 {
     class DbConnection
     {
-       
-        
+
+
         public SqlConnection StartConn()
         {
             DbParam param = new DbParam();
-        
+
             SqlConnection con = new SqlConnection(param.ConString());
 
             try
             {
                 con.Open();
 
-               
+
             }
             catch (Exception theException)
             {
@@ -49,9 +49,9 @@ namespace PickingList
 
         }
 
- 
-               
+
+
 
     }
 
- }
+}

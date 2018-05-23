@@ -1,0 +1,53 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>ACI_REPORT_TEMPLATE</Name>
+    <Description>&lt;No hay ninguna descripción disponible&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>ACI_REPORT_TEMPLATE</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="PickingList.csproj" File="PickingList.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="false" TargetFileName="apcon_icon 16x16.ico">apcon_icon 16x16.ico</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="apcon_icon.ico">apcon_icon.ico</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="App.config">App.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="DbConnectionPervasive.cs">DbConnectionPervasive.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="DbConnetion.cs">DbConnetion.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="DbParam.cs">DbParam.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="DbQuery.cs">DbQuery.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="favicon.ico">favicon.ico</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="frmDataGrid.cs">frmDataGrid.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="frmDataGrid.Designer.cs">frmDataGrid.Designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="frmDataGrid.resx">frmDataGrid.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="FrmInit.cs">FrmInit.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="FrmInit.Designer.cs">FrmInit.Designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="FrmInit.resx">FrmInit.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="frmReport.cs">frmReport.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="frmReport.Designer.cs">frmReport.Designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="frmReport.resx">frmReport.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="PickingList_TemporaryKey.pfx">PickingList_TemporaryKey.pfx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Program.cs">Program.cs</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+        <Folder Name="DataSources" TargetFolderName="DataSources">
+          <ProjectItem ReplaceParameters="true" TargetFileName="DbQuery.datasource">DbQuery.datasource</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="false" TargetFileName="licenses.licx">licenses.licx</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Resources.resx">Resources.resx</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Resources.Designer.cs">Resources.Designer.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Settings.settings">Settings.settings</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Settings.Designer.cs">Settings.Designer.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="XtraReport_standard.cs">XtraReport_standard.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="XtraReport_standard.Designer.cs">XtraReport_standard.Designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="XtraReport_standard.resx">XtraReport_standard.resx</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

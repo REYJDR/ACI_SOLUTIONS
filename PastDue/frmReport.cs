@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PickingList
+namespace PastDue
 {
     public partial class frmReport : Form
     {
@@ -23,10 +23,10 @@ namespace PickingList
 
             string ReportName;
 
-                ReportName = String.Concat(@"C:\\ReportDesigner\",docview, ".repx");
-                salesRep.LoadLayout(ReportName);
-                salesRep.CreateDocument();
-                documentViewer1.DocumentSource = salesRep;
+            ReportName = String.Concat(@"C:\\ACIDesktopReport\ReportDesigner\", docview, ".repx");
+            salesRep.LoadLayout(ReportName);
+            salesRep.CreateDocument();
+            documentViewer1.DocumentSource = salesRep;
 
         }
 
