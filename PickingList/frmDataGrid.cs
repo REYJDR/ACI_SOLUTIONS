@@ -13,7 +13,7 @@ namespace PickingList
 {
     public partial class frmDataGrid : Form
     {
-        
+
 
 
         public frmDataGrid()
@@ -22,16 +22,16 @@ namespace PickingList
         }
 
         public void fillGrid(DataTable data)
-        {           
-         
+        {
+
             dataGridPre.DataSource = data;
             dataGridPre.AutoResizeColumns();
 
-          //  FitDataGrid(dataGridPre);
+            //  FitDataGrid(dataGridPre);
 
             /*setear columnas como NO editable excepto la columna de chackbox */
             dataGridPre.ReadOnly = false;
-           
+
             foreach (DataGridViewColumn tblColumns in dataGridPre.Columns)
             {
                 tblColumns.ReadOnly = true;
@@ -55,32 +55,32 @@ namespace PickingList
             DbQuery repQuery = new DbQuery();
 
             /*CREAS LAS COLUMNAS QUE VA A TENER DICHA TABLA */
-            selecRows.Columns.Add("InvNo"); 
+            selecRows.Columns.Add("InvNo");
             selecRows.Columns.Add("Date");
             selecRows.Columns.Add("CustID");
-            
+
 
             for (int i = 0; i < dataGridPre.Rows.Count; i++) //LEES CADA LINEA DE LA TABLA DEL GRIDVIEW
+            {
+                if (Convert.ToBoolean(dataGridPre.Rows[i].Cells[0].Value))//VERIFICAR SI LA COLUMNA DEL CHECKBOX ES TRUE
                 {
-                    if (Convert.ToBoolean(dataGridPre.Rows[i].Cells[0].Value))//VERIFICAR SI LA COLUMNA DEL CHECKBOX ES TRUE
-                    {
 
                     /* INSERTAS EN LAS LINEA EN LA TABLA QUE DEFINISTE, 
                      * LE DEBES INDICAR QUE CELDA DE LA TABLA DEL DATAGRIDVIEW VAS A
                      * INSERTAR EN CADA COLUMNA DE LA NUEVA TABLA */
 
-                     selecRows.Rows.Add(dataGridPre.Rows[i].Cells[1].Value, 
-                                        dataGridPre.Rows[i].Cells[2].Value, 
-                                        dataGridPre.Rows[i].Cells[3].Value);
+                    selecRows.Rows.Add(dataGridPre.Rows[i].Cells[1].Value,
+                                       dataGridPre.Rows[i].Cells[2].Value,
+                                       dataGridPre.Rows[i].Cells[3].Value);
 
-                        
-                    }
+
                 }
+            }
 
             repQuery.repQuery(selecRows);
             frmInit.setMsgtext("Done");
             PrintReport();
-           
+
 
         }
 
@@ -99,7 +99,7 @@ namespace PickingList
             //dgv.ScrollBars = ScrollBars.None;
             var totalHeight = dgv.Rows.GetRowsHeight(states) + dgv.ColumnHeadersHeight;
 
-            totalHeight += dgv.Rows.Count *4;
+            totalHeight += dgv.Rows.Count * 4;
 
             var totalWidth = dgv.Columns.GetColumnsWidth(states) + dgv.RowHeadersWidth;
             dgv.ClientSize = new Size(totalWidth, totalHeight);

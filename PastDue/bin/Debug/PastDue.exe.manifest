@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="ISPCollection.exe" version="2.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
-  <description asmv2:iconFile="apcon_icon 16x16.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <asmv1:assemblyIdentity name="PastDue.exe" version="2.0.0.10" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="apcon_icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="ISPCollection" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
-    <commandLine file="ISPCollection.exe" parameters="" />
+    <assemblyIdentity name="PastDue" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="PastDue.exe" parameters="" />
   </entryPoint>
   <trustInfo>
     <security>
@@ -615,6 +615,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>qoLigHvGf2za6wv46jnKnfsrzdGBAdvN48hFZWrTcHo=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.RichEdit.v17.2.Export.dll" size="220400">
+      <assemblyIdentity name="DevExpress.RichEdit.v17.2.Export" version="17.2.4.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>k9n8JwBlTHjPTw0G4e+sC8Zy/TV5izAarc4sSF4IQg4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1783,18 +1795,27 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ISPCollection.exe" size="265712">
-      <assemblyIdentity name="ISPCollection" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PastDue.exe" size="154080">
+      <assemblyIdentity name="PastDue" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FHTUvURfdaM55Lmw+MLmmemh6fEnAWDHHFdNiZy6jWA=</dsig:DigestValue>
+        <dsig:DigestValue>xTiSI4TujP0seb+YS9FxaIgbmHLTXp7/w/x9ekqZ1pk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="apcon_icon 16x16.ico" size="99678">
+  <file name="apcon_icon 16x16.ico" size="1150">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>5tTnALTALCJuy7ACBgsQHSXdgCMoeMvlnoA5x/vQWsY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="apcon_icon.ico" size="99678">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -1803,13 +1824,22 @@
       <dsig:DigestValue>PpWLOIlScruWB/hJ+XYDdzdgtxuMyKuxIW5SZz6nqWc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="ISPCollection.exe.config" size="189">
+  <file name="favicon.ico" size="1150">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>rl5/qDc7Jz+tB+BIbOv9iMGPlRe6YJwrjmU09dnlPcs=</dsig:DigestValue>
+      <dsig:DigestValue>k+btyBSsQv+ftQxHrn2sWLtt6SEjbUzEZPvsUIoCtBM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PastDue.exe.config" size="184">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gXPU0Xy3KObyxeLOgSTOfrD0WdxiCFvKq3hqvx9rN6c=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
