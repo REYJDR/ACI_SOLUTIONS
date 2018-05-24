@@ -46,10 +46,13 @@ namespace PastDue
                                 "C.Customer_Bill_Name as BillTo," +      
                                 "C.Customer_Type, " +
                                 "A.MainAmount,"+
-                                "A.AmountPaid"+
+                                "A.AmountPaid,"+
+                                "G.EmployeeID, " +
+                                "G.EmployeeName " +
                                 " FROM JrnlHdr A" +
                                 " INNER JOIN JrnlRow B ON A.PostOrder = B.PostOrder" +
                                 " INNER JOIN Customers C ON C.CustomerRecordNumber = B.CustomerRecordNumber" +
+                                " LEFT JOIN Employee G on G.EmpRecordNumber = A.EmpRecordNumber" +
                                 " WHERE A.JrnlKey_Journal = '3'" +
                                 " AND B.RowType = '0'" +
                                 " AND A.TransactionDate < " + date + 
@@ -93,6 +96,10 @@ namespace PastDue
                 resTable.Columns.Add("CustomerType", typeof(String));
                 resTable.Columns.Add("Amount", typeof(Decimal));
                 resTable.Columns.Add("AmountPaid", typeof(Decimal));
+                resTable.Columns.Add("EmployeeID", typeof(String));
+                resTable.Columns.Add("EmployeeName", typeof(String));
+
+
 
                 repPreview.Tables.Add(resTable);
 
@@ -118,7 +125,9 @@ namespace PastDue
                         queryTable.Rows[i].Field<string>(3),
                         queryTable.Rows[i].Field<string>(4),
                         queryTable.Rows[i].Field<decimal>(5),
-                        queryTable.Rows[i].Field<decimal>(6));
+                        queryTable.Rows[i].Field<decimal>(6),
+                        queryTable.Rows[i].Field<string>(7),
+                        queryTable.Rows[i].Field<string>(8));
 
                     }
 

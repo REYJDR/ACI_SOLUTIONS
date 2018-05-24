@@ -1,8 +1,3 @@
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\bin\Debug\PastDue.exe.config
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\bin\Debug\PastDue.exe.manifest
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\bin\Debug\PastDue.application
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\bin\Debug\PastDue.exe
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\bin\Debug\PastDue.pdb
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\bin\Debug\DevExpress.Charts.v17.2.Core.dll
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\bin\Debug\DevExpress.Data.v17.2.dll
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\bin\Debug\DevExpress.DataAccess.v17.2.dll
@@ -183,9 +178,15 @@
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\PastDue.Properties.Resources.resources
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\PastDue.XtraReport_standard.resources
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\PastDue.csproj.GenerateResource.Cache
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\PastDue.exe.licenses
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\PastDue.csproj.CoreCompileInputs.cache
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\PastDue.exe.manifest
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\PastDue.application
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\PastDue.exe
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\PastDue.pdb
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\PastDue.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\bin\Debug\ACI DESKTOP REPORT.exe.config
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\bin\Debug\ACI DESKTOP REPORT.exe.manifest
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\bin\Debug\ACI DESKTOP REPORT.application
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\bin\Debug\ACI DESKTOP REPORT.exe
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\bin\Debug\ACI DESKTOP REPORT.pdb
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\ACI DESKTOP REPORT.exe.licenses
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\ACI DESKTOP REPORT.exe.manifest
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\ACI DESKTOP REPORT.application
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\ACI DESKTOP REPORT.exe
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\ACI DESKTOP REPORT.pdb
