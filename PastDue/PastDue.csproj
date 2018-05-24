@@ -23,9 +23,9 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\Mac\Home\Documents\GitHub\DEPLOY_PASTDUE\</InstallUrl>
-    <ProductName>PickingList</ProductName>
+    <ProductName>ACI DESKTOP REPORT</ProductName>
     <PublisherName>DAOUTEL</PublisherName>
-    <SuiteName>ACI SOLUTIONS</SuiteName>
+    <SuiteName>ACI DESKTOP REPORT</SuiteName>
     <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
