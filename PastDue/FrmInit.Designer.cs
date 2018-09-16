@@ -105,9 +105,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.comboBoxRepType);
-            this.groupBox3.Location = new System.Drawing.Point(6, 83);
+            this.groupBox3.Location = new System.Drawing.Point(209, 80);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(187, 48);
+            this.groupBox3.Size = new System.Drawing.Size(178, 48);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Report Type";
@@ -115,7 +115,7 @@
             // comboBoxRepType
             // 
             this.comboBoxRepType.FormattingEnabled = true;
-            this.comboBoxRepType.Location = new System.Drawing.Point(9, 19);
+            this.comboBoxRepType.Location = new System.Drawing.Point(10, 19);
             this.comboBoxRepType.Name = "comboBoxRepType";
             this.comboBoxRepType.Size = new System.Drawing.Size(162, 21);
             this.comboBoxRepType.TabIndex = 13;
@@ -142,9 +142,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dateTime);
-            this.groupBox1.Location = new System.Drawing.Point(224, 6);
+            this.groupBox1.Location = new System.Drawing.Point(209, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(146, 58);
+            this.groupBox1.Size = new System.Drawing.Size(178, 58);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Date to";
@@ -155,7 +155,7 @@
             this.dateTime.CustomFormat = "yyyy-MM-dd";
             this.dateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTime.Location = new System.Drawing.Point(9, 19);
+            this.dateTime.Location = new System.Drawing.Point(36, 19);
             this.dateTime.Name = "dateTime";
             this.dateTime.Size = new System.Drawing.Size(126, 20);
             this.dateTime.TabIndex = 0;
@@ -163,7 +163,7 @@
             // 
             // btnQuery
             // 
-            this.btnQuery.Location = new System.Drawing.Point(312, 167);
+            this.btnQuery.Location = new System.Drawing.Point(312, 153);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(75, 23);
             this.btnQuery.TabIndex = 12;
@@ -359,7 +359,7 @@
             this.Controls.Add(this.tabPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmInit";
-            this.Text = "ACI DESKTOP REPORT - PastDue  v1.0.0.1";
+            this.Text = "ACI DESKTOP REPORT - PastDue  v1.0.0.2";
             this.Load += new System.EventHandler(this.FrmInit_Load);
             this.tabPrincipal.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
