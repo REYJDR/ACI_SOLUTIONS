@@ -475,7 +475,7 @@
             this.Controls.Add(this.tabPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmInit";
-            this.Text = "Aciweb Desktop Report v1.0.0.4";
+            this.Text = "Aciweb Desktop Report v1.0.0.5";
             this.Load += new System.EventHandler(this.FrmInit_Load);
             this.tabPrincipal.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

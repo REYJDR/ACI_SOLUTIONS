@@ -273,7 +273,7 @@ namespace ACIWEB_DESKTOP_REPORT
 
                         string termino = queryTable.Rows[i].Field<string>(7);
 
-                        if (queryTable.Rows[i].Field<string>(8) == "FAC")
+                        if (queryTable.Rows[i].Field<string>(9) == "FAC")
                         {
 
                             string[] terminoPago = termino.Split('-');

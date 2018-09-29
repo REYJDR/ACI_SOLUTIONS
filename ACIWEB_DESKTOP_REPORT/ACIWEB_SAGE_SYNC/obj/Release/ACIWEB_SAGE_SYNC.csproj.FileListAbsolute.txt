@@ -1,0 +1,8 @@
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_SAGE_SYNC\obj\Release\ACIWEB_SAGE_SYNC.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_SAGE_SYNC\obj\Release\ACIWEB_SAGE_SYNC.frmReport.resources
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_SAGE_SYNC\obj\Release\ACIWEB_SAGE_SYNC.FrmInit.resources
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_SAGE_SYNC\obj\Release\ACIWEB_SAGE_SYNC.Properties.Resources.resources
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_SAGE_SYNC\obj\Release\ACIWEB_SAGE_SYNC.XtraReport_standard.resources
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_SAGE_SYNC\obj\Release\ACIWEB_SAGE_SYNC.csproj.GenerateResource.Cache
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_SAGE_SYNC\obj\Release\ACIWEB_SAGE_SYNC.exe.licenses
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_SAGE_SYNC\obj\Release\ACIWEB_SAGE_SYNC.csproj.CoreCompileInputs.cache

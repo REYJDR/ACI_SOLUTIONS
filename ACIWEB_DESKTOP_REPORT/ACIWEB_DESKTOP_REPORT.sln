@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACIWEB_DESKTOP_REPORT", "ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT.csproj", "{DA71B708-8291-497D-892C-6EBA576CCA84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACIWEB_SAGE_SYNC", "ACIWEB_SAGE_SYNC\ACIWEB_SAGE_SYNC.csproj", "{65A1110A-CD63-48D5-A68F-907424DB5243}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DA71B708-8291-497D-892C-6EBA576CCA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA71B708-8291-497D-892C-6EBA576CCA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA71B708-8291-497D-892C-6EBA576CCA84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65A1110A-CD63-48D5-A68F-907424DB5243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65A1110A-CD63-48D5-A68F-907424DB5243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65A1110A-CD63-48D5-A68F-907424DB5243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65A1110A-CD63-48D5-A68F-907424DB5243}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
