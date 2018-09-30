@@ -133,6 +133,12 @@
     <Compile Include="DbConnetion.cs" />
     <Compile Include="DbParam.cs" />
     <Compile Include="DbQuery.cs" />
+    <Compile Include="FrmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHome.Designer.cs">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     <Compile Include="XtraReport_standard.Designer.cs">
       <DependentUpon>XtraReport_standard.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmHome.resx">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +177,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="XtraReport_standard.resx">
       <DependentUpon>XtraReport_standard.cs</DependentUpon>
@@ -191,6 +201,17 @@
     <Content Include="apcon_icon 16x16.ico" />
     <Content Include="apcon_icon.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\setting.png" />
+    <None Include="Resources\report_fa1.png" />
+    <None Include="Resources\design.png" />
+    <None Include="Resources\config_fa.png" />
+    <None Include="Resources\report_fa2.png" />
+    <None Include="Resources\designer_fa.png" />
+    <None Include="Resources\report_fa.png" />
+    <None Include="Resources\minimize_fa2.png" />
+    <None Include="Resources\minimize_fa.png" />
+    <None Include="Resources\close_fa.png" />
+    <None Include="Resources\logo_3.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

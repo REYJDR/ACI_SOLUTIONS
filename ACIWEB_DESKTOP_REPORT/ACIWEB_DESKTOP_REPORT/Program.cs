@@ -16,7 +16,7 @@ namespace ACIWEB_DESKTOP_REPORT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmInit());
+            Application.Run(new FrmHome());
         }
     }
 }

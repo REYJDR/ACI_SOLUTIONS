@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collection", "ISPCollection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PastDue", "PastDue\PastDue.csproj", "{09EBA98D-93A7-4BCD-B0F2-0CEDB4B2DAFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACIWEB_DESKTOP_REPORT", "ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT.csproj", "{DA71B708-8291-497D-892C-6EBA576CCA84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,14 @@ Global
 		{09EBA98D-93A7-4BCD-B0F2-0CEDB4B2DAFC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{09EBA98D-93A7-4BCD-B0F2-0CEDB4B2DAFC}.Release|x64.ActiveCfg = Release|Any CPU
 		{09EBA98D-93A7-4BCD-B0F2-0CEDB4B2DAFC}.Release|x64.Build.0 = Release|Any CPU
+		{DA71B708-8291-497D-892C-6EBA576CCA84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA71B708-8291-497D-892C-6EBA576CCA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA71B708-8291-497D-892C-6EBA576CCA84}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DA71B708-8291-497D-892C-6EBA576CCA84}.Debug|x64.Build.0 = Debug|Any CPU
+		{DA71B708-8291-497D-892C-6EBA576CCA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA71B708-8291-497D-892C-6EBA576CCA84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA71B708-8291-497D-892C-6EBA576CCA84}.Release|x64.ActiveCfg = Release|Any CPU
+		{DA71B708-8291-497D-892C-6EBA576CCA84}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
