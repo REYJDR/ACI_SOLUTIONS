@@ -10,7 +10,7 @@ namespace ACIWEB_DESKTOP_REPORT
 {
     class DbConnectionMysql
     {
-        DbParam param = new DbParam();
+        DbParamAciweb param = new DbParamAciweb();
         private MySqlConnection connection;
         private MySqlDataAdapter Datos;
 
@@ -42,6 +42,12 @@ namespace ACIWEB_DESKTOP_REPORT
 
 
         }
+
+        public MySqlConnection GetSession()
+        {
+            return connection;
+        }
+
 
         //Close connection
         public bool Close()

@@ -29,8 +29,8 @@
     <MinimumRequiredVersion>1.0.0.4</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>6</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -130,43 +130,96 @@
   <ItemGroup>
     <Compile Include="DbConnectionMysql.cs" />
     <Compile Include="DbConnectionPervasive.cs" />
-    <Compile Include="DbConnetion.cs" />
-    <Compile Include="DbParam.cs" />
-    <Compile Include="DbQuery.cs" />
+    <Compile Include="DbConnetionSql.cs" />
+    <Compile Include="DbParamSage.cs" />
+    <Compile Include="DbParamAciweb.cs" />
+    <Compile Include="DbQuerySage.cs" />
+    <Compile Include="DbQueryAciweb.cs" />
+    <Compile Include="FrmSageRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSageRep.Designer.cs">
+      <DependentUpon>FrmSageRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDesigner.Designer.cs">
+      <DependentUpon>FrmDesigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSettings.Designer.cs">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmHome.Designer.cs">
       <DependentUpon>FrmHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReport.cs">
+    <Compile Include="FrmRepViwer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReport.Designer.cs">
-      <DependentUpon>frmReport.cs</DependentUpon>
+    <Compile Include="FrmRepViwer.Designer.cs">
+      <DependentUpon>FrmRepViwer.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInit.cs">
+    <Compile Include="FrmAciwebRep.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInit.Designer.cs">
-      <DependentUpon>FrmInit.cs</DependentUpon>
+    <Compile Include="FrmAciwebRep.Designer.cs">
+      <DependentUpon>FrmAciwebRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSourceOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSourceOptions.Designer.cs">
+      <DependentUpon>FrmSourceOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTestConn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTestConn.Designer.cs">
+      <DependentUpon>FrmTestConn.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="XtraReport_standard.cs">
+    <Compile Include="XtraReportSage.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="XtraReport_standard.Designer.cs">
-      <DependentUpon>XtraReport_standard.cs</DependentUpon>
+    <Compile Include="XtraReportSage.Designer.cs">
+      <DependentUpon>XtraReportSage.cs</DependentUpon>
     </Compile>
+    <Compile Include="XtraReportAciweb.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportAciweb.Designer.cs">
+      <DependentUpon>XtraReportAciweb.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmSageRep.resx">
+      <DependentUpon>FrmSageRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDesigner.resx">
+      <DependentUpon>FrmDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSettings.resx">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmHome.resx">
       <DependentUpon>FrmHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReport.resx">
-      <DependentUpon>frmReport.cs</DependentUpon>
+    <EmbeddedResource Include="FrmRepViwer.resx">
+      <DependentUpon>FrmRepViwer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmInit.resx">
-      <DependentUpon>FrmInit.cs</DependentUpon>
+    <EmbeddedResource Include="FrmAciwebRep.resx">
+      <DependentUpon>FrmAciwebRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSourceOptions.resx">
+      <DependentUpon>FrmSourceOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTestConn.resx">
+      <DependentUpon>FrmTestConn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -179,8 +232,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="XtraReport_standard.resx">
-      <DependentUpon>XtraReport_standard.cs</DependentUpon>
+    <EmbeddedResource Include="XtraReportSage.resx">
+      <DependentUpon>XtraReportSage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportAciweb.resx">
+      <DependentUpon>XtraReportAciweb.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="PickingList_TemporaryKey.pfx" />
     <None Include="Properties\DataSources\DbQuery.datasource" />
@@ -201,6 +257,11 @@
     <Content Include="apcon_icon 16x16.ico" />
     <Content Include="apcon_icon.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\sage_50_3.png" />
+    <None Include="Resources\sage_50_2.png" />
+    <None Include="Resources\sage_50.png" />
+    <None Include="Resources\AciWeb1.png" />
+    <None Include="Resources\AciWeb.png" />
     <None Include="Resources\setting.png" />
     <None Include="Resources\report_fa1.png" />
     <None Include="Resources\design.png" />

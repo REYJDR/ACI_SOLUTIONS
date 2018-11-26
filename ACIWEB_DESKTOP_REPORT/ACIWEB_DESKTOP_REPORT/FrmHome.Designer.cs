@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHome));
             this.SideBar = new System.Windows.Forms.Panel();
             this.lblVer = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnDesigner = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -40,20 +40,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.picMinimize = new System.Windows.Forms.PictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.SideBar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
+            this.mainPanel.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // SideBar
             // 
             this.SideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(122)))), ((int)(((byte)(108)))));
             this.SideBar.Controls.Add(this.lblVer);
-            this.SideBar.Controls.Add(this.button2);
-            this.SideBar.Controls.Add(this.button1);
+            this.SideBar.Controls.Add(this.btnSettings);
+            this.SideBar.Controls.Add(this.btnDesigner);
             this.SideBar.Controls.Add(this.btnReport);
             this.SideBar.Controls.Add(this.panel1);
             this.SideBar.Dock = System.Windows.Forms.DockStyle.Left;
@@ -74,49 +79,52 @@
             this.lblVer.Name = "lblVer";
             this.lblVer.Size = new System.Drawing.Size(98, 17);
             this.lblVer.TabIndex = 4;
-            this.lblVer.Text = "Version 3.0.0.0";
+            this.lblVer.Text = "Version 2.0.0.3";
+            this.lblVer.Click += new System.EventHandler(this.lblVer_Click);
             // 
-            // button2
+            // btnSettings
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.setting;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 149);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 50);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Settings";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnSettings.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnSettings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSettings.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.setting;
+            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.Location = new System.Drawing.Point(0, 149);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(200, 50);
+            this.btnSettings.TabIndex = 3;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
-            // button1
+            // btnDesigner
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.design;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 99);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 50);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Designer";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnDesigner.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnDesigner.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDesigner.FlatAppearance.BorderSize = 0;
+            this.btnDesigner.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDesigner.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.btnDesigner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesigner.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDesigner.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDesigner.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.design;
+            this.btnDesigner.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDesigner.Location = new System.Drawing.Point(0, 99);
+            this.btnDesigner.Name = "btnDesigner";
+            this.btnDesigner.Size = new System.Drawing.Size(200, 50);
+            this.btnDesigner.TabIndex = 2;
+            this.btnDesigner.Text = "Designer";
+            this.btnDesigner.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDesigner.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDesigner.UseVisualStyleBackColor = false;
+            this.btnDesigner.Click += new System.EventHandler(this.btnDesigner_Click);
             // 
             // btnReport
             // 
@@ -126,7 +134,7 @@
             this.btnReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReport.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnReport.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.report_fa1;
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -138,6 +146,7 @@
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // panel1
             // 
@@ -172,6 +181,9 @@
             this.HeaderPanel.Name = "HeaderPanel";
             this.HeaderPanel.Size = new System.Drawing.Size(598, 48);
             this.HeaderPanel.TabIndex = 1;
+            this.HeaderPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.form_MouseDown);
+            this.HeaderPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.form_MouseMove);
+            this.HeaderPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.form_MouseUp);
             // 
             // label1
             // 
@@ -209,11 +221,40 @@
             this.picClose.TabStop = false;
             this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
+            // mainPanel
+            // 
+            this.mainPanel.Controls.Add(this.statusStrip1);
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainPanel.Location = new System.Drawing.Point(200, 48);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(598, 428);
+            this.mainPanel.TabIndex = 2;
+            this.mainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.form_MouseDown);
+            this.mainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.form_MouseMove);
+            this.mainPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.form_MouseUp);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 406);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(598, 22);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(0, 17);
+            // 
             // FrmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 476);
+            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.HeaderPanel);
             this.Controls.Add(this.SideBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -231,6 +272,10 @@
             this.HeaderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
+            this.mainPanel.ResumeLayout(false);
+            this.mainPanel.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -241,12 +286,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel HeaderPanel;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnDesigner;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.PictureBox picMinimize;
         private System.Windows.Forms.Label lblVer;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Panel mainPanel;
+        public System.Windows.Forms.StatusStrip statusStrip1;
+        public System.Windows.Forms.ToolStripStatusLabel StatusLabel;
     }
 }

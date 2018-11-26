@@ -179,7 +179,6 @@
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\PastDue.XtraReport_standard.resources
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\PastDue.csproj.GenerateResource.Cache
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\PastDue.csproj.CoreCompileInputs.cache
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\obj\Debug\PastDue.csprojResolveAssemblyReference.cache
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\bin\Debug\ACI DESKTOP REPORT.exe.config
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\bin\Debug\ACI DESKTOP REPORT.exe.manifest
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\PastDue\bin\Debug\ACI DESKTOP REPORT.application

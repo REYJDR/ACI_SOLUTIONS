@@ -208,7 +208,7 @@ namespace PickingList
             queryTable = repData;
 
             //Seteo el DataSet
-             SetData();
+            SetData();
            
             
         }

@@ -430,7 +430,7 @@
             // 
             // dbQueryBindingSource
             // 
-            this.dbQueryBindingSource.DataSource = typeof(PickingList.DbQuery);
+       //     this.dbQueryBindingSource.DataSource = typeof(PickingList.DbQuery);
             // 
             // FrmInit
             // 

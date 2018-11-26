@@ -24,17 +24,17 @@ namespace PastDue
         public void SetValueOnFile()
         {
 
-            bool exists = Directory.Exists(@"C:\\ACIDesktopReport\DBConfig\");
+            bool exists = Directory.Exists(@"C:\\ACIDesktopReport\DB\ACIWEB\");
 
             if (!exists)
             {
-                Directory.CreateDirectory(@"C:\\ACIDesktopReport\DBConfig\");
+                Directory.CreateDirectory(@"C:\\ACIDesktopReport\DB\ACIWEB\");
             }
 
 
-            File.WriteAllText(@"C:\\ACIDesktopReport\DBConfig\DbParams.txt", string.Empty);
+            File.WriteAllText(@"C:\\ACIDesktopReport\DB\ACIWEB\DbParams.txt", string.Empty);
 
-            TextWriter file = new StreamWriter(@"C:\\ACIDesktopReport\DBConfig\DbParams.txt");
+            TextWriter file = new StreamWriter(@"C:\\ACIDesktopReport\DB\ACIWEB\DbParams.txt");
 
             // write lines of text to the file
             file.WriteLine(Hostaname);

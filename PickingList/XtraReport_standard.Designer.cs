@@ -72,10 +72,7 @@
             // 
             // objectDataSource1
             // 
-            this.objectDataSource1.DataMember = "SetData";
-            this.objectDataSource1.DataSource = typeof(PickingList.DbQuery);
-            this.objectDataSource1.Name = "objectDataSource1";
-            // 
+           // 
             // xrPageInfo1
             // 
             this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(6F, 6F);

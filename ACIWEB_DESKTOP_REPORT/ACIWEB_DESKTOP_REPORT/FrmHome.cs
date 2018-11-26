@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ACIWEB_DESKTOP_REPORT
 {
     public partial class FrmHome : Form
@@ -17,10 +18,23 @@ namespace ACIWEB_DESKTOP_REPORT
         int MValX;
         int MValY;
 
+
         public FrmHome()
         {
             InitializeComponent();
+
+
+            this.mainPanel.Controls.Clear();
+
+            FrmSourceOptions options = new FrmSourceOptions();
+            options.TopLevel = false;
+            options.AutoScroll = true;
+            options.AutoSize = true;
+
+            this.mainPanel.Controls.Add(options);
+            options.Show();
         }
+
 
         private void picClose_Click(object sender, EventArgs e)
         {
@@ -51,6 +65,60 @@ namespace ACIWEB_DESKTOP_REPORT
         private void form_MouseUp(object sender, MouseEventArgs e)
         {
             TogMove = 0;
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+
+            this.mainPanel.Controls.Clear();
+
+            FrmSourceOptions options = new FrmSourceOptions();
+            options.TopLevel = false;
+            options.AutoScroll = true;
+            options.AutoSize = true;
+
+            this.mainPanel.Controls.Add(options);
+            options.Show();
+
+
+
+        }
+
+        private void btnDesigner_Click(object sender, EventArgs e)
+        {
+            this.mainPanel.Controls.Clear();
+
+            FrmDesigner designer = new FrmDesigner();
+            designer.TopLevel = false;
+            designer.AutoScroll = true;
+            designer.AutoSize = true;
+            this.mainPanel.Controls.Add(designer);
+
+            designer.Show();
+
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+
+            Cursor = Cursors.WaitCursor; // change cursor to hourglass type
+
+            this.mainPanel.Controls.Clear();
+
+            FrmSettings setting = new FrmSettings();
+            setting.TopLevel = false;
+            setting.AutoScroll = true;
+            setting.AutoSize = true;
+            this.mainPanel.Controls.Add(setting);
+            setting.Show();
+
+            Cursor = Cursors.Arrow; // change cursor to hourglass type
+
+        }
+
+        private void lblVer_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

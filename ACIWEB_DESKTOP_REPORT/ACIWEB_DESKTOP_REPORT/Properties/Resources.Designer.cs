@@ -63,6 +63,26 @@ namespace ACIWEB_DESKTOP_REPORT.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AciWeb {
+            get {
+                object obj = ResourceManager.GetObject("AciWeb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AciWeb1 {
+            get {
+                object obj = ResourceManager.GetObject("AciWeb1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_fa {
             get {
                 object obj = ResourceManager.GetObject("close_fa", resourceCulture);
@@ -156,6 +176,36 @@ namespace ACIWEB_DESKTOP_REPORT.Properties {
         internal static System.Drawing.Bitmap report_fa2 {
             get {
                 object obj = ResourceManager.GetObject("report_fa2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sage_50 {
+            get {
+                object obj = ResourceManager.GetObject("sage_50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sage_50_2 {
+            get {
+                object obj = ResourceManager.GetObject("sage_50_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sage_50_3 {
+            get {
+                object obj = ResourceManager.GetObject("sage_50_3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

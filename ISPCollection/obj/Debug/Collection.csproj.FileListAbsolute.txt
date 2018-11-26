@@ -177,7 +177,6 @@
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\bin\Debug\es\DevExpress.Diagram.v17.2.Core.resources.dll
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\bin\Debug\ja\DevExpress.Diagram.v17.2.Core.resources.dll
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\bin\Debug\ru\DevExpress.Diagram.v17.2.Core.resources.dll
-\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\obj\Debug\Collection.csprojResolveAssemblyReference.cache
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\obj\Debug\ISPCollection.frmInit.resources
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\obj\Debug\ISPCollection.frmRepView.resources
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\obj\Debug\ISPCollection.Properties.Resources.resources
@@ -189,3 +188,4 @@
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\obj\Debug\ISPCollection.application
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\obj\Debug\ISPCollection.exe
 \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\obj\Debug\ISPCollection.pdb
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ISPCollection\obj\Debug\Collection.csprojResolveAssemblyReference.cache

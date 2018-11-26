@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInit));
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -67,8 +66,8 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.tabPrincipal = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridTables = new System.Windows.Forms.DataGridView();
             this.dataGridColumn = new System.Windows.Forms.DataGridView();
+            this.dataGridTables = new System.Windows.Forms.DataGridView();
             this.statusStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -82,8 +81,8 @@
             this.groupBox2.SuspendLayout();
             this.tabPrincipal.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridTables)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridColumn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTables)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -236,7 +235,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(13, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(68, 365);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(34, 41);
             this.pictureBox3.TabIndex = 19;
@@ -452,6 +451,14 @@
             this.tabPage1.Text = "Tables";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // dataGridColumn
+            // 
+            this.dataGridColumn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridColumn.Location = new System.Drawing.Point(801, 1);
+            this.dataGridColumn.Name = "dataGridColumn";
+            this.dataGridColumn.Size = new System.Drawing.Size(314, 432);
+            this.dataGridColumn.TabIndex = 1;
+            // 
             // dataGridTables
             // 
             this.dataGridTables.AllowUserToAddRows = false;
@@ -462,14 +469,6 @@
             this.dataGridTables.ReadOnly = true;
             this.dataGridTables.Size = new System.Drawing.Size(328, 431);
             this.dataGridTables.TabIndex = 0;
-            // 
-            // dataGridColumn
-            // 
-            this.dataGridColumn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridColumn.Location = new System.Drawing.Point(801, 1);
-            this.dataGridColumn.Name = "dataGridColumn";
-            this.dataGridColumn.Size = new System.Drawing.Size(314, 432);
-            this.dataGridColumn.TabIndex = 1;
             // 
             // FrmInit
             // 
@@ -500,8 +499,8 @@
             this.groupBox2.PerformLayout();
             this.tabPrincipal.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridTables)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridColumn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTables)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

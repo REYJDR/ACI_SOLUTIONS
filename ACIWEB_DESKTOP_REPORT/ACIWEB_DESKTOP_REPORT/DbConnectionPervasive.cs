@@ -11,13 +11,17 @@ namespace ACIWEB_DESKTOP_REPORT
 
     class DbConnetionPervasive
     {
-        DbParam param = new DbParam();
+        DbParamSage param = new DbParamSage();
+
+        public OdbcConnection DbConn;
+
         private OdbcDataAdapter datos;
 
-        public OdbcConnection StartConn()
+        public OdbcConnection StartConn(string conn)
         {
 
-            OdbcConnection con = new OdbcConnection(param.ConString());
+            OdbcConnection con = new OdbcConnection(conn);
+            DbConn = con;
             try
             {
                 //con.ConnectionTimeout = 0;
@@ -35,7 +39,7 @@ namespace ACIWEB_DESKTOP_REPORT
 
 
             }
-
+            DbConn = con;
             return con;
         }
 
@@ -44,7 +48,7 @@ namespace ACIWEB_DESKTOP_REPORT
 
             try
             {
-                datos = new OdbcDataAdapter(query, StartConn());
+                 datos = new OdbcDataAdapter(query, DbConn);
 
             }
             catch (Exception msg)
@@ -58,7 +62,26 @@ namespace ACIWEB_DESKTOP_REPORT
 
         }
 
+        public void Close()
+        {
 
+            try
+            {
+                DbConn.Close();
+            }
+            catch (Exception theException)
+            {
+                String errorMessage;
+                errorMessage = "Error: ";
+                errorMessage = String.Concat(errorMessage, theException.Message);
+                errorMessage = String.Concat(errorMessage, " Line: ");
+                errorMessage = String.Concat(errorMessage, theException.Source);
+
+                MessageBox.Show(errorMessage, "Error");
+
+            }
+
+        }
 
     }
 }
