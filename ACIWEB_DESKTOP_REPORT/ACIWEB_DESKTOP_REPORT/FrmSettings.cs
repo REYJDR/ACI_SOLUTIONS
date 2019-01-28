@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using WinSCP;
+
 
 namespace ACIWEB_DESKTOP_REPORT
 {
@@ -15,7 +17,11 @@ namespace ACIWEB_DESKTOP_REPORT
     {
         private DbParamAciweb conParams;
         private DbParamSage SageParams;
+        private SftpParam sftpParam;
+        private SAPParam sapParams;
 
+
+        SftpConnection sftpConnection = new SftpConnection();
         FolderBrowserDialog Brw = new FolderBrowserDialog();
 
         DataTable Company = new DataTable("Company");
@@ -24,15 +30,16 @@ namespace ACIWEB_DESKTOP_REPORT
         public FrmSettings()
         {
             InitializeComponent();
-            InitFieldVal();
-            SetCompany();
+         /* InitFieldVal();
+            SetCompany();*/
         }
 
-        private void InitFieldVal()
+        public void InitFieldVal()
         {
-           
+         
+
+            //get ACIWEB config 
             conParams = new DbParamAciweb();
-            SageParams = new DbParamSage();
             conParams.GetValueFromFile();
 
             textHostname.Text = conParams.Hostaname;
@@ -41,8 +48,18 @@ namespace ACIWEB_DESKTOP_REPORT
             textPass.Text = conParams.Password;
             txtIdComp.Text = conParams.IdComp;
             txtNameComp.Text = conParams.NameComp;
-            
+
+            conParams.GetAciExportFolder();
+            txtDirExportAci.Text = conParams.LocalFolder;
+            txtRemoteFolderAci.Text = conParams.RemoteFolder;
+
+            //get SAGE config 
+            SageParams = new DbParamSage();
+
             textDirectorySage.Text = SageParams.GetSageURL();
+            SageParams.GetSageExportFolder();
+            txtDirExportSage.Text = SageParams.LocalFolder;
+            txtRemoteFolderSage.Text = SageParams.RemoteFolder;
 
             Company.Columns.Add("Selecction", typeof(bool));
             Company.Columns.Add("Company Name", typeof(String));
@@ -51,17 +68,38 @@ namespace ACIWEB_DESKTOP_REPORT
             Company.Columns.Add("Pass", typeof(String));
             Company.Columns.Add("Host", typeof(String));
 
-
             dataGridPre.DataSource = SageParams.GetSageConf();
             dataGridPre.AutoResizeColumns();
 
             SageDBSelected();
 
-         
+            //get SAp config 
+            sapParams = new SAPParam();
+            sapParams.GetValueFromFile();
+            txtSapServer.Text = sapParams.AppServerHost;
+            txtSapSysInstance.Text = sapParams.SystemNumber;
+            txtSapSysId.Text = sapParams.SystemID;
+            txtSapPassword.Text = sapParams.Password;
+            txtSapUser.Text = sapParams.User;
+            txtSapClient.Text = sapParams.Client;
+            txtSapRouter.Text = sapParams.SapRouter;
+
+            //get SFTP config
+            sftpParam = new SftpParam();
+        
+            sftpParam.GetSftpConfFromFile();
+            txtSftpHostname.Text = sftpParam.Hostaname;
+            txtSftpUsername.Text = sftpParam.User;
+            txtSftpPassword.Text = sftpParam.Password;
+
+
+
+
+            
 
         }
 
-        private void SetCompany()
+        public void SetCompany()
         {
             DbConnectionMysql dbConn = new DbConnectionMysql();
 
@@ -338,6 +376,167 @@ namespace ACIWEB_DESKTOP_REPORT
          
 
         }
+        
+        private void btnExportDir_Click(object sender, EventArgs e)
+        {
 
+            if (Brw.ShowDialog() == DialogResult.OK)
+            {
+                txtDirExportSage.Text = Brw.SelectedPath; // export path
+            }
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Brw.ShowDialog() == DialogResult.OK)
+            {
+                txtDirExportAci.Text = Brw.SelectedPath; // export path
+            }
+            
+        }
+        
+        private void btnSaveSftp_Click(object sender, EventArgs e)
+        {
+
+            sftpParam.Hostaname = txtSftpHostname.Text;
+            sftpParam.User = txtSftpUsername.Text;
+            sftpParam.Password = txtSftpPassword.Text;
+            sftpParam.Port = txtSftpPort.Text;
+
+
+
+            try
+            {
+
+                SessionOptions sessionOptions = new SessionOptions();
+
+
+                sessionOptions.HostName = sftpParam.Hostaname;
+                sessionOptions.UserName = sftpParam.User;
+                sessionOptions.Password = sftpParam.Password;
+
+                if (sftpParam.Port == "21")
+                {
+
+                    sessionOptions.Protocol = Protocol.Ftp;
+                    sessionOptions.PortNumber = 21;
+
+                }
+                else
+                {
+                    sessionOptions.Protocol = Protocol.Sftp;
+                    sessionOptions.PortNumber = 22;
+                    sessionOptions.GiveUpSecurityAndAcceptAnySshHostKey = true;
+                    // sessionOptions.SshHostKeyFingerprint = "";
+
+                }
+
+
+
+                    using (Session session = new Session())
+                    {
+                        session.Open(sessionOptions);
+                        if (session.Opened)
+                        {
+                            sftpParam.SetSftpConfOnFile();
+                            MessageBox.Show("Test de conexión exitoso", "Test de conexión sftp/ftp");
+
+                        }
+
+                        session.Close();
+
+                    }
+    
+
+
+            }
+            catch (Exception theException)
+            {
+                String errorMessage;
+                errorMessage = "Error: ";
+                errorMessage = String.Concat(errorMessage, theException.Message);
+                errorMessage = String.Concat(errorMessage, " Line: ");
+                errorMessage = String.Concat(errorMessage, theException.Source);
+
+                MessageBox.Show(errorMessage, "Error");
+
+
+            }
+            }
+
+        private void btnSafeExpDirAci_Click(object sender, EventArgs e)
+        {
+            conParams.SetAciExportFolder(txtDirExportAci.Text, txtRemoteFolderAci.Text);
+        }
+        
+        private void btnSafeExpDirSage_Click(object sender, EventArgs e)
+        {
+            SageParams.SetSageExportFolder(txtDirExportSage.Text, txtRemoteFolderSage.Text);
+        }
+
+        private void btnSyncAci_Click(object sender, EventArgs e)
+        {
+           
+            sftpConnection.syncDir(txtDirExportAci.Text, txtRemoteFolderAci.Text, "*.*");
+            
+        }
+
+        private void btnSyncSage_Click(object sender, EventArgs e)
+        {
+            sftpConnection.syncDir(txtDirExportSage.Text, txtRemoteFolderSage.Text, "*.*");
+        }
+        
+        private void btnSapConfSave_Click(object sender, EventArgs e)
+        {
+
+            /*INI READ AND SAVE CONNECTION PARAMETERS*/
+            sapParams.AppServerHost = txtSapServer.Text;
+            sapParams.SystemNumber = txtSapSysInstance.Text;
+            sapParams.SystemID = txtSapSysId.Text;
+            sapParams.Client = txtSapClient.Text;
+            sapParams.User = txtSapUser.Text;
+            sapParams.Password = txtSapPassword.Text;
+            sapParams.SapRouter = txtSapRouter.Text;
+            sapParams.Language = "EN";
+            sapParams.PoolSize = "5";
+
+            /*END READ AND SAVE CONNECTION PARAMETERS*/
+
+            /*Save params values */
+            sapParams.SetValueOnFile();
+
+        }
+
+        private void btnSafeExpDirSap_Click(object sender, EventArgs e)
+        {
+            sapParams.SetSapExportFolder(txtDirExportSap.Text, txtRemoteFolderSap.Text);
+
+        }
+
+        private void btnSyncSap_Click(object sender, EventArgs e)
+        {
+            sftpConnection.syncDir(txtDirExportSap.Text, txtRemoteFolderSap.Text, "*.*");
+
+        }
+
+        private void btnDirSapExport_Click(object sender, EventArgs e)
+        {
+            if (Brw.ShowDialog() == DialogResult.OK)
+            {
+                txtDirExportSap.Text = Brw.SelectedPath; // export path
+            }
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+    }
+

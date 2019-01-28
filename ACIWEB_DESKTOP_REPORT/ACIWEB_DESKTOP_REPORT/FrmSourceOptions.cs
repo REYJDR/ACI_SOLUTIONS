@@ -40,5 +40,16 @@ namespace ACIWEB_DESKTOP_REPORT
             SourcePanel.Controls.Add(sage);
             sage.Show();
         }
+
+        private void btnSapRep_Click(object sender, EventArgs e)
+        {
+            FrmSapRep sap = new FrmSapRep();
+            SourcePanel.Controls.Clear();
+
+            sap.TopLevel = false;
+            sap.AutoScroll = true;
+            SourcePanel.Controls.Add(sap);
+            sap.Show();
+        }
     }
 }

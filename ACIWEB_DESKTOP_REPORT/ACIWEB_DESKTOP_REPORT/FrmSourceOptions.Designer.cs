@@ -28,29 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSage = new System.Windows.Forms.Button();
-            this.btnAciweb = new System.Windows.Forms.Button();
             this.SourcePanel = new System.Windows.Forms.Panel();
+            this.btnSapRep = new System.Windows.Forms.Button();
+            this.btnAciweb = new System.Windows.Forms.Button();
+            this.btnSage = new System.Windows.Forms.Button();
             this.SourcePanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnSage
+            // SourcePanel
             // 
-            this.btnSage.BackColor = System.Drawing.Color.White;
-            this.btnSage.FlatAppearance.BorderSize = 0;
-            this.btnSage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSage.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSage.ForeColor = System.Drawing.Color.Black;
-            this.btnSage.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.sage_50_3;
-            this.btnSage.Location = new System.Drawing.Point(212, 18);
-            this.btnSage.Name = "btnSage";
-            this.btnSage.Size = new System.Drawing.Size(189, 91);
-            this.btnSage.TabIndex = 1;
-            this.btnSage.Text = "Peachtree";
-            this.btnSage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSage.UseVisualStyleBackColor = false;
-            this.btnSage.Click += new System.EventHandler(this.btnSage_Click);
+            this.SourcePanel.Controls.Add(this.btnSapRep);
+            this.SourcePanel.Controls.Add(this.btnAciweb);
+            this.SourcePanel.Controls.Add(this.btnSage);
+            this.SourcePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SourcePanel.Location = new System.Drawing.Point(0, 0);
+            this.SourcePanel.Name = "SourcePanel";
+            this.SourcePanel.Size = new System.Drawing.Size(549, 435);
+            this.SourcePanel.TabIndex = 2;
+            // 
+            // btnSapRep
+            // 
+            this.btnSapRep.BackColor = System.Drawing.Color.White;
+            this.btnSapRep.FlatAppearance.BorderSize = 0;
+            this.btnSapRep.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSapRep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSapRep.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSapRep.ForeColor = System.Drawing.Color.Black;
+            this.btnSapRep.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.sap_logo1;
+            this.btnSapRep.Location = new System.Drawing.Point(343, 9);
+            this.btnSapRep.Name = "btnSapRep";
+            this.btnSapRep.Size = new System.Drawing.Size(162, 91);
+            this.btnSapRep.TabIndex = 2;
+            this.btnSapRep.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSapRep.UseVisualStyleBackColor = false;
+            this.btnSapRep.Click += new System.EventHandler(this.btnSapRep_Click);
             // 
             // btnAciweb
             // 
@@ -61,24 +72,32 @@
             this.btnAciweb.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAciweb.ForeColor = System.Drawing.Color.Black;
             this.btnAciweb.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.AciWeb1;
-            this.btnAciweb.Location = new System.Drawing.Point(17, 18);
+            this.btnAciweb.Location = new System.Drawing.Point(7, 9);
             this.btnAciweb.Name = "btnAciweb";
-            this.btnAciweb.Size = new System.Drawing.Size(189, 91);
+            this.btnAciweb.Size = new System.Drawing.Size(162, 91);
             this.btnAciweb.TabIndex = 0;
             this.btnAciweb.Text = "Aciweb";
             this.btnAciweb.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAciweb.UseVisualStyleBackColor = false;
             this.btnAciweb.Click += new System.EventHandler(this.btnAciweb_Click);
             // 
-            // SourcePanel
+            // btnSage
             // 
-            this.SourcePanel.Controls.Add(this.btnAciweb);
-            this.SourcePanel.Controls.Add(this.btnSage);
-            this.SourcePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SourcePanel.Location = new System.Drawing.Point(0, 0);
-            this.SourcePanel.Name = "SourcePanel";
-            this.SourcePanel.Size = new System.Drawing.Size(549, 435);
-            this.SourcePanel.TabIndex = 2;
+            this.btnSage.BackColor = System.Drawing.Color.White;
+            this.btnSage.FlatAppearance.BorderSize = 0;
+            this.btnSage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSage.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSage.ForeColor = System.Drawing.Color.Black;
+            this.btnSage.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.sage_50_3;
+            this.btnSage.Location = new System.Drawing.Point(175, 9);
+            this.btnSage.Name = "btnSage";
+            this.btnSage.Size = new System.Drawing.Size(162, 91);
+            this.btnSage.TabIndex = 1;
+            this.btnSage.Text = "Peachtree";
+            this.btnSage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSage.UseVisualStyleBackColor = false;
+            this.btnSage.Click += new System.EventHandler(this.btnSage_Click);
             // 
             // FrmSourceOptions
             // 
@@ -99,5 +118,6 @@
         private System.Windows.Forms.Button btnAciweb;
         private System.Windows.Forms.Button btnSage;
         private System.Windows.Forms.Panel SourcePanel;
+        private System.Windows.Forms.Button btnSapRep;
     }
 }

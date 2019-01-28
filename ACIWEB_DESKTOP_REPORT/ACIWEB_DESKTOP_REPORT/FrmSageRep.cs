@@ -19,7 +19,7 @@ namespace ACIWEB_DESKTOP_REPORT
 {
     public partial class FrmSageRep : Form
     {
-        public static string dateRange;
+
         public static string invRange;
         public static int Type;
         bool Loaded;
@@ -34,10 +34,6 @@ namespace ACIWEB_DESKTOP_REPORT
 
         private void InitValue()
         {
-
-            setInitDate();
-
-
             comboBoxRepType.Items.Clear();
 
             string[] files = Directory.GetFiles(@"C:\\ACIDesktopReport\ReportDesigner\SAGE\", "*.repx");
@@ -54,44 +50,7 @@ namespace ACIWEB_DESKTOP_REPORT
             }
 
         }
-        
-        private void setInitDate()
-        {
-            Loaded = false;
-            dateTimeTo.Value = DateTime.Now;
-            dateTimeFrom.Value = DateTime.Now;
-            Loaded = true;
-
-        }
-
-        private void setDateRange()
-        {
-            if (dateTimeFrom.Text == dateTimeTo.Text)
-            {
-
-                dateRange = "like '" + dateTimeFrom.Text + "%'";
-
-            }
-            else
-            {
-
-                dateRange = "between '" + dateTimeFrom.Text + "' and '" + dateTimeTo.Text + "'";
-
-            }
-
-
-        }
-
-        private void dateTimeFrom_ValueChanged(object sender, EventArgs e)
-        {
-            setDateRange();
-        }
-
-        private void dateTimeTo_ValueChanged(object sender, EventArgs e)
-        {
-            setDateRange();
-        }
-
+  
         private void comboBoxRepType_SelectedIndexChanged(object sender, EventArgs e)
         {
             string template = comboBoxRepType.SelectedItem.ToString();
@@ -102,8 +61,7 @@ namespace ACIWEB_DESKTOP_REPORT
         private void btnQuery_Click(object sender, EventArgs e)
         {
 
-            setDateRange();
-
+         
             if (comboBoxRepType.SelectedIndex == -1)
             {
                 setMsgtext("Please select a template");
@@ -124,11 +82,21 @@ namespace ACIWEB_DESKTOP_REPORT
             {
                 Cursor = Cursors.WaitCursor; // change cursor to hourglass type
 
+                if (this.chkExport.Checked == true)
+                {
+                    DbParamSage folder = new DbParamSage();
+                    FrmRepViwer.export = true;
+
+                    folder.GetSageExportFolder();
+                    FrmRepViwer.expFolder = folder.LocalFolder;
+                    FrmRepViwer.sftpFolder = folder.RemoteFolder;
+                }
+
                 FrmRepViwer.repType = "sage";
                 FrmRepViwer repViewer = new FrmRepViwer();
 
-                
-                repViewer.Show();
+              
+
 
                 Cursor = Cursors.Arrow; // change cursor to hourglass type
 
@@ -155,7 +123,9 @@ namespace ACIWEB_DESKTOP_REPORT
 
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

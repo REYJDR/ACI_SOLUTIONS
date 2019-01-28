@@ -1,0 +1,400 @@
+
+**** Log file opened by process 2960 at 2019-01-23 18:28:11 (UTC-06:00 Hora estándar, América Central)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-01-23 18:28:11.727 [Thread 1]
+Failure to create pool for destination SAPDest (ORIGINAL) [NAME=SAPDest]
+SAP.Middleware.Connector.RfcCommunicationException: Connection parameter ASHOST or MSHOST missing
+   en SAP.Middleware.Connector.CpicConnection.parseConnParameters(Dictionary`2 options, Boolean forRepository)
+   en SAP.Middleware.Connector.CpicConnection.ConnectAsClient(Dictionary`2 options, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcDestination destination, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination destination, Boolean forRepositoryCalls)
+>> Error entry 2019-01-23 18:28:11.727 [Thread 1]
+[NAME=SAPDest]
+SAP.Middleware.Connector.RfcCommunicationException: Connection parameter ASHOST or MSHOST missing
+   en SAP.Middleware.Connector.CpicConnection.parseConnParameters(Dictionary`2 options, Boolean forRepository)
+   en SAP.Middleware.Connector.CpicConnection.ConnectAsClient(Dictionary`2 options, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcDestination destination, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination destination, Boolean forRepositoryCalls)
+   en SAP.Middleware.Connector.RfcConnectionPool.GetPool(RfcDestination destination, Boolean forRepository, Boolean create)
+   en SAP.Middleware.Connector.RfcDestination.GetClient(Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.SetAttributeValues(RfcSystemAttributes attribs)
+>> Error entry 2019-01-23 18:28:11.727 [Thread 1]
+SAP.Middleware.Connector.RfcCommunicationException: Connection parameter ASHOST or MSHOST missing
+   en SAP.Middleware.Connector.CpicConnection.parseConnParameters(Dictionary`2 options, Boolean forRepository)
+   en SAP.Middleware.Connector.CpicConnection.ConnectAsClient(Dictionary`2 options, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcDestination destination, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination destination, Boolean forRepositoryCalls)
+   en SAP.Middleware.Connector.RfcConnectionPool.GetPool(RfcDestination destination, Boolean forRepository, Boolean create)
+   en SAP.Middleware.Connector.RfcDestination.GetClient(Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.SetAttributeValues(RfcSystemAttributes attribs)
+   en SAP.Middleware.Connector.RfcDestination.get_SystemAttributes()
+   en SAP.Middleware.Connector.RfcRepository.GetRepositoryForDestination(RfcDestination destination)
+>> Error entry 2019-01-23 18:29:05.705 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidStateException: destination configuration already initialized
+   en SAP.Middleware.Connector.RfcDestinationManager.RegisterDestinationConfiguration(IDestinationConfiguration config)
+
+**** Log file opened by process 11160 at 2019-01-23 18:38:18 (UTC-06:00 Hora estándar, América Central)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-01-23 18:38:18.887 [Thread 1]
+SAP.Middleware.Connector.RfcConfigurationException: client must not be null or empty
+   en SAP.Middleware.Connector.RfcConfigParameters.NormalizedCopyTo(RfcConfigParameters target)
+   en SAP.Middleware.Connector.RfcConfigParameters.NormalizedCopy()
+   en SAP.Middleware.Connector.RfcDestination..ctor(String destName, RfcConfigParameters parameters)
+   en SAP.Middleware.Connector.RfcDestinationManager.GetDestination(String destinationName)
+
+**** Log file opened by process 8836 at 2019-01-23 18:44:46 (UTC-06:00 Hora estándar, América Central)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-01-23 18:44:46.780 [Thread 1]
+Failure to create pool for destination SAPDest (ORIGINAL) [ASHOST=192.168.4.14 SYSNR=00 SYSID=DEV USER=rdaou PASSWD=******** CLIENT=100 LANG=EN POOL_SIZE=5 NAME=SAPDest]
+SAP.Middleware.Connector.RfcLogonException: Incomplete logon data. ---> SAP.Middleware.Connector.RfcAbapRuntimeException: Incomplete logon data.
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   en SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   en SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcDestination destination, Boolean forRepository)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcDestination destination, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination destination, Boolean forRepositoryCalls)
+>> Error entry 2019-01-23 18:44:46.864 [Thread 1]
+[ASHOST=192.168.4.14 SYSNR=00 SYSID=DEV USER=rdaou PASSWD=******** CLIENT=100 LANG=EN POOL_SIZE=5 NAME=SAPDest]
+SAP.Middleware.Connector.RfcLogonException: Incomplete logon data. ---> SAP.Middleware.Connector.RfcAbapRuntimeException: Incomplete logon data.
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   en SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   en SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcDestination destination, Boolean forRepository)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcDestination destination, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination destination, Boolean forRepositoryCalls)
+   en SAP.Middleware.Connector.RfcConnectionPool.GetPool(RfcDestination destination, Boolean forRepository, Boolean create)
+   en SAP.Middleware.Connector.RfcDestination.GetClient(Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.SetAttributeValues(RfcSystemAttributes attribs)
+>> Error entry 2019-01-23 18:44:46.869 [Thread 1]
+SAP.Middleware.Connector.RfcLogonException: Incomplete logon data. ---> SAP.Middleware.Connector.RfcAbapRuntimeException: Incomplete logon data.
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   en SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   en SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcDestination destination, Boolean forRepository)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcDestination destination, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination destination, Boolean forRepositoryCalls)
+   en SAP.Middleware.Connector.RfcConnectionPool.GetPool(RfcDestination destination, Boolean forRepository, Boolean create)
+   en SAP.Middleware.Connector.RfcDestination.GetClient(Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.SetAttributeValues(RfcSystemAttributes attribs)
+   en SAP.Middleware.Connector.RfcDestination.get_SystemAttributes()
+   en SAP.Middleware.Connector.RfcRepository.GetRepositoryForDestination(RfcDestination destination)
+>> Error entry 2019-01-23 18:45:15.775 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidStateException: destination configuration already initialized
+   en SAP.Middleware.Connector.RfcDestinationManager.RegisterDestinationConfiguration(IDestinationConfiguration config)
+
+**** Log file opened by process 8084 at 2019-01-24 16:58:13 (UTC-06:00 Hora estándar, América Central)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-01-24 16:58:13.100 [Thread 1]
+[ASHOST=192.168.4.14 SYSNR=00 SYSID=DEV USER=rdaou PASSWD=******** CLIENT=100 LANG=EN POOL_SIZE=5 NAME=SAPDest]
+SAP.Middleware.Connector.RfcAbapRuntimeException: Function module "ZFI_EXTBAN_VALFILE" cannot be used for 'remote' calls.
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   en SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   en SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn)
+   en SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+
+**** Log file opened by process 10896 at 2019-01-24 17:46:24 (UTC-06:00 Hora estándar, América Central)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-01-24 17:46:24.978 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER DATE_FROM of FUNCTION BAPI_AR_ACC_GETSTATEMENT (SETTER): cannot convert String into DATE ---> SAP.Middleware.Connector.RfcTypeConversionException: Cannot convert "01.01.2015" into DATE (yyyyMMdd) ---> System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+>> Error entry 2019-01-24 17:47:12.080 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER DATE_FROM of FUNCTION BAPI_AR_ACC_GETSTATEMENT (SETTER): cannot convert String into DATE ---> SAP.Middleware.Connector.RfcTypeConversionException: Cannot convert "01.01.2015" into DATE (yyyyMMdd) ---> System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+>> Error entry 2019-01-24 17:47:32.931 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER DATE_FROM of FUNCTION BAPI_AR_ACC_GETSTATEMENT (SETTER): cannot convert String into DATE ---> SAP.Middleware.Connector.RfcTypeConversionException: Cannot convert "01.01.2015" into DATE (yyyyMMdd) ---> System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+>> Error entry 2019-01-24 17:47:56.148 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER DATE_FROM of FUNCTION BAPI_AR_ACC_GETSTATEMENT (SETTER): cannot convert String into DATE ---> SAP.Middleware.Connector.RfcTypeConversionException: Cannot convert "01.01.2015" into DATE (yyyyMMdd) ---> System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+
+**** Log file opened by process 7152 at 2019-01-24 17:50:55 (UTC-06:00 Hora estándar, América Central)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-01-24 17:50:55.846 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER DATE_FROM of FUNCTION BAPI_AR_ACC_GETSTATEMENT (SETTER): cannot convert Int32 into DATE ---> SAP.Middleware.Connector.RfcTypeConversionException: int cannot be converted into DATE
+   en SAP.Middleware.Connector.RfcScalarMetadata.ConvertInt(Int32 value, Object& currentValue)
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, Int32 value)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, Int32 value)
+
+**** Log file opened by process 3100 at 2019-01-27 14:32:53 (UTC-06:00 Hora estándar, América Central)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-01-27 14:32:53.456 [Thread 1]
+Failure to create pool for destination SAPDest (ORIGINAL) [ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=100 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcLogonException: Client 100 is not available in this system ---> SAP.Middleware.Connector.RfcAbapMessageException: Client 100 is not available in this system
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   en SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   en SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcDestination destination, Boolean forRepository)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcDestination destination, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination destination, Boolean forRepositoryCalls)
+>> Error entry 2019-01-27 14:32:53.461 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=100 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcLogonException: Client 100 is not available in this system ---> SAP.Middleware.Connector.RfcAbapMessageException: Client 100 is not available in this system
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   en SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   en SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcDestination destination, Boolean forRepository)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcDestination destination, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination destination, Boolean forRepositoryCalls)
+   en SAP.Middleware.Connector.RfcConnectionPool.GetPool(RfcDestination destination, Boolean forRepository, Boolean create)
+   en SAP.Middleware.Connector.RfcDestination.GetClient(Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.SetAttributeValues(RfcSystemAttributes attribs)
+>> Error entry 2019-01-27 14:32:53.462 [Thread 1]
+SAP.Middleware.Connector.RfcLogonException: Client 100 is not available in this system ---> SAP.Middleware.Connector.RfcAbapMessageException: Client 100 is not available in this system
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.ReadBytes(Byte* buffer, Int32 count)
+   en SAP.Middleware.Connector.RfcConnection.ReadRfcIDBegin(Int32& length)
+   en SAP.Middleware.Connector.RfcConnection.ReadUpTo(RFCGET readState, RfcFunction function, RFCID toRid)
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcDestination destination, Boolean forRepository)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcConnection.ConnectAsClient(RfcDestination destination, Boolean forRepository)
+   en SAP.Middleware.Connector.RfcConnectionPool..ctor(RfcDestination destination, Boolean forRepositoryCalls)
+   en SAP.Middleware.Connector.RfcConnectionPool.GetPool(RfcDestination destination, Boolean forRepository, Boolean create)
+   en SAP.Middleware.Connector.RfcDestination.GetClient(Boolean forRepository)
+   en SAP.Middleware.Connector.RfcDestination.SetAttributeValues(RfcSystemAttributes attribs)
+   en SAP.Middleware.Connector.RfcDestination.get_SystemAttributes()
+   en SAP.Middleware.Connector.RfcRepository.GetRepositoryForDestination(RfcDestination destination)
+
+**** Log file opened by process 9096 at 2019-01-27 14:42:40 (UTC-06:00 Hora estándar, América Central)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-01-27 14:42:40.527 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER DATE_FROM of FUNCTION BAPI_AR_ACC_GETSTATEMENT (SETTER): cannot convert String into DATE ---> SAP.Middleware.Connector.RfcTypeConversionException: Cannot convert "27.01.2019" into DATE (yyyyMMdd) ---> System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+
+**** Log file opened by process 6624 at 2019-01-27 15:18:31 (UTC-06:00 Hora estándar, América Central)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-01-27 15:18:31.717 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER DATE_FROM of FUNCTION BAPI_AR_ACC_GETSTATEMENT (SETTER): cannot convert String into DATE ---> SAP.Middleware.Connector.RfcTypeConversionException: Cannot convert "27.00.2019" into DATE (yyyyMMdd) ---> System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+
+**** Log file opened by process 6276 at 2019-01-27 15:28:58 (UTC-06:00 Hora estándar, América Central)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-01-27 15:28:58.683 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER DATE_FROM of FUNCTION BAPI_AR_ACC_GETSTATEMENT (SETTER): cannot convert String into DATE ---> SAP.Middleware.Connector.RfcTypeConversionException: Cannot convert "27.00.2019" into DATE (yyyyMMdd) ---> System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+
+**** Log file opened by process 10120 at 2019-01-27 15:30:45 (UTC-06:00 Hora estándar, América Central)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-01-27 15:30:45.570 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER DATE_FROM of FUNCTION BAPI_AR_ACC_GETSTATEMENT (SETTER): cannot convert Int32 into DATE ---> SAP.Middleware.Connector.RfcTypeConversionException: int cannot be converted into DATE
+   en SAP.Middleware.Connector.RfcScalarMetadata.ConvertInt(Int32 value, Object& currentValue)
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, Int32 value)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, Int32 value)
+
+**** Log file opened by process 11488 at 2019-01-27 15:54:49 (UTC-06:00 Hora estándar, América Central)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-01-27 15:54:49.346 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER DATE_FROM of FUNCTION BAPI_AR_ACC_GETSTATEMENT (SETTER): cannot convert String into DATE ---> SAP.Middleware.Connector.RfcTypeConversionException: Cannot convert "20190027" into DATE (yyyyMMdd) ---> System.FormatException: La cadena representa un DateTime no admitido en el calendario System.Globalization.GregorianCalendar.
+   en System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+
+**** Log file opened by process 5008 at 2019-01-27 16:22:17 (UTC-06:00 Hora estándar, América Central)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-01-27 16:22:17.417 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER DATE_FROM of FUNCTION BAPI_AR_ACC_GETSTATEMENT (SETTER): cannot convert String into DATE ---> SAP.Middleware.Connector.RfcTypeConversionException: Cannot convert "YYYY01DD" into DATE (yyyyMMdd) ---> System.FormatException: No se puede reconocer la cadena como valor DateTime válido.
+   en System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcScalarMetadataDate.ConvertString(String value, Object& currentValue)
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)

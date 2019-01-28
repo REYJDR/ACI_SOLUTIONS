@@ -79,7 +79,7 @@
             this.lblVer.Name = "lblVer";
             this.lblVer.Size = new System.Drawing.Size(98, 17);
             this.lblVer.TabIndex = 4;
-            this.lblVer.Text = "Version 2.0.0.3";
+            this.lblVer.Text = "Version 3.0.0.0";
             this.lblVer.Click += new System.EventHandler(this.lblVer_Click);
             // 
             // btnSettings
@@ -92,7 +92,6 @@
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSettings.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.setting;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSettings.Location = new System.Drawing.Point(0, 149);
             this.btnSettings.Name = "btnSettings";
@@ -114,7 +113,6 @@
             this.btnDesigner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesigner.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesigner.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDesigner.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.design;
             this.btnDesigner.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDesigner.Location = new System.Drawing.Point(0, 99);
             this.btnDesigner.Name = "btnDesigner";
@@ -136,7 +134,6 @@
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnReport.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.report_fa1;
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReport.Location = new System.Drawing.Point(0, 48);
             this.btnReport.Name = "btnReport";
@@ -163,7 +160,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.logo_3;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(52, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(79, 40);
@@ -201,7 +198,6 @@
             // 
             // picMinimize
             // 
-            this.picMinimize.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.minimize_fa2;
             this.picMinimize.Location = new System.Drawing.Point(539, 12);
             this.picMinimize.Name = "picMinimize";
             this.picMinimize.Size = new System.Drawing.Size(19, 19);
@@ -212,7 +208,6 @@
             // 
             // picClose
             // 
-            this.picClose.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.close_fa;
             this.picClose.Location = new System.Drawing.Point(567, 12);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(19, 19);
@@ -223,6 +218,7 @@
             // 
             // mainPanel
             // 
+            this.mainPanel.AccessibleName = "Aci desktop suite";
             this.mainPanel.Controls.Add(this.statusStrip1);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -260,7 +256,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmHome";
-            this.Text = "Form1";
+            this.Text = "ACIDesktopReport";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.form_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.form_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.form_MouseUp);

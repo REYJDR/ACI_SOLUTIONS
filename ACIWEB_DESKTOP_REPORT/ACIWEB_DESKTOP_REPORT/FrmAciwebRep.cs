@@ -21,12 +21,13 @@ namespace ACIWEB_DESKTOP_REPORT
     public partial class FrmAciwebRep : Form
     {
         public static string dateRange;
-
+        public static string dateFrom;
+        public static string dateTo;
         public static string invRange;
-
         public static int Type;
 
-        
+
+       
 
         DbQueryAciweb dbquery = new DbQueryAciweb();
 
@@ -38,17 +39,17 @@ namespace ACIWEB_DESKTOP_REPORT
         public FrmAciwebRep()
         {
             InitializeComponent();
-            InitValue();
-           
+            InitValue();  
  
         }
+
+
+        
 
         private void InitValue()
         {
 
-            SetInvDate();
-
-
+            
             comboBoxRepType.Items.Clear();
 
             string[] files = Directory.GetFiles(@"C:\\ACIDesktopReport\ReportDesigner\ACIWEB\", "*.repx");
@@ -66,54 +67,7 @@ namespace ACIWEB_DESKTOP_REPORT
 
         }
 
-        public void SetInvDate()
-        {
-            Loaded = false;
-            dateTimeTo.Value = DateTime.Now;
-            dateTimeFrom.Value = DateTime.Now;
-            Loaded = true;
-
-        }
-        
-        private void FrmInit_Load(object sender, EventArgs e)
-        {
-
-            setRefCat();
-
-        }
-
-        private void dateTimeFrom_ValueChanged(object sender, EventArgs e)
-        {
-            setRefCat();
-
-
-
-        }
-
-        private void dateTimeTo_ValueChanged(object sender, EventArgs e)
-        {
-            setRefCat();
-
-        }
-
-        private void setRefCat()
-        {
-            if(dateTimeFrom.Text == dateTimeTo.Text)
-            {
-
-                dateRange = "like '"+ dateTimeFrom.Text + "%'";
-
-            }
-            else
-            {
-
-                dateRange = "between '"+ dateTimeFrom.Text + "%' and '" + dateTimeTo.Text + "%'";
-
-            }
-
-
-        }
-
+ 
         public void setMsgtext(string text)
         {
             FrmHome home = new FrmHome();
@@ -124,7 +78,7 @@ namespace ACIWEB_DESKTOP_REPORT
 
         private void btnQuery_Click_1(object sender, EventArgs e)
         {
-            setRefCat();
+            
 
             if (comboBoxRepType.SelectedIndex == -1)
             {
@@ -133,8 +87,10 @@ namespace ACIWEB_DESKTOP_REPORT
             }
             else
             {
-               
-                PrintReport();
+
+
+                    PrintReport();
+                    
 
             }
         }
@@ -143,13 +99,26 @@ namespace ACIWEB_DESKTOP_REPORT
         {
             try
             {
-                Cursor = Cursors.WaitCursor; // change cursor to hourglass type
-              
+               // Cursor = Cursors.WaitCursor; // change cursor to hourglass type
+
+                if (this.chkExport.Checked == true)
+                {
+                    DbParamAciweb folder = new DbParamAciweb();
+                    FrmRepViwer.export = true;
+
+                    folder.GetAciExportFolder();
+                    FrmRepViwer.expFolder = folder.LocalFolder;
+                    FrmRepViwer.sftpFolder = folder.RemoteFolder;
+
+                }
+
                 FrmRepViwer.repType = "aci";
                 FrmRepViwer repViewer = new FrmRepViwer();
-                repViewer.Show();
 
-                Cursor = Cursors.Arrow; // change cursor to normal type
+              
+               
+
+             //   Cursor = Cursors.Arrow; // change cursor to normal type
 
             }
             catch (Exception theException)
@@ -216,8 +185,25 @@ namespace ACIWEB_DESKTOP_REPORT
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+     
+
+        private void btnQuery_Click(object sender, EventArgs e)
         {
+            
+
+            if (comboBoxRepType.SelectedIndex == -1)
+            {
+                setMsgtext("Please select a template");
+                MessageBox.Show("Please select a template");
+            }
+            else
+            {
+
+
+                PrintReport();
+
+            }
+
 
         }
     }

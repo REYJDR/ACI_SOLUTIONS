@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>\\Mac\Home\Documents\GitHub\DEPLOY_ACIWEBREPORT\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
@@ -23,14 +25,14 @@
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\Mac\Home\Documents\GitHub\DEPLOY_ACIWEBREPORT\</InstallUrl>
-    <ProductName>Aciweb Desktop Report</ProductName>
-    <PublisherName>DAOUTEL</PublisherName>
+    <ProductName>ACI Desktop Report</ProductName>
+    <PublisherName>KODIKKA</PublisherName>
     <SuiteName>ACI SOLUTIONS</SuiteName>
     <MinimumRequiredVersion>1.0.0.4</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>4</ApplicationRevision>
-    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -67,7 +69,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -114,6 +116,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Downloads\mysql-connector-net-8.0.11-noinstall\v4.5.2\MySql.Web.dll</HintPath>
     </Reference>
+    <Reference Include="sapnco, Version=3.0.0.42, Culture=neutral, PublicKeyToken=50436dca5c7f7d23, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\SAP CONNECT .NET\sapnco.dll</HintPath>
+    </Reference>
+    <Reference Include="sapnco_utils, Version=3.0.0.42, Culture=neutral, PublicKeyToken=50436dca5c7f7d23, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\SAP CONNECT .NET\sapnco_utils.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -126,6 +136,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WinSCPnet, Version=1.5.7.9125, Culture=neutral, PublicKeyToken=2271ec4a3c56d0bf, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinSCP.5.13.7\lib\net\WinSCPnet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbConnectionMysql.cs" />
@@ -135,6 +148,19 @@
     <Compile Include="DbParamAciweb.cs" />
     <Compile Include="DbQuerySage.cs" />
     <Compile Include="DbQueryAciweb.cs" />
+    <Compile Include="DbQuerySap.cs" />
+    <Compile Include="FrmLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogs.Designer.cs">
+      <DependentUpon>FrmLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportFilter.Designer.cs">
+      <DependentUpon>FrmReportFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSageRep.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +172,12 @@
     </Compile>
     <Compile Include="FrmDesigner.Designer.cs">
       <DependentUpon>FrmDesigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSapRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSapRep.Designer.cs">
+      <DependentUpon>FrmSapRep.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSettings.cs">
       <SubType>Form</SubType>
@@ -183,8 +215,25 @@
     <Compile Include="FrmTestConn.Designer.cs">
       <DependentUpon>FrmTestConn.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmInitializing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInitializing.Designer.cs">
+      <DependentUpon>FrmInitializing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IRfcTableExtentions.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressBar.Designer.cs">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SapConnection.cs" />
+    <Compile Include="SAPParam.cs" />
+    <Compile Include="SftpConnection.cs" />
+    <Compile Include="SftpParam.cs" />
     <Compile Include="XtraReportSage.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -197,11 +246,26 @@
     <Compile Include="XtraReportAciweb.Designer.cs">
       <DependentUpon>XtraReportAciweb.cs</DependentUpon>
     </Compile>
+    <Compile Include="XtraReportSap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportSap.Designer.cs">
+      <DependentUpon>XtraReportSap.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmLogs.resx">
+      <DependentUpon>FrmLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportFilter.resx">
+      <DependentUpon>FrmReportFilter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSageRep.resx">
       <DependentUpon>FrmSageRep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDesigner.resx">
       <DependentUpon>FrmDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSapRep.resx">
+      <DependentUpon>FrmSapRep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSettings.resx">
       <DependentUpon>FrmSettings.cs</DependentUpon>
@@ -221,6 +285,12 @@
     <EmbeddedResource Include="FrmTestConn.resx">
       <DependentUpon>FrmTestConn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmInitializing.resx">
+      <DependentUpon>FrmInitializing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressBar.resx">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -238,6 +308,7 @@
     <EmbeddedResource Include="XtraReportAciweb.resx">
       <DependentUpon>XtraReportAciweb.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="PickingList_TemporaryKey.pfx" />
     <None Include="Properties\DataSources\DbQuery.datasource" />
     <None Include="Properties\Settings.settings">
@@ -257,22 +328,23 @@
     <Content Include="apcon_icon 16x16.ico" />
     <Content Include="apcon_icon.ico" />
     <Content Include="favicon.ico" />
-    <None Include="Resources\sage_50_3.png" />
-    <None Include="Resources\sage_50_2.png" />
-    <None Include="Resources\sage_50.png" />
-    <None Include="Resources\AciWeb1.png" />
-    <None Include="Resources\AciWeb.png" />
-    <None Include="Resources\setting.png" />
-    <None Include="Resources\report_fa1.png" />
-    <None Include="Resources\design.png" />
-    <None Include="Resources\config_fa.png" />
-    <None Include="Resources\report_fa2.png" />
-    <None Include="Resources\designer_fa.png" />
-    <None Include="Resources\report_fa.png" />
-    <None Include="Resources\minimize_fa2.png" />
-    <None Include="Resources\minimize_fa.png" />
-    <None Include="Resources\close_fa.png" />
-    <None Include="Resources\logo_3.png" />
+    <Content Include="Resources\AciWeb.png" />
+    <Content Include="Resources\AciWeb1.png" />
+    <Content Include="Resources\close_fa.png" />
+    <Content Include="Resources\config_fa.png" />
+    <Content Include="Resources\design.png" />
+    <Content Include="Resources\designer_fa.png" />
+    <Content Include="Resources\logo_3.png" />
+    <Content Include="Resources\minimize_fa.png" />
+    <Content Include="Resources\minimize_fa2.png" />
+    <Content Include="Resources\report_fa.png" />
+    <Content Include="Resources\report_fa1.png" />
+    <Content Include="Resources\report_fa2.png" />
+    <Content Include="Resources\sage_50.png" />
+    <Content Include="Resources\sage_50_2.png" />
+    <Content Include="Resources\sage_50_3.png" />
+    <Content Include="Resources\sap_logo.png" />
+    <Content Include="Resources\setting.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -286,5 +358,15 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\WinSCP.5.13.7\build\WinSCP.targets" Condition="Exists('..\packages\WinSCP.5.13.7\build\WinSCP.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\WinSCP.5.13.7\build\WinSCP.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\WinSCP.5.13.7\build\WinSCP.targets'))" />
+  </Target>
 </Project>

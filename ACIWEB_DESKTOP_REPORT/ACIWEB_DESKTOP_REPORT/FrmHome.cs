@@ -18,21 +18,35 @@ namespace ACIWEB_DESKTOP_REPORT
         int MValX;
         int MValY;
 
+        FrmSettings setting = new FrmSettings();
+        FrmInitializing initialFrm = new FrmInitializing();
+
 
         public FrmHome()
         {
+
+            initialFrm.Show();
+
             InitializeComponent();
 
 
             this.mainPanel.Controls.Clear();
+
+            //parametros de configuracion
+            setting.InitFieldVal();
+            setting.SetCompany();
+
 
             FrmSourceOptions options = new FrmSourceOptions();
             options.TopLevel = false;
             options.AutoScroll = true;
             options.AutoSize = true;
 
+            initialFrm.Hide();
             this.mainPanel.Controls.Add(options);
             options.Show();
+
+        
         }
 
 
@@ -105,7 +119,7 @@ namespace ACIWEB_DESKTOP_REPORT
 
             this.mainPanel.Controls.Clear();
 
-            FrmSettings setting = new FrmSettings();
+
             setting.TopLevel = false;
             setting.AutoScroll = true;
             setting.AutoSize = true;

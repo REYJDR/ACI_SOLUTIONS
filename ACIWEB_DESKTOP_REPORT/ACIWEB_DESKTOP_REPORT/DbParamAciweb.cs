@@ -16,16 +16,21 @@ namespace ACIWEB_DESKTOP_REPORT
         private string password;
         private string idComp;
         private string nameComp;
+        private string localFolder;
+        private string remoteFolder;
 
-
+        
         public string Hostaname { get => hostaname; set => hostaname = value; }
         public string Dbname { get => dbname; set => dbname = value; }
         public string User { get => user; set => user = value; }
         public string Password { get => password; set => password = value; }
         public string IdComp { get => idComp; set => idComp = value; }
         public string NameComp { get => nameComp; set => nameComp = value; }
+        public string LocalFolder { get => localFolder; set => localFolder = value; }
+        public string RemoteFolder { get => remoteFolder; set => remoteFolder = value; }
 
-       
+
+
 
 
         public void SetValueOnFile()
@@ -36,6 +41,7 @@ namespace ACIWEB_DESKTOP_REPORT
             {
                 Directory.CreateDirectory(@"C:\\ACIDesktopReport\DB\ACIWEB\");
             }
+
 
             File.WriteAllText(@"C:\\ACIDesktopReport\DB\ACIWEB\DbParams.txt", string.Empty);
 
@@ -119,7 +125,7 @@ namespace ACIWEB_DESKTOP_REPORT
                           "DATABASE=" + dbname +  ";" +
                           "UID=" + User + ";" + 
                           "PASSWORD=" + Password + ";" +
-                          "SslMode = none;";
+                          "SslMode = none ;ConnectionTimeout=200";
 
 
                 // close the stream
@@ -130,6 +136,46 @@ namespace ACIWEB_DESKTOP_REPORT
 
 
             return strConn;
+        }
+
+
+        public void SetAciExportFolder(string localfolder, string remoteFolder)
+        {
+
+            bool exists = Directory.Exists(@"C:\\ACIDesktopReport\Conf\ACIWEB\");
+
+            if (!exists)
+            {
+                Directory.CreateDirectory(@"C:\\ACIDesktopReport\Conf\ACIWEB\");
+            }
+
+
+            File.WriteAllText(@"C:\\ACIDesktopReport\Conf\ACIWEB\export.conf", string.Empty);
+
+            TextWriter file = new StreamWriter(@"C:\\ACIDesktopReport\Conf\ACIWEB\export.conf");
+
+            // write lines of text to the file
+            file.WriteLine(localfolder);
+            file.WriteLine(remoteFolder);
+
+            file.Close();
+
+        }
+
+        public void GetAciExportFolder()
+        {
+            
+
+            if (File.Exists(@"C:\\ACIDesktopReport\Conf\ACIWEB\export.conf"))
+            {
+                // create reader & open file
+                TextReader file = new StreamReader(@"C:\\ACIDesktopReport\Conf\ACIWEB\export.conf");
+
+                localFolder = file.ReadLine();
+                remoteFolder = file.ReadLine();
+
+            }
+
         }
 
 

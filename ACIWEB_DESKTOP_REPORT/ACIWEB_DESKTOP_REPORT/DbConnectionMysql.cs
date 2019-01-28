@@ -20,6 +20,7 @@ namespace ACIWEB_DESKTOP_REPORT
         public bool  StartConn()
         {
             connection = new MySqlConnection(param.ConString());
+           
 
             try
             {

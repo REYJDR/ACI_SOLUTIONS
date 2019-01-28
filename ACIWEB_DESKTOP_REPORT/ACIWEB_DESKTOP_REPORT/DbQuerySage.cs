@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Data;
 using System.Windows.Forms;
 
@@ -12,10 +13,79 @@ namespace ACIWEB_DESKTOP_REPORT
     {
         DbConnetionPervasive dbcon = new DbConnetionPervasive();
 
+        public static ManualResetEvent mre = new ManualResetEvent(false);
         public static DataTable queryTable;
         public static bool doQuery;
         public static bool theresData;
         public static DataSet repPreview;
+
+        //Selection options 
+        FrmReportFilter SO = new FrmReportFilter();
+        DataTable SelectOptions = new DataTable("SelectOption");
+
+        //variables de parametros de seleccion
+        public static string From;
+        public static string To;
+
+        public DbQuerySage()
+        {
+            SelectionOptionsTbl();
+
+        }
+
+        //SELECTION OPTIONS
+            private void SelectionOptionsTbl()
+            {
+
+                SelectOptions.Columns.Add("type", typeof(String));
+                SelectOptions.Columns.Add("fieldname", typeof(String));
+
+            }
+        
+            private void showSelecOptionByReport(int Type)
+            {
+            
+                if (Type == 1)
+                {
+                    //selection option 
+                    SelectOptions.NewRow();
+                    SelectOptions.Rows.Add("date", "To");
+                    SelectOptions.NewRow();
+                    SelectOptions.Rows.Add("button", "Go");
+
+
+                    SO.SetSelectionsOptions(SelectOptions);
+                    SO.ShowDialog();
+
+                    DateTimePicker to = SO.selectOptionsPanel.Controls.Find("date_To", true).FirstOrDefault() as DateTimePicker;
+                    To = to.Text;
+                
+                }
+
+                if (Type == 2)
+                {
+                    //selection option 
+                    SelectOptions.NewRow();
+                    SelectOptions.Rows.Add("date", "From");
+                    SelectOptions.NewRow();
+                    SelectOptions.Rows.Add("date", "To");
+                    SelectOptions.NewRow();
+                    SelectOptions.Rows.Add("button", "Go");
+
+
+                    SO.SetSelectionsOptions(SelectOptions);
+                    SO.ShowDialog();
+
+                    DateTimePicker from = SO.selectOptionsPanel.Controls.Find("date_From", true).FirstOrDefault() as DateTimePicker;
+                    From = from.Text;
+                    DateTimePicker to = SO.selectOptionsPanel.Controls.Find("date_To", true).FirstOrDefault() as DateTimePicker;
+                    To = to.Text;
+
+                
+                }
+                
+            }
+        //SELECTION OPTIONS
 
         public DataTable CompanyName()
         {
@@ -39,14 +109,13 @@ namespace ACIWEB_DESKTOP_REPORT
 
         public void reportQuery(int Type)
         {
+       
 
             DataTable result = new DataTable();
 
             string sql = "";
 
-            /*OBTENGO EL RANGO DE FECHA DE FrmInit y el rango de invoice */
-            string dateRange = FrmSageRep.dateRange;
-
+            
             try
             {
                 /*Listar conexion*/
@@ -71,6 +140,12 @@ namespace ACIWEB_DESKTOP_REPORT
                         /*QUERY*/
                         if (Type == 1)//Past Due
                         {
+                            showSelecOptionByReport(1);
+                            mre.WaitOne();
+
+                            var to = Convert.ToDateTime(To);
+                            var lastMonth = to.AddDays(-30);
+
                             //Facturas abiertas
                             sql = "SELECT DISTINCT " +
                                     "A.Reference as InvoiceNo," +
@@ -87,19 +162,22 @@ namespace ACIWEB_DESKTOP_REPORT
                                     "C.CustomField2, " +
                                     "C.customField3, " +
                                     "C.CustomField4, " +
-                                    "C.CustomField5 " +
+                                    "C.CustomField5, " +
+                                    " (SELECT SUM(I.Amount) FROM JrnlHdr H INNER JOIN JrnlRow  I ON H.PostOrder = I.PostOrder "+
+                                    " WHERE H.JrnlKey_Journal = '1' AND I.RowType = '0' "+
+                                    " AND H.TransactionDate between '" + lastMonth.ToString("yyyy-MM-dd") + "' and '" + to.ToString("yyyy-MM-dd") + "'" +
+                                    " AND I.InvNumForThisTrx = A.Reference AND B.CustomerRecordNumber = I.CustomerRecordNumber  ) AS PAID "+
                                     " FROM JrnlHdr A" +
                                     " INNER JOIN JrnlRow B ON A.PostOrder = B.PostOrder" +
                                     " INNER JOIN Customers C ON C.CustomerRecordNumber = B.CustomerRecordNumber" +
                                     " LEFT JOIN Employee G on G.EmpRecordNumber = A.EmpRecordNumber" +
                                     " WHERE A.JrnlKey_Journal = '3'" +
                                     " AND B.RowType = '0'" +
-                                    " AND A.TransactionDate  " + dateRange +
+                                    " AND A.TransactionDate <= '" + to.ToString("yyyy-MM-dd") + "'"+
                                     " AND A.AmountPaid < A.MainAmount " +
                                     " Order by A.Reference; ";
 
-
-
+                            
                             dbcon.Query(sql).Fill(result);
 
                         }
@@ -107,7 +185,10 @@ namespace ACIWEB_DESKTOP_REPORT
                        
                         if (Type == 2)//PickingList
                         {
-                            
+
+                            showSelecOptionByReport(2);
+                            mre.WaitOne();
+
                             sql = "SELECT DISTINCT " +
                                 "A.Reference as InvoiceNo," +
                                 "A.TransactionDate as InvoiceDate," +
@@ -139,7 +220,7 @@ namespace ACIWEB_DESKTOP_REPORT
                                 " INNER JOIN LineItem D ON D.ItemRecordNumber = B.ItemRecordNumber" +
                                 " WHERE A.JrnlKey_Journal = '3'" +
                                 " AND B.RowType = '0'" +
-                                " AND A.TransactionDate " + dateRange + 
+                                " AND A.TransactionDate between '" + From + "' and '" + To + "' " +
                                 " Order by A.Reference; ";
                             
 
@@ -152,8 +233,8 @@ namespace ACIWEB_DESKTOP_REPORT
                         {
                             
                             sql = "SELECT DISTINCT " +
-                                "A.Reference as InvoiceNo," +
-                                "A.TransactionDate as InvoiceDate," +
+                                "A.Reference as PONo," +
+                                "A.TransactionDate as PODate," +
                                 "C.VendorID as IdVendor," +
                                 "C.Name as VendorName," +
                                 "B.Quantity," +
@@ -173,7 +254,10 @@ namespace ACIWEB_DESKTOP_REPORT
                                 "D.CustomField2, " +
                                 "D.customField3, " +
                                 "D.CustomField4, " +
-                                "D.CustomField5 " +
+                                "D.CustomField5, " +
+                                "A.PurchOrder , " +
+                                "A.CustomerInvoiceNo, " +
+                                "A.CustomerSONo "+
                                 " FROM JrnlHdr A" +
                                 " INNER JOIN JrnlRow B ON A.PostOrder = B.PostOrder" +
                                 " LEFT JOIN Jobs E ON E.JobRecordNumber = B.JobRecordNumber " +
@@ -183,7 +267,7 @@ namespace ACIWEB_DESKTOP_REPORT
                                 " INNER JOIN LineItem D ON D.ItemRecordNumber = B.ItemRecordNumber" +
                                 " WHERE A.JrnlKey_Journal = '10'" +
                                 " AND B.RowType = '0'" +
-                                " AND A.TransactionDate " + dateRange + 
+                                " AND A.TransactionDate between '" + From + "' and '" + To + "' " +
                                 " Order by A.Reference; ";
 
 
@@ -215,7 +299,7 @@ namespace ACIWEB_DESKTOP_REPORT
             
         }
 
-
+        
         public DataSet SetPastDue() //facturas abiertas
         {
            
@@ -358,7 +442,6 @@ namespace ACIWEB_DESKTOP_REPORT
                     resTable.Columns.Add("CustomField5", typeof(String));
 
 
-
                     repPreview = new DataSet();
                     repPreview.Tables.Add(resTable);
 
@@ -448,12 +531,12 @@ namespace ACIWEB_DESKTOP_REPORT
 
                 if (repPreview is null)
                 {
-
+                   
 
                     DataTable resTable = new DataTable("PurchaseOrders");
                     resTable.Columns.Add("CompanyNam", typeof(String));
-                    resTable.Columns.Add("InvoiceNo", typeof(String));
-                    resTable.Columns.Add("InvoiceDate", typeof(String));
+                    resTable.Columns.Add("PONo", typeof(String));
+                    resTable.Columns.Add("PODate", typeof(String));
                     resTable.Columns.Add("IdVendor", typeof(String));
                     resTable.Columns.Add("VendorName", typeof(String));
                     resTable.Columns.Add("Quantity", typeof(Decimal));
@@ -474,8 +557,10 @@ namespace ACIWEB_DESKTOP_REPORT
                     resTable.Columns.Add("CustomField3", typeof(String));
                     resTable.Columns.Add("CustomField4", typeof(String));
                     resTable.Columns.Add("CustomField5", typeof(String));
-
-
+                    resTable.Columns.Add("PurchOrder", typeof(String));
+                    resTable.Columns.Add("CustomerInvoiceNo", typeof(String));
+                    resTable.Columns.Add("CustomerSONo", typeof(String));
+                
 
                     repPreview = new DataSet();
                     repPreview.Tables.Add(resTable);
@@ -520,7 +605,10 @@ namespace ACIWEB_DESKTOP_REPORT
                                 queryTable.Rows[i].Field<string>(18),
                                 queryTable.Rows[i].Field<string>(19),
                                 queryTable.Rows[i].Field<string>(20),
-                                queryTable.Rows[i].Field<string>(21));
+                                queryTable.Rows[i].Field<string>(21),
+                                queryTable.Rows[i].Field<string>(22),
+                                queryTable.Rows[i].Field<string>(23),
+                                queryTable.Rows[i].Field<string>(24));
 
 
                             }

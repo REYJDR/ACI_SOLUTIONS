@@ -32,6 +32,17 @@
             this.settingsPanel = new System.Windows.Forms.Panel();
             this.tabSetting = new System.Windows.Forms.TabControl();
             this.tabAciSet = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnSyncAci = new System.Windows.Forms.Button();
+            this.btnSafeExpDirAci = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtRemoteFolderAci = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnDirAciExport = new System.Windows.Forms.Button();
+            this.txtDirExportAci = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtIdComp = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,13 +53,24 @@
             this.textHostname = new System.Windows.Forms.TextBox();
             this.lblDbName = new System.Windows.Forms.Label();
             this.textUser = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.textBD = new System.Windows.Forms.TextBox();
             this.textPass = new System.Windows.Forms.TextBox();
             this.lblHost = new System.Windows.Forms.Label();
             this.lblPass = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
             this.tabSageDb = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSyncSage = new System.Windows.Forms.Button();
+            this.btnSafeExpDirSage = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtRemoteFolderSage = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnExportDir = new System.Windows.Forms.Button();
+            this.txtDirExportSage = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridPre = new System.Windows.Forms.DataGridView();
@@ -56,15 +78,67 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.textDirectorySage = new System.Windows.Forms.TextBox();
             this.btnSageConn = new System.Windows.Forms.Button();
+            this.tabSAP = new System.Windows.Forms.TabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnSyncSap = new System.Windows.Forms.Button();
+            this.btnSafeExpDirSap = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtRemoteFolderSap = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.btnDirSapExport = new System.Windows.Forms.Button();
+            this.txtDirExportSap = new System.Windows.Forms.TextBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtSapClient = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtSapSysId = new System.Windows.Forms.TextBox();
+            this.txtSapServer = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtSapUser = new System.Windows.Forms.TextBox();
+            this.btnSapConfSave = new System.Windows.Forms.Button();
+            this.txtSapSysInstance = new System.Windows.Forms.TextBox();
+            this.txtSapPassword = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.tabSFTP = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtSftpPort = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnSaveSftp = new System.Windows.Forms.Button();
+            this.txtSftpPassword = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSftpUsername = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtSftpHostname = new System.Windows.Forms.TextBox();
+            this.txtSapRouter = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.settingsPanel.SuspendLayout();
             this.tabSetting.SuspendLayout();
             this.tabAciSet.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabSageDb.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPre)).BeginInit();
+            this.tabSAP.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.groupBox9.SuspendLayout();
+            this.tabSFTP.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // settingsPanel
@@ -79,6 +153,8 @@
             // 
             this.tabSetting.Controls.Add(this.tabAciSet);
             this.tabSetting.Controls.Add(this.tabSageDb);
+            this.tabSetting.Controls.Add(this.tabSAP);
+            this.tabSetting.Controls.Add(this.tabSFTP);
             this.tabSetting.Location = new System.Drawing.Point(0, 0);
             this.tabSetting.Name = "tabSetting";
             this.tabSetting.SelectedIndex = 0;
@@ -87,9 +163,9 @@
             // 
             // tabAciSet
             // 
+            this.tabAciSet.Controls.Add(this.groupBox3);
             this.tabAciSet.Controls.Add(this.groupBox6);
             this.tabAciSet.Controls.Add(this.groupBox2);
-            this.tabAciSet.Controls.Add(this.btnSave);
             this.tabAciSet.Location = new System.Drawing.Point(4, 25);
             this.tabAciSet.Name = "tabAciSet";
             this.tabAciSet.Padding = new System.Windows.Forms.Padding(3);
@@ -97,6 +173,118 @@
             this.tabAciSet.TabIndex = 0;
             this.tabAciSet.Text = "Aciweb DB";
             this.tabAciSet.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnSyncAci);
+            this.groupBox3.Controls.Add(this.btnSafeExpDirAci);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.pictureBox4);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.txtRemoteFolderAci);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.pictureBox3);
+            this.groupBox3.Controls.Add(this.btnDirAciExport);
+            this.groupBox3.Controls.Add(this.txtDirExportAci);
+            this.groupBox3.Location = new System.Drawing.Point(8, 234);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(576, 101);
+            this.groupBox3.TabIndex = 23;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Export reports directory";
+            // 
+            // btnSyncAci
+            // 
+            this.btnSyncAci.Location = new System.Drawing.Point(503, 72);
+            this.btnSyncAci.Name = "btnSyncAci";
+            this.btnSyncAci.Size = new System.Drawing.Size(62, 23);
+            this.btnSyncAci.TabIndex = 24;
+            this.btnSyncAci.Text = "Sync";
+            this.btnSyncAci.UseVisualStyleBackColor = true;
+            this.btnSyncAci.Click += new System.EventHandler(this.btnSyncAci_Click);
+            // 
+            // btnSafeExpDirAci
+            // 
+            this.btnSafeExpDirAci.Location = new System.Drawing.Point(437, 72);
+            this.btnSafeExpDirAci.Name = "btnSafeExpDirAci";
+            this.btnSafeExpDirAci.Size = new System.Drawing.Size(62, 23);
+            this.btnSafeExpDirAci.TabIndex = 30;
+            this.btnSafeExpDirAci.Text = "Save";
+            this.btnSafeExpDirAci.UseVisualStyleBackColor = true;
+            this.btnSafeExpDirAci.Click += new System.EventHandler(this.btnSafeExpDirAci_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 7F);
+            this.label10.Location = new System.Drawing.Point(103, 68);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(175, 15);
+            this.label10.TabIndex = 34;
+            this.label10.Text = "In case you use sftp configuration";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(87, 47);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox4.TabIndex = 33;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(7, 47);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(83, 16);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Remote folder";
+            // 
+            // txtRemoteFolderAci
+            // 
+            this.txtRemoteFolderAci.AllowDrop = true;
+            this.txtRemoteFolderAci.Location = new System.Drawing.Point(106, 44);
+            this.txtRemoteFolderAci.Name = "txtRemoteFolderAci";
+            this.txtRemoteFolderAci.Size = new System.Drawing.Size(290, 21);
+            this.txtRemoteFolderAci.TabIndex = 31;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 16);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Export Folder.";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(87, 20);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox3.TabIndex = 25;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btnDirAciExport
+            // 
+            this.btnDirAciExport.Image = ((System.Drawing.Image)(resources.GetObject("btnDirAciExport.Image")));
+            this.btnDirAciExport.Location = new System.Drawing.Point(477, 15);
+            this.btnDirAciExport.Margin = new System.Windows.Forms.Padding(1);
+            this.btnDirAciExport.Name = "btnDirAciExport";
+            this.btnDirAciExport.Size = new System.Drawing.Size(28, 25);
+            this.btnDirAciExport.TabIndex = 24;
+            this.btnDirAciExport.UseVisualStyleBackColor = true;
+            this.btnDirAciExport.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtDirExportAci
+            // 
+            this.txtDirExportAci.AllowDrop = true;
+            this.txtDirExportAci.Location = new System.Drawing.Point(105, 17);
+            this.txtDirExportAci.Name = "txtDirExportAci";
+            this.txtDirExportAci.Size = new System.Drawing.Size(373, 21);
+            this.txtDirExportAci.TabIndex = 23;
             // 
             // groupBox6
             // 
@@ -107,7 +295,7 @@
             this.groupBox6.Controls.Add(this.btnSaveComp);
             this.groupBox6.Location = new System.Drawing.Point(7, 157);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(441, 71);
+            this.groupBox6.Size = new System.Drawing.Size(577, 71);
             this.groupBox6.TabIndex = 14;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "ID Compañia";
@@ -147,9 +335,9 @@
             // 
             // btnSaveComp
             // 
-            this.btnSaveComp.Location = new System.Drawing.Point(316, 15);
+            this.btnSaveComp.Location = new System.Drawing.Point(438, 41);
             this.btnSaveComp.Name = "btnSaveComp";
-            this.btnSaveComp.Size = new System.Drawing.Size(92, 23);
+            this.btnSaveComp.Size = new System.Drawing.Size(62, 23);
             this.btnSaveComp.TabIndex = 12;
             this.btnSaveComp.Text = "Save Company";
             this.btnSaveComp.UseVisualStyleBackColor = true;
@@ -160,6 +348,7 @@
             this.groupBox2.Controls.Add(this.textHostname);
             this.groupBox2.Controls.Add(this.lblDbName);
             this.groupBox2.Controls.Add(this.textUser);
+            this.groupBox2.Controls.Add(this.btnSave);
             this.groupBox2.Controls.Add(this.textBD);
             this.groupBox2.Controls.Add(this.textPass);
             this.groupBox2.Controls.Add(this.lblHost);
@@ -167,7 +356,7 @@
             this.groupBox2.Controls.Add(this.lblUser);
             this.groupBox2.Location = new System.Drawing.Point(6, 15);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(287, 136);
+            this.groupBox2.Size = new System.Drawing.Size(576, 136);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Mysql Parameters";
@@ -176,8 +365,10 @@
             // 
             this.textHostname.Location = new System.Drawing.Point(102, 19);
             this.textHostname.Name = "textHostname";
+            this.textHostname.ReadOnly = true;
             this.textHostname.Size = new System.Drawing.Size(159, 21);
             this.textHostname.TabIndex = 0;
+            this.textHostname.Text = "aciweb-pa.com";
             // 
             // lblDbName
             // 
@@ -194,6 +385,16 @@
             this.textUser.Name = "textUser";
             this.textUser.Size = new System.Drawing.Size(159, 21);
             this.textUser.TabIndex = 1;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(439, 101);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(107, 23);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "Connect/Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // textBD
             // 
@@ -238,26 +439,129 @@
             this.lblUser.TabIndex = 4;
             this.lblUser.Text = "User";
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(308, 25);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(107, 23);
-            this.btnSave.TabIndex = 12;
-            this.btnSave.Text = "Connect/Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // tabSageDb
             // 
+            this.tabSageDb.Controls.Add(this.groupBox1);
             this.tabSageDb.Controls.Add(this.groupBox5);
             this.tabSageDb.Location = new System.Drawing.Point(4, 25);
             this.tabSageDb.Name = "tabSageDb";
             this.tabSageDb.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSageDb.Size = new System.Drawing.Size(562, 330);
+            this.tabSageDb.Size = new System.Drawing.Size(590, 399);
             this.tabSageDb.TabIndex = 1;
             this.tabSageDb.Text = "Sage DB";
             this.tabSageDb.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnSyncSage);
+            this.groupBox1.Controls.Add(this.btnSafeExpDirSage);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.pictureBox5);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.txtRemoteFolderSage);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Controls.Add(this.btnExportDir);
+            this.groupBox1.Controls.Add(this.txtDirExportSage);
+            this.groupBox1.Location = new System.Drawing.Point(3, 232);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(578, 103);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Export reports directory";
+            // 
+            // btnSyncSage
+            // 
+            this.btnSyncSage.Location = new System.Drawing.Point(503, 73);
+            this.btnSyncSage.Name = "btnSyncSage";
+            this.btnSyncSage.Size = new System.Drawing.Size(69, 23);
+            this.btnSyncSage.TabIndex = 30;
+            this.btnSyncSage.Text = "Sync";
+            this.btnSyncSage.UseVisualStyleBackColor = true;
+            this.btnSyncSage.Click += new System.EventHandler(this.btnSyncSage_Click);
+            // 
+            // btnSafeExpDirSage
+            // 
+            this.btnSafeExpDirSage.Location = new System.Drawing.Point(435, 73);
+            this.btnSafeExpDirSage.Name = "btnSafeExpDirSage";
+            this.btnSafeExpDirSage.Size = new System.Drawing.Size(65, 23);
+            this.btnSafeExpDirSage.TabIndex = 17;
+            this.btnSafeExpDirSage.Text = "Save";
+            this.btnSafeExpDirSage.UseVisualStyleBackColor = true;
+            this.btnSafeExpDirSage.Click += new System.EventHandler(this.btnSafeExpDirSage_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 7F);
+            this.label8.Location = new System.Drawing.Point(102, 77);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(175, 15);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "In case you use sftp configuration";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(86, 56);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox5.TabIndex = 28;
+            this.pictureBox5.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 56);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 16);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Remote folder";
+            // 
+            // txtRemoteFolderSage
+            // 
+            this.txtRemoteFolderSage.AllowDrop = true;
+            this.txtRemoteFolderSage.Location = new System.Drawing.Point(105, 53);
+            this.txtRemoteFolderSage.Name = "txtRemoteFolderSage";
+            this.txtRemoteFolderSage.Size = new System.Drawing.Size(290, 21);
+            this.txtRemoteFolderSage.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 16);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Local Folder.";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(86, 20);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox2.TabIndex = 25;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnExportDir
+            // 
+            this.btnExportDir.Image = ((System.Drawing.Image)(resources.GetObject("btnExportDir.Image")));
+            this.btnExportDir.Location = new System.Drawing.Point(477, 15);
+            this.btnExportDir.Margin = new System.Windows.Forms.Padding(1);
+            this.btnExportDir.Name = "btnExportDir";
+            this.btnExportDir.Size = new System.Drawing.Size(28, 25);
+            this.btnExportDir.TabIndex = 24;
+            this.btnExportDir.UseVisualStyleBackColor = true;
+            this.btnExportDir.Click += new System.EventHandler(this.btnExportDir_Click);
+            // 
+            // txtDirExportSage
+            // 
+            this.txtDirExportSage.AllowDrop = true;
+            this.txtDirExportSage.Location = new System.Drawing.Point(105, 17);
+            this.txtDirExportSage.Name = "txtDirExportSage";
+            this.txtDirExportSage.Size = new System.Drawing.Size(373, 21);
+            this.txtDirExportSage.TabIndex = 23;
             // 
             // groupBox5
             // 
@@ -269,7 +573,7 @@
             this.groupBox5.Controls.Add(this.btnSageConn);
             this.groupBox5.Location = new System.Drawing.Point(0, 3);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(559, 324);
+            this.groupBox5.Size = new System.Drawing.Size(587, 223);
             this.groupBox5.TabIndex = 18;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Sage Parameters";
@@ -291,7 +595,7 @@
             this.dataGridPre.Location = new System.Drawing.Point(7, 52);
             this.dataGridPre.Name = "dataGridPre";
             this.dataGridPre.ReadOnly = true;
-            this.dataGridPre.Size = new System.Drawing.Size(490, 193);
+            this.dataGridPre.Size = new System.Drawing.Size(574, 133);
             this.dataGridPre.TabIndex = 15;
             // 
             // SageURL
@@ -323,13 +627,393 @@
             // 
             // btnSageConn
             // 
-            this.btnSageConn.Location = new System.Drawing.Point(394, 259);
+            this.btnSageConn.Location = new System.Drawing.Point(489, 191);
             this.btnSageConn.Name = "btnSageConn";
             this.btnSageConn.Size = new System.Drawing.Size(92, 23);
             this.btnSageConn.TabIndex = 6;
             this.btnSageConn.Text = "Test/Save";
             this.btnSageConn.UseVisualStyleBackColor = true;
             this.btnSageConn.Click += new System.EventHandler(this.btnSageConn_Click);
+            // 
+            // tabSAP
+            // 
+            this.tabSAP.Controls.Add(this.groupBox7);
+            this.tabSAP.Controls.Add(this.groupBox9);
+            this.tabSAP.Location = new System.Drawing.Point(4, 25);
+            this.tabSAP.Name = "tabSAP";
+            this.tabSAP.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSAP.Size = new System.Drawing.Size(590, 399);
+            this.tabSAP.TabIndex = 3;
+            this.tabSAP.Text = "SAP";
+            this.tabSAP.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.btnSyncSap);
+            this.groupBox7.Controls.Add(this.btnSafeExpDirSap);
+            this.groupBox7.Controls.Add(this.label12);
+            this.groupBox7.Controls.Add(this.pictureBox6);
+            this.groupBox7.Controls.Add(this.label13);
+            this.groupBox7.Controls.Add(this.txtRemoteFolderSap);
+            this.groupBox7.Controls.Add(this.label14);
+            this.groupBox7.Controls.Add(this.pictureBox7);
+            this.groupBox7.Controls.Add(this.btnDirSapExport);
+            this.groupBox7.Controls.Add(this.txtDirExportSap);
+            this.groupBox7.Location = new System.Drawing.Point(3, 237);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(576, 101);
+            this.groupBox7.TabIndex = 26;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Export reports directory";
+            // 
+            // btnSyncSap
+            // 
+            this.btnSyncSap.Location = new System.Drawing.Point(503, 72);
+            this.btnSyncSap.Name = "btnSyncSap";
+            this.btnSyncSap.Size = new System.Drawing.Size(62, 23);
+            this.btnSyncSap.TabIndex = 24;
+            this.btnSyncSap.Text = "Sync";
+            this.btnSyncSap.UseVisualStyleBackColor = true;
+            this.btnSyncSap.Click += new System.EventHandler(this.btnSyncSap_Click);
+            // 
+            // btnSafeExpDirSap
+            // 
+            this.btnSafeExpDirSap.Location = new System.Drawing.Point(437, 72);
+            this.btnSafeExpDirSap.Name = "btnSafeExpDirSap";
+            this.btnSafeExpDirSap.Size = new System.Drawing.Size(62, 23);
+            this.btnSafeExpDirSap.TabIndex = 30;
+            this.btnSafeExpDirSap.Text = "Save";
+            this.btnSafeExpDirSap.UseVisualStyleBackColor = true;
+            this.btnSafeExpDirSap.Click += new System.EventHandler(this.btnSafeExpDirSap_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 7F);
+            this.label12.Location = new System.Drawing.Point(103, 68);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(175, 15);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "In case you use sftp configuration";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(87, 47);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox6.TabIndex = 33;
+            this.pictureBox6.TabStop = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(7, 47);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(83, 16);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Remote folder";
+            // 
+            // txtRemoteFolderSap
+            // 
+            this.txtRemoteFolderSap.AllowDrop = true;
+            this.txtRemoteFolderSap.Location = new System.Drawing.Point(106, 44);
+            this.txtRemoteFolderSap.Name = "txtRemoteFolderSap";
+            this.txtRemoteFolderSap.Size = new System.Drawing.Size(290, 21);
+            this.txtRemoteFolderSap.TabIndex = 31;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 20);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(80, 16);
+            this.label14.TabIndex = 22;
+            this.label14.Text = "Export Folder.";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(87, 20);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox7.TabIndex = 25;
+            this.pictureBox7.TabStop = false;
+            // 
+            // btnDirSapExport
+            // 
+            this.btnDirSapExport.Image = ((System.Drawing.Image)(resources.GetObject("btnDirSapExport.Image")));
+            this.btnDirSapExport.Location = new System.Drawing.Point(477, 15);
+            this.btnDirSapExport.Margin = new System.Windows.Forms.Padding(1);
+            this.btnDirSapExport.Name = "btnDirSapExport";
+            this.btnDirSapExport.Size = new System.Drawing.Size(28, 25);
+            this.btnDirSapExport.TabIndex = 24;
+            this.btnDirSapExport.UseVisualStyleBackColor = true;
+            this.btnDirSapExport.Click += new System.EventHandler(this.btnDirSapExport_Click);
+            // 
+            // txtDirExportSap
+            // 
+            this.txtDirExportSap.AllowDrop = true;
+            this.txtDirExportSap.Location = new System.Drawing.Point(105, 17);
+            this.txtDirExportSap.Name = "txtDirExportSap";
+            this.txtDirExportSap.Size = new System.Drawing.Size(373, 21);
+            this.txtDirExportSap.TabIndex = 23;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.txtSapRouter);
+            this.groupBox9.Controls.Add(this.label21);
+            this.groupBox9.Controls.Add(this.label20);
+            this.groupBox9.Controls.Add(this.txtSapClient);
+            this.groupBox9.Controls.Add(this.label15);
+            this.groupBox9.Controls.Add(this.txtSapSysId);
+            this.groupBox9.Controls.Add(this.txtSapServer);
+            this.groupBox9.Controls.Add(this.label16);
+            this.groupBox9.Controls.Add(this.txtSapUser);
+            this.groupBox9.Controls.Add(this.btnSapConfSave);
+            this.groupBox9.Controls.Add(this.txtSapSysInstance);
+            this.groupBox9.Controls.Add(this.txtSapPassword);
+            this.groupBox9.Controls.Add(this.label17);
+            this.groupBox9.Controls.Add(this.label18);
+            this.groupBox9.Controls.Add(this.label19);
+            this.groupBox9.Location = new System.Drawing.Point(3, 6);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(576, 225);
+            this.groupBox9.TabIndex = 24;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "SAP Parameters";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(20, 51);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(39, 16);
+            this.label20.TabIndex = 16;
+            this.label20.Text = "Client";
+            // 
+            // txtSapClient
+            // 
+            this.txtSapClient.Location = new System.Drawing.Point(102, 46);
+            this.txtSapClient.Name = "txtSapClient";
+            this.txtSapClient.Size = new System.Drawing.Size(43, 21);
+            this.txtSapClient.TabIndex = 15;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(18, 105);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(59, 16);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "ID System";
+            // 
+            // txtSapSysId
+            // 
+            this.txtSapSysId.Location = new System.Drawing.Point(102, 100);
+            this.txtSapSysId.Name = "txtSapSysId";
+            this.txtSapSysId.Size = new System.Drawing.Size(33, 21);
+            this.txtSapSysId.TabIndex = 13;
+            // 
+            // txtSapServer
+            // 
+            this.txtSapServer.Location = new System.Drawing.Point(102, 19);
+            this.txtSapServer.Name = "txtSapServer";
+            this.txtSapServer.Size = new System.Drawing.Size(159, 21);
+            this.txtSapServer.TabIndex = 0;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(18, 78);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(76, 16);
+            this.label16.TabIndex = 8;
+            this.label16.Text = "Instance No.";
+            // 
+            // txtSapUser
+            // 
+            this.txtSapUser.Location = new System.Drawing.Point(102, 165);
+            this.txtSapUser.Name = "txtSapUser";
+            this.txtSapUser.Size = new System.Drawing.Size(159, 21);
+            this.txtSapUser.TabIndex = 1;
+            // 
+            // btnSapConfSave
+            // 
+            this.btnSapConfSave.Location = new System.Drawing.Point(458, 195);
+            this.btnSapConfSave.Name = "btnSapConfSave";
+            this.btnSapConfSave.Size = new System.Drawing.Size(107, 23);
+            this.btnSapConfSave.TabIndex = 12;
+            this.btnSapConfSave.Text = "Save";
+            this.btnSapConfSave.UseVisualStyleBackColor = true;
+            this.btnSapConfSave.Click += new System.EventHandler(this.btnSapConfSave_Click);
+            // 
+            // txtSapSysInstance
+            // 
+            this.txtSapSysInstance.Location = new System.Drawing.Point(102, 73);
+            this.txtSapSysInstance.Name = "txtSapSysInstance";
+            this.txtSapSysInstance.Size = new System.Drawing.Size(33, 21);
+            this.txtSapSysInstance.TabIndex = 7;
+            // 
+            // txtSapPassword
+            // 
+            this.txtSapPassword.Location = new System.Drawing.Point(102, 191);
+            this.txtSapPassword.Name = "txtSapPassword";
+            this.txtSapPassword.PasswordChar = '*';
+            this.txtSapPassword.Size = new System.Drawing.Size(159, 21);
+            this.txtSapPassword.TabIndex = 2;
+            this.txtSapPassword.UseSystemPasswordChar = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(21, 21);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(65, 16);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "SAP Server";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(34, 198);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(59, 16);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "Password";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(34, 172);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(30, 16);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "User";
+            // 
+            // tabSFTP
+            // 
+            this.tabSFTP.Controls.Add(this.groupBox4);
+            this.tabSFTP.Location = new System.Drawing.Point(4, 25);
+            this.tabSFTP.Name = "tabSFTP";
+            this.tabSFTP.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSFTP.Size = new System.Drawing.Size(590, 399);
+            this.tabSFTP.TabIndex = 2;
+            this.tabSFTP.Text = "SFTP";
+            this.tabSFTP.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.txtSftpPort);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.btnSaveSftp);
+            this.groupBox4.Controls.Add(this.txtSftpPassword);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.txtSftpUsername);
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Controls.Add(this.txtSftpHostname);
+            this.groupBox4.Location = new System.Drawing.Point(6, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(407, 202);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Configuration";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(42, 117);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(29, 16);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Port";
+            // 
+            // txtSftpPort
+            // 
+            this.txtSftpPort.Location = new System.Drawing.Point(76, 114);
+            this.txtSftpPort.Name = "txtSftpPort";
+            this.txtSftpPort.Size = new System.Drawing.Size(21, 21);
+            this.txtSftpPort.TabIndex = 6;
+            this.txtSftpPort.Text = "22";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 89);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 16);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Password";
+            // 
+            // btnSaveSftp
+            // 
+            this.btnSaveSftp.Location = new System.Drawing.Point(304, 156);
+            this.btnSaveSftp.Name = "btnSaveSftp";
+            this.btnSaveSftp.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveSftp.TabIndex = 0;
+            this.btnSaveSftp.Text = "Save";
+            this.btnSaveSftp.UseVisualStyleBackColor = true;
+            this.btnSaveSftp.Click += new System.EventHandler(this.btnSaveSftp_Click);
+            // 
+            // txtSftpPassword
+            // 
+            this.txtSftpPassword.Location = new System.Drawing.Point(76, 86);
+            this.txtSftpPassword.Name = "txtSftpPassword";
+            this.txtSftpPassword.PasswordChar = '*';
+            this.txtSftpPassword.Size = new System.Drawing.Size(193, 21);
+            this.txtSftpPassword.TabIndex = 4;
+            this.txtSftpPassword.UseSystemPasswordChar = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 16);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Username";
+            // 
+            // txtSftpUsername
+            // 
+            this.txtSftpUsername.Location = new System.Drawing.Point(76, 59);
+            this.txtSftpUsername.Name = "txtSftpUsername";
+            this.txtSftpUsername.Size = new System.Drawing.Size(193, 21);
+            this.txtSftpUsername.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 35);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 16);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Hostname";
+            // 
+            // txtSftpHostname
+            // 
+            this.txtSftpHostname.Location = new System.Drawing.Point(76, 32);
+            this.txtSftpHostname.Name = "txtSftpHostname";
+            this.txtSftpHostname.Size = new System.Drawing.Size(303, 21);
+            this.txtSftpHostname.TabIndex = 0;
+            // 
+            // txtSapRouter
+            // 
+            this.txtSapRouter.Location = new System.Drawing.Point(102, 133);
+            this.txtSapRouter.Name = "txtSapRouter";
+            this.txtSapRouter.Size = new System.Drawing.Size(278, 21);
+            this.txtSapRouter.TabIndex = 17;
+            this.txtSapRouter.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(21, 135);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(66, 16);
+            this.label21.TabIndex = 18;
+            this.label21.Text = "SAP Router";
+            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // FrmSettings
             // 
@@ -345,15 +1029,33 @@
             this.settingsPanel.ResumeLayout(false);
             this.tabSetting.ResumeLayout(false);
             this.tabAciSet.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabSageDb.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPre)).EndInit();
+            this.tabSAP.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.tabSFTP.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -387,5 +1089,66 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox textDirectorySage;
         private System.Windows.Forms.Button btnSageConn;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnExportDir;
+        private System.Windows.Forms.TextBox txtDirExportSage;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnDirAciExport;
+        private System.Windows.Forms.TextBox txtDirExportAci;
+        private System.Windows.Forms.TabPage tabSFTP;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtSftpPassword;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtSftpUsername;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtSftpHostname;
+        private System.Windows.Forms.Button btnSaveSftp;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtSftpPort;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtRemoteFolderSage;
+        private System.Windows.Forms.Button btnSafeExpDirAci;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtRemoteFolderAci;
+        private System.Windows.Forms.Button btnSafeExpDirSage;
+        private System.Windows.Forms.Button btnSyncAci;
+        private System.Windows.Forms.Button btnSyncSage;
+        private System.Windows.Forms.TabPage tabSAP;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button btnSyncSap;
+        private System.Windows.Forms.Button btnSafeExpDirSap;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtRemoteFolderSap;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Button btnDirSapExport;
+        private System.Windows.Forms.TextBox txtDirExportSap;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.TextBox txtSapServer;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtSapUser;
+        private System.Windows.Forms.Button btnSapConfSave;
+        private System.Windows.Forms.TextBox txtSapSysInstance;
+        private System.Windows.Forms.TextBox txtSapPassword;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtSapSysId;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtSapClient;
+        private System.Windows.Forms.TextBox txtSapRouter;
+        private System.Windows.Forms.Label label21;
     }
 }

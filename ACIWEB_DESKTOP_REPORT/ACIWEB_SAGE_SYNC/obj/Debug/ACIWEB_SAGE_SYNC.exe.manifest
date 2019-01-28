@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FFQWD4vf78ctQ5XW90W6/VBdLudHQ4OQ4zO5Nyiv1Kg=</dsig:DigestValue>
+        <dsig:DigestValue>P6BIaAl9WH69Xx1qyruQ1A1JEC1ZcaLKGNscbtPxkSs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1879,26 +1879,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Sage.Peachtree.API.dll" size="449216">
-      <assemblyIdentity name="Sage.Peachtree.API" version="2017.2.0.230" publicKeyToken="D06C16DDE04D83E4" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Sage.Peachtree.API.dll" size="461800">
+      <assemblyIdentity name="Sage.Peachtree.API" version="2018.2.0.197" publicKeyToken="D06C16DDE04D83E4" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wUpXkz77HvedDvwsAsz3npNactrZDd92zTavLs+64Kk=</dsig:DigestValue>
+        <dsig:DigestValue>4+7NfhtAS+mv/alvbri+pQk3jnsXKksN8tKFykyxbTI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Sage.Peachtree.API.Resolver.dll" size="17088">
-      <assemblyIdentity name="Sage.Peachtree.API.Resolver" version="2017.2.0.230" publicKeyToken="D06C16DDE04D83E4" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Sage.Peachtree.API.Resolver.dll" size="16872">
+      <assemblyIdentity name="Sage.Peachtree.API.Resolver" version="2018.2.0.197" publicKeyToken="D06C16DDE04D83E4" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>89bufMqP3FSno+BYJj99+Z7oRNllfiBecwrzTyiYwKo=</dsig:DigestValue>
+        <dsig:DigestValue>hxtiWf3fDkuIsoPGiBJ9j80AHnFvBKARvA+TuNDwSWs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

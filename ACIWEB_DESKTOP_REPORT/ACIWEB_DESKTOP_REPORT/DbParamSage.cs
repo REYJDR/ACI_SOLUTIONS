@@ -11,7 +11,13 @@ namespace ACIWEB_DESKTOP_REPORT
     class DbParamSage
     {
 
- 
+
+        private string localFolder;
+        private string remoteFolder;
+
+        public string LocalFolder { get => localFolder; set => localFolder = value; }
+        public string RemoteFolder { get => remoteFolder; set => remoteFolder = value; }
+
         public void SetSageConfOnFile(DataTable sageTbl, string URL)
         {
 
@@ -134,5 +140,46 @@ namespace ACIWEB_DESKTOP_REPORT
 
         }
 
-    }
+
+        public void SetSageExportFolder(string localfolder, string remotefolder)
+        {
+
+            bool exists = Directory.Exists(@"C:\\ACIDesktopReport\Conf\SAGE\");
+
+            if (!exists)
+            {
+                Directory.CreateDirectory(@"C:\\ACIDesktopReport\Conf\SAGE\");
+            }
+
+
+            File.WriteAllText(@"C:\\ACIDesktopReport\Conf\SAGE\export.conf", string.Empty);
+
+            TextWriter file = new StreamWriter(@"C:\\ACIDesktopReport\Conf\SAGE\export.conf");
+
+            // write lines of text to the file
+            file.WriteLine(localfolder);
+            file.WriteLine(remotefolder);
+
+            file.Close();
+
+        }
+
+        public void GetSageExportFolder()
+        {
+            
+
+            if (File.Exists(@"C:\\ACIDesktopReport\Conf\SAGE\export.conf"))
+            {
+                // create reader & open file
+                TextReader file = new StreamReader(@"C:\\ACIDesktopReport\Conf\SAGE\export.conf");
+
+                localFolder = file.ReadLine();
+                remoteFolder = file.ReadLine();
+            }
+
+            
+        }
+
+
+        }
 }
