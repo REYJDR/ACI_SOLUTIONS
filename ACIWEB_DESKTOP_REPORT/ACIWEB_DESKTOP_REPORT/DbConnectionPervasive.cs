@@ -12,10 +12,10 @@ namespace ACIWEB_DESKTOP_REPORT
     class DbConnetionPervasive
     {
         DbParamSage param = new DbParamSage();
-
+        private OdbcCommand comm;
         public OdbcConnection DbConn;
 
-        private OdbcDataAdapter datos;
+       // private OdbcDataAdapter datos;
 
         public OdbcConnection StartConn(string conn)
         {
@@ -25,7 +25,10 @@ namespace ACIWEB_DESKTOP_REPORT
             try
             {
                 //con.ConnectionTimeout = 0;
+                
                 con.Open();
+
+
             }
             catch (Exception theException)
             {
@@ -43,12 +46,17 @@ namespace ACIWEB_DESKTOP_REPORT
             return con;
         }
 
-        public OdbcDataAdapter Query(string query)
+        public OdbcDataReader Query(string query)
         {
+            OdbcDataReader reader = null;
 
             try
             {
-                 datos = new OdbcDataAdapter(query, DbConn);
+               //  datos = new OdbcDataAdapter(query, DbConn);
+
+                comm = new OdbcCommand(query, DbConn);
+                comm.CommandTimeout = 2000;
+                reader = comm.ExecuteReader();
 
             }
             catch (Exception msg)
@@ -58,7 +66,7 @@ namespace ACIWEB_DESKTOP_REPORT
 
             }
 
-            return datos;
+            return reader;
 
         }
 

@@ -398,3 +398,26 @@ SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER DATE_FROM of FUNC
    en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
    --- Fin del seguimiento de la pila de la excepción interna ---
    en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+
+**** Log file opened by process 11580 at 2019-01-29 13:46:19 (UTC-06:00 Hora estándar, América Central)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-01-29 13:46:19.231 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER ACCOUNT_BALANCE of FUNCTION BAPI_GL_ACC_GETBALANCE (GETTER): cannot convert STRUCTURE BAPI3006_3 into IRfcTable ---> System.InvalidCastException: No se puede convertir un objeto de tipo 'SAP.Middleware.Connector.RfcStructure' al tipo 'SAP.Middleware.Connector.IRfcTable'.
+   en SAP.Middleware.Connector.RfcDataContainer`1.GetTable(Int32 index, Boolean create)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.GetTable(Int32 index, Boolean create)
+>> Error entry 2019-01-29 13:47:03.764 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER ACCOUNT_BALANCE of FUNCTION BAPI_GL_ACC_GETBALANCE (GETTER): cannot convert STRUCTURE BAPI3006_3 into IRfcTable ---> System.InvalidCastException: No se puede convertir un objeto de tipo 'SAP.Middleware.Connector.RfcStructure' al tipo 'SAP.Middleware.Connector.IRfcTable'.
+   en SAP.Middleware.Connector.RfcDataContainer`1.GetTable(Int32 index, Boolean create)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.GetTable(Int32 index, Boolean create)

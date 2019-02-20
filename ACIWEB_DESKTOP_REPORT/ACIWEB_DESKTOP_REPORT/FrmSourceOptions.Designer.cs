@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.SourcePanel = new System.Windows.Forms.Panel();
+            this.btnFileSource = new System.Windows.Forms.Button();
             this.btnSapRep = new System.Windows.Forms.Button();
             this.btnAciweb = new System.Windows.Forms.Button();
             this.btnSage = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             // 
             // SourcePanel
             // 
+            this.SourcePanel.Controls.Add(this.btnFileSource);
             this.SourcePanel.Controls.Add(this.btnSapRep);
             this.SourcePanel.Controls.Add(this.btnAciweb);
             this.SourcePanel.Controls.Add(this.btnSage);
@@ -45,6 +47,25 @@
             this.SourcePanel.Name = "SourcePanel";
             this.SourcePanel.Size = new System.Drawing.Size(549, 435);
             this.SourcePanel.TabIndex = 2;
+            // 
+            // btnFileSource
+            // 
+            this.btnFileSource.BackColor = System.Drawing.Color.White;
+            this.btnFileSource.FlatAppearance.BorderSize = 0;
+            this.btnFileSource.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnFileSource.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFileSource.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFileSource.ForeColor = System.Drawing.Color.Black;
+            this.btnFileSource.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.FILESOURCE;
+            this.btnFileSource.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFileSource.Location = new System.Drawing.Point(7, 106);
+            this.btnFileSource.Name = "btnFileSource";
+            this.btnFileSource.Size = new System.Drawing.Size(162, 91);
+            this.btnFileSource.TabIndex = 3;
+            this.btnFileSource.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFileSource.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnFileSource.UseVisualStyleBackColor = false;
+            this.btnFileSource.Click += new System.EventHandler(this.btnFileSource_Click);
             // 
             // btnSapRep
             // 
@@ -119,5 +140,6 @@
         private System.Windows.Forms.Button btnSage;
         private System.Windows.Forms.Panel SourcePanel;
         private System.Windows.Forms.Button btnSapRep;
+        private System.Windows.Forms.Button btnFileSource;
     }
 }

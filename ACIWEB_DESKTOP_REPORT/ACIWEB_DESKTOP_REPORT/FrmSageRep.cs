@@ -64,7 +64,6 @@ namespace ACIWEB_DESKTOP_REPORT
          
             if (comboBoxRepType.SelectedIndex == -1)
             {
-                setMsgtext("Please select a template");
                 MessageBox.Show("Please select a template");
             }
             else
@@ -90,13 +89,15 @@ namespace ACIWEB_DESKTOP_REPORT
                     folder.GetSageExportFolder();
                     FrmRepViwer.expFolder = folder.LocalFolder;
                     FrmRepViwer.sftpFolder = folder.RemoteFolder;
+
+                   
+                    
                 }
 
                 FrmRepViwer.repType = "sage";
                 FrmRepViwer repViewer = new FrmRepViwer();
 
               
-
 
                 Cursor = Cursors.Arrow; // change cursor to hourglass type
 

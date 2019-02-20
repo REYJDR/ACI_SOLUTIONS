@@ -60,6 +60,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImage = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.logo_3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;

@@ -50,6 +50,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkedListReportSap = new System.Windows.Forms.CheckedListBox();
             this.btnSapDNew = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.comboBoxRepType = new System.Windows.Forms.ComboBox();
+            this.btnFSDEdit = new System.Windows.Forms.Button();
+            this.btnFSDRefresh = new System.Windows.Forms.Button();
+            this.btnFSDDel = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkedListReportFS = new System.Windows.Forms.CheckedListBox();
+            this.btnFSDNew = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -57,6 +65,8 @@
             this.gpoTempSage.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -64,6 +74,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(-1, -1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -298,6 +309,92 @@
             this.btnSapDNew.UseVisualStyleBackColor = true;
             this.btnSapDNew.Click += new System.EventHandler(this.btnSapDNew_Click);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.comboBoxRepType);
+            this.tabPage4.Controls.Add(this.btnFSDEdit);
+            this.tabPage4.Controls.Add(this.btnFSDRefresh);
+            this.tabPage4.Controls.Add(this.btnFSDDel);
+            this.tabPage4.Controls.Add(this.groupBox2);
+            this.tabPage4.Controls.Add(this.btnFSDNew);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(590, 402);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "File Source Templates";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxRepType
+            // 
+            this.comboBoxRepType.FormattingEnabled = true;
+            this.comboBoxRepType.Location = new System.Drawing.Point(6, 26);
+            this.comboBoxRepType.Name = "comboBoxRepType";
+            this.comboBoxRepType.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxRepType.TabIndex = 44;
+            this.comboBoxRepType.SelectedIndexChanged += new System.EventHandler(this.comboBoxRepType_SelectedIndexChanged);
+            // 
+            // btnFSDEdit
+            // 
+            this.btnFSDEdit.Location = new System.Drawing.Point(365, 62);
+            this.btnFSDEdit.Name = "btnFSDEdit";
+            this.btnFSDEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnFSDEdit.TabIndex = 43;
+            this.btnFSDEdit.Text = "Edit";
+            this.btnFSDEdit.UseVisualStyleBackColor = true;
+            this.btnFSDEdit.Click += new System.EventHandler(this.btnFSDEdit_Click);
+            // 
+            // btnFSDRefresh
+            // 
+            this.btnFSDRefresh.Location = new System.Drawing.Point(365, 120);
+            this.btnFSDRefresh.Name = "btnFSDRefresh";
+            this.btnFSDRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnFSDRefresh.TabIndex = 42;
+            this.btnFSDRefresh.Text = "Refresh";
+            this.btnFSDRefresh.UseVisualStyleBackColor = true;
+            this.btnFSDRefresh.Click += new System.EventHandler(this.btnFSDRefresh_Click);
+            // 
+            // btnFSDDel
+            // 
+            this.btnFSDDel.Location = new System.Drawing.Point(365, 91);
+            this.btnFSDDel.Name = "btnFSDDel";
+            this.btnFSDDel.Size = new System.Drawing.Size(75, 23);
+            this.btnFSDDel.TabIndex = 41;
+            this.btnFSDDel.Text = "Delete";
+            this.btnFSDDel.UseVisualStyleBackColor = true;
+            this.btnFSDDel.Click += new System.EventHandler(this.btnFSDDel_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.checkedListReportFS);
+            this.groupBox2.Location = new System.Drawing.Point(5, 55);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(354, 274);
+            this.groupBox2.TabIndex = 40;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Reports templates";
+            // 
+            // checkedListReportFS
+            // 
+            this.checkedListReportFS.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListReportFS.CheckOnClick = true;
+            this.checkedListReportFS.FormattingEnabled = true;
+            this.checkedListReportFS.Location = new System.Drawing.Point(6, 21);
+            this.checkedListReportFS.Name = "checkedListReportFS";
+            this.checkedListReportFS.Size = new System.Drawing.Size(342, 240);
+            this.checkedListReportFS.TabIndex = 20;
+            this.checkedListReportFS.SelectedIndexChanged += new System.EventHandler(this.checkedListReportFS_SelectedIndexChanged);
+            // 
+            // btnFSDNew
+            // 
+            this.btnFSDNew.Location = new System.Drawing.Point(172, 25);
+            this.btnFSDNew.Name = "btnFSDNew";
+            this.btnFSDNew.Size = new System.Drawing.Size(75, 23);
+            this.btnFSDNew.TabIndex = 39;
+            this.btnFSDNew.Text = "New ";
+            this.btnFSDNew.UseVisualStyleBackColor = true;
+            this.btnFSDNew.Click += new System.EventHandler(this.btnFSDNew_Click);
+            // 
             // FrmDesigner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,6 +411,8 @@
             this.gpoTempSage.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -342,5 +441,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckedListBox checkedListReportSap;
         private System.Windows.Forms.Button btnSapDNew;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button btnFSDEdit;
+        private System.Windows.Forms.Button btnFSDRefresh;
+        private System.Windows.Forms.Button btnFSDDel;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckedListBox checkedListReportFS;
+        private System.Windows.Forms.Button btnFSDNew;
+        public System.Windows.Forms.ComboBox comboBoxRepType;
     }
 }

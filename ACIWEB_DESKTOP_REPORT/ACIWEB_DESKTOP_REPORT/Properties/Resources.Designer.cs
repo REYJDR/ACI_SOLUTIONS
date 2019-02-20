@@ -123,6 +123,27 @@ namespace ACIWEB_DESKTOP_REPORT.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FILESOURCE {
+            get {
+                object obj = ResourceManager.GetObject("FILESOURCE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kisspng_comma_separated_values_ico_database_icon_database_icons_5a85f535a54123_6582165515187285016769 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-comma-separated-values-ico-database-icon-database-icons-5a85f535a54123.65" +
+                        "82165515187285016769", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_3 {
             get {
                 object obj = ResourceManager.GetObject("logo_3", resourceCulture);

@@ -26,8 +26,7 @@ namespace ACIWEB_DESKTOP_REPORT
         public static string invRange;
         public static int Type;
 
-
-       
+        
 
         DbQueryAciweb dbquery = new DbQueryAciweb();
 
@@ -42,8 +41,6 @@ namespace ACIWEB_DESKTOP_REPORT
             InitValue();  
  
         }
-
-
         
 
         private void InitValue()
@@ -66,8 +63,7 @@ namespace ACIWEB_DESKTOP_REPORT
             }
 
         }
-
- 
+        
         public void setMsgtext(string text)
         {
             FrmHome home = new FrmHome();
@@ -75,26 +71,7 @@ namespace ACIWEB_DESKTOP_REPORT
             home.statusStrip1.Refresh();
 
         }
-
-        private void btnQuery_Click_1(object sender, EventArgs e)
-        {
-            
-
-            if (comboBoxRepType.SelectedIndex == -1)
-            {
-                setMsgtext("Please select a template");
-                MessageBox.Show("Please select a template");
-            }
-            else
-            {
-
-
-                    PrintReport();
-                    
-
-            }
-        }
-
+        
         private void PrintReport()
         {
             try
@@ -193,8 +170,7 @@ namespace ACIWEB_DESKTOP_REPORT
 
             if (comboBoxRepType.SelectedIndex == -1)
             {
-                setMsgtext("Please select a template");
-                MessageBox.Show("Please select a template");
+                 MessageBox.Show("Please select a template");
             }
             else
             {

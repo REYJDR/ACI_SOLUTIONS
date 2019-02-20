@@ -20,6 +20,8 @@ namespace ACIWEB_DESKTOP_REPORT
         public static bool theresData;
         public static DataSet repPreview;
         public static ManualResetEvent mre = new ManualResetEvent(false);
+        public static string exportFileName;
+        public static bool kill = false;
 
         //Selection options 
         FrmReportFilter SO = new FrmReportFilter();
@@ -30,7 +32,10 @@ namespace ACIWEB_DESKTOP_REPORT
         public static string To;
         public static string companycode;
         public static string customer;
-        public static string noteditems; 
+        public static string noteditems;
+        public static string year;
+        public static string glaccnt;
+        public static string type;
 
 
         public DbQuerySap()
@@ -44,7 +49,8 @@ namespace ACIWEB_DESKTOP_REPORT
 
             SelectOptions.Columns.Add("type", typeof(String));
             SelectOptions.Columns.Add("fieldname", typeof(String));
-
+            SelectOptions.Columns.Add("long", typeof(String));
+            SelectOptions.Columns.Add("default", typeof(String));
         }
 
         private void showSelecOptionByReport(int Type)
@@ -52,18 +58,18 @@ namespace ACIWEB_DESKTOP_REPORT
 
             if (Type == 1)
             {
-               
+
                 //selection option 
                 SelectOptions.NewRow();
-                SelectOptions.Rows.Add("text", "COMPANY");
+                SelectOptions.Rows.Add("text", "COMPANY", 4, false);
                 SelectOptions.NewRow();
-                SelectOptions.Rows.Add("text", "CUSTOMER");
+                SelectOptions.Rows.Add("text", "CUSTOMER", 10, false);
                 SelectOptions.NewRow();
-                SelectOptions.Rows.Add("date", "FROM");
+                SelectOptions.Rows.Add("date","FROM");
                 SelectOptions.NewRow();
                 SelectOptions.Rows.Add("date", "TO");
                 SelectOptions.NewRow();
-                SelectOptions.Rows.Add("text", "NOTEDITEMS");
+                SelectOptions.Rows.Add("text", "NOTEDITEMS",4);
                 SelectOptions.NewRow();
                 SelectOptions.Rows.Add("button", "Go");
 
@@ -73,22 +79,56 @@ namespace ACIWEB_DESKTOP_REPORT
 
                 TextBox COMPANYCODE = SO.selectOptionsPanel.Controls.Find("COMPANY", true).FirstOrDefault() as TextBox;
                 if (COMPANYCODE != null) { companycode = COMPANYCODE.Text; } else { companycode = ""; };
-              
+
                 TextBox CUSTOMER = SO.selectOptionsPanel.Controls.Find("CUSTOMER", true).FirstOrDefault() as TextBox;
                 if (CUSTOMER != null) { customer = CUSTOMER.Text; } else { customer = ""; };
-                
-                TextBox NOTEDITEMS = SO.selectOptionsPanel.Controls.Find("NOTEDITEMS", true).FirstOrDefault() as TextBox;
-                 if (NOTEDITEMS != null) { noteditems = NOTEDITEMS.Text; } else { noteditems = ""; };
 
-                DateTimePicker to = SO.selectOptionsPanel.Controls.Find("date_FROM", true).FirstOrDefault() as DateTimePicker;
+                TextBox NOTEDITEMS = SO.selectOptionsPanel.Controls.Find("NOTEDITEMS", true).FirstOrDefault() as TextBox;
+                if (NOTEDITEMS != null) { noteditems = NOTEDITEMS.Text; } else { noteditems = ""; };
+
+                DateTimePicker to = SO.selectOptionsPanel.Controls.Find("date_TO", true).FirstOrDefault() as DateTimePicker;
                 To = to.Text;
-                DateTimePicker from = SO.selectOptionsPanel.Controls.Find("date_TO", true).FirstOrDefault() as DateTimePicker;
+
+                DateTimePicker from = SO.selectOptionsPanel.Controls.Find("date_FROM", true).FirstOrDefault() as DateTimePicker;
                 From = from.Text;
-        
+
+
 
 
             }
 
+            if (Type == 2) { 
+                //selection option 
+                SelectOptions.NewRow();
+                SelectOptions.Rows.Add("text",  "COMPANY", 4,"0105");
+                SelectOptions.NewRow();
+                SelectOptions.Rows.Add("text", "GL_ACCOUNT", 11, "110201121");
+                SelectOptions.NewRow();
+                SelectOptions.Rows.Add("text", "YEAR", 4, Convert.ToString(DateTime.Now.Year));
+                SelectOptions.NewRow();
+                SelectOptions.Rows.Add("text", "CURRENCY_TYPE", 2, "10");
+                SelectOptions.NewRow();
+                SelectOptions.Rows.Add("button","Go");
+
+
+                SO.SetSelectionsOptions(SelectOptions);
+                SO.ShowDialog();
+
+                TextBox COMPANYCODE = SO.selectOptionsPanel.Controls.Find("COMPANY", true).FirstOrDefault() as TextBox;
+                if (COMPANYCODE != null) { companycode = COMPANYCODE.Text; } else { companycode = ""; };
+
+                TextBox GL_ACCOUNT = SO.selectOptionsPanel.Controls.Find("GL_ACCOUNT", true).FirstOrDefault() as TextBox;
+                if (GL_ACCOUNT != null) {  glaccnt = GL_ACCOUNT.Text; } else {  glaccnt = ""; };
+
+                TextBox YEAR = SO.selectOptionsPanel.Controls.Find("YEAR", true).FirstOrDefault() as TextBox;
+                if (YEAR != null) {  year = YEAR.Text; } else { year = ""; };
+
+                TextBox TYPE = SO.selectOptionsPanel.Controls.Find("CURRENCY_TYPE", true).FirstOrDefault() as TextBox;
+                if (TYPE != null) { type = TYPE.Text; } else { type = ""; };
+
+                
+
+            }
         }
         //SELECTION OPTIONS
 
@@ -103,17 +143,16 @@ namespace ACIWEB_DESKTOP_REPORT
 
                     if (true)//validar conexion abierta
                     {
+                        RfcDestinationManager.RegisterDestinationConfiguration(sapCon);
+                        RfcDestination dest = RfcDestinationManager.GetDestination("SAPDest");
+                        RfcRepository repo = dest.Repository;
 
-                       
+
                         if (Type == 1)//BAPI_COMPANYCODE_GETLIST
                         {
 
                         
-                            RfcDestinationManager.RegisterDestinationConfiguration(sapCon);
-                            RfcDestination dest = RfcDestinationManager.GetDestination("SAPDest");
-                            RfcRepository repo = dest.Repository;
-
-                            IRfcFunction testfn = repo.CreateFunction("BAPI_AR_ACC_GETSTATEMENT");
+                            IRfcFunction testfn = repo.CreateFunction("BAPI_COMPANYCODE_GETLIST");
 
                             testfn.Invoke(dest);
 
@@ -121,64 +160,52 @@ namespace ACIWEB_DESKTOP_REPORT
 
                             result = companyCodeList.ToDataTable("CompanyList");
                  
-                            RfcDestinationManager.UnregisterDestinationConfiguration(sapCon);
-
-                        }
-
-
-                        if (Type == 2)//BAPI_COMPANYCODE_GETLIST
-                        {
-
-
-                        RfcDestinationManager.RegisterDestinationConfiguration(sapCon);
-                        RfcDestination dest = RfcDestinationManager.GetDestination("SAPDest");
-                        RfcRepository repo = dest.Repository;
-
-                        IRfcFunction testfn = repo.CreateFunction("BAPI_AR_ACC_GETSTATEMENT");
-
-                        showSelecOptionByReport(1);
-                        mre.WaitOne();
-
-                        string format = "YYYYMMDD";
-                        var dateFrom = Convert.ToDateTime(From);
-                        var dateTo   = Convert.ToDateTime(To);
-
-
-                        var D = dateFrom.ToString(format, System.Globalization.CultureInfo.InvariantCulture);
-
-                        testfn.SetValue("COMPANYCODE",companycode);
-                        testfn.SetValue("CUSTOMER", customer);
-                        testfn.SetValue("DATE_FROM", Convert.ToDateTime(D));
-                        testfn.SetValue("DATE_TO", Convert.ToDateTime(D));
-                        testfn.SetValue("NOTEDITEMS", noteditems);
-
-                        testfn.Invoke(dest);
-
-                        var fnRes = testfn.GetStructure("RETURN").GetValue("MESSAGE");
-
-                      
-                        if (fnRes.ToString() != null)
-                        {
                             
-                            MessageBox.Show(fnRes.ToString(), "SAP Response");
 
                         }
-                        else
+
+                         
+
+                        if (Type == 2)// BAPI_GL_ACC_GETBALANCE
                         {
 
+                            IRfcFunction testfn = repo.CreateFunction("BAPI_GL_ACC_GETBALANCE");
 
-                            var finatialStatement = testfn.GetTable("LINEITEMS");
+                                showSelecOptionByReport(2);
+                                mre.WaitOne();
 
-                            result = finatialStatement.ToDataTable("GET_STATEMENT");
+                            if (kill == false)
+                            {
+                                testfn.SetValue("COMPANYCODE", companycode);
+                                testfn.SetValue("GLACCT", glaccnt);
+                                testfn.SetValue("FISCALYEAR", year);
+                                testfn.SetValue("CURRENCYTYPE", type);
 
+                                testfn.Invoke(dest);
+
+                                var fnRes = testfn.GetStructure("RETURN").GetValue("MESSAGE");
+
+
+                                if (fnRes.ToString() != "")
+                                {
+
+                                    MessageBox.Show(fnRes.ToString(), "SAP Response");
+
+                                }
+                                else
+                                {
+
+                                    var finatialStatement = testfn.GetStructure("ACCOUNT_BALANCE");
+
+                                    //  result = finatialStatement;
+
+                                }
+
+                            }
                         }
 
-                        RfcDestinationManager.UnregisterDestinationConfiguration(sapCon);
-
-                    }
-
-
-                    }
+                         RfcDestinationManager.UnregisterDestinationConfiguration(sapCon);
+                }
 
             }
             catch (Exception theException)
@@ -206,14 +233,11 @@ namespace ACIWEB_DESKTOP_REPORT
             {
                 if (repPreview is null)
                 {
-
-
-                    DataTable resTable = new DataTable("Bukrs");
-                    resTable.Columns.Add("MANDT", typeof(String));
-                    resTable.Columns.Add("BUKRS", typeof(String));
+                
+                    DataTable resTable = new DataTable("CompanyList");
+                    resTable.Columns.Add("COMP", typeof(String));
+                    resTable.Columns.Add("COMP_NAME", typeof(String));
             
-
-
                     repPreview = new DataSet();
                     repPreview.Tables.Add(resTable);
 
@@ -228,10 +252,7 @@ namespace ACIWEB_DESKTOP_REPORT
                             {
                                 resTable.NewRow();
 
-                              /*  rawDate = Convert.ToDateTime(queryTable.Rows[i].Field<DateTime>(1));
-                                date = rawDate.ToString("yyyy-MM-dd");*/
-
-                                
+                             
                                 resTable.Rows.Add(
                                 queryTable.Rows[i].Field<string>(0),
                                 queryTable.Rows[i].Field<string>(1));
@@ -271,7 +292,7 @@ namespace ACIWEB_DESKTOP_REPORT
 
         }
 
-        public DataSet GetFinancialStatement()//Get Sap Financial_Statement
+        public DataSet GetGlBalance()//Get Sap Financial_Statement
         {
 
             try
@@ -281,14 +302,14 @@ namespace ACIWEB_DESKTOP_REPORT
                 {
                     
 
-                    DataTable resTable = new DataTable("GET_STATEMENT");
-                    resTable.Columns.Add("COMP", typeof(String));
-                    resTable.Columns.Add("S", typeof(String));
-                    resTable.Columns.Add("CLEAR_DATE", typeof(String));
-                    resTable.Columns.Add("CLR_DOC_NO", typeof(String));
-                    resTable.Columns.Add("ALLOC_NMBR", typeof(String));
-                    resTable.Columns.Add("FISC", typeof(String));
-                    resTable.Columns.Add("DOC_NO", typeof(String));
+                    DataTable resTable = new DataTable("GL_Balance");
+                    resTable.Columns.Add("COMP_CODE", typeof(String));
+                    resTable.Columns.Add("GL_ACCOUNT", typeof(String));
+                    resTable.Columns.Add("FISC_YEAR", typeof(String));
+                    resTable.Columns.Add("BALANCE", typeof(String));
+                    resTable.Columns.Add("CURRENCY", typeof(String));
+                    resTable.Columns.Add("CURRENCY_ISO", typeof(String));
+                 
 
                     repPreview = new DataSet();
                     repPreview.Tables.Add(resTable);
@@ -304,10 +325,7 @@ namespace ACIWEB_DESKTOP_REPORT
                             {
                                 resTable.NewRow();
 
-                                /*  rawDate = Convert.ToDateTime(queryTable.Rows[i].Field<DateTime>(1));
-                                  date = rawDate.ToString("yyyy-MM-dd");*/
-
-
+                                
                                 resTable.Rows.Add(
 
                                 queryTable.Rows[i].Field<string>(0),
@@ -315,8 +333,7 @@ namespace ACIWEB_DESKTOP_REPORT
                                 queryTable.Rows[i].Field<string>(2),
                                 queryTable.Rows[i].Field<string>(3),
                                 queryTable.Rows[i].Field<string>(4),
-                                queryTable.Rows[i].Field<string>(5),
-                                queryTable.Rows[i].Field<string>(6)
+                                queryTable.Rows[i].Field<string>(5)
 
                                 );
 

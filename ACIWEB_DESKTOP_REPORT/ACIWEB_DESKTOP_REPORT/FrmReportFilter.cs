@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace ACIWEB_DESKTOP_REPORT
 {
@@ -14,7 +15,7 @@ namespace ACIWEB_DESKTOP_REPORT
     {
 
 
-        int y = 0;
+        int y = 5;
         public static bool winClose;
 
 
@@ -36,19 +37,40 @@ namespace ACIWEB_DESKTOP_REPORT
 
                var dataType =  SelectionOptions.Rows[i].Field<string>(0);
                var fielName =  SelectionOptions.Rows[i].Field<string>(1);
+               var longitud =  SelectionOptions.Rows[i].Field<string>(2);
+               var dafaultVal  = SelectionOptions.Rows[i].Field<string>(3);
+
 
                 if (dataType == "text")
                 {
                     // Create new Label
                     var newLabel = new Label();
                     newLabel.Name = "lbl_" + fielName;
-                    newLabel.Text = fielName;
+                    newLabel.Text = fielName.Replace("_", " ");
                     newLabel.Location = new Point(10, y);
+                    newLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                    newLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
                     // Create new TextBox
                     var newTextbox = new TextBox();
                     newTextbox.Name = fielName;
                     newTextbox.Location = new Point(150, y);
+                    newTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+
+                    if (longitud != ""){
+                        newTextbox.MaxLength = Convert.ToInt32(longitud);
+                        using (Graphics G = newTextbox.CreateGraphics())
+                        {
+                            newTextbox.Width = (int)(newTextbox.MaxLength *
+                                                      G.MeasureString("x", newTextbox.Font).Width);
+                        }
+                    }
+                   
+  
+                    if (dafaultVal != "")
+                    {
+                        newTextbox.Text = dafaultVal;
+                    }
 
                     // Add items to panel, then add panel to form
                     selectOptionsPanel.Controls.Add(newLabel);
@@ -62,10 +84,12 @@ namespace ACIWEB_DESKTOP_REPORT
 
                     var newLabel = new Label();
                     newLabel.Name = "lbl_" +fielName;
-                    newLabel.Text = fielName;
+                    newLabel.Text =  fielName.Replace("_", " ");
                     newLabel.Size = new Size(90, 23);
                     newLabel.Location = new Point(10, y);
                     newLabel.Font = new Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    newLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                    newLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
                     var newDateBox = new DateTimePicker();
                     newDateBox.AllowDrop = true;
@@ -81,7 +105,6 @@ namespace ACIWEB_DESKTOP_REPORT
                     selectOptionsPanel.Controls.Add(newDateBox);
                     y = y + 30;
                 }
-
             
                 if (dataType == "button")
                 {  
@@ -109,17 +132,27 @@ namespace ACIWEB_DESKTOP_REPORT
 
         private void Button_Click(object sender, EventArgs e)
         {
+            Cursor = Cursors.WaitCursor; // change cursor to hourglass type
+
             DbQueryAciweb.mre.Set();
             DbQuerySage.mre.Set();
             DbQuerySap.mre.Set();
+
+            DbQueryAciweb.kill = false;
+            DbQuerySage.kill = false;
+            DbQuerySap.kill = false;
             this.Close();
         }
 
         private void picClose_Click_1(object sender, EventArgs e)
         {
-            DbQueryAciweb.mre.Close();
-            DbQuerySage.mre.Close();
-            DbQuerySap.mre.Close();
+            DbQueryAciweb.mre.Set();
+            DbQuerySage.mre.Set();
+            DbQuerySap.mre.Set();
+
+            DbQueryAciweb.kill = true;
+            DbQuerySage.kill = true; 
+            DbQuerySap.kill = true;
 
             this.Close();
 

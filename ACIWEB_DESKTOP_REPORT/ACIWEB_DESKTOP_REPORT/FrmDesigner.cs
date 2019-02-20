@@ -19,14 +19,23 @@ namespace ACIWEB_DESKTOP_REPORT
 {
     public partial class FrmDesigner : Form
     {
+        FileSourceParam fileSourceParam = new FileSourceParam();
+        DataTable FsList = new DataTable("FsList");
+        // XtraReport report;
+        XtraReportFileSource fSreport;
+
+       // XtraReportFS fSreport;
+        ReportDesignTool fSdt;
+
         public FrmDesigner()
         {
             InitializeComponent();
             InitDesignerRepVal();
+            setFSList();
+
         }
-        
-     
-        public XtraReport report;
+
+      
 
         void DesignMdiController_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -117,6 +126,28 @@ namespace ACIWEB_DESKTOP_REPORT
                                 {
 
                                     reportName = checkedListReportSap.Items[i].ToString();
+
+
+                                }
+
+
+                            }
+
+                        }
+
+                    }
+                    break;
+
+                    case 3://design for FS
+                    {
+                        if (checkedListReportFS.CheckedItems.Count >= 1)
+                        {
+                            for (int i = 0; i + 1 <= checkedListReportFS.Items.Count; i++)
+                            {
+                                if (checkedListReportFS.GetItemCheckState(i).ToString() == "Checked")
+                                {
+
+                                    reportName = checkedListReportFS.Items[i].ToString();
 
 
                                 }
@@ -229,6 +260,7 @@ namespace ACIWEB_DESKTOP_REPORT
 
                     }
                     break;
+
             }
 
 
@@ -406,9 +438,7 @@ namespace ACIWEB_DESKTOP_REPORT
             }
             else
             {
-
                 MessageBox.Show("You must select a template to edit", "Warning");
-
 
             }
         }
@@ -535,8 +565,7 @@ namespace ACIWEB_DESKTOP_REPORT
         {
             string reportName = GetReportName();
             string reportToDelete = String.Concat(@"C:\\ACIDesktopReport\ReportDesigner\SAP\", reportName, ".repx");
-
-
+            
             try
             {
 
@@ -583,6 +612,257 @@ namespace ACIWEB_DESKTOP_REPORT
         {
             InitDesignerRepVal();
             
+        }
+
+        private void comboBoxRepType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+            
+            setTemplateList();
+            
+        }
+
+        private void setTemplateList()
+        {
+            string[] fileMask = comboBoxRepType.SelectedItem.ToString().Split('_');
+            string Mask = fileMask[0];
+
+            bool exists = Directory.Exists(@"C:\\ACIDesktopReport\ReportDesigner\FILE_SOURCE\");
+
+            if (!exists)
+            {
+                Directory.CreateDirectory(@"C:\\ACIDesktopReport\ReportDesigner\FILE_SOURCE\");
+            }
+
+            checkedListReportFS.Items.Clear();
+
+
+            string[] files = Directory.GetFiles(@"C:\\ACIDesktopReport\ReportDesigner\FILE_SOURCE\", Mask+"*.repx");
+
+            string filename;
+
+            for (int i = 0; i < files.Length; i++)
+            {
+
+                filename = Path.GetFileNameWithoutExtension(files[i]);
+                checkedListReportFS.Items.Add(filename);
+
+
+            }
+
+
+        }
+
+        private void setFSList()
+        {
+
+            FsList = fileSourceParam.GetFSConfOnFile();
+
+            for (int i = 0; i < FsList.Rows.Count; i++)
+            {
+                comboBoxRepType.Items.Add(FsList.Rows[i].Field<string>(0));
+
+            }
+
+        }
+
+        private void btnFSDNew_Click(object sender, EventArgs e)
+        {
+
+            try {
+
+                if (comboBoxRepType.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Please select a source file");
+                }
+                else
+                {
+                   List<string> Params = new List<string>(); ;
+
+                   fileSourceParam.GetFSParameters(comboBoxRepType.SelectedItem.ToString());
+
+                   Params.Add(fileSourceParam.Datatable);
+                   Params.Add(fileSourceParam.Column);
+                   Params.Add(fileSourceParam.Separator);
+                   Params.Add(fileSourceParam.Mask);
+                   Params.Add(fileSourceParam.LocalImpDir);
+
+                    DataSourceFS dataSourceFS = new DataSourceFS();
+                    DataSourceFS.FSParams = Params;
+                    DataSourceFS.repPreview = null;
+
+                    fSreport = new XtraReportFileSource();
+                    fSreport.DataSource = dataSourceFS.SetFileSource();
+                    fSreport.CreateDocument();
+                    fSreport.ShowDesigner();
+
+
+                }
+
+             }
+            catch (Exception theException)
+            {
+                String errorMessage;
+                errorMessage = "Error: ";
+                errorMessage = String.Concat(errorMessage, theException.Message);
+                errorMessage = String.Concat(errorMessage, " Line: ");
+                errorMessage = String.Concat(errorMessage, theException.Source);
+
+                MessageBox.Show(errorMessage, "Error");
+            }
+            
+        }
+
+        private void checkedListReportFS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+                if (checkedListReportFS.CheckedItems.Count >= 1) //leo que la lista tenga al menos un checkbox tildado
+                {
+                    //leo segun la cantidad total de items que tenga la lista
+                    for (int i = 0; i + 1 <= checkedListReportFS.Items.Count; i++)
+                    {
+                        //comparo el valor del item que acabo de check con el que estoy leyendo.
+                        if (checkedListReportFS.SelectedIndex.ToString() != checkedListReportFS.Items[i].ToString())
+                        {
+
+                        // si los valores difieren cambio el estado del check 
+                        checkedListReportFS.SetItemChecked(i, false);
+
+                        }
+
+                    }
+
+                }
+            
+        }
+
+        private void btnFSDEdit_Click(object sender, EventArgs e)
+        {
+            try
+            { 
+
+                if (comboBoxRepType.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Please select a source file");
+                }
+                else
+                {
+                   List<string> Params = new List<string>(); 
+
+                    fileSourceParam.GetFSParameters(comboBoxRepType.SelectedItem.ToString());
+
+                    Params.Add(fileSourceParam.Datatable);
+                    Params.Add(fileSourceParam.Column);
+                    Params.Add(fileSourceParam.Separator);
+                    Params.Add(fileSourceParam.Mask);
+                    Params.Add(fileSourceParam.LocalImpDir);
+
+                    DataSourceFS dataSourceFS = new DataSourceFS();
+                    DataSourceFS.FSParams = Params;
+                    DataSourceFS.repPreview = null;
+
+
+                    fSreport = new XtraReportFileSource();
+                    fSreport.DataSource = dataSourceFS.SetFileSource();
+
+                    fSdt = new ReportDesignTool(fSreport);
+
+                string ReportName = GetReportName();
+
+                if (ReportName != "")
+                {
+                    ReportName = String.Concat(@"C:\\ACIDesktopReport\ReportDesigner\FILE_SOURCE\", ReportName, ".repx");
+
+                        fSreport.LoadLayout(ReportName);
+                        fSreport.CreateDocument();
+                
+                    // Create a new End-User Report Designer form.
+                    XRDesignForm designForm = new XRDesignForm();
+
+                    DevExpress.XtraReports.Configuration.Settings.Default.StorageOptions.RootDirectory = @"C:\\ACIDesktopReport\ReportDesigner\FILE_SOURCE";
+
+
+                    // Handle the DesignPanelLoaded event before opening a report in the Report Designer
+                    designForm.FormClosed += DesignMdiController_FormClosed;
+
+                    // Create a new blank report and show it the Report Designer dialog window.
+                    designForm.OpenReport(fSreport);
+                    designForm.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("You must select a template to edit", "Warning");
+
+                }
+
+                }
+
+            }
+            catch (Exception theException)
+            {
+                String errorMessage;
+                errorMessage = "Error: ";
+                errorMessage = String.Concat(errorMessage, theException.Message);
+                errorMessage = String.Concat(errorMessage, " Line: ");
+                errorMessage = String.Concat(errorMessage, theException.Source);
+
+                MessageBox.Show(errorMessage, "Error");
+            }
+
+           
+ 
+        }
+
+        private void btnFSDDel_Click(object sender, EventArgs e)
+        {
+            string reportName = GetReportName();
+            string reportToDelete = String.Concat(@"C:\\ACIDesktopReport\ReportDesigner\FILE_SOURCE\", reportName, ".repx");
+
+            try
+            {
+
+                if (reportName != "")
+                {
+
+                    DialogResult dr = MessageBox.Show("Do you want to delete this report desing ?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        if (File.Exists(reportToDelete))
+                        {
+                            File.Delete(reportToDelete);
+                            setTemplateList();
+                        }
+
+                    }
+
+
+                }
+                else
+                {
+                    MessageBox.Show("A report design must be selected", "Warning");
+
+                }
+
+
+
+            }
+            catch (Exception theException)
+            {
+                String errorMessage;
+                errorMessage = "Error: ";
+                errorMessage = String.Concat(errorMessage, theException.Message);
+                errorMessage = String.Concat(errorMessage, " Line: ");
+                errorMessage = String.Concat(errorMessage, theException.Source);
+
+                MessageBox.Show(errorMessage, "Error");
+            }
+        }
+
+        private void btnFSDRefresh_Click(object sender, EventArgs e)
+        {
+            setTemplateList();
         }
     }
 }

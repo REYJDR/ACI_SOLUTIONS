@@ -20,7 +20,10 @@ namespace ACIWEB_DESKTOP_REPORT
         public static DataTable compTable;
         public static bool theresData;
         public static bool doQuery;
+        public static bool kill = false;
+
         public static DataSet company;
+        public static string exportFileName;
 
         public static  DataSet repPreview;
 
@@ -147,6 +150,8 @@ namespace ACIWEB_DESKTOP_REPORT
 
             SelectOptions.Columns.Add("type", typeof(String));
             SelectOptions.Columns.Add("fieldname", typeof(String));
+            SelectOptions.Columns.Add("long", typeof(String));
+            SelectOptions.Columns.Add("default", typeof(String)); ;
 
         }
 
@@ -208,8 +213,9 @@ namespace ACIWEB_DESKTOP_REPORT
                       
                         showSelecOptionByReport(1);
                         mre.WaitOne();
-                        
-                        
+                        if (kill == false)
+                        {
+
                             //Facturas
                             sql = " SELECT A.InvoiceNumber AS DOCUMENTO_FISCAL," +
                                         " C.SalesOrderNumber AS PEDIDO , " +
@@ -250,7 +256,7 @@ namespace ACIWEB_DESKTOP_REPORT
                                     " GROUP BY A.CreditNumber ORDER BY B.TransactionID";
 
                             dbcon.Query(sql).Fill(result);
-
+                        }
                      
                     }
 
@@ -260,14 +266,16 @@ namespace ACIWEB_DESKTOP_REPORT
                         showSelecOptionByReport(1);
                         mre.WaitOne();
 
-                        //Reporte de requisiciones
-                        sql =
+                        if (kill == false)
+                        {
+                            //Reporte de requisiciones
+                            sql =
                         " SELECT " +
                         " A.NO_REQ, " +
-                        " A.ProductID AS ITEMID, " + 
+                        " A.ProductID AS ITEMID, " +
                         " CAST( COALESCE(A.CANTIDAD, 0 ) AS decimal(16,4))  AS QTY_REQUIRED, " +
                         " CAST( COALESCE((SELECT SUM(Quantity) FROM PurOrdr_Detail_Exp AS I " +
-                        " INNER JOIN PurOrdr_Header_Exp as J on J.TransactionID =  I.TransactionID  "+
+                        " INNER JOIN PurOrdr_Header_Exp as J on J.TransactionID =  I.TransactionID  " +
                         " WHERE I.Item_Id = A.ProductID and J.CustomerSO = B.NO_REQ) , 0 ) AS  decimal(16,4)) AS QTY_ORDERED, " +
                         " CAST( COALESCE((SELECT SUM(QTY) FROM REQ_RECEPT AS L WHERE  L.NO_REQ  = B.NO_REQ  AND  L.ITEM = A.ProductID ), 0) AS decimal(16,4) )AS QTY_RECEIVED, " +
                         " A.DESCRIPCION, " +
@@ -280,7 +288,7 @@ namespace ACIWEB_DESKTOP_REPORT
                         " (SELECT Description from Jobs_Exp AS N where N.JobID = A.JOB AND N.ID_compania = A.ID_compania ) AS JOB_DESCRIPTION, " +
                         " A.PHASE, " +
                         " A.CCOST, " +
-                        " (SELECT CompanyNameSage50 from CompanySession AS D where D.ID_compania = A.ID_compania) AS SAGE_COMPANY, "+
+                        " (SELECT CompanyNameSage50 from CompanySession AS D where D.ID_compania = A.ID_compania) AS SAGE_COMPANY, " +
                         " B.st_closed as STATUS_CLOSED" +
                         " FROM REQ_DETAIL AS A " +
                         " inner join REQ_HEADER AS B ON A.NO_REQ = B.NO_REQ and A.ID_compania = B.ID_compania " +
@@ -289,8 +297,8 @@ namespace ACIWEB_DESKTOP_REPORT
                         " WHERE B.DATE between '" + From + "' and '" + To + "' " +
                         " ORDER BY A.NO_REQ";
 
-                    dbcon.Query(sql).Fill(result);
-
+                            dbcon.Query(sql).Fill(result);
+                        }
                 }
 
                 }

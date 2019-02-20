@@ -108,7 +108,6 @@ namespace ACIWEB_DESKTOP_REPORT
 
             if (comboBoxRepType.SelectedIndex == -1)
             {
-                setMsgtext("Please select a template");
                 MessageBox.Show("Please select a template");
             }
             else

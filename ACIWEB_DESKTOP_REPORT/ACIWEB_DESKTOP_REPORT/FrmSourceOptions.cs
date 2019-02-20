@@ -51,5 +51,19 @@ namespace ACIWEB_DESKTOP_REPORT
             SourcePanel.Controls.Add(sap);
             sap.Show();
         }
+
+        private void btnFileSource_Click(object sender, EventArgs e)
+        {
+
+
+            FrmFileSrcRep fileSource = new FrmFileSrcRep();
+            SourcePanel.Controls.Clear();
+
+            fileSource.TopLevel = false;
+            fileSource.AutoScroll = true;
+            SourcePanel.Controls.Add(fileSource);
+            fileSource.Show();
+
+        }
     }
 }

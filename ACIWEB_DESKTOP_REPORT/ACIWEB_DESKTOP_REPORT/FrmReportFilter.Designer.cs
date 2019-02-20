@@ -56,6 +56,7 @@
             // 
             // picClose
             // 
+            this.picClose.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.close_fa;
             this.picClose.Location = new System.Drawing.Point(481, 2);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(11, 10);

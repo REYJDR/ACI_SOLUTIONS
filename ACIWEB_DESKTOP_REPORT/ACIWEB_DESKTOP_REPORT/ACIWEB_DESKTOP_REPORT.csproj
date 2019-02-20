@@ -17,7 +17,7 @@
     <PublishUrl>\\Mac\Home\Documents\GitHub\DEPLOY_ACIWEBREPORT\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
@@ -25,15 +25,17 @@
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\Mac\Home\Documents\GitHub\DEPLOY_ACIWEBREPORT\</InstallUrl>
+    <UpdateUrl>https://github.com/REYJDR/DEPLOY_ACIWEBREPORT/</UpdateUrl>
     <ProductName>ACI Desktop Report</ProductName>
     <PublisherName>KODIKKA</PublisherName>
     <SuiteName>ACI SOLUTIONS</SuiteName>
-    <MinimumRequiredVersion>1.0.0.4</MinimumRequiredVersion>
+    <MinimumRequiredVersion>4.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>5.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -141,6 +143,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSourceFS.cs" />
     <Compile Include="DbConnectionMysql.cs" />
     <Compile Include="DbConnectionPervasive.cs" />
     <Compile Include="DbConnetionSql.cs" />
@@ -149,6 +152,13 @@
     <Compile Include="DbQuerySage.cs" />
     <Compile Include="DbQueryAciweb.cs" />
     <Compile Include="DbQuerySap.cs" />
+    <Compile Include="FileSourceParam.cs" />
+    <Compile Include="FrmFileSrcRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFileSrcRep.Designer.cs">
+      <DependentUpon>FrmFileSrcRep.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +244,18 @@
     <Compile Include="SAPParam.cs" />
     <Compile Include="SftpConnection.cs" />
     <Compile Include="SftpParam.cs" />
+    <Compile Include="XtraReportFileSource.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportFileSource.Designer.cs">
+      <DependentUpon>XtraReportFileSource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportFS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportFS.Designer.cs">
+      <DependentUpon>XtraReportFS.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReportSage.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -252,6 +274,9 @@
     <Compile Include="XtraReportSap.Designer.cs">
       <DependentUpon>XtraReportSap.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmFileSrcRep.resx">
+      <DependentUpon>FrmFileSrcRep.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogs.resx">
       <DependentUpon>FrmLogs.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +327,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="XtraReportFS.resx">
+      <DependentUpon>XtraReportFS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReportSage.resx">
       <DependentUpon>XtraReportSage.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +362,8 @@
     <Content Include="Resources\config_fa.png" />
     <Content Include="Resources\design.png" />
     <Content Include="Resources\designer_fa.png" />
+    <None Include="Resources\kisspng-comma-separated-values-ico-database-icon-database-icons-5a85f535a54123.6582165515187285016769.png" />
+    <None Include="Resources\FILESOURCE.png" />
     <Content Include="Resources\logo_3.png" />
     <Content Include="Resources\minimize_fa.png" />
     <Content Include="Resources\minimize_fa2.png" />
@@ -358,9 +388,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\WinSCP.5.13.7\build\WinSCP.targets" Condition="Exists('..\packages\WinSCP.5.13.7\build\WinSCP.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
