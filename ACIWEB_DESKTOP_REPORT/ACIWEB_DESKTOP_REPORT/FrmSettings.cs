@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using WinSCP;
+using AciSageLibrary;
+using SFTPLibrary;
 
 
 namespace ACIWEB_DESKTOP_REPORT
@@ -18,7 +19,8 @@ namespace ACIWEB_DESKTOP_REPORT
         private DbParamAciweb conParams;
         private DbParamSage SageParams;
         private SftpParam sftpParam;
-        private SAPParam sapParams;
+
+        // private SAPParam sapParams;
         private FileSourceParam fileSourceParam;
 
 
@@ -28,6 +30,7 @@ namespace ACIWEB_DESKTOP_REPORT
         DataTable Company = new DataTable("Company");
         DataTable SftpList = new DataTable("SftpList");
         DataTable FsList = new DataTable("FsList");
+       
 
 
 
@@ -42,8 +45,37 @@ namespace ACIWEB_DESKTOP_REPORT
         public void InitFieldVal()
         {
 
+            bool exists = Directory.Exists(@"C:\\ACIDesktopReport\DB\SAGE\");
 
-            //get ACIWEB config 
+            if (!exists)
+            {
+                Directory.CreateDirectory(@"C:\\ACIDesktopReport\DB\SAGE\");
+            }
+
+            exists = Directory.Exists(@"C:\\ACIDesktopReport\DB\ACIWEB\");
+
+            if (!exists)
+            {
+                Directory.CreateDirectory(@"C:\\ACIDesktopReport\DB\ACIWEB\");
+            }
+
+
+            exists = Directory.Exists(@"C:\\ACIDesktopReport\ReportDesigner\SAGE\");
+
+            if (!exists)
+            {
+                Directory.CreateDirectory(@"C:\\ACIDesktopReport\ReportDesigner\SAGE\");
+            }
+
+            exists = Directory.Exists(@"C:\\ACIDesktopReport\ReportDesigner\ACIWEB\");
+
+            if (!exists)
+            {
+                Directory.CreateDirectory(@"C:\\ACIDesktopReport\ReportDesigner\ACIWEB\");
+            }
+
+
+            //Get ACIWEB config 
             conParams = new DbParamAciweb();
             conParams.GetValueFromFile();
 
@@ -58,7 +90,7 @@ namespace ACIWEB_DESKTOP_REPORT
             txtDirExportAci.Text = conParams.LocalFolder;
             txtRemoteFolderAci.Text = conParams.RemoteFolder;
 
-            //get SAGE config 
+            //Get SAGE config 
             SageParams = new DbParamSage();
 
             textDirectorySage.Text = SageParams.GetSageURL();
@@ -68,25 +100,17 @@ namespace ACIWEB_DESKTOP_REPORT
 
             Company.Columns.Add("Selecction", typeof(bool));
             Company.Columns.Add("Company Name", typeof(String));
-            Company.Columns.Add("DB Name ", typeof(String));
+            Company.Columns.Add("DB", typeof(String));
             Company.Columns.Add("User", typeof(String));
             Company.Columns.Add("Pass", typeof(String));
             Company.Columns.Add("Host", typeof(String));
 
             SageDBSelected();
+            OtherSageListComp();
 
+            
 
-            //get SAp config 
-            sapParams = new SAPParam();
-            sapParams.GetValueFromFile();
-            txtSapServer.Text = sapParams.AppServerHost;
-            txtSapSysInstance.Text = sapParams.SystemNumber;
-            txtSapSysId.Text = sapParams.SystemID;
-            txtSapPassword.Text = sapParams.Password;
-            txtSapUser.Text = sapParams.User;
-            txtSapClient.Text = sapParams.Client;
-            txtSapRouter.Text = sapParams.SapRouter;
-
+            
             //get SFTP config
             sftpParam = new SftpParam();
             SftpList.Columns.Add("Conecction name", typeof(String));
@@ -94,6 +118,7 @@ namespace ACIWEB_DESKTOP_REPORT
             SftpList.Columns.Add("Username", typeof(String));
             SftpList.Columns.Add("Password", typeof(String));
             SftpList.Columns.Add("Port", typeof(String));
+            SftpList.Columns.Add("Type", typeof(String));
 
             GetSftpList();
 
@@ -133,7 +158,6 @@ namespace ACIWEB_DESKTOP_REPORT
 
             cmbSftpListAci.Items.Clear();
             cmbSftpListSage.Items.Clear();
-            cmbSftpListSap.Items.Clear();
             cmbSftpListFSImport.Items.Clear();
             cmbSftpListFSExport.Items.Clear();
 
@@ -142,7 +166,6 @@ namespace ACIWEB_DESKTOP_REPORT
             {
                 cmbSftpListAci.Items.Add(SftpList.Rows[i].Field<string>(0));
                 cmbSftpListSage.Items.Add(SftpList.Rows[i].Field<string>(0));
-                cmbSftpListSap.Items.Add(SftpList.Rows[i].Field<string>(0));
                 cmbSftpListFSImport.Items.Add(SftpList.Rows[i].Field<string>(0));
                 cmbSftpListFSExport.Items.Add(SftpList.Rows[i].Field<string>(0));
 
@@ -152,23 +175,28 @@ namespace ACIWEB_DESKTOP_REPORT
         //CONFIGURACION DE SAGE
         public void  SetCompany()
         {
-            DbConnectionMysql dbConn = new DbConnectionMysql();
-
-            //if (dbConn.StartConn().State == System.Data.ConnectionState.Open)  //Conexion odbc a Peacthtree
-            if (dbConn.StartConn() == true) //Conexion Mysql a  Aciweb
+            if(textHostname.Text != "")
             {
+                DbConnectionMysql dbConn = new DbConnectionMysql();
 
-                DbQueryAciweb dbCon = new DbQueryAciweb();
-                dbCon.Company();
+                //if (dbConn.StartConn().State == System.Data.ConnectionState.Open)  //Conexion odbc a Peacthtree
+                if (dbConn.StartConn() == true) //Conexion Mysql a  Aciweb
+                {
 
-                comboComp.DataSource = DbQueryAciweb.company.Tables["Company"].DefaultView;
-                comboComp.ValueMember = "ID";
-                comboComp.DisplayMember = "NAME";
-                comboComp.BindingContext = this.BindingContext;
+                    DbQueryAciweb dbCon = new DbQueryAciweb();
+                    dbCon.Company();
+
+                    comboComp.DataSource = DbQueryAciweb.company.Tables["Company"].DefaultView;
+                    comboComp.ValueMember = "ID";
+                    comboComp.DisplayMember = "NAME";
+                    comboComp.BindingContext = this.BindingContext;
 
 
-                dbConn.Close();
+                    dbConn.Close();
+                }
+
             }
+
 
         }
 
@@ -247,15 +275,15 @@ namespace ACIWEB_DESKTOP_REPORT
 
             DataTable sageConf = new DataTable("sage");
             sageConf.Columns.Add("Selecction ", typeof(bool));
-            sageConf.Columns.Add("Name ", typeof(String));
-            sageConf.Columns.Add("DB ", typeof(String));
+            sageConf.Columns.Add("Name", typeof(String));
+            sageConf.Columns.Add("DB", typeof(String));
             sageConf.Columns.Add("User", typeof(String));
             sageConf.Columns.Add("Pass", typeof(String));
             sageConf.Columns.Add("Host ", typeof(String));
             sageConf.Columns.Add("Connection", typeof(String));
 
             DataTable test = new DataTable("test");
-            test.Columns.Add("DB Name", typeof(String));
+            test.Columns.Add("DB", typeof(String));
             test.Columns.Add("Status", typeof(String));
 
             for (int i = 0; i < dataGridPre.Rows.Count; i++) //LEES CADA LINEA DE LA TABLA DEL GRIDVIEW
@@ -314,15 +342,19 @@ namespace ACIWEB_DESKTOP_REPORT
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+          
 
-
-                if (Brw.ShowDialog() == DialogResult.OK)
-                {
+            if (Brw.ShowDialog() == DialogResult.OK)
+            {
                     textDirectorySage.Text = Brw.SelectedPath; // prints path
+                    Company.Clear();
+                    SageDBSelected();
+                    OtherSageListComp();
 
-
-                    // Recurse into subdirectories of this directory.
-                    string[] subdirectoryEntries = Directory.GetDirectories(Brw.SelectedPath);
+                return;
+/*
+                // Recurse into subdirectories of this directory.
+                string[] subdirectoryEntries = Directory.GetDirectories(Brw.SelectedPath);
                     string[] fileEntries;
                     string[] DbConString;
                     string line = "";
@@ -332,6 +364,8 @@ namespace ACIWEB_DESKTOP_REPORT
                     string dbuser = "";
                     string host = "";
                     TextReader file;
+
+                  //  Company.Clear();
 
                     foreach (string subdirectory in subdirectoryEntries)
                     {
@@ -343,7 +377,7 @@ namespace ACIWEB_DESKTOP_REPORT
                         foreach (string fileName in fileEntries)
                         {
                             ext = Path.GetExtension(fileName);
-
+                             
                             if (ext == ".udl")
                             {
 
@@ -387,17 +421,127 @@ namespace ACIWEB_DESKTOP_REPORT
 
                         }
 
-                    }
+                    } */
 
                 }
-                SageListComp();
+             //   SageListComp();
             
         }
 
+        private void OtherSageListComp()
+        {
+            if (textDirectorySage.Text != "") {
+                // Recurse into subdirectories of this directory.
+                string[] subdirectoryEntries = Directory.GetDirectories(textDirectorySage.Text);
+                string[] fileEntries;
+                string[] DbConString;
+                string line = "";
+                string[] fields;
+                string ext;
+                string dbname = "";
+                string dbuser = "";
+                string host = "";
+                TextReader file;
+
+                foreach (string subdirectory in subdirectoryEntries)
+                {
+
+                    // Process the list of files found in the directory.
+                    fileEntries = Directory.GetFiles(subdirectory);
+                    var folder = new DirectoryInfo(subdirectory).Name;
+
+                    foreach (string fileName in fileEntries)
+                    {
+                        ext = Path.GetExtension(fileName);
+
+                        if (ext == ".udl")
+                        {
+
+                            // create reader & open file
+                            file = new StreamReader(fileName);
+
+                            Company.NewRow();
+
+                            file.ReadLine();
+                            file.ReadLine();
+
+                            line = file.ReadLine();
+                            DbConString = line.Split(';');
+
+                            foreach (string fline in DbConString)
+                            {
+                                if (fline.Contains("Data Source="))
+                                {
+                                    fields = fline.Split('=');
+                                    dbname = fields[1];
+                                }
+
+                                if (fline.Contains("User ID="))
+                                {
+                                    fields = fline.Split('=');
+                                    dbuser = fields[1];
+                                }
+
+                                if (fline.Contains("Location="))
+                                {
+                                    fields = fline.Split('=');
+                                    host = fields[1];
+                                }
+
+                            }
+
+
+                          ((DataTable)dataGridPre.DataSource).DefaultView.RowFilter = string.Format("DB = '{0}'", dbname);
+
+                          if(((DataTable)dataGridPre.DataSource).DefaultView.Count > 0)
+                            {
+                                foreach (DataGridViewRow row in dataGridPre.Rows)
+                                {
+                                    Company.Rows.Add(
+                                        row.Cells[0].Value.ToString(),
+                                        row.Cells[1].Value.ToString(),
+                                        row.Cells[2].Value.ToString(),
+                                        row.Cells[3].Value.ToString(),
+                                        row.Cells[4].Value.ToString(),
+                                        row.Cells[5].Value.ToString()
+                                        );
+                                break;
+                                    }
+
+                            }
+                            else
+                            {
+
+                                Company.Rows.Add(false, folder, dbname, dbuser, "", host);
+                                break;
+
+                            }
+
+                         
+                                   
+                             
+
+
+
+                        }
+
+                        //buscar en lista actual
+
+
+
+                    }
+
+                }
+
+                SageListComp();
+            }
+        }
+        
         private void SageListComp()
         {
 
-
+            /*dataGridPre.Rows.Clear();
+            dataGridPre.Refresh();*/
             dataGridPre.DataSource = Company;
             dataGridPre.AutoResizeColumns();
 
@@ -409,9 +553,11 @@ namespace ACIWEB_DESKTOP_REPORT
                 tblColumns.ReadOnly = true;
             }
 
-            dataGridPre.Columns[0].ReadOnly = false; //COLUMNA DE CHECKBOX
-            dataGridPre.Columns[3].ReadOnly = false; //COLUMNA DE CHECKBOX
-            dataGridPre.Columns[4].ReadOnly = false; //COLUMNA DE CHECKBOX
+            dataGridPre.Columns[0].ReadOnly = false;
+            dataGridPre.Columns[3].ReadOnly = false;
+            dataGridPre.Columns[4].ReadOnly = false;
+            dataGridPre.Columns[5].ReadOnly = false;
+
             /* FIN SETADO DE COLUMNAS */
 
         }
@@ -441,25 +587,34 @@ namespace ACIWEB_DESKTOP_REPORT
         private void btnSafeExpDirSage_Click(object sender, EventArgs e)
         {
             string sftpconf = "";
-
-            if (txtRemoteFolderSage.Text.IndexOf(';', 0) > 0)
+            if(cmbSftpListSage.SelectedItem != null )
             {
-                string[] S;
+                if (txtRemoteFolderSage.Text.IndexOf(';', 0) > 0)
+                {
+                    string[] S;
 
-                S = txtRemoteFolderSage.Text.Split(';');
+                    S = txtRemoteFolderSage.Text.Split(';');
 
-                sftpconf = cmbSftpListSage.SelectedItem.ToString() + ';' + S[1];
+                    sftpconf = cmbSftpListSage.SelectedItem.ToString() + ';' + S[1];
 
+                }
+                else
+                {
+                    sftpconf = cmbSftpListSage.SelectedItem.ToString() + ';' + txtRemoteFolderSage.Text;
+
+                }
+                txtRemoteFolderSage.Text = sftpconf;
+              
             }
             else
             {
-                sftpconf = cmbSftpListSage.SelectedItem.ToString() + ';' + txtRemoteFolderSage.Text;
+
+                SageParams.SetSageExportFolder(txtDirExportSage.Text, sftpconf);
 
             }
 
-            SageParams.SetSageExportFolder(txtDirExportSage.Text, sftpconf);
 
-            txtRemoteFolderSage.Text = sftpconf;
+
 
 
         }
@@ -472,85 +627,57 @@ namespace ACIWEB_DESKTOP_REPORT
         //CONFIGURACION SFTP
         private bool checkSftp()
         {
+            var type = "";
+            var port = "";
 
-            sftpParam.Hostaname = txtSftpHostname.Text;
-            sftpParam.User = txtSftpUsername.Text;
-            sftpParam.Password = txtSftpPassword.Text;
-            sftpParam.Port = txtSftpPort.Text;
-            
-            try
+            if (chkConnType.CheckedItems.Count >= 1)
             {
-
-                SessionOptions sessionOptions = new SessionOptions();
-                
-                sessionOptions.HostName = sftpParam.Hostaname;
-                sessionOptions.UserName = sftpParam.User;
-                sessionOptions.Password = sftpParam.Password;
-
-                if (sftpParam.Port == "21")
+                for (int i = 0; i + 1 <= chkConnType.Items.Count; i++)
                 {
-
-                    sessionOptions.Protocol = Protocol.Ftp;
-                    sessionOptions.PortNumber = 21;
-
-                }
-                else
-                {
-                    sessionOptions.Protocol = Protocol.Sftp;
-                    sessionOptions.PortNumber = 22;
-                    sessionOptions.GiveUpSecurityAndAcceptAnySshHostKey = true;
-                    // sessionOptions.SshHostKeyFingerprint = "";
-
-                }
-
-
-
-                    using (Session session = new Session())
+                    if (chkConnType.GetItemCheckState(i).ToString() == "Checked")
                     {
-                        session.Open(sessionOptions);
-                        if (session.Opened)
-                        {
-                           // sftpParam.SetSftpConfOnFile();
-                            MessageBox.Show("Test de conexión exitoso", "Test de conexión sftp/ftp");
-                            session.Close();
-                            return true;
-
-                        }
-                        else
-                        {
-                            session.Close();
-                            return false;
-
-                        }
-
-                    
-
+                        type = chkConnType.Items[i].ToString();
+                        
+                    }
                 }
 
-
-                
             }
-            catch (Exception theException)
+
+            switch (type)
             {
-                String errorMessage;
-                errorMessage = "Error: ";
-                errorMessage = String.Concat(errorMessage, theException.Message);
-                errorMessage = String.Concat(errorMessage, " Line: ");
-                errorMessage = String.Concat(errorMessage, theException.Source);
+                case "FTP":
+                    port = "21";
+                    break;
 
-                MessageBox.Show(errorMessage, "Error");
-                return false;
+                case "FTPS":
+                    port = "21";
+                    break;
 
+                case "SFTP":
+                    port = "22";
+                    break;
+
+                default:
+                    port = "21";
+                    break;
             }
-            }
+
+
+            return  sftpConnection.chckConn(
+                       txtSftpHostname.Text,
+                       txtSftpUsername.Text,
+                       txtSftpPassword.Text,
+                        port ,
+                        type );
+           
+        }
 
         private void btnAddSftpToList_Click(object sender, EventArgs e)
         {
             bool check = false;
 
             if (checkSftp() == true)
-            {//checa conexion al sftp
-
+            { //checa conexion al sftp
 
                 foreach (DataGridViewRow row in dataGridSftpList.Rows)
                 {
@@ -576,12 +703,47 @@ namespace ACIWEB_DESKTOP_REPORT
 
                 if (check == false)
                 {
-                    
+                    var type = "";
+                    var port = "";
+
+                    if (chkConnType.CheckedItems.Count >= 1)
+                    {
+                        for (int i = 0; i + 1 <= chkConnType.Items.Count; i++)
+                        {
+                            if (chkConnType.GetItemCheckState(i).ToString() == "Checked")
+                            {
+                                type = chkConnType.Items[i].ToString();
+
+                            }
+                        }
+
+                    }
+
+                    switch (type)
+                    {
+                        case "FTP":
+                            port = "21";
+                            break;
+
+                        case "FTPS":
+                            port = "21";
+                            break;
+
+                        case "SFTP":
+                            port = "22";
+                            break;
+
+                        default:
+                            port = "21";
+                            break;
+                    }
+
                     SftpList.Rows.Add(      txtSftpName.Text,
                                             txtSftpHostname.Text,
                                             txtSftpUsername.Text,
                                             txtSftpPassword.Text,
-                                            txtSftpPort.Text);
+                                            port,
+                                            type);
 
 
                    
@@ -603,19 +765,24 @@ namespace ACIWEB_DESKTOP_REPORT
         private void btnSafeExpDirAci_Click(object sender, EventArgs e)
         {
             string sftpconf = "";
-
-            if (txtRemoteFolderAci.Text.IndexOf(';', 0)>0)
+            if (cmbSftpListAci.SelectedItem != null)
             {
-                string[] S;
+                if (txtRemoteFolderAci.Text.IndexOf(';', 0) > 0)
+                {
+                    string[] S;
 
-                S = txtRemoteFolderAci.Text.Split(';');
+                    S = txtRemoteFolderAci.Text.Split(';');
 
-                sftpconf = cmbSftpListAci.SelectedItem.ToString() + ';' + S[1];
+                    sftpconf = cmbSftpListAci.SelectedItem.ToString() + ';' + S[1];
 
-            }
-            else
-            {
-                sftpconf = cmbSftpListAci.SelectedItem.ToString() + ';' + txtRemoteFolderAci.Text;
+                }
+                else
+                {
+                    sftpconf = cmbSftpListAci.SelectedItem.ToString() + ';' + txtRemoteFolderAci.Text;
+
+                }
+
+                txtRemoteFolderAci.Text = sftpconf;
 
             }
             
@@ -625,7 +792,7 @@ namespace ACIWEB_DESKTOP_REPORT
                         txtDirExportAci.Text,
                         sftpconf );
 
-            txtRemoteFolderAci.Text = sftpconf;
+            
 
         }
       
@@ -637,70 +804,7 @@ namespace ACIWEB_DESKTOP_REPORT
         }
 
 
-        //CONFIGURACION SAP
-        private void btnSafeExpDirSap_Click(object sender, EventArgs e)
-        {
-            string sftpconf = "";
-
-            if (txtRemoteFolderSap.Text.IndexOf(';', 0) > 0)
-            {
-                string[] S;
-
-                S = txtRemoteFolderSap.Text.Split(';');
-
-                sftpconf = cmbSftpListSap.SelectedItem.ToString() + ';' + S[1];
-
-            }
-            else
-            {
-                sftpconf = cmbSftpListSap.SelectedItem.ToString() + ';' + txtRemoteFolderSap.Text;
-
-            }
-
-            sapParams.SetSapExportFolder(txtDirExportSap.Text, sftpconf);
-
-
-            txtRemoteFolderSap.Text = sftpconf;
-
-
-        }
-
-        private void btnSapConfSave_Click(object sender, EventArgs e)
-        {
-
-            /*INI READ AND SAVE CONNECTION PARAMETERS*/
-            sapParams.AppServerHost = txtSapServer.Text;
-            sapParams.SystemNumber = txtSapSysInstance.Text;
-            sapParams.SystemID = txtSapSysId.Text;
-            sapParams.Client = txtSapClient.Text;
-            sapParams.User = txtSapUser.Text;
-            sapParams.Password = txtSapPassword.Text;
-            sapParams.SapRouter = txtSapRouter.Text;
-            sapParams.Language = "EN";
-            sapParams.PoolSize = "5";
-
-            /*END READ AND SAVE CONNECTION PARAMETERS*/
-
-            /*Save params values */
-            sapParams.SetValueOnFile();
-
-        }
-        
-        private void btnSyncSap_Click(object sender, EventArgs e)
-        {
-            sftpConnection.syncDir(txtDirExportSap.Text, txtRemoteFolderSap.Text, "*.*");
-
-        }
-
-        private void btnDirSapExport_Click(object sender, EventArgs e)
-        {
-            if (Brw.ShowDialog() == DialogResult.OK)
-            {
-                txtDirExportSap.Text = Brw.SelectedPath; // export path
-            }
-        }
-
-
+     
         //CONFIGURACION FILE SOURCE
         private void btnAddFs_Click(object sender, EventArgs e)
         {
@@ -845,11 +949,82 @@ namespace ACIWEB_DESKTOP_REPORT
 
             FsList = (DataTable)(dataGridSftpList.DataSource);
 
-            fileSourceParam.SetFSpConfOnFile(FsList);
+            sftpParam.SetSftpConfOnFile(FsList);
 
-            GetFsList();
+            //  fileSourceParam.SetFSpConfOnFile(FsList);
 
+            //  GetFsList();
+            GetSftpList();
             dataGridSftpList.AutoResizeColumns();
+        }
+
+        private void cmbFileType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridPre_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 4 && e.Value != null)
+            {
+                // set the exact display value
+
+                e.Value = new String('*', e.Value.ToString().Length);
+
+            }
+        }
+
+
+        private void btnSapConfSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridSftpList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 3 && e.Value != null)
+            {
+                // set the exact display value
+
+                e.Value = new String('*', e.Value.ToString().Length);
+
+            }
+        }
+
+        private void chkConnType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (chkConnType.CheckedItems.Count >= 1) //leo que la lista tenga al menos un checkbox tildado
+            {
+                //leo segun la cantidad total de items que tenga la lista
+                for (int i = 0; i + 1 <= chkConnType.Items.Count; i++)
+                {
+                    //comparo el valor del item que acabo de check con el que estoy leyendo.
+                    if (chkConnType.SelectedIndex.ToString() != chkConnType.Items[i].ToString())
+                    {
+
+                        // si los valores difieren cambio el estado del check 
+                        chkConnType.SetItemChecked(i, false);
+
+                    }
+
+                }
+
+            }
+        }
+
+        private void comboComp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridFileSource_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridPre_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
     }

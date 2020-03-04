@@ -5,10 +5,14 @@
     <PublishUrlHistory>\\Mac\Home\Documents\GitHub\DEPLOY_ACIWEBREPORT\</PublishUrlHistory>
     <InstallUrlHistory>\\Mac\Home\Documents\GitHub\DEPLOY_ACIWEBREPORT\</InstallUrlHistory>
     <SupportUrlHistory />
-    <UpdateUrlHistory>http://www.koddika.com/|http://www.daoutel.net/</UpdateUrlHistory>
+    <UpdateUrlHistory>https://github.com/REYJDR/DEPLOY_ACIWEBREPORT/|http://www.koddika.com/|http://www.daoutel.net/</UpdateUrlHistory>
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />
     <FallbackCulture>es-ES</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <RemoteDebugEnabled>false</RemoteDebugEnabled>
+    <StartAction>Project</StartAction>
   </PropertyGroup>
 </Project>

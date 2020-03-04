@@ -421,3 +421,525 @@ SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER ACCOUNT_BALANCE o
    en SAP.Middleware.Connector.RfcDataContainer`1.GetTable(Int32 index, Boolean create)
    --- Fin del seguimiento de la pila de la excepción interna ---
    en SAP.Middleware.Connector.RfcDataContainer`1.GetTable(Int32 index, Boolean create)
+
+**** Log file opened by process 9224 at 2019-04-23 17:39:10 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-04-23 17:39:10.163 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcInvalidStateException: metadata for function BAPI_COMPANYCODE_GET not available: FU_NOT_FOUND: Function module BAPI_COMPANYCODE_GET does not exist
+   en SAP.Middleware.Connector.RfcRepository.LookupFunctionMetadataNew(String name)
+   en SAP.Middleware.Connector.RfcRepository.LookupFunctionMetadata(String name)
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+>> Error entry 2019-04-23 17:39:10.177 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidStateException: metadata for function BAPI_COMPANYCODE_GET not available: FU_NOT_FOUND: Function module BAPI_COMPANYCODE_GET does not exist
+   en SAP.Middleware.Connector.RfcRepository.LookupFunctionMetadataNew(String name)
+   en SAP.Middleware.Connector.RfcRepository.LookupFunctionMetadata(String name)
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+   en SAP.Middleware.Connector.RfcRepository.CreateFunction(String name)
+
+**** Log file opened by process 8800 at 2019-04-23 17:51:55 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-04-23 17:51:55.169 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER COMPANYCODE_LIST of FUNCTION BAPI_COMPANYCODE_GETLIST (GETTER): cannot convert TABLE [STRUCTURE BAPI0002_1] into IRfcAbapObject ---> System.InvalidCastException: No se puede convertir un objeto de tipo 'SAP.Middleware.Connector.RfcTable' al tipo 'SAP.Middleware.Connector.IRfcAbapObject'.
+   en SAP.Middleware.Connector.RfcDataContainer`1.GetAbapObject(Int32 index, Boolean create)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.GetAbapObject(Int32 index, Boolean create)
+
+**** Log file opened by process 10828 at 2019-04-23 18:55:20 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-04-23 18:55:20.929 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+>> Error entry 2019-04-23 18:55:20.933 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+   en SAP.Middleware.Connector.RfcRepository.CreateFunction(String name)
+>> Error entry 2019-04-23 18:55:36.925 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidStateException: destination configuration already initialized
+   en SAP.Middleware.Connector.RfcDestinationManager.RegisterDestinationConfiguration(IDestinationConfiguration config)
+
+**** Log file opened by process 8360 at 2019-04-24 09:45:46 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-04-24 09:45:46.821 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER ACCOUNT_BALANCE of FUNCTION BAPI_GL_ACC_GETBALANCE (GETTER): cannot convert STRUCTURE BAPI3006_3 into IRfcAbapObject ---> System.InvalidCastException: No se puede convertir un objeto de tipo 'SAP.Middleware.Connector.RfcStructure' al tipo 'SAP.Middleware.Connector.IRfcAbapObject'.
+   en SAP.Middleware.Connector.RfcDataContainer`1.GetAbapObject(Int32 index, Boolean create)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.GetAbapObject(Int32 index, Boolean create)
+
+**** Log file opened by process 1200 at 2019-04-24 13:14:50 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-04-24 13:14:50.834 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER COMPANYCODE of FUNCTION BAPI_DEBTOR_GETDETAIL (SETTER): cannot convert TextBox into CHAR4 ---> SAP.Middleware.Connector.RfcTypeConversionException: System.Windows.Forms.TextBox cannot be converted into CHAR
+   en SAP.Middleware.Connector.RfcScalarMetadata.ConvertObject(Object value, Object& currentValue)
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, Object value)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, Object value)
+
+**** Log file opened by process 10136 at 2019-04-24 13:16:32 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-04-24 13:16:32.943 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcInvalidStateException: metadata for function BAPI_DEBPTOR_GETDETAIL not available: FU_NOT_FOUND: Function module BAPI_DEBPTOR_GETDETAIL does not exist
+   en SAP.Middleware.Connector.RfcRepository.LookupFunctionMetadataNew(String name)
+   en SAP.Middleware.Connector.RfcRepository.LookupFunctionMetadata(String name)
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+>> Error entry 2019-04-24 13:16:32.949 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidStateException: metadata for function BAPI_DEBPTOR_GETDETAIL not available: FU_NOT_FOUND: Function module BAPI_DEBPTOR_GETDETAIL does not exist
+   en SAP.Middleware.Connector.RfcRepository.LookupFunctionMetadataNew(String name)
+   en SAP.Middleware.Connector.RfcRepository.LookupFunctionMetadata(String name)
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+   en SAP.Middleware.Connector.RfcRepository.CreateFunction(String name)
+
+**** Log file opened by process 12204 at 2019-04-25 09:37:37 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-04-25 09:37:37.355 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+>> Error entry 2019-04-25 09:37:37.381 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+   en SAP.Middleware.Connector.RfcRepository.CreateFunction(String name)
+>> Error entry 2019-04-25 09:37:42.210 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidStateException: destination configuration already initialized
+   en SAP.Middleware.Connector.RfcDestinationManager.RegisterDestinationConfiguration(IDestinationConfiguration config)
+
+**** Log file opened by process 6392 at 2019-04-25 11:15:41 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-04-25 11:15:41.981 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+>> Error entry 2019-04-25 11:15:41.987 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+   en SAP.Middleware.Connector.RfcRepository.CreateFunction(String name)
+>> Error entry 2019-04-25 11:17:26.446 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+>> Error entry 2019-04-25 11:17:26.447 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+   en SAP.Middleware.Connector.RfcRepository.CreateFunction(String name)
+
+**** Log file opened by process 7368 at 2019-04-25 11:19:28 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-04-25 11:19:28.168 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+>> Error entry 2019-04-25 11:19:28.179 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+   en SAP.Middleware.Connector.RfcRepository.CreateFunction(String name)
+>> Error entry 2019-04-25 11:23:18.191 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+>> Error entry 2019-04-25 11:23:18.196 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+   en SAP.Middleware.Connector.RfcRepository.CreateFunction(String name)
+
+**** Log file opened by process 528 at 2019-04-25 11:24:57 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-04-25 11:24:57.396 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+>> Error entry 2019-04-25 11:24:57.401 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+   en SAP.Middleware.Connector.RfcRepository.CreateFunction(String name)
+
+**** Log file opened by process 10784 at 2019-04-25 12:30:13 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-04-25 12:30:13.961 [Thread 1]
+System.ArgumentOutOfRangeException: El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+   en System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   en SAP.Middleware.Connector.RfcContainerMetadata`1.get_Item(Int32 index)
+>> Error entry 2019-04-25 12:30:13.968 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidParameterException: Element metadata access using index=2 on metadata of TABLE [STRUCTURE BAPI0002_1] failed ---> System.ArgumentOutOfRangeException: El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+   en System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   en SAP.Middleware.Connector.RfcContainerMetadata`1.get_Item(Int32 index)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcContainerMetadata`1.get_Item(Int32 index)
+   en SAP.Middleware.Connector.RfcDataContainer`1.GetElementMetadata(Int32 index)
+
+**** Log file opened by process 1348 at 2019-04-25 13:26:48 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-04-25 13:26:48.226 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidStateException: destination configuration already initialized
+   en SAP.Middleware.Connector.RfcDestinationManager.RegisterDestinationConfiguration(IDestinationConfiguration config)
+>> Error entry 2019-04-25 13:26:55.677 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidStateException: destination configuration already initialized
+   en SAP.Middleware.Connector.RfcDestinationManager.RegisterDestinationConfiguration(IDestinationConfiguration config)
+>> Error entry 2019-04-25 13:27:14.173 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidStateException: destination configuration already initialized
+   en SAP.Middleware.Connector.RfcDestinationManager.RegisterDestinationConfiguration(IDestinationConfiguration config)
+
+**** Log file opened by process 6544 at 2019-04-25 16:11:52 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-04-25 16:11:52.467 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER CUSTOMERCPD of FUNCTION BAPI_ACC_BILLING_CHECK (SETTER): cannot convert String into STRUCTURE BAPIACPA00
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+
+**** Log file opened by process 8476 at 2019-04-26 10:34:20 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-04-26 10:34:20.292 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcAbapException: PARAMETER_ERROR
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn)
+   en SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+
+**** Log file opened by process 7368 at 2019-04-26 10:44:57 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-04-26 10:44:57.443 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcAbapException: PARAMETER_ERROR
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn)
+   en SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+
+**** Log file opened by process 2724 at 2019-05-02 09:48:53 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-05-02 09:48:53.571 [Thread 1]
+SAP.Middleware.Connector.RfcTypeConversionException: PARAMETER MAX_ENTRIES of FUNCTION RFC_GET_TABLE_ENTRIES (SETTER): cannot convert String into INT4 ---> SAP.Middleware.Connector.RfcTypeConversionException: Cannot convert "" into INT4 ---> System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en SAP.Middleware.Connector.RfcScalarMetadataInt4.ConvertString(String value, Object& currentValue)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcScalarMetadataInt4.ConvertString(String value, Object& currentValue)
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en SAP.Middleware.Connector.RfcDataContainer`1.SetValue(Int32 index, String value)
+
+**** Log file opened by process 9412 at 2019-05-03 17:07:20 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-05-03 17:07:20.312 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcAbapException: INTERNAL_ERROR
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn)
+   en SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+
+**** Log file opened by process 11184 at 2019-05-03 17:23:44 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-05-03 17:23:44.942 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcAbapException: INTERNAL_ERROR
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn)
+   en SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+>> Error entry 2019-05-03 17:24:27.444 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcAbapException: INTERNAL_ERROR
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn)
+   en SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+
+**** Log file opened by process 1412 at 2019-05-03 18:02:10 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-05-03 18:02:10.474 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcAbapException: PARAMETER_ERROR
+   en SAP.Middleware.Connector.RfcConnection.ThrowRfcErrorMsg()
+   en SAP.Middleware.Connector.RfcConnection.RfcReceive(RfcFunction function)
+   en SAP.Middleware.Connector.RfcFunction.RfcDeserialize(RfcConnection conn, IRfcIOStream stream)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn, IRfcIOStream stream, RFCID rid)
+   en SAP.Middleware.Connector.RfcFunction.RfcCallReceive(RfcConnection conn)
+   en SAP.Middleware.Connector.RfcFunction.Invoke(RfcDestination destination)
+
+**** Log file opened by process 13292 at 2019-05-05 13:58:18 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-05-05 13:58:18.387 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+>> Error entry 2019-05-05 13:58:18.387 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+   en SAP.Middleware.Connector.RfcRepository.CreateFunction(String name)
+>> Error entry 2019-05-05 13:59:06.770 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidStateException: destination configuration already initialized
+   en SAP.Middleware.Connector.RfcDestinationManager.RegisterDestinationConfiguration(IDestinationConfiguration config)
+>> Error entry 2019-05-05 14:02:13.463 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidStateException: destination configuration already initialized
+   en SAP.Middleware.Connector.RfcDestinationManager.RegisterDestinationConfiguration(IDestinationConfiguration config)
+>> Error entry 2019-05-05 14:03:23.204 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidStateException: destination configuration already initialized
+   en SAP.Middleware.Connector.RfcDestinationManager.RegisterDestinationConfiguration(IDestinationConfiguration config)
+
+**** Log file opened by process 9664 at 2019-05-05 14:17:19 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-05-05 14:17:19.468 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+>> Error entry 2019-05-05 14:17:19.468 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+   en SAP.Middleware.Connector.RfcRepository.CreateFunction(String name)
+>> Error entry 2019-05-05 14:17:27.607 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidStateException: cannot unregister the given destination configuration
+   en SAP.Middleware.Connector.RfcDestinationManager.UnregisterDestinationConfiguration(IDestinationConfiguration config)
+>> Error entry 2019-05-05 14:18:41.683 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidStateException: cannot unregister the given destination configuration
+   en SAP.Middleware.Connector.RfcDestinationManager.UnregisterDestinationConfiguration(IDestinationConfiguration config)
+
+**** Log file opened by process 12568 at 2019-05-05 14:19:38 (UTC-05:00 Hora est. Pacífico, Sudamérica)
+
+SAP .NET Connector 3.0 with file version 3.0.20.0 running on 32-bit .NET Framework 4.0.30319.42000
+Program: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug\ACIWEB_DESKTOP_REPORT.exe
+Working directory: \\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ACIWEB_DESKTOP_REPORT\bin\Debug
+Operating system: Windows 10 Professional 64-bit 
+Processor: 2x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 1011
+Hostname: REINALDODAO87E8, IP address: 10.211.55.3, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-05-05 14:19:38.870 [Thread 1]
+[ASHOST=192.168.4.13 SYSNR=00 SYSID=QAS USER=rdaou PASSWD=******** CLIENT=300 LANG=EN POOL_SIZE=5 SAPROUTER=/H/201.175.34.148 NAME=SAPDest]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+>> Error entry 2019-05-05 14:19:38.886 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidParameterException: Cannot get function metadata for a name that is null or empty
+   en SAP.Middleware.Connector.RfcRepository.GetFunctionMetadata(String name)
+   en SAP.Middleware.Connector.RfcRepository.CreateFunction(String name)
+>> Error entry 2019-05-05 14:20:10.868 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidStateException: cannot unregister the given destination configuration
+   en SAP.Middleware.Connector.RfcDestinationManager.UnregisterDestinationConfiguration(IDestinationConfiguration config)
+>> Error entry 2019-05-05 14:20:10.899 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidStateException: cannot unregister the given destination configuration
+   en SAP.Middleware.Connector.RfcDestinationManager.UnregisterDestinationConfiguration(IDestinationConfiguration config)

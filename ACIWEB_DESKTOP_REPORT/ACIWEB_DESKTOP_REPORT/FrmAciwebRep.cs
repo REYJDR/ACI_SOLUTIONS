@@ -82,13 +82,21 @@ namespace ACIWEB_DESKTOP_REPORT
                 {
                     DbParamAciweb folder = new DbParamAciweb();
                     FrmRepViwer.export = true;
+                    FrmRepViwer.fileExt = cmbFileType.SelectedItem.ToString();
 
                     folder.GetAciExportFolder();
                     FrmRepViwer.expFolder = folder.LocalFolder;
                     FrmRepViwer.sftpFolder = folder.RemoteFolder;
 
                 }
-
+                else
+                {
+                    FrmRepViwer.export = false;
+                }
+                if (this.chkOnlyDS.Checked == true)
+                {
+                    FrmRepViwer.OnlyDs = true;
+                }
                 FrmRepViwer.repType = "aci";
                 FrmRepViwer repViewer = new FrmRepViwer();
 
@@ -181,6 +189,17 @@ namespace ACIWEB_DESKTOP_REPORT
             }
 
 
+        }
+
+        private void chkExport_CheckedChanged(object sender, EventArgs e)
+        {
+            chkOnlyDS.Checked = false;
+        }
+
+
+        private void chkOnlyDS_CheckedChanged(object sender, EventArgs e)
+        {
+            chkExport.Checked = false;
         }
     }
 }

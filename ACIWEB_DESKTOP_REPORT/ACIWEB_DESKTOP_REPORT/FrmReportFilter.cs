@@ -16,19 +16,34 @@ namespace ACIWEB_DESKTOP_REPORT
 
 
         int y = 5;
+        int yx = 0;
+        int dx = 0;
         public static bool winClose;
-
-
+        public static bool exe;
 
 
         public FrmReportFilter()
         {
             InitializeComponent();
-           
+
+            exe = false;
+            DbQueryAciweb.kill = false;
+            FrmRepViwer.canceled = false;
         }
 
         public void SetSelectionsOptions(DataTable SelectionOptions)
         {
+
+            var newSice = SelectionOptions.Rows.Count * 80;
+
+            this.MaximumSize = new Size(800, 800);
+            this.AutoSize = true;
+            this.AutoScroll = true;
+            selectOptionsPanel.AutoSize = true;
+            selectOptionsPanel2.AutoSize = true;
+            groupBox1.AutoSize = true;
+         
+
             selectOptionsPanel.Controls.Clear();
             winClose = false;
 
@@ -39,34 +54,64 @@ namespace ACIWEB_DESKTOP_REPORT
                var fielName =  SelectionOptions.Rows[i].Field<string>(1);
                var longitud =  SelectionOptions.Rows[i].Field<string>(2);
                var dafaultVal  = SelectionOptions.Rows[i].Field<string>(3);
+               var FontType = "SAPGUI - Belize - Icons";
 
-
-                if (dataType == "text")
+                if (dataType == "lable")
                 {
                     // Create new Label
                     var newLabel = new Label();
+
+                    newLabel.AutoSize = true;
                     newLabel.Name = "lbl_" + fielName;
                     newLabel.Text = fielName.Replace("_", " ");
                     newLabel.Location = new Point(10, y);
-                    newLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                    newLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                    newLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                    newLabel.Font = new Font(FontType, 12, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+
+                    // Add items to panel, then add panel to form
+                    selectOptionsPanel.Controls.Add(newLabel);
+                    
+                    y = y + 20;
+                }
+
+                if (dataType == "text")
+                {
+                    yx = y;
+                   
+                    // Create new Label
+                    var newLabel = new Label();
+                    newLabel.AutoSize = false;
+                    newLabel.Name = "lbl_" + fielName;
+                    newLabel.Text = fielName.Replace("_", " ");
+                    newLabel.Location = new Point(10, y);
+                    newLabel.Font = new Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    newLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+                   
 
                     // Create new TextBox
                     var newTextbox = new TextBox();
+                    
                     newTextbox.Name = fielName;
-                    newTextbox.Location = new Point(150, y);
-                    newTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+                    newTextbox.Location = new Point(10, y);
+                    newTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+                    newTextbox.BackColor = Color.AliceBlue;
+                    newTextbox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 
                     if (longitud != ""){
-                        newTextbox.MaxLength = Convert.ToInt32(longitud);
+    
+                        newTextbox.MaxLength = Convert.ToInt32(longitud)+2;
+
                         using (Graphics G = newTextbox.CreateGraphics())
                         {
                             newTextbox.Width = (int)(newTextbox.MaxLength *
                                                       G.MeasureString("x", newTextbox.Font).Width);
                         }
                     }
-                   
-  
+
+                 
+
+
                     if (dafaultVal != "")
                     {
                         newTextbox.Text = dafaultVal;
@@ -74,8 +119,26 @@ namespace ACIWEB_DESKTOP_REPORT
 
                     // Add items to panel, then add panel to form
                     selectOptionsPanel.Controls.Add(newLabel);
-                    selectOptionsPanel.Controls.Add(newTextbox);
-                    y = y + 40;
+                    selectOptionsPanel2.Controls.Add(newTextbox);
+                   // selectOptionsPanel.Controls.Add(newTextbox);
+                    y = y + 25;
+                }
+                
+                if (dataType == "desc")
+                {
+                    
+                    // Create new Label
+                    var newLabel = new Label();
+                    newLabel.AutoSize = true; 
+                    newLabel.Name = "lbl_" + fielName;
+                    newLabel.Text = "("+fielName.Replace("_", " ")+")";
+                    newLabel.Location = new Point(10, y);
+                    newLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                    newLabel.Font = new Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    
+                    // Add items to panel, then add panel to form
+                    selectOptionsPanel2.Controls.Add(newLabel);
+                    y = y + 25;
                 }
 
                 if (dataType == "date")
@@ -83,44 +146,47 @@ namespace ACIWEB_DESKTOP_REPORT
 
 
                     var newLabel = new Label();
+                    newLabel.AutoSize = false;
                     newLabel.Name = "lbl_" +fielName;
                     newLabel.Text =  fielName.Replace("_", " ");
-                    newLabel.Size = new Size(90, 23);
                     newLabel.Location = new Point(10, y);
-                    newLabel.Font = new Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    newLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                    newLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                    newLabel.Font = new Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    newLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 
                     var newDateBox = new DateTimePicker();
                     newDateBox.AllowDrop = true;
-                    newDateBox.Size = new Size(150, 23);
-                    newDateBox.CustomFormat = "yyyy-MM-dd";
+                    newDateBox.Size = new Size(100, 23);    
                     newDateBox.Format = DateTimePickerFormat.Custom;
+                    newDateBox.CustomFormat = "dd-MM-yyyy";
                     newDateBox.Name = "date_" + fielName;
-                    newDateBox.Location = new Point(120, y);
+                    newDateBox.Location = new Point(10, y);
 
 
                     // Add items to panel, then add panel to form
                     selectOptionsPanel.Controls.Add(newLabel);
-                    selectOptionsPanel.Controls.Add(newDateBox);
-                    y = y + 30;
+                    selectOptionsPanel2.Controls.Add(newDateBox);
+                    y = y + 25;
                 }
             
                 if (dataType == "button")
                 {  
                     
                     Button dynamicButton = new Button();
-                    
+
+                    var footerPoint = this.Size.Height - 70;
+
                     // Set Button properties
-                    dynamicButton.Size = new Size(75, 23);
-                    dynamicButton.Location = new Point(393, 130);
+                    dynamicButton.AutoSize = true;
+                    dynamicButton.Location = new Point(250, y+5);
                     dynamicButton.Text = fielName;
                     dynamicButton.Name = "btn_" + fielName;
                     dynamicButton.UseVisualStyleBackColor = true;
-
-                    dynamicButton.Click += new EventHandler(Button_Click);
+                    dynamicButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                     
-                    selectOptionsPanel.Controls.Add(dynamicButton);
+                    dynamicButton.Click += new EventHandler(Button_Click);
+
+                    
+                    selectOptionsPanel2.Controls.Add(dynamicButton);
                    
                 }
 
@@ -134,28 +200,34 @@ namespace ACIWEB_DESKTOP_REPORT
         {
             Cursor = Cursors.WaitCursor; // change cursor to hourglass type
 
-            DbQueryAciweb.mre.Set();
-            DbQuerySage.mre.Set();
-            DbQuerySap.mre.Set();
+            exe  = true;
 
+            DbQueryAciweb.mre.Set();
             DbQueryAciweb.kill = false;
-            DbQuerySage.kill = false;
-            DbQuerySap.kill = false;
             this.Close();
         }
 
-        private void picClose_Click_1(object sender, EventArgs e)
+       
+
+        private void closeTask()
         {
-            DbQueryAciweb.mre.Set();
-            DbQuerySage.mre.Set();
-            DbQuerySap.mre.Set();
+            Cursor = Cursors.Default; // change cursor to hourglass type
 
-            DbQueryAciweb.kill = true;
-            DbQuerySage.kill = true; 
-            DbQuerySap.kill = true;
 
-            this.Close();
+            if (exe != true)
+            {
+                DbQueryAciweb.mre.Set();
+                DbQueryAciweb.kill = true;
+                FrmRepViwer.canceled = true;
+                
+                this.Close();
+            }
+            
+        }
 
+        private void closeTask(object sender, FormClosedEventArgs e)
+        {
+            closeTask();
         }
     }
 }

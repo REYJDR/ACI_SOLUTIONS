@@ -1,0 +1,10 @@
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ClassLibrary1\bin\Debug\WinSCPnet.dll
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ClassLibrary1\obj\Debug\SFTPLibrary.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ClassLibrary1\obj\Debug\SFTPLibrary.FrmLogs.resources
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ClassLibrary1\obj\Debug\SFTPLibrary.ProgressBar.resources
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ClassLibrary1\obj\Debug\SFTPLibrary.csproj.GenerateResource.Cache
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ClassLibrary1\obj\Debug\SFTPLibrary.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ClassLibrary1\bin\Debug\SFTPLibrary.dll
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ClassLibrary1\bin\Debug\SFTPLibrary.pdb
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ClassLibrary1\obj\Debug\SFTPLibrary.dll
+\\Mac\Home\Documents\GitHub\ACI_SOLUTIONS\ACIWEB_DESKTOP_REPORT\ClassLibrary1\obj\Debug\SFTPLibrary.pdb

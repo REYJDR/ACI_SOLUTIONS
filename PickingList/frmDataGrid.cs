@@ -117,5 +117,10 @@ namespace PickingList
 
             dataGridPre.EndEdit();
         }
+
+        private void frmDataGrid_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

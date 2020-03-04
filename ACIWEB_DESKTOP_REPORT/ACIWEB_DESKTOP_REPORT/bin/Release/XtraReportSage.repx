@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="17.2.4.0" Ref="1" ControlType="ACIWEB_DESKTOP_REPORT.XtraReportSage, ACIWEB_DESKTOP_REPORT, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null" Name="XtraReportSage" Margins="19, 0, 100, 100" PaperKind="A3Extra" PageWidth="1268" PageHeight="1752" Version="17.2" DataMember="IncomeStatement" DataSource="#Ref-0">
+  <Bands>
+    <Item1 Ref="2" ControlType="TopMarginBand" Name="topMarginBand1" HeightF="100" />
+    <Item2 Ref="3" ControlType="BottomMarginBand" Name="bottomMarginBand1" HeightF="100">
+      <Controls>
+        <Item1 Ref="4" ControlType="XRPageInfo" Name="pageInfo1" PageInfo="DateTime" SizeF="612,23" LocationFloat="6, 6" StyleName="PageInfo" Padding="2,2,0,0,96" />
+        <Item2 Ref="5" ControlType="XRPageInfo" Name="pageInfo2" TextFormatString="Página {0} de {1}" TextAlignment="TopRight" SizeF="612,23" LocationFloat="630, 6" StyleName="PageInfo" Padding="2,2,0,0,96" />
+      </Controls>
+    </Item2>
+    <Item3 Ref="6" ControlType="ReportHeaderBand" Name="reportHeaderBand1" HeightF="60">
+      <Controls>
+        <Item1 Ref="7" ControlType="XRLabel" Name="label1" Text="IncomeStatement" SizeF="1237,26" LocationFloat="6, 6" StyleName="Title" Padding="2,2,0,0,96" />
+      </Controls>
+    </Item3>
+    <Item4 Ref="8" ControlType="GroupHeaderBand" Name="groupHeaderBand1" GroupUnion="WithFirstDetail" Level="1" Expanded="false" HeightF="48">
+      <Controls>
+        <Item1 Ref="9" ControlType="XRPanel" Name="panel1" SizeF="1249,48" LocationFloat="0, 0" StyleName="DetailCaptionBackground3" />
+      </Controls>
+    </Item4>
+    <Item5 Ref="10" ControlType="DetailBand" Name="detailBand1" HeightF="25">
+      <Controls>
+        <Item1 Ref="11" ControlType="XRTable" Name="table2" SizeF="1180.393,25" LocationFloat="0, 0" OddStyleName="DetailData3_Odd">
+          <Rows>
+            <Item1 Ref="12" ControlType="XRTableRow" Name="tableRow2" Weight="11.5">
+              <Cells>
+                <Item1 Ref="13" ControlType="XRTableCell" Name="tableCell11" Weight="0.10563381124821733" Text="tableCell11" StyleName="DetailData3">
+                  <ExpressionBindings>
+                    <Item1 Ref="14" Expression="[AccountID]" PropertyName="Text" EventName="BeforePrint" />
+                  </ExpressionBindings>
+                </Item1>
+                <Item2 Ref="15" ControlType="XRTableCell" Name="tableCell12" Weight="0.17464789702856035" Text="tableCell12" StyleName="DetailData3">
+                  <ExpressionBindings>
+                    <Item1 Ref="16" Expression="[AccountDescription]" PropertyName="Text" EventName="BeforePrint" />
+                  </ExpressionBindings>
+                </Item2>
+                <Item3 Ref="17" ControlType="XRTableCell" Name="tableCell13" Weight="0.10985916418681821" TextFormatString="{0:C2}" Text="tableCell13" TextAlignment="MiddleRight" StyleName="DetailData3">
+                  <ExpressionBindings>
+                    <Item1 Ref="18" Expression="Abs([ActBalance])" PropertyName="Text" EventName="BeforePrint" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="19" UseTextAlignment="false" />
+                </Item3>
+                <Item4 Ref="20" ControlType="XRTableCell" Name="tableCell14" Weight="0.14788734063422612" TextFormatString="{0:C2}" Text="tableCell14" TextAlignment="MiddleRight" StyleName="DetailData3">
+                  <ExpressionBindings>
+                    <Item1 Ref="21" Expression="Abs([LastYrdBalance])" PropertyName="Text" EventName="BeforePrint" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="22" UseTextAlignment="false" />
+                </Item4>
+                <Item5 Ref="23" ControlType="XRTableCell" Name="tableCell15" Weight="0.1042253602686837" TextFormatString="{0:C2}" Text="tableCell15" TextAlignment="MiddleRight" StyleName="DetailData3">
+                  <ExpressionBindings>
+                    <Item1 Ref="24" Expression="Abs([ActBudget])" PropertyName="Text" EventName="BeforePrint" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="25" UseTextAlignment="false" />
+                </Item5>
+                <Item6 Ref="26" ControlType="XRTableCell" Name="tableCell16" Weight="0.14366198769562524" TextFormatString="{0:C2}" Text="tableCell16" TextAlignment="MiddleRight" StyleName="DetailData3">
+                  <ExpressionBindings>
+                    <Item1 Ref="27" Expression="Abs([LastYrdBudget])" PropertyName="Text" EventName="BeforePrint" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="28" UseTextAlignment="false" />
+                </Item6>
+                <Item7 Ref="29" ControlType="XRTableCell" Name="tableCell17" Weight="0.0915493075612834" Text="tableCell17" StyleName="DetailData3">
+                  <ExpressionBindings>
+                    <Item1 Ref="30" Expression="[Company]" PropertyName="Text" EventName="BeforePrint" />
+                  </ExpressionBindings>
+                </Item7>
+                <Item8 Ref="31" ControlType="XRTableCell" Name="tableCell18" Weight="0.067605549283176539" Text="tableCell18" TextAlignment="MiddleRight" StyleName="DetailData3">
+                  <ExpressionBindings>
+                    <Item1 Ref="32" Expression="[period]" PropertyName="Text" EventName="BeforePrint" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="33" UseTextAlignment="false" />
+                </Item8>
+              </Cells>
+            </Item1>
+          </Rows>
+        </Item1>
+      </Controls>
+    </Item5>
+    <Item6 Ref="34" ControlType="GroupHeaderBand" Name="GroupHeader1" HeightF="79.1666641">
+      <GroupFields>
+        <Item1 Ref="35" FieldName="Type" />
+      </GroupFields>
+      <Controls>
+        <Item1 Ref="36" ControlType="XRLabel" Name="label2" Text="label2" SizeF="100,23" LocationFloat="0, 10.0000067" Font="Tahoma, 8pt, style=Bold" ForeColor="255,75,75,75" Padding="2,2,0,0,96">
+          <ExpressionBindings>
+            <Item1 Ref="37" Expression="[Type]" PropertyName="Text" EventName="BeforePrint" />
+          </ExpressionBindings>
+          <StylePriority Ref="38" UseFont="false" UseForeColor="false" />
+        </Item1>
+        <Item2 Ref="39" ControlType="XRTable" Name="table3" SizeF="1180.393,28" LocationFloat="0, 51.16666">
+          <Rows>
+            <Item1 Ref="40" ControlType="XRTableRow" Name="tableRow3" Weight="1">
+              <Cells>
+                <Item1 Ref="41" ControlType="XRTableCell" Name="tableCell20" Weight="0.10563379903141264" Text="Account ID" StyleName="DetailCaption3" />
+                <Item2 Ref="42" ControlType="XRTableCell" Name="tableCell21" Weight="0.17464788481175567" Text="Account Description" StyleName="DetailCaption3" />
+                <Item3 Ref="43" ControlType="XRTableCell" Name="tableCell22" Weight="0.10985915197001352" Text="Act Balance" TextAlignment="MiddleRight" StyleName="DetailCaption3">
+                  <StylePriority Ref="44" UseTextAlignment="false" />
+                </Item3>
+                <Item4 Ref="45" ControlType="XRTableCell" Name="tableCell23" Weight="0.14788732841742144" Text="Last Yrd Balance" TextAlignment="MiddleRight" StyleName="DetailCaption3">
+                  <StylePriority Ref="46" UseTextAlignment="false" />
+                </Item4>
+                <Item5 Ref="47" ControlType="XRTableCell" Name="tableCell24" Weight="0.104225348051879" Text="Act Budget" TextAlignment="MiddleRight" StyleName="DetailCaption3">
+                  <StylePriority Ref="48" UseTextAlignment="false" />
+                </Item5>
+                <Item6 Ref="49" ControlType="XRTableCell" Name="tableCell25" Weight="0.14366197547882056" Text="Last Yrd Budget" TextAlignment="MiddleRight" StyleName="DetailCaption3">
+                  <StylePriority Ref="50" UseTextAlignment="false" />
+                </Item6>
+                <Item7 Ref="51" ControlType="XRTableCell" Name="tableCell26" Weight="0.091549295344478712" Text="Company" StyleName="DetailCaption3" />
+                <Item8 Ref="52" ControlType="XRTableCell" Name="tableCell27" Weight="0.067605537066371846" Text="period" TextAlignment="MiddleRight" StyleName="DetailCaption3">
+                  <StylePriority Ref="53" UseTextAlignment="false" />
+                </Item8>
+              </Cells>
+            </Item1>
+          </Rows>
+        </Item2>
+      </Controls>
+    </Item6>
+  </Bands>
+  <StyleSheet>
+    <Item1 Ref="54" Name="Title" BorderStyle="Inset" Font="Tahoma, 14pt" ForeColor="255,75,75,75" BackColor="Transparent" BorderColor="Black" Sides="None" StringFormat="Near;Near;0;None;Character;Default" BorderWidthSerializable="1" />
+    <Item2 Ref="55" Name="DetailCaption3" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Tahoma, 8pt, style=Bold" ForeColor="255,75,75,75" BackColor="Transparent" BorderColor="Transparent" Sides="None" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" />
+    <Item3 Ref="56" Name="DetailData3" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Tahoma, 8pt" ForeColor="Black" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" />
+    <Item4 Ref="57" Name="DetailData3_Odd" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Tahoma, 8pt" ForeColor="Black" BackColor="255,231,231,231" BorderColor="Transparent" Sides="None" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="1" />
+    <Item5 Ref="58" Name="DetailCaptionBackground3" BorderStyle="Inset" BackColor="Transparent" BorderColor="255,206,206,206" Sides="Top" StringFormat="Near;Near;0;None;Character;Default" BorderWidthSerializable="2" />
+    <Item6 Ref="59" Name="PageInfo" BorderStyle="Inset" Padding="2,2,0,0,100" Font="Tahoma, 8pt, style=Bold" ForeColor="255,75,75,75" StringFormat="Near;Near;0;None;Character;Default" />
+  </StyleSheet>
+  <ComponentStorage>
+    <Item1 Ref="0" ObjectType="DevExpress.DataAccess.ObjectBinding.ObjectDataSource,DevExpress.DataAccess.v17.2" Name="objectDataSource1" Base64="PE9iamVjdERhdGFTb3VyY2U+PE5hbWU+b2JqZWN0RGF0YVNvdXJjZTE8L05hbWU+PERhdGFTb3VyY2UgVHlwZT0iQWNpU2FnZUxpYnJhcnkuRGJRdWVyeVNhZ2UsIEFjaVNhZ2VMaWJyYXJ5LCBWZXJzaW9uPTEuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbCIgLz48RGF0YU1lbWJlcj5JbmNvbWVTdGF0ZW1lbnQ8L0RhdGFNZW1iZXI+PC9PYmplY3REYXRhU291cmNlPg==" />
+  </ComponentStorage>
+</XtraReportsLayoutSerializer>

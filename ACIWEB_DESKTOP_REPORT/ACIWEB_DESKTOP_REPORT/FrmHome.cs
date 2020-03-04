@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 
 namespace ACIWEB_DESKTOP_REPORT
@@ -36,6 +37,8 @@ namespace ACIWEB_DESKTOP_REPORT
             setting.InitFieldVal();
             setting.SetCompany();
 
+
+      
 
             FrmSourceOptions options = new FrmSourceOptions();
             options.TopLevel = false;

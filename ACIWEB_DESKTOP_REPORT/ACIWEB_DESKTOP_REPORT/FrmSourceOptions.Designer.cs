@@ -30,7 +30,6 @@
         {
             this.SourcePanel = new System.Windows.Forms.Panel();
             this.btnFileSource = new System.Windows.Forms.Button();
-            this.btnSapRep = new System.Windows.Forms.Button();
             this.btnAciweb = new System.Windows.Forms.Button();
             this.btnSage = new System.Windows.Forms.Button();
             this.SourcePanel.SuspendLayout();
@@ -39,7 +38,6 @@
             // SourcePanel
             // 
             this.SourcePanel.Controls.Add(this.btnFileSource);
-            this.SourcePanel.Controls.Add(this.btnSapRep);
             this.SourcePanel.Controls.Add(this.btnAciweb);
             this.SourcePanel.Controls.Add(this.btnSage);
             this.SourcePanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -58,7 +56,7 @@
             this.btnFileSource.ForeColor = System.Drawing.Color.Black;
             this.btnFileSource.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.FILESOURCE;
             this.btnFileSource.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFileSource.Location = new System.Drawing.Point(7, 106);
+            this.btnFileSource.Location = new System.Drawing.Point(343, 9);
             this.btnFileSource.Name = "btnFileSource";
             this.btnFileSource.Size = new System.Drawing.Size(162, 91);
             this.btnFileSource.TabIndex = 3;
@@ -66,23 +64,6 @@
             this.btnFileSource.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnFileSource.UseVisualStyleBackColor = false;
             this.btnFileSource.Click += new System.EventHandler(this.btnFileSource_Click);
-            // 
-            // btnSapRep
-            // 
-            this.btnSapRep.BackColor = System.Drawing.Color.White;
-            this.btnSapRep.FlatAppearance.BorderSize = 0;
-            this.btnSapRep.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSapRep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSapRep.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSapRep.ForeColor = System.Drawing.Color.Black;
-            this.btnSapRep.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.sap_logo1;
-            this.btnSapRep.Location = new System.Drawing.Point(343, 9);
-            this.btnSapRep.Name = "btnSapRep";
-            this.btnSapRep.Size = new System.Drawing.Size(162, 91);
-            this.btnSapRep.TabIndex = 2;
-            this.btnSapRep.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSapRep.UseVisualStyleBackColor = false;
-            this.btnSapRep.Click += new System.EventHandler(this.btnSapRep_Click);
             // 
             // btnAciweb
             // 
@@ -139,7 +120,6 @@
         private System.Windows.Forms.Button btnAciweb;
         private System.Windows.Forms.Button btnSage;
         private System.Windows.Forms.Panel SourcePanel;
-        private System.Windows.Forms.Button btnSapRep;
         private System.Windows.Forms.Button btnFileSource;
     }
 }

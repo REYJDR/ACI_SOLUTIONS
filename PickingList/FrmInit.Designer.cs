@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInit));
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.tabPrincipal = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -65,7 +64,7 @@
             this.btnDesigner = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.dbQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbQueryBindingSource = new System.Windows.Forms.BindingSource();
             this.tabPrincipal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -428,10 +427,6 @@
             this.StatusLabel.Name = "StatusLabel";
             this.StatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
-            // dbQueryBindingSource
-            // 
-       //     this.dbQueryBindingSource.DataSource = typeof(PickingList.DbQuery);
-            // 
             // FrmInit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,7 +436,7 @@
             this.Controls.Add(this.tabPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmInit";
-            this.Text = "Picking List v2.0.0.9";
+            this.Text = "Picking List v3.0.0";
             this.Load += new System.EventHandler(this.FrmInit_Load);
             this.tabPrincipal.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

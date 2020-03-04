@@ -28,119 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Title = new DevExpress.XtraReports.UI.XRControlStyle();
-            this.DetailCaption3 = new DevExpress.XtraReports.UI.XRControlStyle();
-            this.DetailData3 = new DevExpress.XtraReports.UI.XRControlStyle();
-            this.DetailData3_Odd = new DevExpress.XtraReports.UI.XRControlStyle();
-            this.DetailCaptionBackground3 = new DevExpress.XtraReports.UI.XRControlStyle();
-            this.PageInfo = new DevExpress.XtraReports.UI.XRControlStyle();
-            this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
-            this.detailBand1 = new DevExpress.XtraReports.UI.DetailBand();
-            this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.components = new System.ComponentModel.Container();
+            this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
+            this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
-            // Title
+            // objectDataSource1
             // 
-            this.Title.BackColor = System.Drawing.Color.Transparent;
-            this.Title.BorderColor = System.Drawing.Color.Black;
-            this.Title.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.Title.BorderWidth = 1F;
-            this.Title.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.Title.Name = "Title";
+            this.objectDataSource1.DataMember = "Journal";
+            this.objectDataSource1.DataSource = typeof(AciSageLibrary.DbQuerySage);
+            this.objectDataSource1.Name = "objectDataSource1";
             // 
-            // DetailCaption3
+            // TopMargin
             // 
-            this.DetailCaption3.BackColor = System.Drawing.Color.Transparent;
-            this.DetailCaption3.BorderColor = System.Drawing.Color.Transparent;
-            this.DetailCaption3.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.DetailCaption3.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.DetailCaption3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.DetailCaption3.Name = "DetailCaption3";
-            this.DetailCaption3.Padding = new DevExpress.XtraPrinting.PaddingInfo(6, 6, 0, 0, 100F);
-            this.DetailCaption3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.TopMargin.Name = "TopMargin";
             // 
-            // DetailData3
+            // BottomMargin
             // 
-            this.DetailData3.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.DetailData3.ForeColor = System.Drawing.Color.Black;
-            this.DetailData3.Name = "DetailData3";
-            this.DetailData3.Padding = new DevExpress.XtraPrinting.PaddingInfo(6, 6, 0, 0, 100F);
-            this.DetailData3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.BottomMargin.Name = "BottomMargin";
             // 
-            // DetailData3_Odd
+            // Detail
             // 
-            this.DetailData3_Odd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(231)))));
-            this.DetailData3_Odd.BorderColor = System.Drawing.Color.Transparent;
-            this.DetailData3_Odd.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.DetailData3_Odd.BorderWidth = 1F;
-            this.DetailData3_Odd.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.DetailData3_Odd.ForeColor = System.Drawing.Color.Black;
-            this.DetailData3_Odd.Name = "DetailData3_Odd";
-            this.DetailData3_Odd.Padding = new DevExpress.XtraPrinting.PaddingInfo(6, 6, 0, 0, 100F);
-            this.DetailData3_Odd.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // DetailCaptionBackground3
-            // 
-            this.DetailCaptionBackground3.BackColor = System.Drawing.Color.Transparent;
-            this.DetailCaptionBackground3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
-            this.DetailCaptionBackground3.Borders = DevExpress.XtraPrinting.BorderSide.Top;
-            this.DetailCaptionBackground3.BorderWidth = 2F;
-            this.DetailCaptionBackground3.Name = "DetailCaptionBackground3";
-            // 
-            // PageInfo
-            // 
-            this.PageInfo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.PageInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.PageInfo.Name = "PageInfo";
-            this.PageInfo.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            // 
-            // topMarginBand1
-            // 
-            this.topMarginBand1.HeightF = 100F;
-            this.topMarginBand1.Name = "topMarginBand1";
-            // 
-            // detailBand1
-            // 
-            this.detailBand1.HeightF = 100F;
-            this.detailBand1.Name = "detailBand1";
-            // 
-            // bottomMarginBand1
-            // 
-            this.bottomMarginBand1.HeightF = 100F;
-            this.bottomMarginBand1.Name = "bottomMarginBand1";
+            this.Detail.Name = "Detail";
             // 
             // XtraReportSage
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
-            this.topMarginBand1,
-            this.detailBand1,
-            this.bottomMarginBand1});
-            this.Margins = new System.Drawing.Printing.Margins(19, 0, 100, 100);
-            this.PageHeight = 1752;
-            this.PageWidth = 1268;
-            this.PaperKind = System.Drawing.Printing.PaperKind.A3Extra;
-            this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
-            this.Title,
-            this.DetailCaption3,
-            this.DetailData3,
-            this.DetailData3_Odd,
-            this.DetailCaptionBackground3,
-            this.PageInfo});
-            this.Version = "17.2";
+            this.TopMargin,
+            this.BottomMargin,
+            this.Detail});
+            this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
+            this.objectDataSource1});
+            this.DataSource = this.objectDataSource1;
+            this.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.Version = "18.2";
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
 
         #endregion
-        private DevExpress.XtraReports.UI.XRControlStyle Title;
-        private DevExpress.XtraReports.UI.XRControlStyle DetailCaption3;
-        private DevExpress.XtraReports.UI.XRControlStyle DetailData3;
-        private DevExpress.XtraReports.UI.XRControlStyle DetailData3_Odd;
-        private DevExpress.XtraReports.UI.XRControlStyle DetailCaptionBackground3;
-        private DevExpress.XtraReports.UI.XRControlStyle PageInfo;
-        private DevExpress.XtraReports.UI.TopMarginBand topMarginBand1;
-        private DevExpress.XtraReports.UI.DetailBand detailBand1;
-        private DevExpress.XtraReports.UI.BottomMarginBand bottomMarginBand1;
+
+        private DevExpress.DataAccess.ObjectBinding.ObjectDataSource objectDataSource1;
+        private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
+        private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
+        private DevExpress.XtraReports.UI.DetailBand Detail;
     }
 }

@@ -82,36 +82,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.textDirectorySage = new System.Windows.Forms.TextBox();
             this.btnSageConn = new System.Windows.Forms.Button();
-            this.tabSAP = new System.Windows.Forms.TabPage();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.cmbSftpListSap = new System.Windows.Forms.ComboBox();
-            this.btnSyncSap = new System.Windows.Forms.Button();
-            this.btnSafeExpDirSap = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtRemoteFolderSap = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.btnDirSapExport = new System.Windows.Forms.Button();
-            this.txtDirExportSap = new System.Windows.Forms.TextBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.txtSapRouter = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtSapClient = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtSapSysId = new System.Windows.Forms.TextBox();
-            this.txtSapServer = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtSapUser = new System.Windows.Forms.TextBox();
-            this.btnSapConfSave = new System.Windows.Forms.Button();
-            this.txtSapSysInstance = new System.Windows.Forms.TextBox();
-            this.txtSapPassword = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.tabFileSource = new System.Windows.Forms.TabPage();
             this.btnUnSelAll = new System.Windows.Forms.Button();
             this.btnSelAll = new System.Windows.Forms.Button();
@@ -151,22 +121,22 @@
             this.lblDataTble = new System.Windows.Forms.Label();
             this.dataGridFileSource = new System.Windows.Forms.DataGridView();
             this.tabSFTP = new System.Windows.Forms.TabPage();
+            this.btnDelSFTP = new System.Windows.Forms.Button();
+            this.btnUnSelAllSftp = new System.Windows.Forms.Button();
+            this.btnSelAllSftp = new System.Windows.Forms.Button();
             this.dataGridSftpList = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.chkConnType = new System.Windows.Forms.CheckedListBox();
             this.label29 = new System.Windows.Forms.Label();
             this.txtSftpName = new System.Windows.Forms.TextBox();
             this.btnAddSftpToList = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtSftpPort = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSftpPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSftpUsername = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSftpHostname = new System.Windows.Forms.TextBox();
-            this.btnUnSelAllSftp = new System.Windows.Forms.Button();
-            this.btnSelAllSftp = new System.Windows.Forms.Button();
-            this.btnDelSFTP = new System.Windows.Forms.Button();
             this.settingsPanel.SuspendLayout();
             this.tabSetting.SuspendLayout();
             this.tabAciSet.SuspendLayout();
@@ -182,11 +152,6 @@
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPre)).BeginInit();
-            this.tabSAP.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.groupBox9.SuspendLayout();
             this.tabFileSource.SuspendLayout();
             this.groupBox11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -200,6 +165,7 @@
             this.tabSFTP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSftpList)).BeginInit();
             this.groupBox4.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // settingsPanel
@@ -214,7 +180,6 @@
             // 
             this.tabSetting.Controls.Add(this.tabAciSet);
             this.tabSetting.Controls.Add(this.tabSageDb);
-            this.tabSetting.Controls.Add(this.tabSAP);
             this.tabSetting.Controls.Add(this.tabFileSource);
             this.tabSetting.Controls.Add(this.tabSFTP);
             this.tabSetting.Location = new System.Drawing.Point(0, 0);
@@ -404,6 +369,7 @@
             this.comboComp.Name = "comboComp";
             this.comboComp.Size = new System.Drawing.Size(237, 24);
             this.comboComp.TabIndex = 10;
+            this.comboComp.SelectedIndexChanged += new System.EventHandler(this.comboComp_SelectedIndexChanged);
             // 
             // txtNameComp
             // 
@@ -696,6 +662,8 @@
             this.dataGridPre.ReadOnly = true;
             this.dataGridPre.Size = new System.Drawing.Size(574, 133);
             this.dataGridPre.TabIndex = 15;
+            this.dataGridPre.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPre_CellContentClick);
+            this.dataGridPre.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridPre_CellFormatting);
             // 
             // SageURL
             // 
@@ -733,297 +701,6 @@
             this.btnSageConn.Text = "Test/Save";
             this.btnSageConn.UseVisualStyleBackColor = true;
             this.btnSageConn.Click += new System.EventHandler(this.btnSageConn_Click);
-            // 
-            // tabSAP
-            // 
-            this.tabSAP.Controls.Add(this.groupBox7);
-            this.tabSAP.Controls.Add(this.groupBox9);
-            this.tabSAP.Location = new System.Drawing.Point(4, 25);
-            this.tabSAP.Name = "tabSAP";
-            this.tabSAP.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSAP.Size = new System.Drawing.Size(590, 399);
-            this.tabSAP.TabIndex = 3;
-            this.tabSAP.Text = "SAP";
-            this.tabSAP.UseVisualStyleBackColor = true;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.label32);
-            this.groupBox7.Controls.Add(this.cmbSftpListSap);
-            this.groupBox7.Controls.Add(this.btnSyncSap);
-            this.groupBox7.Controls.Add(this.btnSafeExpDirSap);
-            this.groupBox7.Controls.Add(this.label12);
-            this.groupBox7.Controls.Add(this.pictureBox6);
-            this.groupBox7.Controls.Add(this.label13);
-            this.groupBox7.Controls.Add(this.txtRemoteFolderSap);
-            this.groupBox7.Controls.Add(this.label14);
-            this.groupBox7.Controls.Add(this.pictureBox7);
-            this.groupBox7.Controls.Add(this.btnDirSapExport);
-            this.groupBox7.Controls.Add(this.txtDirExportSap);
-            this.groupBox7.Location = new System.Drawing.Point(3, 237);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(576, 140);
-            this.groupBox7.TabIndex = 26;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Export reports directory";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(6, 50);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(98, 16);
-            this.label32.TabIndex = 40;
-            this.label32.Text = "SFTP Connection";
-            // 
-            // cmbSftpListSap
-            // 
-            this.cmbSftpListSap.FormattingEnabled = true;
-            this.cmbSftpListSap.Location = new System.Drawing.Point(105, 47);
-            this.cmbSftpListSap.Name = "cmbSftpListSap";
-            this.cmbSftpListSap.Size = new System.Drawing.Size(121, 24);
-            this.cmbSftpListSap.TabIndex = 39;
-            // 
-            // btnSyncSap
-            // 
-            this.btnSyncSap.Location = new System.Drawing.Point(508, 111);
-            this.btnSyncSap.Name = "btnSyncSap";
-            this.btnSyncSap.Size = new System.Drawing.Size(62, 23);
-            this.btnSyncSap.TabIndex = 24;
-            this.btnSyncSap.Text = "Sync";
-            this.btnSyncSap.UseVisualStyleBackColor = true;
-            this.btnSyncSap.Click += new System.EventHandler(this.btnSyncSap_Click);
-            // 
-            // btnSafeExpDirSap
-            // 
-            this.btnSafeExpDirSap.Location = new System.Drawing.Point(442, 111);
-            this.btnSafeExpDirSap.Name = "btnSafeExpDirSap";
-            this.btnSafeExpDirSap.Size = new System.Drawing.Size(62, 23);
-            this.btnSafeExpDirSap.TabIndex = 30;
-            this.btnSafeExpDirSap.Text = "Save";
-            this.btnSafeExpDirSap.UseVisualStyleBackColor = true;
-            this.btnSafeExpDirSap.Click += new System.EventHandler(this.btnSafeExpDirSap_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 7F);
-            this.label12.Location = new System.Drawing.Point(102, 101);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(175, 15);
-            this.label12.TabIndex = 34;
-            this.label12.Text = "In case you use sftp configuration";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(86, 80);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox6.TabIndex = 33;
-            this.pictureBox6.TabStop = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 80);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(83, 16);
-            this.label13.TabIndex = 32;
-            this.label13.Text = "Remote folder";
-            // 
-            // txtRemoteFolderSap
-            // 
-            this.txtRemoteFolderSap.AllowDrop = true;
-            this.txtRemoteFolderSap.Location = new System.Drawing.Point(105, 77);
-            this.txtRemoteFolderSap.Name = "txtRemoteFolderSap";
-            this.txtRemoteFolderSap.Size = new System.Drawing.Size(290, 21);
-            this.txtRemoteFolderSap.TabIndex = 31;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 20);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(80, 16);
-            this.label14.TabIndex = 22;
-            this.label14.Text = "Export Folder.";
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(87, 20);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox7.TabIndex = 25;
-            this.pictureBox7.TabStop = false;
-            // 
-            // btnDirSapExport
-            // 
-            this.btnDirSapExport.Image = ((System.Drawing.Image)(resources.GetObject("btnDirSapExport.Image")));
-            this.btnDirSapExport.Location = new System.Drawing.Point(477, 15);
-            this.btnDirSapExport.Margin = new System.Windows.Forms.Padding(1);
-            this.btnDirSapExport.Name = "btnDirSapExport";
-            this.btnDirSapExport.Size = new System.Drawing.Size(28, 25);
-            this.btnDirSapExport.TabIndex = 24;
-            this.btnDirSapExport.UseVisualStyleBackColor = true;
-            this.btnDirSapExport.Click += new System.EventHandler(this.btnDirSapExport_Click);
-            // 
-            // txtDirExportSap
-            // 
-            this.txtDirExportSap.AllowDrop = true;
-            this.txtDirExportSap.Location = new System.Drawing.Point(105, 17);
-            this.txtDirExportSap.Name = "txtDirExportSap";
-            this.txtDirExportSap.Size = new System.Drawing.Size(373, 21);
-            this.txtDirExportSap.TabIndex = 23;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.txtSapRouter);
-            this.groupBox9.Controls.Add(this.label21);
-            this.groupBox9.Controls.Add(this.label20);
-            this.groupBox9.Controls.Add(this.txtSapClient);
-            this.groupBox9.Controls.Add(this.label15);
-            this.groupBox9.Controls.Add(this.txtSapSysId);
-            this.groupBox9.Controls.Add(this.txtSapServer);
-            this.groupBox9.Controls.Add(this.label16);
-            this.groupBox9.Controls.Add(this.txtSapUser);
-            this.groupBox9.Controls.Add(this.btnSapConfSave);
-            this.groupBox9.Controls.Add(this.txtSapSysInstance);
-            this.groupBox9.Controls.Add(this.txtSapPassword);
-            this.groupBox9.Controls.Add(this.label17);
-            this.groupBox9.Controls.Add(this.label18);
-            this.groupBox9.Controls.Add(this.label19);
-            this.groupBox9.Location = new System.Drawing.Point(3, 6);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(576, 225);
-            this.groupBox9.TabIndex = 24;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "SAP Parameters";
-            // 
-            // txtSapRouter
-            // 
-            this.txtSapRouter.Location = new System.Drawing.Point(102, 133);
-            this.txtSapRouter.Name = "txtSapRouter";
-            this.txtSapRouter.Size = new System.Drawing.Size(278, 21);
-            this.txtSapRouter.TabIndex = 17;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(21, 135);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(66, 16);
-            this.label21.TabIndex = 18;
-            this.label21.Text = "SAP Router";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(20, 51);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(39, 16);
-            this.label20.TabIndex = 16;
-            this.label20.Text = "Client";
-            // 
-            // txtSapClient
-            // 
-            this.txtSapClient.Location = new System.Drawing.Point(102, 46);
-            this.txtSapClient.Name = "txtSapClient";
-            this.txtSapClient.Size = new System.Drawing.Size(43, 21);
-            this.txtSapClient.TabIndex = 15;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(18, 105);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(59, 16);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "ID System";
-            // 
-            // txtSapSysId
-            // 
-            this.txtSapSysId.Location = new System.Drawing.Point(102, 100);
-            this.txtSapSysId.Name = "txtSapSysId";
-            this.txtSapSysId.Size = new System.Drawing.Size(33, 21);
-            this.txtSapSysId.TabIndex = 13;
-            // 
-            // txtSapServer
-            // 
-            this.txtSapServer.Location = new System.Drawing.Point(102, 19);
-            this.txtSapServer.Name = "txtSapServer";
-            this.txtSapServer.Size = new System.Drawing.Size(159, 21);
-            this.txtSapServer.TabIndex = 0;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(18, 78);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(76, 16);
-            this.label16.TabIndex = 8;
-            this.label16.Text = "Instance No.";
-            // 
-            // txtSapUser
-            // 
-            this.txtSapUser.Location = new System.Drawing.Point(102, 165);
-            this.txtSapUser.Name = "txtSapUser";
-            this.txtSapUser.Size = new System.Drawing.Size(159, 21);
-            this.txtSapUser.TabIndex = 1;
-            // 
-            // btnSapConfSave
-            // 
-            this.btnSapConfSave.Location = new System.Drawing.Point(458, 195);
-            this.btnSapConfSave.Name = "btnSapConfSave";
-            this.btnSapConfSave.Size = new System.Drawing.Size(107, 23);
-            this.btnSapConfSave.TabIndex = 12;
-            this.btnSapConfSave.Text = "Save";
-            this.btnSapConfSave.UseVisualStyleBackColor = true;
-            this.btnSapConfSave.Click += new System.EventHandler(this.btnSapConfSave_Click);
-            // 
-            // txtSapSysInstance
-            // 
-            this.txtSapSysInstance.Location = new System.Drawing.Point(102, 73);
-            this.txtSapSysInstance.Name = "txtSapSysInstance";
-            this.txtSapSysInstance.Size = new System.Drawing.Size(33, 21);
-            this.txtSapSysInstance.TabIndex = 7;
-            // 
-            // txtSapPassword
-            // 
-            this.txtSapPassword.Location = new System.Drawing.Point(102, 191);
-            this.txtSapPassword.Name = "txtSapPassword";
-            this.txtSapPassword.PasswordChar = '*';
-            this.txtSapPassword.Size = new System.Drawing.Size(159, 21);
-            this.txtSapPassword.TabIndex = 2;
-            this.txtSapPassword.UseSystemPasswordChar = true;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(21, 21);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(65, 16);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "SAP Server";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(34, 198);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(59, 16);
-            this.label18.TabIndex = 5;
-            this.label18.Text = "Password";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(34, 172);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(30, 16);
-            this.label19.TabIndex = 4;
-            this.label19.Text = "User";
             // 
             // tabFileSource
             // 
@@ -1350,6 +1027,7 @@
             this.cmbFileType.Name = "cmbFileType";
             this.cmbFileType.Size = new System.Drawing.Size(58, 24);
             this.cmbFileType.TabIndex = 27;
+            this.cmbFileType.SelectedIndexChanged += new System.EventHandler(this.cmbFileType_SelectedIndexChanged);
             // 
             // txtDataTable
             // 
@@ -1415,6 +1093,7 @@
             this.dataGridFileSource.ReadOnly = true;
             this.dataGridFileSource.Size = new System.Drawing.Size(584, 118);
             this.dataGridFileSource.TabIndex = 16;
+            this.dataGridFileSource.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridFileSource_CellContentClick);
             // 
             // tabSFTP
             // 
@@ -1431,6 +1110,36 @@
             this.tabSFTP.Text = "SFTP";
             this.tabSFTP.UseVisualStyleBackColor = true;
             // 
+            // btnDelSFTP
+            // 
+            this.btnDelSFTP.Location = new System.Drawing.Point(505, 368);
+            this.btnDelSFTP.Name = "btnDelSFTP";
+            this.btnDelSFTP.Size = new System.Drawing.Size(75, 23);
+            this.btnDelSFTP.TabIndex = 42;
+            this.btnDelSFTP.Text = "Delete";
+            this.btnDelSFTP.UseVisualStyleBackColor = true;
+            this.btnDelSFTP.Click += new System.EventHandler(this.btnDelSFTP_Click);
+            // 
+            // btnUnSelAllSftp
+            // 
+            this.btnUnSelAllSftp.Location = new System.Drawing.Point(82, 368);
+            this.btnUnSelAllSftp.Name = "btnUnSelAllSftp";
+            this.btnUnSelAllSftp.Size = new System.Drawing.Size(83, 23);
+            this.btnUnSelAllSftp.TabIndex = 41;
+            this.btnUnSelAllSftp.Text = "Unselect all";
+            this.btnUnSelAllSftp.UseVisualStyleBackColor = true;
+            this.btnUnSelAllSftp.Click += new System.EventHandler(this.btnUnSelAllSftp_Click);
+            // 
+            // btnSelAllSftp
+            // 
+            this.btnSelAllSftp.Location = new System.Drawing.Point(6, 368);
+            this.btnSelAllSftp.Name = "btnSelAllSftp";
+            this.btnSelAllSftp.Size = new System.Drawing.Size(75, 23);
+            this.btnSelAllSftp.TabIndex = 40;
+            this.btnSelAllSftp.Text = "Select All";
+            this.btnSelAllSftp.UseVisualStyleBackColor = true;
+            this.btnSelAllSftp.Click += new System.EventHandler(this.btnSelAllSftp_Click);
+            // 
             // dataGridSftpList
             // 
             this.dataGridSftpList.AllowUserToAddRows = false;
@@ -1441,14 +1150,14 @@
             this.dataGridSftpList.ReadOnly = true;
             this.dataGridSftpList.Size = new System.Drawing.Size(574, 181);
             this.dataGridSftpList.TabIndex = 16;
+            this.dataGridSftpList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridSftpList_CellFormatting);
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.groupBox7);
             this.groupBox4.Controls.Add(this.label29);
             this.groupBox4.Controls.Add(this.txtSftpName);
             this.groupBox4.Controls.Add(this.btnAddSftpToList);
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.txtSftpPort);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.txtSftpPassword);
             this.groupBox4.Controls.Add(this.label5);
@@ -1457,10 +1166,34 @@
             this.groupBox4.Controls.Add(this.txtSftpHostname);
             this.groupBox4.Location = new System.Drawing.Point(6, 6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(407, 163);
+            this.groupBox4.Size = new System.Drawing.Size(574, 163);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Configuration";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.chkConnType);
+            this.groupBox7.Location = new System.Drawing.Point(321, 11);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(247, 75);
+            this.groupBox7.TabIndex = 11;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Connection Type";
+            // 
+            // chkConnType
+            // 
+            this.chkConnType.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.chkConnType.FormattingEnabled = true;
+            this.chkConnType.Items.AddRange(new object[] {
+            "FTP",
+            "FTPS",
+            "SFTP"});
+            this.chkConnType.Location = new System.Drawing.Point(6, 20);
+            this.chkConnType.Name = "chkConnType";
+            this.chkConnType.Size = new System.Drawing.Size(120, 48);
+            this.chkConnType.TabIndex = 0;
+            this.chkConnType.SelectedIndexChanged += new System.EventHandler(this.chkConnType_SelectedIndexChanged);
             // 
             // label29
             // 
@@ -1480,30 +1213,13 @@
             // 
             // btnAddSftpToList
             // 
-            this.btnAddSftpToList.Location = new System.Drawing.Point(331, 131);
+            this.btnAddSftpToList.Location = new System.Drawing.Point(493, 134);
             this.btnAddSftpToList.Name = "btnAddSftpToList";
             this.btnAddSftpToList.Size = new System.Drawing.Size(75, 23);
             this.btnAddSftpToList.TabIndex = 8;
             this.btnAddSftpToList.Text = "add";
             this.btnAddSftpToList.UseVisualStyleBackColor = true;
             this.btnAddSftpToList.Click += new System.EventHandler(this.btnAddSftpToList_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(42, 136);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 16);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Port";
-            // 
-            // txtSftpPort
-            // 
-            this.txtSftpPort.Location = new System.Drawing.Point(76, 133);
-            this.txtSftpPort.Name = "txtSftpPort";
-            this.txtSftpPort.Size = new System.Drawing.Size(21, 21);
-            this.txtSftpPort.TabIndex = 6;
-            this.txtSftpPort.Text = "22";
             // 
             // label6
             // 
@@ -1552,38 +1268,8 @@
             // 
             this.txtSftpHostname.Location = new System.Drawing.Point(76, 51);
             this.txtSftpHostname.Name = "txtSftpHostname";
-            this.txtSftpHostname.Size = new System.Drawing.Size(303, 21);
+            this.txtSftpHostname.Size = new System.Drawing.Size(239, 21);
             this.txtSftpHostname.TabIndex = 0;
-            // 
-            // btnUnSelAllSftp
-            // 
-            this.btnUnSelAllSftp.Location = new System.Drawing.Point(82, 368);
-            this.btnUnSelAllSftp.Name = "btnUnSelAllSftp";
-            this.btnUnSelAllSftp.Size = new System.Drawing.Size(83, 23);
-            this.btnUnSelAllSftp.TabIndex = 41;
-            this.btnUnSelAllSftp.Text = "Unselect all";
-            this.btnUnSelAllSftp.UseVisualStyleBackColor = true;
-            this.btnUnSelAllSftp.Click += new System.EventHandler(this.btnUnSelAllSftp_Click);
-            // 
-            // btnSelAllSftp
-            // 
-            this.btnSelAllSftp.Location = new System.Drawing.Point(6, 368);
-            this.btnSelAllSftp.Name = "btnSelAllSftp";
-            this.btnSelAllSftp.Size = new System.Drawing.Size(75, 23);
-            this.btnSelAllSftp.TabIndex = 40;
-            this.btnSelAllSftp.Text = "Select All";
-            this.btnSelAllSftp.UseVisualStyleBackColor = true;
-            this.btnSelAllSftp.Click += new System.EventHandler(this.btnSelAllSftp_Click);
-            // 
-            // btnDelSFTP
-            // 
-            this.btnDelSFTP.Location = new System.Drawing.Point(505, 368);
-            this.btnDelSFTP.Name = "btnDelSFTP";
-            this.btnDelSFTP.Size = new System.Drawing.Size(75, 23);
-            this.btnDelSFTP.TabIndex = 42;
-            this.btnDelSFTP.Text = "Delete";
-            this.btnDelSFTP.UseVisualStyleBackColor = true;
-            this.btnDelSFTP.Click += new System.EventHandler(this.btnDelSFTP_Click);
             // 
             // FrmSettings
             // 
@@ -1616,13 +1302,6 @@
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPre)).EndInit();
-            this.tabSAP.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
             this.tabFileSource.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
@@ -1640,6 +1319,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSftpList)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1691,8 +1371,6 @@
         private System.Windows.Forms.TextBox txtSftpUsername;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSftpHostname;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtSftpPort;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label9;
@@ -1705,34 +1383,6 @@
         private System.Windows.Forms.Button btnSafeExpDirSage;
         private System.Windows.Forms.Button btnSyncAci;
         private System.Windows.Forms.Button btnSyncSage;
-        private System.Windows.Forms.TabPage tabSAP;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button btnSyncSap;
-        private System.Windows.Forms.Button btnSafeExpDirSap;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtRemoteFolderSap;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Button btnDirSapExport;
-        private System.Windows.Forms.TextBox txtDirExportSap;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.TextBox txtSapServer;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtSapUser;
-        private System.Windows.Forms.Button btnSapConfSave;
-        private System.Windows.Forms.TextBox txtSapSysInstance;
-        private System.Windows.Forms.TextBox txtSapPassword;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtSapSysId;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox txtSapClient;
-        private System.Windows.Forms.TextBox txtSapRouter;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TabPage tabFileSource;
         private System.Windows.Forms.Label lblDataTble;
         private System.Windows.Forms.Label lblColumnNo;
@@ -1769,8 +1419,6 @@
         private System.Windows.Forms.ComboBox cmbSftpListAci;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.ComboBox cmbSftpListSage;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.ComboBox cmbSftpListSap;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.ComboBox cmbSftpListFSImport;
         private System.Windows.Forms.Label label34;
@@ -1784,5 +1432,7 @@
         private System.Windows.Forms.Button btnDelSFTP;
         private System.Windows.Forms.Button btnUnSelAllSftp;
         private System.Windows.Forms.Button btnSelAllSftp;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.CheckedListBox chkConnType;
     }
 }

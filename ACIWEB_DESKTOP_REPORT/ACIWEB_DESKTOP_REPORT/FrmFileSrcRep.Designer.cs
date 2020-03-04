@@ -35,6 +35,8 @@
             this.btnQuery = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbSelectSource = new System.Windows.Forms.ComboBox();
+            this.cmbFileType = new System.Windows.Forms.ComboBox();
+            this.chkOnlyDS = new System.Windows.Forms.CheckBox();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -45,10 +47,11 @@
             this.chkExport.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.chkExport.Location = new System.Drawing.Point(12, 112);
             this.chkExport.Name = "chkExport";
-            this.chkExport.Size = new System.Drawing.Size(104, 17);
+            this.chkExport.Size = new System.Drawing.Size(71, 17);
             this.chkExport.TabIndex = 23;
-            this.chkExport.Text = "Export to text file";
+            this.chkExport.Text = "Export to ";
             this.chkExport.UseVisualStyleBackColor = false;
+            this.chkExport.CheckedChanged += new System.EventHandler(this.chkExport_CheckedChanged);
             // 
             // groupBox3
             // 
@@ -101,12 +104,39 @@
             this.cmbSelectSource.TabIndex = 13;
             this.cmbSelectSource.SelectedIndexChanged += new System.EventHandler(this.cmbSelectSource_SelectedIndexChanged);
             // 
+            // cmbFileType
+            // 
+            this.cmbFileType.AutoCompleteCustomSource.AddRange(new string[] {
+            "txt",
+            "csv"});
+            this.cmbFileType.FormattingEnabled = true;
+            this.cmbFileType.Items.AddRange(new object[] {
+            "csv",
+            "txt"});
+            this.cmbFileType.Location = new System.Drawing.Point(77, 110);
+            this.cmbFileType.Name = "cmbFileType";
+            this.cmbFileType.Size = new System.Drawing.Size(58, 21);
+            this.cmbFileType.TabIndex = 29;
+            // 
+            // chkOnlyDS
+            // 
+            this.chkOnlyDS.AutoSize = true;
+            this.chkOnlyDS.Location = new System.Drawing.Point(12, 137);
+            this.chkOnlyDS.Name = "chkOnlyDS";
+            this.chkOnlyDS.Size = new System.Drawing.Size(131, 17);
+            this.chkOnlyDS.TabIndex = 31;
+            this.chkOnlyDS.Text = "Only show datasource";
+            this.chkOnlyDS.UseVisualStyleBackColor = true;
+            this.chkOnlyDS.CheckedChanged += new System.EventHandler(this.chkOnlyDS_CheckedChanged);
+            // 
             // FrmFileSrcRep
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(582, 389);
+            this.Controls.Add(this.chkOnlyDS);
+            this.Controls.Add(this.cmbFileType);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chkExport);
             this.Controls.Add(this.groupBox3);
@@ -129,5 +159,7 @@
         private System.Windows.Forms.Button btnQuery;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.ComboBox cmbSelectSource;
+        private System.Windows.Forms.ComboBox cmbFileType;
+        private System.Windows.Forms.CheckBox chkOnlyDS;
     }
 }

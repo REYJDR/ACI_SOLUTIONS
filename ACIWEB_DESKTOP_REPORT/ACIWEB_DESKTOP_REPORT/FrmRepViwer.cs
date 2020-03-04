@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraReports.UI;
 using System.IO;
+using AciSageLibrary;
+using SFTPLibrary;
+using DevExpress.XtraPrinting;
 
 namespace ACIWEB_DESKTOP_REPORT
 {
@@ -23,21 +26,45 @@ namespace ACIWEB_DESKTOP_REPORT
         public static string impFolder;
         public static string sftpImpFolder;
         public static string fileSource;
+        public static string fileExt;
+        public static string bapiName;
+        public static bool OnlyDs = false;
+        public static bool Excel = false;
 
+        public static bool canceled = false;
+
+
+        BackgroundWorker backgroundWorker1 = new BackgroundWorker();
+        FrmWait frmWait = new FrmWait();
 
 
         public FrmRepViwer()
         {
             InitializeComponent();
+
+            backgroundWorker1.DoWork += backgroundWorker1_DoWork;
+            backgroundWorker1.ProgressChanged += backgroundWorker1_ProgressChanged;
+            backgroundWorker1.WorkerReportsProgress = true;
+
+
             IniTemplate();
+
 
 
         }
 
+        
         private void IniTemplate(){
+
+            /*Listar conexion*/
+            List<string> Parameters = new List<string>();
+            DataTable Sqlresult = new DataTable();
+
+            // backgroundWorker1.RunWorkerAsync();
 
             try
             {
+
                 if (repType == "aci")
                 {
                     XtraReportAciweb aciRep = new XtraReportAciweb();
@@ -50,85 +77,125 @@ namespace ACIWEB_DESKTOP_REPORT
                     DbQueryAciweb.doQuery = true;
 
                     var exportFileName = DbQueryAciweb.exportFileName;
+
+                    var hasAnyData = false;
+
                     aciRep.LoadLayout(ReportName);
 
-                    if (export == true)
+
+                    if (DbQueryAciweb.repPreview.Tables.Count > 0)
                     {
-                        string dirName = "";
-                        if (expFolder == "")
+                        for (int i = 0; i < DbQueryAciweb.repPreview.Tables.Count; i++)
                         {
-                            dirName = String.Concat(@"C:\\ACIDesktopReport\ReportDesigner\ACIWEB\Export\", docview, "\\");
-                            bool exists = Directory.Exists(dirName);
-                            if (!exists)
+                            if (DbQueryAciweb.repPreview.Tables[i].Rows.Count > 0)
                             {
-                                Directory.CreateDirectory(dirName);
+                                hasAnyData = true;
+                                break;
                             }
-
-                        }
-                        else
-                        {
-                            dirName = String.Concat(expFolder, "\\");
-
                         }
 
-                        var fileName = "";
+                    }
 
-                        if (exportFileName != null)
+                    if (hasAnyData)
+                    {
+
+                        if (export == true)
                         {
-                            fileName = String.Concat(docview, "_", exportFileName, ".txt");
-                        }
-                        else
-                        {
-                            fileName = String.Concat(docview, "_", DateTime.Now.ToString("yyyy-MM-dd_hh_mm_ss"), ".txt");
-
-                        }
-                        string fileDir = String.Concat(dirName, fileName);
-
-                        //muestra la pantalla de parametros
-                        ReportPrintTool rep = new ReportPrintTool(aciRep);
-
-
-                        //esporta diseño a text
-                        aciRep.ExportToText(fileDir);
-
-                        if (aciRep.RowCount > 0)
-                        {
-
-                            if (!string.IsNullOrEmpty(sftpFolder))
+                            string dirName = "";
+                            if (expFolder == "")
                             {
-                                SftpConnection sftpConnection = new SftpConnection();
-
-                                sftpConnection.sendFile(fileName, fileDir, sftpFolder);
+                                dirName = String.Concat(@"C:\\ACIDesktopReport\ReportDesigner\ACIWEB\Export\", docview, "\\");
+                                bool exists = Directory.Exists(dirName);
+                                if (!exists)
+                                {
+                                    Directory.CreateDirectory(dirName);
+                                }
 
                             }
-                            MessageBox.Show("Data successfuly exported to: " + fileDir);
+                            else
+                            {
+                                dirName = String.Concat(expFolder, "\\");
+
+                            }
+
+                            var fileName = "";
+
+                            if (exportFileName != null)
+                            {
+                                fileName = String.Concat(docview, "_", exportFileName, '.', fileExt);
+                            }
+                            else
+                            {
+                                fileName = String.Concat(docview, "_", DateTime.Now.ToString("yyyy-MM-dd_hh_mm_ss"), '.', fileExt);
+
+                            }
+                            string fileDir = String.Concat(dirName, fileName);
+
+                            //muestra la pantalla de parametros
+                            ReportPrintTool rep = new ReportPrintTool(aciRep);
+
+
+                            //esporta diseño a text
+                            aciRep.ExportToText(fileDir);
+
+                            if (aciRep.RowCount > 0)
+                            {
+
+                                if (!string.IsNullOrEmpty(sftpFolder))
+                                {
+                                    SftpConnection sftpConnection = new SftpConnection();
+
+                                    sftpConnection.sendFile(fileName, fileDir, sftpFolder);
+
+                                }
+                                MessageBox.Show("Data successfuly exported to: " + fileDir);
+                            }
+                            else
+                            {
+
+                                File.Delete(fileDir);
+                                MessageBox.Show("There´s not data to export for this selection");
+
+                            }
+
+
                         }
                         else
                         {
+                            // ReportPrintTool rep = new ReportPrintTool(aciRep);
 
-                            File.Delete(fileDir);
-                            MessageBox.Show("There´s not data to export for this selection");
+                            if (OnlyDs == false)
+                            {
+                                aciRep.CreateDocument();
+
+                                documentViewer1.DocumentSource = aciRep;
+                                this.Show();
+
+
+                            }
+                            else
+                            {
+
+                                if (canceled == false)
+                                {
+                                    FrmViewGrid frmView = new FrmViewGrid(DbQueryAciweb.repPreview);
+
+                                    frmView.ShowDialog(this);
+                                }
+                                OnlyDs = false;
+
+                            }
+
 
                         }
-
 
                     }
                     else
                     {
-                        ReportPrintTool rep = new ReportPrintTool(aciRep);
-                        aciRep.CreateDocument();
-                        if (aciRep.RowCount > 0)
-                        {
-                            documentViewer1.DocumentSource = aciRep;
-                            this.Show();
-                        }
-                        else
-                        {
-                            MessageBox.Show("There´s not data to export for this selection");
-
-                        }
+                        MessageBox.Show("There´s not data to export for this selection");
 
                     }
+
 
 
                     export = false;
@@ -138,75 +205,168 @@ namespace ACIWEB_DESKTOP_REPORT
 
                 if (repType == "sage")
                 {
+
                     XtraReportSage sageRep = new XtraReportSage();
 
                     string ReportName;
-
+                    string exportFileName = "";
                     ReportName = String.Concat(@"C:\\ACIDesktopReport\ReportDesigner\SAGE\", docview, ".repx");
 
                     DbQuerySage.repPreview = null;
                     DbQuerySage.doQuery = true;
-                    var exportFileName = DbQuerySage.exportFileName;
+
+                    var hasAnyData = false;
 
                     sageRep.LoadLayout(ReportName);
+                    exportFileName = DbQuerySage.exportFileName;
 
-                    if (export == true)
+                    if (DbQuerySage.repPreview.Tables.Count > 0)
                     {
-                        string dirName = "";
-                        if (expFolder == "")
+                        for (int i = 0; i < DbQuerySage.repPreview.Tables.Count; i++)
                         {
-                            dirName = String.Concat(@"C:\\ACIDesktopReport\ReportDesigner\Sage\Export\", docview, "\\");
-                            bool exists = Directory.Exists(dirName);
-                            if (!exists)
+                            if (DbQuerySage.repPreview.Tables[i].Rows.Count > 0)
                             {
-                                Directory.CreateDirectory(dirName);
+                                hasAnyData = true;
+                                break;
+                            }
+                        }
+
+                    }
+
+                    if (hasAnyData)
+                    {
+                        string fileDir = "";
+                        string fileName = "";
+                        string dirName = @"C:\\ACIDesktopReport\ReportDesigner\SAGE\Export\";
+
+                        if (export == true || Excel == true)
+                        {
+                            if (expFolder == "")
+                            {
+
+                                bool exists = Directory.Exists(dirName);
+                                if (!exists)
+                                {
+                                    Directory.CreateDirectory(dirName);
+                                }
+
+                            }
+                            else
+                            {
+                                dirName = String.Concat(expFolder, "\\");
+
+                            }
+
+                            if (Excel == false)
+                            {
+
+
+                                if (exportFileName != null)
+                                {
+                                    fileName = String.Concat(docview, "_", exportFileName, '.', fileExt);
+                                }
+                                else
+                                {
+                                    fileName = String.Concat(docview, "_", DateTime.Now.ToString("yyyy-MM-dd_hh_mm_ss"), '.', fileExt);
+
+                                }
+
+                                fileDir = String.Concat(dirName, fileName);
+
+                            }
+                            else
+                            {
+                                fileName = String.Concat(docview, "_", DateTime.Now.ToString("yyyy-MM-dd_hh_mm_ss"), ".xlsx");
+                                fileDir = String.Concat(dirName, fileName);
+
+                            }
+
+
+                            //muestra la pantalla de parametros
+                            ReportPrintTool rep = new ReportPrintTool(sageRep);
+
+                            if (export == true)
+                            {
+                                sageRep.ExportToText(fileDir);
+                            }
+
+
+                            if (Excel == true)
+                            {
+
+                                // Get its XLSX export options. 
+                                XlsxExportOptions xlsxOptions = sageRep.ExportOptions.Xlsx;
+
+                                // Set XLSX-specific export options. 
+                                xlsxOptions.ShowGridLines = true;
+                                xlsxOptions.TextExportMode = TextExportMode.Value;
+                                xlsxOptions.ExportHyperlinks = true;
+                                //   xlsxOptions.SheetName = "IncomeStatement";
+                                xlsxOptions.ExportMode = XlsxExportMode.SingleFilePageByPage;
+
+
+                                sageRep.ExportToXlsx(fileDir, xlsxOptions);
+
+                            }
+
+
+
+                            //sageRep.ExportToCsv(fileDir);
+                            if (hasAnyData)
+                            {
+
+                                if (!string.IsNullOrEmpty(sftpFolder) && Excel == false)
+                                {
+                                    SftpConnection sftpConnection = new SftpConnection();
+
+                                    sftpConnection.sendFile(fileName, fileDir, sftpFolder);
+
+                                }
+                                MessageBox.Show("Data successfuly exported to: " + fileDir);
+                                if (Excel == true)
+                                {
+                                    System.Diagnostics.Process.Start(fileDir);
+                                }
+
+                            }
+                            else
+                            {
+
+                                File.Delete(fileDir);
+
+                                MessageBox.Show("There´s not data to export for this selection");
+
                             }
 
                         }
                         else
                         {
-                            dirName = String.Concat(expFolder, "\\");
 
-                        }
+                            //muestra la pantalla de parametros
+                            //    ReportPrintTool rep = new ReportPrintTool(sageRep);
 
-                        var fileName = "";
-
-                        if (exportFileName != null)
-                        {
-                            fileName = String.Concat(docview, "_", exportFileName, ".txt");
-                        }
-                        else
-                        {
-                            fileName = String.Concat(docview, "_", DateTime.Now.ToString("yyyy-MM-dd_hh_mm_ss"), ".txt");
-
-                        }
-
-
-                        string fileDir = String.Concat(dirName, fileName);
-
-                        //muestra la pantalla de parametros
-                        ReportPrintTool rep = new ReportPrintTool(sageRep);
-
-                        sageRep.ExportToText(fileDir);
-
-                        if (sageRep.RowCount > 0)
-                        {
-
-                            if (!string.IsNullOrEmpty(sftpFolder))
+                            if (OnlyDs == false)
                             {
-                                SftpConnection sftpConnection = new SftpConnection();
 
-                                sftpConnection.sendFile(fileName, fileDir, sftpFolder);
+                                sageRep.CreateDocument();
+                                documentViewer1.DocumentSource = sageRep;
+                                this.Show();
+
 
                             }
-                            MessageBox.Show("Data successfuly exported to: " + fileDir);
-                        }
-                        else
-                        {
+                            else
+                            {
 
-                            File.Delete(fileDir);
+                                if (canceled == false)
+                                {
+                                    FrmViewGrid frmView = new FrmViewGrid(DbQuerySage.repPreview);
 
-                            MessageBox.Show("There´s not data to export for this selection");
+                                    frmView.ShowDialog(this);
+                                }
+
+                                OnlyDs = false;
+                            }
+
 
                         }
 
@@ -214,132 +374,14 @@ namespace ACIWEB_DESKTOP_REPORT
                     else
                     {
 
-                        //muestra la pantalla de parametros
-                        ReportPrintTool rep = new ReportPrintTool(sageRep);
-
-                        sageRep.CreateDocument();
-
-                        if (sageRep.RowCount > 0)
-                        {
-                            documentViewer1.DocumentSource = sageRep;
-                            this.Show();
-                        }
-                        else
-                        {
-                            MessageBox.Show("There´s not data to export for this selection");
-
-                        }
-
+                        MessageBox.Show("There´s not data to export for this selection");
 
                     }
+
 
 
                     export = false;
                     repType = "";
-                }
-
-                if (repType == "sap")
-                {
-                    XtraReportSap sapRep = new XtraReportSap();
-
-                    string ReportName;
-
-                    ReportName = String.Concat(@"C:\\ACIDesktopReport\ReportDesigner\SAP\", docview, ".repx");
-
-                    DbQuerySap.repPreview = null;
-                    DbQuerySap.doQuery = true;
-                    var exportFileName = DbQuerySap.exportFileName;
-
-                    sapRep.LoadLayout(ReportName);
-
-                    if (export == true)
-                    {
-                        string dirName = "";
-                        if (expFolder == "")
-                        {
-                            dirName = String.Concat(@"C:\\ACIDesktopReport\ReportDesigner\SAP\Export\", docview, "\\");
-                            bool exists = Directory.Exists(dirName);
-                            if (!exists)
-                            {
-                                Directory.CreateDirectory(dirName);
-                            }
-
-                        }
-                        else
-                        {
-                            dirName = String.Concat(expFolder, "\\");
-
-                        }
-
-                        var fileName = "";
-
-                        if (exportFileName != null)
-                        {
-                            fileName = String.Concat(docview, "_", exportFileName, ".txt");
-                        }
-                        else
-                        {
-                            fileName = String.Concat(docview, "_", DateTime.Now.ToString("yyyy-MM-dd_hh_mm_ss"), ".txt");
-
-                        }
-                        string fileDir = String.Concat(dirName, fileName);
-
-                        //muestra la pantalla de parametros
-                        ReportPrintTool rep = new ReportPrintTool(sapRep);
-
-                        sapRep.ExportToText(fileDir);
-
-                        if (sapRep.RowCount > 0)
-                        {
-
-                            MessageBox.Show("Data successfuly exported to: " + fileDir);
-
-                            if (!string.IsNullOrEmpty(sftpFolder))
-                            {
-                                SftpConnection sftpConnection = new SftpConnection();
-
-                                sftpConnection.sendFile(fileName, fileDir, sftpFolder);
-
-                            }
-
-                        }
-                        else
-                        {
-
-                            File.Delete(fileDir);
-
-                            MessageBox.Show("There´s not data to export for this selection");
-
-                        }
-
-
-                    }
-                    else
-                    {
-                        //muestra la pantalla de parametros
-                        ReportPrintTool rep = new ReportPrintTool(sapRep);
-
-                        sapRep.CreateDocument();
-                        if (sapRep.RowCount > 0)
-                        {
-
-                            documentViewer1.DocumentSource = sapRep;
-                            this.Show();
-                        }
-                        else
-                        {
-                            MessageBox.Show("There´s not data to export for this selection");
-
-                        }
-
-
-
-                    }
-
-
-                    export = false;
-                    repType = "";
-
                 }
 
                 if (repType == "filesource")
@@ -364,15 +406,15 @@ namespace ACIWEB_DESKTOP_REPORT
                     {
                         if (!string.IsNullOrEmpty(sftpImpFolder))
                         {
-                           
+
                             sftpConnection.getFile(fileSourceParam.Mask, impFolder, sftpImpFolder);
-                           
+
                         }
                     }
 
-                    
+
                     XtraReportFileSource fsRep = new XtraReportFileSource();
-                   
+
                     string ReportName;
 
                     ReportName = String.Concat(@"C:\\ACIDesktopReport\ReportDesigner\FILE_SOURCE\", docview, ".repx");
@@ -384,104 +426,131 @@ namespace ACIWEB_DESKTOP_REPORT
 
                     fsRep.DataSource = dataSourceFS.SetFileSource();
 
-                    var exportFileName = "";
+                    var hasAnyData = false;
 
                     fsRep.LoadLayout(ReportName);
 
-                    if (export == true)
+
+                    if (DataSourceFS.repPreview.Tables.Count > 0)
                     {
-                        string dirName = "";
-                        if (expFolder == "")
+                        for (int i = 0; i < DataSourceFS.repPreview.Tables.Count; i++)
                         {
-                            dirName = String.Concat(fileSourceParam.LocalExpDir, docview, "\\");
-                            bool exists = Directory.Exists(dirName);
-                            if (!exists)
+                            if (DataSourceFS.repPreview.Tables[i].Rows.Count > 0)
                             {
-                                Directory.CreateDirectory(dirName);
+                                hasAnyData = true;
+                                break;
                             }
-
-                        }
-                        else
-                        {
-                            dirName = String.Concat(fileSourceParam.LocalExpDir, "\\");
-
                         }
 
-                        var fileName = "";
+                    }
 
-                        if (exportFileName != null)
+                    if (hasAnyData)
+                    {
+
+                        if (export == true)
                         {
-                            fileName = String.Concat(docview, "_", exportFileName, ".txt");
-                        }
-                        else
-                        {
-                            fileName = String.Concat(docview, "_", DateTime.Now.ToString("yyyy-MM-dd_hh_mm_ss"), ".txt");
-
-                        }
-
-                        string fileDir = String.Concat(dirName, fileName);
-
-                        //muestra la pantalla de parametros
-                        ReportPrintTool rep = new ReportPrintTool(fsRep);
-
-                        fsRep.ExportToText(fileDir);
-
-                        if (fsRep.RowCount > 0)
-                        {
-
-                            MessageBox.Show("Data successfuly exported to: " + fileDir);
-
-                            if (!string.IsNullOrEmpty(fileSourceParam.SftpConExpDir))
+                            string dirName = "";
+                            if (expFolder == "")
                             {
+                                dirName = String.Concat(fileSourceParam.LocalExpDir, docview, "\\");
+                                bool exists = Directory.Exists(dirName);
+                                if (!exists)
+                                {
+                                    Directory.CreateDirectory(dirName);
+                                }
 
-                                sftpConnection.sendFile(fileName, fileDir, fileSourceParam.SftpConExp + ";" + fileSourceParam.SftpConExpDir);
+                            }
+                            else
+                            {
+                                dirName = String.Concat(fileSourceParam.LocalExpDir, "\\");
 
                             }
 
+                            var fileName = "";
+
+                            fileName = String.Concat(docview, "_", DateTime.Now.ToString("yyyy-MM-dd_hh_mm_ss"), '.', fileExt);
+
+
+
+                            string fileDir = String.Concat(dirName, fileName);
+
+                            //muestra la pantalla de parametros
+                            ReportPrintTool rep = new ReportPrintTool(fsRep);
+
+                            fsRep.ExportToText(fileDir);
+
+                            if (fsRep.RowCount > 0)
+                            {
+
+                                MessageBox.Show("Data successfuly exported to: " + fileDir);
+
+                                if (!string.IsNullOrEmpty(fileSourceParam.SftpConExpDir))
+                                {
+
+                                    sftpConnection.sendFile(fileName, fileDir, fileSourceParam.SftpConExp + ";" + fileSourceParam.SftpConExpDir);
+
+                                }
+
+                            }
+                            else
+                            {
+
+                                File.Delete(fileDir);
+
+                                MessageBox.Show("There´s not data to export for this selection");
+
+                            }
+
+
                         }
                         else
                         {
+                            //muestra la pantalla de parametros
+                            //ReportPrintTool rep = new ReportPrintTool(fsRep);
 
-                            File.Delete(fileDir);
+                            if (OnlyDs == false)
+                            {
+                                fsRep.CreateDocument();
 
-                            MessageBox.Show("There´s not data to export for this selection");
+
+                                documentViewer1.DocumentSource = fsRep;
+                                this.Show();
+
+
+
+                            }
+                            else
+                            {
+                                if (canceled == false)
+                                {
+
+                                    FrmViewGrid frmView = new FrmViewGrid(DataSourceFS.repPreview);
+
+                                    frmView.ShowDialog(this);
+                                }
+                                OnlyDs = false;
+                            }
+
+
+
 
                         }
-
-
                     }
                     else
                     {
-                        //muestra la pantalla de parametros
-                        ReportPrintTool rep = new ReportPrintTool(fsRep);
 
-                        fsRep.CreateDocument();
-                        if (fsRep.RowCount > 0)
-                        {
-
-                            documentViewer1.DocumentSource = fsRep;
-                            this.Show();
-                        }
-                        else
-                        {
-                            MessageBox.Show("There´s not data to export for this selection");
-
-                        }
-
-
-
-                        //   }
-
-
-                        export = false;
-                        repType = "";
+                        MessageBox.Show("There´s not data to export for this selection");
 
                     }
 
 
 
+                    export = false;
+                    repType = "";
 
                 }
+
+
             }
             catch (Exception theException)
             {
@@ -496,9 +565,54 @@ namespace ACIWEB_DESKTOP_REPORT
 
 
 
+        }
+
+
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            
+
+            try
+            {
+
+
+                //do some work
+
+            }
+            finally
+            {
+                backgroundWorker1.ReportProgress(0);
+            }
+
 
 
         }
+
+        private void backgroundWorker1_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
+        {
+
+            Spinner(false);
+        }
+
+        public void Spinner(bool start)
+        {
+
+
+
+            if (start)
+            {
+                frmWait.Show();
+                frmWait.BringToFront();
+            }
+            else
+            {
+                frmWait.Hide();
+            }
+
+
+
+        }
+
 
 
     }

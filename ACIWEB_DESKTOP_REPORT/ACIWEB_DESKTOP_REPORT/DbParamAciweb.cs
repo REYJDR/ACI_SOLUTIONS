@@ -125,7 +125,7 @@ namespace ACIWEB_DESKTOP_REPORT
                           "DATABASE=" + dbname +  ";" +
                           "UID=" + User + ";" + 
                           "PASSWORD=" + Password + ";" +
-                          "SslMode = none ;ConnectionTimeout=200";
+                          "SslMode = none ;ConnectionTimeout=200 ; convert zero datetime=True";
 
 
                 // close the stream

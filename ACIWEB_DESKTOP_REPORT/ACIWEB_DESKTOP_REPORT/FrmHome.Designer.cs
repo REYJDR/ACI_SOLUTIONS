@@ -75,11 +75,11 @@
             this.lblVer.AutoSize = true;
             this.lblVer.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVer.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblVer.Location = new System.Drawing.Point(30, 450);
+            this.lblVer.Location = new System.Drawing.Point(49, 450);
             this.lblVer.Name = "lblVer";
-            this.lblVer.Size = new System.Drawing.Size(131, 17);
+            this.lblVer.Size = new System.Drawing.Size(76, 17);
             this.lblVer.TabIndex = 4;
-            this.lblVer.Text = "Version 5.0.0.1(Rev)";
+            this.lblVer.Text = "Version 9.1";
             this.lblVer.Click += new System.EventHandler(this.lblVer_Click);
             // 
             // btnSettings

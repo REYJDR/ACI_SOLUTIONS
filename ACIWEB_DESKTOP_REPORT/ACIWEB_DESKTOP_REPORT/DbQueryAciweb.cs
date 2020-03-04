@@ -168,15 +168,15 @@ namespace ACIWEB_DESKTOP_REPORT
                 SelectOptions.NewRow();
                 SelectOptions.Rows.Add("date", "To");
                 SelectOptions.NewRow();
-                SelectOptions.Rows.Add("button", "Go");
+                SelectOptions.Rows.Add("button", "Execute");
                 
 
                 SO.SetSelectionsOptions(SelectOptions);
                 SO.ShowDialog();
 
-                DateTimePicker from = SO.selectOptionsPanel.Controls.Find("date_From", true).FirstOrDefault() as DateTimePicker;
+                DateTimePicker from = SO.selectOptionsPanel2.Controls.Find("date_From", true).FirstOrDefault() as DateTimePicker;
                 From = from.Text;
-                DateTimePicker to = SO.selectOptionsPanel.Controls.Find("date_To", true).FirstOrDefault() as DateTimePicker;
+                DateTimePicker to = SO.selectOptionsPanel2.Controls.Find("date_To", true).FirstOrDefault() as DateTimePicker;
                 To = to.Text;
 
                 
@@ -207,99 +207,130 @@ namespace ACIWEB_DESKTOP_REPORT
                 if (dbcon.StartConn() == true)
                 {
 
-                /*QUERY*/
-                if (Type == 1)//Reporte diario
-                {
+                    /*QUERY*/
+                    if (Type == 1)//Reporte diario
+                    {
                       
-                        showSelecOptionByReport(1);
-                        mre.WaitOne();
-                        if (kill == false)
-                        {
+                            showSelecOptionByReport(1);
+                            mre.WaitOne();
+                            if (kill == false)
+                            {
+                                var to = Convert.ToDateTime(To);
+                                var from = Convert.ToDateTime(From);
+                                //Facturas
+                                sql = " SELECT A.InvoiceNumber AS DOCUMENTO_FISCAL," +
+                                            " C.SalesOrderNumber AS PEDIDO , " +
+                                            " A.CustomerID AS CUSTID," +
+                                             "A.date AS DATE," +
+                                            " A.CustomerName AS CUSTNAME ," +
+                                            " A.Net_due AS AMOUNT , " +
+                                            " IFNULL(A.OrderTax, 0) AS TAX," +
+                                            " C.NOTAS AS TYPE_PAYMENT ," +
+                                            " '-' as NOTE ," +
+                                            " 'FAC' as DOCTYPE" +
+                                        " FROM Sales_Header_Imp as A " +
+                                        " INNER JOIN Sales_Detail_Imp as B ON A.InvoiceNumber = B.InvoiceNumber   and  B.ID_compania = '" + idComp + "' " +
+                                        " INNER JOIN INVOICE_GEN_HEADER as C ON C.InvoiceNumber = B.InvoiceNumber and  C.ID_compania = '" + idComp + "' " +
+                                        " WHERE A.date >= '" + from.ToString("yyyy-MM-dd") + " 00:00:00' and A.date <= '" + to.ToString("yyyy-MM-dd") + " 23:59:59' " +
+                                        " AND A.ID_compania = '" + idComp + "'" +
+                                        " GROUP BY A.InvoiceNumber ORDER BY A.LAST_CHANGE";
+                            
+                                dbcon.Query(sql).Fill(result);
 
-                            //Facturas
-                            sql = " SELECT A.InvoiceNumber AS DOCUMENTO_FISCAL," +
-                                        " C.SalesOrderNumber AS PEDIDO , " +
-                                        " A.CustomerID AS CUSTID," +
-                                         "A.date AS DATE," +
-                                        " A.CustomerName AS CUSTNAME ," +
-                                        " A.Net_due AS AMOUNT , " +
-                                        " IFNULL(A.OrderTax, 0) AS TAX," +
-                                        " C.NOTAS AS TYPE_PAYMENT ," +
-                                        " '-' as NOTE ," +
-                                        " 'FAC' as DOCTYPE" +
-                                    " FROM Sales_Header_Imp as A " +
-                                    " INNER JOIN Sales_Detail_Imp as B ON A.InvoiceNumber = B.InvoiceNumber   and  B.ID_compania = '" + idComp + "' " +
-                                    " INNER JOIN INVOICE_GEN_HEADER as C ON C.InvoiceNumber = B.InvoiceNumber and  C.ID_compania = '" + idComp + "' " +
-                                    " WHERE A.date   between '" + From + "' and '" + To + "' " +
-                                    " AND A.ID_compania = '" + idComp + "'" +
-                                    " GROUP BY A.InvoiceNumber ORDER BY A.LAST_CHANGE";
+                                //Devoluciones
+                                sql = " SELECT " +
+                                        " A.CreditNumber AS  DOCUMENTO_FISCAL, " +
+                                        " A.CreditNoteNumber  AS PEDIDO , " +
+                                        " A.CustomerID AS CUSTID, " +
+                                        " A.Date  AS DATE, " +
+                                        " A.CustomerName AS CUSTNAME, " +
+                                        " A.Net_Credit_due AS AMOUNT  ," +
+                                        " '0'  AS TAX ," +
+                                        " C.motivo AS TYPE_PAYMENT, " +
+                                        " C.observaciones  as NOTE ," +
+                                        " 'NC'  as DOCTYPE " +
+                                        " FROM Customer_Credit_Memo_Header_Imp A" +
+                                        " INNER JOIN Customer_Credit_Memo_Detail_Imp B ON A.TransactionID = B.TransactionID AND B.ID_compania = '" + idComp + "' " +
+                                        " INNER JOIN CREDITNOTE_HEADER as C ON C.CreditNoteNumber = A.CreditNoteNumber and  C.ID_compania = '" + idComp + "' " +
+                                        " WHERE A.date >= '" + from.ToString("yyyy-MM-dd") + " 00:00:00' and A.date <= '" + to.ToString("yyyy-MM-dd") + " 23:59:59' " +
+                                        " AND A.ID_compania = '" + idComp + "'" +
+                                        " GROUP BY A.CreditNumber ORDER BY B.TransactionID";
 
-                            dbcon.Query(sql).Fill(result);
-
-                            //Devoluciones
-                            sql = " SELECT " +
-                                    " A.CreditNumber AS  DOCUMENTO_FISCAL, " +
-                                    " A.CreditNoteNumber  AS PEDIDO , " +
-                                    " A.CustomerID AS CUSTID, " +
-                                    " A.Date  AS DATE, " +
-                                    " A.CustomerName AS CUSTNAME, " +
-                                    " A.Net_Credit_due AS AMOUNT  ," +
-                                    " '0'  AS TAX ," +
-                                    " C.motivo AS TYPE_PAYMENT, " +
-                                    " C.observaciones  as NOTE ," +
-                                    " 'NC'  as DOCTYPE " +
-                                    " FROM Customer_Credit_Memo_Header_Imp A" +
-                                    " INNER JOIN Customer_Credit_Memo_Detail_Imp B ON A.TransactionID = B.TransactionID AND B.ID_compania = '" + idComp + "' " +
-                                    " INNER JOIN CREDITNOTE_HEADER as C ON C.CreditNoteNumber = A.CreditNoteNumber and  C.ID_compania = '" + idComp + "' " +
-                                    " WHERE A.date   between '" + From + "' and '" + To + "' " +
-                                    " AND A.ID_compania = '" + idComp + "'" +
-                                    " GROUP BY A.CreditNumber ORDER BY B.TransactionID";
-
-                            dbcon.Query(sql).Fill(result);
-                        }
+                                dbcon.Query(sql).Fill(result);
+                            }
                      
-                    }
+                        }
 
-                /*QUERY*/
-                if (Type == 2)//Reporte de requisiciones
-                {
-                        showSelecOptionByReport(1);
-                        mre.WaitOne();
+                    /*QUERY*/
+                    if (Type == 2)//Reporte de requisiciones
+                    {
+                            showSelecOptionByReport(1);
+                            mre.WaitOne();
 
-                        if (kill == false)
-                        {
+                            if (kill == false)
+                            {
+
+                            var to = Convert.ToDateTime(To);
+                            var from = Convert.ToDateTime(From);
+
                             //Reporte de requisiciones
                             sql =
-                        " SELECT " +
-                        " A.NO_REQ, " +
-                        " A.ProductID AS ITEMID, " +
-                        " CAST( COALESCE(A.CANTIDAD, 0 ) AS decimal(16,4))  AS QTY_REQUIRED, " +
-                        " CAST( COALESCE((SELECT SUM(Quantity) FROM PurOrdr_Detail_Exp AS I " +
-                        " INNER JOIN PurOrdr_Header_Exp as J on J.TransactionID =  I.TransactionID  " +
-                        " WHERE I.Item_Id = A.ProductID and J.CustomerSO = B.NO_REQ) , 0 ) AS  decimal(16,4)) AS QTY_ORDERED, " +
-                        " CAST( COALESCE((SELECT SUM(QTY) FROM REQ_RECEPT AS L WHERE  L.NO_REQ  = B.NO_REQ  AND  L.ITEM = A.ProductID ), 0) AS decimal(16,4) )AS QTY_RECEIVED, " +
-                        " A.DESCRIPCION, " +
-                        " B.DATE AS REQ_DATE, " +
-                        " COALESCE(E.DATE, '' ) AS QUOTA_DATE, " +
-                        " B.NOTA, " +
-                        " C.NAME AS REQ_USER_NAME, " +
-                        " C.LASTNAME AS REQ_USER_LASTNAME, " +
-                        " A.JOB, " +
-                        " (SELECT Description from Jobs_Exp AS N where N.JobID = A.JOB AND N.ID_compania = A.ID_compania ) AS JOB_DESCRIPTION, " +
-                        " A.PHASE, " +
-                        " A.CCOST, " +
-                        " (SELECT CompanyNameSage50 from CompanySession AS D where D.ID_compania = A.ID_compania) AS SAGE_COMPANY, " +
-                        " B.st_closed as STATUS_CLOSED" +
-                        " FROM REQ_DETAIL AS A " +
-                        " inner join REQ_HEADER AS B ON A.NO_REQ = B.NO_REQ and A.ID_compania = B.ID_compania " +
-                        " LEFT join REQ_QUOTA AS E ON E.NO_REQ = B.NO_REQ and E.ID_compania = B.ID_compania " +
-                        " LEFT join SAX_USER AS C ON C.ID = B.USER " +
-                        " WHERE B.DATE between '" + From + "' and '" + To + "' " +
-                        " ORDER BY A.NO_REQ";
+                            " SELECT " +
+                            " A.NO_REQ, " +
+                            " A.ProductID AS ITEMID, " +
+                            " CAST( COALESCE(A.CANTIDAD, 0 ) AS decimal(16,4))  AS QTY_REQUIRED, " +
+                            " CAST( COALESCE((SELECT SUM(Quantity) FROM PurOrdr_Detail_Exp AS I " +
+                            " INNER JOIN PurOrdr_Header_Exp as J on J.TransactionID =  I.TransactionID  " +
+                            " WHERE I.Item_Id = A.ProductID and J.CustomerSO = B.NO_REQ) , 0 ) AS  decimal(16,4)) AS QTY_ORDERED, " +
+                            " CAST( COALESCE((SELECT SUM(QTY) FROM REQ_RECEPT AS L WHERE  L.NO_REQ  = B.NO_REQ  AND  L.ITEM = A.ProductID ), 0) AS decimal(16,4) )AS QTY_RECEIVED, " +
+                            " A.DESCRIPCION, " +
+                            " B.DATE AS REQ_DATE, " +
+                            " COALESCE(E.DATE, '' ) AS QUOTA_DATE, " +
+                            " B.NOTA, " +
+                            " C.NAME AS REQ_USER_NAME, " +
+                            " C.LASTNAME AS REQ_USER_LASTNAME, " +
+                            " A.JOB, " +
+                            " (SELECT Description from Jobs_Exp AS N where N.JobID = A.JOB AND N.ID_compania = A.ID_compania ) AS JOB_DESCRIPTION, " +
+                            " A.PHASE, " +
+                            " A.CCOST, " +
+                            " (SELECT CompanyNameSage50 from CompanySession AS D where D.ID_compania = A.ID_compania) AS SAGE_COMPANY, " +
+                            " B.st_closed as STATUS_CLOSED" +
+                            " FROM REQ_DETAIL AS A " +
+                            " inner join REQ_HEADER AS B ON A.NO_REQ = B.NO_REQ and A.ID_compania = B.ID_compania " +
+                            " LEFT join REQ_QUOTA AS E ON E.NO_REQ = B.NO_REQ and E.ID_compania = B.ID_compania " +
+                            " LEFT join SAX_USER AS C ON C.ID = B.USER " +
+                            " WHERE B.DATE between '" + from.ToString("yyyy-MM-dd") + "' and '" + to.ToString("yyyy-MM-dd") + "' " +
+                            " ORDER BY A.NO_REQ";
 
-                            dbcon.Query(sql).Fill(result);
+                                dbcon.Query(sql).Fill(result);
+                            }
+                    }
+
+
+                    if(Type == 3)
+                        {
+                       
+                            //invantario x ubicaciones
+                            sql =
+                                "SELECT" +
+                                " D.ProductID as Codigo," +
+                                " D.Description as Descripcion," +
+                                " E.no_lote as No_Lote," +
+                                " IFNULL(E.fecha_ven, '0000-00-00 00:00:00') as Fecha_Venc," +
+                                " A.qty as Cantidad," +
+                                " C.name as Almacen," +
+                                " C.description as Descriocion_Almacen," +
+                                " B.location as Ubicacion," +
+                                " IFNULL(A.last_change, '0000-00-00 00:00:00') as Modificado_el " +
+                                " FROM Products_Exp as D " +
+                                " LEFT JOIN STOCK_ITEMS_LOCATION AS A ON D.ProductID = A.itemID " +
+                                " LEFT JOIN ITEMS_NO_LOTES AS E ON E.no_lote = A.lote " +
+                                " LEFT JOIN STOCK_LOCATION AS B ON B.id = A.Location " +
+                                " LEFT JOIN STOCKS AS C on C.ID = A.stock;";
+
+                                 dbcon.Query(sql).Fill(result);
+                      
                         }
-                }
 
                 }
             }
@@ -566,6 +597,103 @@ namespace ACIWEB_DESKTOP_REPORT
             return repPreview;
         }
 
+        //SET DATA REPORTE DE REQUISICIONES
+        public DataSet getItemsList()
+        {
+            try
+            {
+
+
+
+                if (repPreview is null)
+                {
+
+                    //Creo estructura de tabla
+                    DataTable resTable = new DataTable("itemList");
+                    resTable.Columns.Add("codigo", typeof(string));
+                    resTable.Columns.Add("Descripcion", typeof(string));
+                    resTable.Columns.Add("Lote", typeof(string));
+                    resTable.Columns.Add("Fecha Ven", typeof(string));
+                    resTable.Columns.Add("Cantidad", typeof(Decimal));
+                    resTable.Columns.Add("Almacen", typeof(string));
+                    resTable.Columns.Add("Decripcion Almacen", typeof(string));
+                    resTable.Columns.Add("Ubicacion", typeof(string));
+                    resTable.Columns.Add("Ultima modificacion", typeof(string));
+                    
+
+
+                    repPreview = new DataSet();
+
+                    //Inserto tabla en dataset
+                    repPreview.Tables.Add(resTable);
+
+
+
+                    // doQuery = true; //quitar
+
+                    if (doQuery == true)
+                    {
+                        if (!FrmReportFilter.winClose)
+                        {
+
+                            DataTable queryTable = reportQuery(3);
+
+
+                            if (queryTable != null && queryTable.Rows.Count > 0)
+                            {
+                                for (int i = 0; i < queryTable.Rows.Count; i++)
+                                {
+
+                                    resTable.NewRow();
+
+                                    /*  rawDate = Convert.ToDateTime(queryTable.Rows[i].Field<string>(4));
+                                      date = rawDate.ToString("yyyy-MM-dd");*/
+                                 
+
+                                    resTable.Rows.Add(
+
+                                        queryTable.Rows[i].Field<string>(0),
+                                        queryTable.Rows[i].Field<string>(1),
+                                        queryTable.Rows[i].Field<string>(2),
+                                        queryTable.Rows[i].Field<string>(3),
+                                        queryTable.Rows[i].Field<Decimal>(4),
+                                        queryTable.Rows[i].Field<string>(5),
+                                        queryTable.Rows[i].Field<string>(6),
+                                        queryTable.Rows[i].Field<string>(7),
+                                        queryTable.Rows[i].Field<string>(8)
+                                         );
+
+                                }
+                                theresData = true;
+                            }
+                            else
+                            {
+                                theresData = false;
+                            }
+
+                            doQuery = false;
+                        }
+                    }
+
+                    //Inserto data resultado en tabla para reporte
+
+
+                }
+            }
+            catch (Exception theException)
+            {
+                String errorMessage;
+                errorMessage = "Error: ";
+                errorMessage = String.Concat(errorMessage, theException.Message);
+                errorMessage = String.Concat(errorMessage, " Line: ");
+                errorMessage = String.Concat(errorMessage, theException.Source);
+
+                MessageBox.Show(errorMessage, "Error");
+            }
+
+
+            return repPreview;
+        }
 
 
 

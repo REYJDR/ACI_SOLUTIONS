@@ -63,20 +63,20 @@ namespace ACIWEB_DESKTOP_REPORT.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AciWeb {
+        internal static System.Drawing.Bitmap AciWeb1 {
             get {
-                object obj = ResourceManager.GetObject("AciWeb", resourceCulture);
+                object obj = ResourceManager.GetObject("AciWeb1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Bitmap AciWeb1 {
+        internal static System.Drawing.Icon apcon_icon_16x16 {
             get {
-                object obj = ResourceManager.GetObject("AciWeb1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("apcon_icon_16x16", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         

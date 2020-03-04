@@ -17,23 +17,23 @@
     <PublishUrl>\\Mac\Home\Documents\GitHub\DEPLOY_ACIWEBREPORT\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>true</UpdateRequired>
+    <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\Mac\Home\Documents\GitHub\DEPLOY_ACIWEBREPORT\</InstallUrl>
-    <UpdateUrl>https://github.com/REYJDR/DEPLOY_ACIWEBREPORT/</UpdateUrl>
     <ProductName>ACI Desktop Report</ProductName>
     <PublisherName>KODIKKA</PublisherName>
     <SuiteName>ACI SOLUTIONS</SuiteName>
     <MinimumRequiredVersion>4.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>5.0.0.%2a</ApplicationVersion>
+    <TrustUrlParameters>true</TrustUrlParameters>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>6.0.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -73,27 +73,46 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
-    <Reference Include="DevExpress.Charts.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.DataAccess.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Office.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v17.2.Export, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Sparkline.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v17.2.UI, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Xpo.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraGauges.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v17.2.Extensions, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="AciSageLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AciSageLibrary\bin\Release\AciSageLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper, Version=12.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.12.1.2\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v18.2.Core, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v18.2.UI, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Docs.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v18.2.Core, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v18.2.Core, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v18.2.Core, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.2.Core, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.2.Export, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v18.2.Core, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v18.2.UI, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.2.Extensions, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v18.2.Core, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPdfViewer.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v18.2.Extensions, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v18.2.Web, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v18.2.Reporting, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraWizard.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Downloads\mysql-connector-net-8.0.11-noinstall\v4.5.2\Google.Protobuf.dll</HintPath>
@@ -118,17 +137,18 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Downloads\mysql-connector-net-8.0.11-noinstall\v4.5.2\MySql.Web.dll</HintPath>
     </Reference>
-    <Reference Include="sapnco, Version=3.0.0.42, Culture=neutral, PublicKeyToken=50436dca5c7f7d23, processorArchitecture=x86">
+    <Reference Include="SFTPLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SAP CONNECT .NET\sapnco.dll</HintPath>
-    </Reference>
-    <Reference Include="sapnco_utils, Version=3.0.0.42, Culture=neutral, PublicKeyToken=50436dca5c7f7d23, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SAP CONNECT .NET\sapnco_utils.dll</HintPath>
+      <HintPath>..\ClassLibrary1\bin\Release\SFTPLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -138,32 +158,19 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WinSCPnet, Version=1.5.7.9125, Culture=neutral, PublicKeyToken=2271ec4a3c56d0bf, processorArchitecture=MSIL">
-      <HintPath>..\packages\WinSCP.5.13.7\lib\net\WinSCPnet.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataSourceFS.cs" />
     <Compile Include="DbConnectionMysql.cs" />
-    <Compile Include="DbConnectionPervasive.cs" />
     <Compile Include="DbConnetionSql.cs" />
-    <Compile Include="DbParamSage.cs" />
     <Compile Include="DbParamAciweb.cs" />
-    <Compile Include="DbQuerySage.cs" />
     <Compile Include="DbQueryAciweb.cs" />
-    <Compile Include="DbQuerySap.cs" />
     <Compile Include="FileSourceParam.cs" />
     <Compile Include="FrmFileSrcRep.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmFileSrcRep.Designer.cs">
       <DependentUpon>FrmFileSrcRep.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmLogs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmLogs.Designer.cs">
-      <DependentUpon>FrmLogs.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmReportFilter.cs">
       <SubType>Form</SubType>
@@ -182,12 +189,6 @@
     </Compile>
     <Compile Include="FrmDesigner.Designer.cs">
       <DependentUpon>FrmDesigner.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmSapRep.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmSapRep.Designer.cs">
-      <DependentUpon>FrmSapRep.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSettings.cs">
       <SubType>Form</SubType>
@@ -231,19 +232,14 @@
     <Compile Include="FrmInitializing.Designer.cs">
       <DependentUpon>FrmInitializing.cs</DependentUpon>
     </Compile>
-    <Compile Include="IRfcTableExtentions.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="ProgressBar.cs">
+    <Compile Include="FrmViewGrid.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProgressBar.Designer.cs">
-      <DependentUpon>ProgressBar.cs</DependentUpon>
+    <Compile Include="FrmViewGrid.Designer.cs">
+      <DependentUpon>FrmViewGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SapConnection.cs" />
-    <Compile Include="SAPParam.cs" />
-    <Compile Include="SftpConnection.cs" />
-    <Compile Include="SftpParam.cs" />
     <Compile Include="XtraReportFileSource.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -256,29 +252,20 @@
     <Compile Include="XtraReportFS.Designer.cs">
       <DependentUpon>XtraReportFS.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportSage.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="XtraReportSage.Designer.cs">
-      <DependentUpon>XtraReportSage.cs</DependentUpon>
-    </Compile>
     <Compile Include="XtraReportAciweb.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="XtraReportAciweb.Designer.cs">
       <DependentUpon>XtraReportAciweb.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportSap.cs">
+    <Compile Include="XtraReportSage.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="XtraReportSap.Designer.cs">
-      <DependentUpon>XtraReportSap.cs</DependentUpon>
+    <Compile Include="XtraReportSage.Designer.cs">
+      <DependentUpon>XtraReportSage.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmFileSrcRep.resx">
       <DependentUpon>FrmFileSrcRep.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmLogs.resx">
-      <DependentUpon>FrmLogs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReportFilter.resx">
       <DependentUpon>FrmReportFilter.cs</DependentUpon>
@@ -288,9 +275,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDesigner.resx">
       <DependentUpon>FrmDesigner.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmSapRep.resx">
-      <DependentUpon>FrmSapRep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSettings.resx">
       <DependentUpon>FrmSettings.cs</DependentUpon>
@@ -313,8 +297,8 @@
     <EmbeddedResource Include="FrmInitializing.resx">
       <DependentUpon>FrmInitializing.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProgressBar.resx">
-      <DependentUpon>ProgressBar.cs</DependentUpon>
+    <EmbeddedResource Include="FrmViewGrid.resx">
+      <DependentUpon>FrmViewGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -330,14 +314,15 @@
     <EmbeddedResource Include="XtraReportFS.resx">
       <DependentUpon>XtraReportFS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="XtraReportSage.resx">
-      <DependentUpon>XtraReportSage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="XtraReportAciweb.resx">
       <DependentUpon>XtraReportAciweb.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportSage.resx">
+      <DependentUpon>XtraReportSage.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="PickingList_TemporaryKey.pfx" />
+    <None Include="Properties\DataSources\AciSageLibrary.DbQuerySage.datasource" />
     <None Include="Properties\DataSources\DbQuery.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -358,12 +343,14 @@
     <Content Include="favicon.ico" />
     <Content Include="Resources\AciWeb.png" />
     <Content Include="Resources\AciWeb1.png" />
+    <None Include="Resources\apcon_icon.ico" />
     <Content Include="Resources\close_fa.png" />
     <Content Include="Resources\config_fa.png" />
     <Content Include="Resources\design.png" />
     <Content Include="Resources\designer_fa.png" />
     <None Include="Resources\kisspng-comma-separated-values-ico-database-icon-database-icons-5a85f535a54123.6582165515187285016769.png" />
     <None Include="Resources\FILESOURCE.png" />
+    <None Include="Resources\Icon1.ico" />
     <Content Include="Resources\logo_3.png" />
     <Content Include="Resources\minimize_fa.png" />
     <Content Include="Resources\minimize_fa2.png" />

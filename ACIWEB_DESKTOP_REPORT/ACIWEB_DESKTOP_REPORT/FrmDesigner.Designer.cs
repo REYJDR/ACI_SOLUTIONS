@@ -43,13 +43,6 @@
             this.gpoTempSage = new System.Windows.Forms.GroupBox();
             this.checkedListReportSage = new System.Windows.Forms.CheckedListBox();
             this.btnNewSage = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btnSapDEdit = new System.Windows.Forms.Button();
-            this.btnSapDFrsh = new System.Windows.Forms.Button();
-            this.btnSapDDel = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkedListReportSap = new System.Windows.Forms.CheckedListBox();
-            this.btnSapDNew = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.comboBoxRepType = new System.Windows.Forms.ComboBox();
             this.btnFSDEdit = new System.Windows.Forms.Button();
@@ -63,8 +56,6 @@
             this.groupBox5.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.gpoTempSage.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +64,6 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(-1, -1);
             this.tabControl1.Name = "tabControl1";
@@ -234,81 +224,6 @@
             this.btnNewSage.UseVisualStyleBackColor = true;
             this.btnNewSage.Click += new System.EventHandler(this.btnNewSage_Click);
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.btnSapDEdit);
-            this.tabPage3.Controls.Add(this.btnSapDFrsh);
-            this.tabPage3.Controls.Add(this.btnSapDDel);
-            this.tabPage3.Controls.Add(this.groupBox1);
-            this.tabPage3.Controls.Add(this.btnSapDNew);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(590, 402);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "SAP Templates";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // btnSapDEdit
-            // 
-            this.btnSapDEdit.Location = new System.Drawing.Point(369, 47);
-            this.btnSapDEdit.Name = "btnSapDEdit";
-            this.btnSapDEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnSapDEdit.TabIndex = 38;
-            this.btnSapDEdit.Text = "Edit";
-            this.btnSapDEdit.UseVisualStyleBackColor = true;
-            this.btnSapDEdit.Click += new System.EventHandler(this.btnSapDEdit_Click);
-            // 
-            // btnSapDFrsh
-            // 
-            this.btnSapDFrsh.Location = new System.Drawing.Point(369, 105);
-            this.btnSapDFrsh.Name = "btnSapDFrsh";
-            this.btnSapDFrsh.Size = new System.Drawing.Size(75, 23);
-            this.btnSapDFrsh.TabIndex = 37;
-            this.btnSapDFrsh.Text = "Refresh";
-            this.btnSapDFrsh.UseVisualStyleBackColor = true;
-            this.btnSapDFrsh.Click += new System.EventHandler(this.btnSapDFrsh_Click);
-            // 
-            // btnSapDDel
-            // 
-            this.btnSapDDel.Location = new System.Drawing.Point(369, 76);
-            this.btnSapDDel.Name = "btnSapDDel";
-            this.btnSapDDel.Size = new System.Drawing.Size(75, 23);
-            this.btnSapDDel.TabIndex = 36;
-            this.btnSapDDel.Text = "Delete";
-            this.btnSapDDel.UseVisualStyleBackColor = true;
-            this.btnSapDDel.Click += new System.EventHandler(this.btnSapDDel_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.checkedListReportSap);
-            this.groupBox1.Location = new System.Drawing.Point(9, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(354, 274);
-            this.groupBox1.TabIndex = 35;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Reports templates";
-            // 
-            // checkedListReportSap
-            // 
-            this.checkedListReportSap.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListReportSap.CheckOnClick = true;
-            this.checkedListReportSap.FormattingEnabled = true;
-            this.checkedListReportSap.Location = new System.Drawing.Point(6, 21);
-            this.checkedListReportSap.Name = "checkedListReportSap";
-            this.checkedListReportSap.Size = new System.Drawing.Size(342, 240);
-            this.checkedListReportSap.TabIndex = 20;
-            // 
-            // btnSapDNew
-            // 
-            this.btnSapDNew.Location = new System.Drawing.Point(369, 18);
-            this.btnSapDNew.Name = "btnSapDNew";
-            this.btnSapDNew.Size = new System.Drawing.Size(75, 23);
-            this.btnSapDNew.TabIndex = 34;
-            this.btnSapDNew.Text = "New ";
-            this.btnSapDNew.UseVisualStyleBackColor = true;
-            this.btnSapDNew.Click += new System.EventHandler(this.btnSapDNew_Click);
-            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.comboBoxRepType);
@@ -409,8 +324,6 @@
             this.groupBox5.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.gpoTempSage.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -434,13 +347,6 @@
         private System.Windows.Forms.GroupBox gpoTempSage;
         private System.Windows.Forms.CheckedListBox checkedListReportSage;
         private System.Windows.Forms.Button btnNewSage;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button btnSapDEdit;
-        private System.Windows.Forms.Button btnSapDFrsh;
-        private System.Windows.Forms.Button btnSapDDel;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckedListBox checkedListReportSap;
-        private System.Windows.Forms.Button btnSapDNew;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Button btnFSDEdit;
         private System.Windows.Forms.Button btnFSDRefresh;

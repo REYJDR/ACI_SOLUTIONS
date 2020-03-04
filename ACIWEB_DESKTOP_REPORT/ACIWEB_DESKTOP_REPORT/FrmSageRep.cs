@@ -14,6 +14,7 @@ using System.Data.Odbc;
 using System.Data.OleDb;
 using DevExpress.XtraReports.UI;
 using DevExpress.XtraReports.UserDesigner;
+using AciSageLibrary;
 
 namespace ACIWEB_DESKTOP_REPORT
 {
@@ -68,8 +69,7 @@ namespace ACIWEB_DESKTOP_REPORT
             }
             else
             {
-
-
+                
                 PrintReport();
                
             }
@@ -77,27 +77,50 @@ namespace ACIWEB_DESKTOP_REPORT
 
         private void PrintReport()
         {
+
+            FrmRepViwer.Excel =false;
+            FrmRepViwer.export = false;
+            FrmRepViwer.OnlyDs = false;
+            DbParamSage folder = new DbParamSage();
+
             try
             {
                 Cursor = Cursors.WaitCursor; // change cursor to hourglass type
 
                 if (this.chkExport.Checked == true)
                 {
-                    DbParamSage folder = new DbParamSage();
+                  
                     FrmRepViwer.export = true;
+                    FrmRepViwer.fileExt = cmbFileType.SelectedItem.ToString();
+
+
 
                     folder.GetSageExportFolder();
-                    FrmRepViwer.expFolder = folder.LocalFolder;
+                    FrmRepViwer.expFolder  = folder.LocalFolder;
                     FrmRepViwer.sftpFolder = folder.RemoteFolder;
-
-                   
-                    
+  
                 }
+                else
+                {
+                    FrmRepViwer.export = false;
+                }
+
+                if (this.chkOnlyDS.Checked == true)
+                {
+                    FrmRepViwer.OnlyDs = true;
+                }
+
+                if (this.chkExcel.Checked == true)
+                {
+                    FrmRepViwer.Excel = true;
+                    folder.GetSageExportFolder();
+                    FrmRepViwer.expFolder = folder.LocalFolder;
+                }
+                
 
                 FrmRepViwer.repType = "sage";
                 FrmRepViwer repViewer = new FrmRepViwer();
 
-              
 
                 Cursor = Cursors.Arrow; // change cursor to hourglass type
 
@@ -127,6 +150,25 @@ namespace ACIWEB_DESKTOP_REPORT
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void chkExport_CheckedChanged(object sender, EventArgs e)
+        {
+            chkOnlyDS.Checked = false;
+            chkExcel.Checked = false;
+        }
+        
+
+        private void chkOnlyDS_CheckedChanged(object sender, EventArgs e)
+        {
+            chkExport.Checked = false;
+            chkExcel.Checked = false;
+        }
+
+        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            chkExport.Checked = false;
+            chkOnlyDS.Checked = false;
         }
     }
 }

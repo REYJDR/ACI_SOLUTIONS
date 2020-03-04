@@ -105,12 +105,23 @@ namespace ACIWEB_DESKTOP_REPORT
                 {
                    
                     FrmRepViwer.export = true;
+                    FrmRepViwer.fileExt = cmbFileType.SelectedItem.ToString();
+
                     FrmRepViwer.expFolder  = fileSourceParam.LocalExpDir;
                     FrmRepViwer.sftpFolder = fileSourceParam.SftpConExp+';'+fileSourceParam.SftpConExpDir;
 
                    
                 }
+                else
+                {
+                    FrmRepViwer.export = false;
+                }
 
+
+                if (this.chkOnlyDS.Checked == true)
+                {
+                    FrmRepViwer.OnlyDs = true;
+                }
                 FrmRepViwer.repType = "filesource";
                 FrmRepViwer repViewer = new FrmRepViwer();
 
@@ -151,6 +162,17 @@ namespace ACIWEB_DESKTOP_REPORT
 
 
 
+        }
+
+        private void chkExport_CheckedChanged(object sender, EventArgs e)
+        {
+            chkOnlyDS.Checked = false;
+        }
+
+
+        private void chkOnlyDS_CheckedChanged(object sender, EventArgs e)
+        {
+            chkExport.Checked = false;
         }
     }
 }
