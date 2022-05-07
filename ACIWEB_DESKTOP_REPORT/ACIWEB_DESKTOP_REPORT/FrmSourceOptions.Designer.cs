@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.SourcePanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnFileSource = new System.Windows.Forms.Button();
             this.btnAciweb = new System.Windows.Forms.Button();
             this.btnSage = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             // 
             // SourcePanel
             // 
+            this.SourcePanel.Controls.Add(this.button1);
             this.SourcePanel.Controls.Add(this.btnFileSource);
             this.SourcePanel.Controls.Add(this.btnAciweb);
             this.SourcePanel.Controls.Add(this.btnSage);
@@ -45,6 +47,25 @@
             this.SourcePanel.Name = "SourcePanel";
             this.SourcePanel.Size = new System.Drawing.Size(549, 435);
             this.SourcePanel.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.bd_21;
+            this.button1.Location = new System.Drawing.Point(344, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(166, 124);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Customs";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnFileSource
             // 
@@ -55,13 +76,13 @@
             this.btnFileSource.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFileSource.ForeColor = System.Drawing.Color.Black;
             this.btnFileSource.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.FILESOURCE;
-            this.btnFileSource.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFileSource.Location = new System.Drawing.Point(343, 9);
+            this.btnFileSource.Location = new System.Drawing.Point(3, 133);
             this.btnFileSource.Name = "btnFileSource";
-            this.btnFileSource.Size = new System.Drawing.Size(162, 91);
+            this.btnFileSource.Size = new System.Drawing.Size(163, 124);
             this.btnFileSource.TabIndex = 3;
+            this.btnFileSource.Text = "Files ";
             this.btnFileSource.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnFileSource.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnFileSource.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnFileSource.UseVisualStyleBackColor = false;
             this.btnFileSource.Click += new System.EventHandler(this.btnFileSource_Click);
             // 
@@ -74,12 +95,12 @@
             this.btnAciweb.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAciweb.ForeColor = System.Drawing.Color.Black;
             this.btnAciweb.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.AciWeb1;
-            this.btnAciweb.Location = new System.Drawing.Point(7, 9);
+            this.btnAciweb.Location = new System.Drawing.Point(3, 3);
             this.btnAciweb.Name = "btnAciweb";
-            this.btnAciweb.Size = new System.Drawing.Size(162, 91);
+            this.btnAciweb.Size = new System.Drawing.Size(163, 124);
             this.btnAciweb.TabIndex = 0;
             this.btnAciweb.Text = "Aciweb";
-            this.btnAciweb.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAciweb.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnAciweb.UseVisualStyleBackColor = false;
             this.btnAciweb.Click += new System.EventHandler(this.btnAciweb_Click);
             // 
@@ -92,12 +113,12 @@
             this.btnSage.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSage.ForeColor = System.Drawing.Color.Black;
             this.btnSage.Image = global::ACIWEB_DESKTOP_REPORT.Properties.Resources.sage_50_3;
-            this.btnSage.Location = new System.Drawing.Point(175, 9);
+            this.btnSage.Location = new System.Drawing.Point(172, 3);
             this.btnSage.Name = "btnSage";
-            this.btnSage.Size = new System.Drawing.Size(162, 91);
+            this.btnSage.Size = new System.Drawing.Size(166, 124);
             this.btnSage.TabIndex = 1;
             this.btnSage.Text = "Peachtree";
-            this.btnSage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSage.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnSage.UseVisualStyleBackColor = false;
             this.btnSage.Click += new System.EventHandler(this.btnSage_Click);
             // 
@@ -121,5 +142,6 @@
         private System.Windows.Forms.Button btnSage;
         private System.Windows.Forms.Panel SourcePanel;
         private System.Windows.Forms.Button btnFileSource;
+        private System.Windows.Forms.Button button1;
     }
 }

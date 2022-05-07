@@ -397,7 +397,7 @@
     </member>
     <member name="P:DevExpress.Pdf.PdfGraphics.TextOrigin">
       <summary>
-        <para>Specifies how to interpret a point passed to one of the  overload methods that take a PointF object.</para>
+        <para>Specifies how to interpret a point passed to one of the PdfGraphics.DrawString overload methods that take a PointF object.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Pdf.PdfGraphicsTextOrigin"/> enumeration value. The default value is TopLeftCorner.</value>
     </member>

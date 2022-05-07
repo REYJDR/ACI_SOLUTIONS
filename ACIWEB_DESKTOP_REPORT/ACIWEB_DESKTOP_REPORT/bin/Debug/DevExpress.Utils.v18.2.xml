@@ -2507,6 +2507,7 @@ The following screenshot shows the UltraFlat style applied to a button edit cont
       <param name="commandSelector">An Expression that selects the appropriate command from the source object.</param>
       <param name="source">An Object (typically, a ViewModel) where the commandSelector looks for the required command.</param>
       <param name="queryCommandParameter">A Func delegate that passes the specific Object to the command as a parameter.</param>
+      <typeparam name="T"></typeparam>
       <returns>An IDisposable object. Disposing of this object unbinds the command from this <see cref="T:DevExpress.Utils.CheckContextButton"/>.</returns>
     </member>
     <member name="P:DevExpress.Utils.CheckContextButton.Caption">
@@ -2652,6 +2653,7 @@ The following screenshot shows the UltraFlat style applied to a button edit cont
       <param name="commandSelector">An Expression that selects the appropriate command from the source object.</param>
       <param name="source">An Object (typically, a ViewModel) where the commandSelector looks for the required command.</param>
       <param name="queryCommandParameter">A Func delegate that passes the specific Object to the command as a parameter.</param>
+      <typeparam name="T"></typeparam>
       <returns>An IDisposable object. Disposing of this object unbinds the command from this <see cref="T:DevExpress.Utils.ContextButtonBase"/>.</returns>
     </member>
     <member name="P:DevExpress.Utils.ContextButtonBase.Caption">
@@ -4923,7 +4925,7 @@ Use the <see cref="P:DevExpress.Utils.FlyoutPanelOptions.AnchorType"/> property 
     </member>
     <member name="M:DevExpress.Utils.FlyoutPanel.Hide">
       <summary>
-        <para>This method is not supported by the <see cref="T:DevExpress.Utils.FlyoutPanel"/> class. Use the  method instead.</para>
+        <para>This method is not supported by the <see cref="T:DevExpress.Utils.FlyoutPanel"/> class. Use the FlyoutPanel.HidePopup method instead.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Utils.FlyoutPanel.HideBeakForm">
@@ -4997,7 +4999,7 @@ Use the <see cref="P:DevExpress.Utils.FlyoutPanelOptions.AnchorType"/> property 
     </member>
     <member name="M:DevExpress.Utils.FlyoutPanel.Show">
       <summary>
-        <para>This method is not supported by the <see cref="T:DevExpress.Utils.FlyoutPanel"/> class. Use the  method instead.</para>
+        <para>This method is not supported by the <see cref="T:DevExpress.Utils.FlyoutPanel"/> class. Use the FlyoutPanel.ShowPopup method instead.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Utils.FlyoutPanel.ShowBeakForm">
@@ -5104,7 +5106,7 @@ Use the <see cref="P:DevExpress.Utils.FlyoutPanelOptions.AnchorType"/> property 
     </member>
     <member name="P:DevExpress.Utils.FlyoutPanel.Visible">
       <summary>
-        <para>This property is not supported by the <see cref="T:DevExpress.Utils.FlyoutPanel"/> class. Use the  and  methods to control the panel visibility.</para>
+        <para>This property is not supported by the <see cref="T:DevExpress.Utils.FlyoutPanel"/> class. Use the FlyoutPanel.ShowPopup and FlyoutPanel.HidePopup methods to control the panel visibility.</para>
       </summary>
       <value></value>
     </member>
@@ -6233,6 +6235,7 @@ For the <see cref="T:DevExpress.Utils.SharedImageCollection"/>, this property sp
       <summary>
         <para>Base class for the popup (context) menu of Office-inspired controls.</para>
       </summary>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.Utils.Menu.CommandPopupMenu`1.#ctor">
       <summary>
@@ -6526,6 +6529,7 @@ For the <see cref="T:DevExpress.Utils.SharedImageCollection"/>, this property sp
       <param name="commandSelector">An Expression that selects the appropriate command from the source object.</param>
       <param name="source">An Object (typically, a ViewModel) where the commandSelector looks for the required command.</param>
       <param name="queryCommandParameter">A Func delegate that passes the specific Object to the command as a parameter.</param>
+      <typeparam name="T"></typeparam>
       <returns>An IDisposable object. Disposing of this object unbinds the command from this <see cref="T:DevExpress.Utils.Menu.DXMenuItem"/>.</returns>
     </member>
     <member name="P:DevExpress.Utils.Menu.DXMenuItem.Caption">
@@ -7616,6 +7620,7 @@ For the <see cref="T:DevExpress.Utils.SharedImageCollection"/>, this property sp
       <param name="commandSelector">An Expression that selects the appropriate command from the source object.</param>
       <param name="source">An Object (typically, a ViewModel) where the commandSelector looks for the required command.</param>
       <param name="queryCommandParameter">A Func delegate that passes the specific Object to the command as a parameter.</param>
+      <typeparam name="T"></typeparam>
       <returns>An IDisposable object. Disposing of this object unbinds the command from this <see cref="T:DevExpress.Utils.Taskbar.JumpListItemTask"/>.</returns>
     </member>
     <member name="P:DevExpress.Utils.Taskbar.JumpListItemTask.Caption">
@@ -8146,9 +8151,9 @@ For the <see cref="T:DevExpress.Utils.SharedImageCollection"/>, this property sp
     </member>
     <member name="P:DevExpress.Utils.ThumbnailImageEventArgs.DesiredThumbnailSize">
       <summary>
-        <para>Stores the desired size of thumbnail images, generated using the  method.</para>
+        <para>Stores the desired size of thumbnail images, generated using the ThumbnailImageEventArgs.CreateThumbnailImage method.</para>
       </summary>
-      <value>A Size structure that is the desired size of thumbnail images, generated using the  method.</value>
+      <value>A Size structure that is the desired size of thumbnail images, generated using the ThumbnailImageEventArgs.CreateThumbnailImage method.</value>
     </member>
     <member name="M:DevExpress.Utils.ThumbnailImageEventArgs.ResetImageCache">
       <summary>
@@ -8241,7 +8246,7 @@ For the <see cref="T:DevExpress.Utils.SharedImageCollection"/>, this property sp
     </member>
     <member name="P:DevExpress.Utils.ToolTipControlInfo.ForcedShow">
       <summary>
-        <para>Gets or sets whether the tooltip should be forcibly shown for the same visual element via the  method.</para>
+        <para>Gets or sets whether the tooltip should be forcibly shown for the same visual element via the ToolTipController.ShowHint method.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Utils.DefaultBoolean"/> enumeration value that specifies whether the tooptip should be forcibly shown for the same visual element.</value>
     </member>
@@ -9658,6 +9663,7 @@ In other cases, tooltips are painted using the <see cref="F:DevExpress.Utils.Too
       <param name="commandSelector">An Expression that selects the appropriate command from the source object.</param>
       <param name="source">An Object (typically, a ViewModel) where the commandSelector looks for the required command.</param>
       <param name="queryCommandParameter">A Func delegate that passes the specific Object to the command as a parameter.</param>
+      <typeparam name="T"></typeparam>
       <returns>An IDisposable object. Disposing of this object unbinds the command from this <see cref="T:DevExpress.Utils.VisualEffects.AdornerElement"/>.</returns>
     </member>
     <member name="E:DevExpress.Utils.VisualEffects.AdornerElement.Click">
@@ -9758,6 +9764,7 @@ In other cases, tooltips are painted using the <see cref="F:DevExpress.Utils.Too
       <summary>
         <para>Gets all elements of the specific type that are stored within this <see cref="T:DevExpress.Utils.VisualEffects.AdornerElementCollection"/>.</para>
       </summary>
+      <typeparam name="TType"></typeparam>
       <returns>A typed elements array.</returns>
     </member>
     <member name="M:DevExpress.Utils.VisualEffects.AdornerElementCollection.GetElementsBySource(System.Object)">
@@ -9772,6 +9779,7 @@ In other cases, tooltips are painted using the <see cref="F:DevExpress.Utils.Too
         <para>Gets <see cref="T:DevExpress.Utils.VisualEffects.AdornerElement"/>s of the specific type that are related to the target UI element.</para>
       </summary>
       <param name="source">An Object that is the source UI element, whose related adorner elements should be returned.</param>
+      <typeparam name="TType"></typeparam>
       <returns>A one-dimensional array containing elements of the specific type.</returns>
     </member>
     <member name="M:DevExpress.Utils.VisualEffects.AdornerElementCollection.GetEnumerator">
@@ -11201,7 +11209,7 @@ Use the <see cref="P:DevExpress.Utils.FlyoutPanelOptions.HorzIndent"/> and <see 
     </member>
     <member name="E:DevExpress.Utils.WorkspaceManager.WorkspaceSaved">
       <summary>
-        <para>Occurs after the  method was called.</para>
+        <para>Occurs after the WorkspaceManager.SaveWorkspace method was called.</para>
       </summary>
     </member>
     <member name="T:DevExpress.Utils.XPThemeSupport">
@@ -13462,6 +13470,11 @@ A specific version of the addressed image is automatically chosen based on the a
         <para>Disables the title bar skinning feature for MDI child DevExpress forms.</para>
       </summary>
     </member>
+    <member name="M:DevExpress.XtraEditors.WindowsFormsSettings.DisableWindowShadows">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
     <member name="P:DevExpress.XtraEditors.WindowsFormsSettings.DockingViewStyle">
       <summary>
         <para>Gets or sets the style for all <see cref="T:DevExpress.XtraBars.Docking.DockManager"/> and <see cref="T:DevExpress.XtraBars.Docking2010.DocumentManager"/> panels in this application.</para>
@@ -13618,6 +13631,13 @@ A specific version of the addressed image is automatically chosen based on the a
       </summary>
       <param name="control">A Control object.</param>
       <returns>A Boolean value that indicates whether right-to-left mirror placement is turned on for the specified control or form.</returns>
+    </member>
+    <member name="M:DevExpress.XtraEditors.WindowsFormsSettings.GetPopupShadowStyle(DevExpress.LookAndFeel.UserLookAndFeel)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="lookAndFeel"></param>
+      <returns></returns>
     </member>
     <member name="M:DevExpress.XtraEditors.WindowsFormsSettings.GetPopupWidthMode(System.Boolean,DevExpress.XtraEditors.PopupWidthMode)">
       <summary>

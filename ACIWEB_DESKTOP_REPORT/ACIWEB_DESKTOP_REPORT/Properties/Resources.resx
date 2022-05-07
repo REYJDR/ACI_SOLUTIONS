@@ -118,17 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="apcon_icon_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\apcon_icon 16x16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AciWeb1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AciWeb1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="kisspng-comma-separated-values-ico-database-icon-database-icons-5a85f535a54123.6582165515187285016769" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kisspng-comma-separated-values-ico-database-icon-database-icons-5a85f535a54123.6582165515187285016769.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minimize_fa2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimize_fa2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sap_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sap_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sage_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sage_50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FILESOURCE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FILESOURCE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,8 +139,8 @@
   <data name="report_fa1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\report_fa1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sap_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sap_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Spinner-1s-200px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Spinner-1s-200px.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sap_logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sap_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,8 +160,17 @@
   <data name="config_fa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\config_fa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sage_50_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sage_50_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minimize_fa2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize_fa2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sage_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sage_50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bd_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bd_2.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="db" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\db.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,16 +178,16 @@
   <data name="design" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\design.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="sage_50_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sage_50_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="minimize_fa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minimize_fa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="report_fa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\report_fa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FILESOURCE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FILESOURCE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="apcon_icon_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\apcon_icon 16x16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bd_21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bd_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -37,8 +37,8 @@ namespace ACIWEB_DESKTOP_REPORT
             setting.InitFieldVal();
             setting.SetCompany();
 
+            this.FormBorderStyle = FormBorderStyle.Sizable;
 
-      
 
             FrmSourceOptions options = new FrmSourceOptions();
             options.TopLevel = false;
@@ -63,6 +63,7 @@ namespace ACIWEB_DESKTOP_REPORT
            this.WindowState = FormWindowState.Minimized;
 
         }
+        
 
         private void form_MouseMove(object sender, MouseEventArgs e)
         {
@@ -121,8 +122,7 @@ namespace ACIWEB_DESKTOP_REPORT
             Cursor = Cursors.WaitCursor; // change cursor to hourglass type
 
             this.mainPanel.Controls.Clear();
-
-
+            
             setting.TopLevel = false;
             setting.AutoScroll = true;
             setting.AutoSize = true;
@@ -130,6 +130,16 @@ namespace ACIWEB_DESKTOP_REPORT
             setting.Show();
 
             Cursor = Cursors.Arrow; // change cursor to hourglass type
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
         }
 

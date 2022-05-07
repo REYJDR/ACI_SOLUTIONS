@@ -3009,17 +3009,17 @@
     </member>
     <member name="T:DevExpress.Pdf.PdfGraphicsTextOrigin">
       <summary>
-        <para>Contains values that specify how to interpret a point passed to one of the  overload methods that take a PointF object as an argument.</para>
+        <para>Contains values that specify how to interpret a point passed to one of the PdfGraphics.DrawString overload methods that take a PointF object as an argument.</para>
       </summary>
     </member>
     <member name="F:DevExpress.Pdf.PdfGraphicsTextOrigin.Baseline">
       <summary>
-        <para>The point passed to one of the  methods that take a PointF object is on the text baseline.</para>
+        <para>The point passed to one of the PdfGraphics.DrawString methods that take a PointF object is on the text baseline.</para>
       </summary>
     </member>
     <member name="F:DevExpress.Pdf.PdfGraphicsTextOrigin.TopLeftCorner">
       <summary>
-        <para>The point passed to one the  methods that take a PointF object is the top left corner of the text bounding rectangle.</para>
+        <para>The point passed to one the PdfGraphics.DrawString methods that take a PointF object is the top left corner of the text bounding rectangle.</para>
       </summary>
     </member>
     <member name="T:DevExpress.Pdf.PdfHotkeyPrefix">
@@ -5373,13 +5373,13 @@
     </member>
     <member name="P:DevExpress.Pdf.PdfRenderingSettings.ExternalDctDecoderModulePath">
       <summary>
-        <para>Specifies the path where the libjpeg-turbo DCT decoder module (dll) should be unpacked.</para>
+        <para></para>
       </summary>
-      <value>A String value that is the path where the DCT decoder module should be unpacked. The default value is &quot;%AppData%/DevExpress/&quot;.</value>
+      <value></value>
     </member>
     <member name="P:DevExpress.Pdf.PdfRenderingSettings.UseExternalDctDecoder">
       <summary>
-        <para>Specifies whether the external  libjpeg-turbo DCT decoder can be used to optimize JPEG image decoding.</para>
+        <para>Specifies whether the external Windows Imaging Component (WIC) decoder can be used to optimize JPEG image decoding.</para>
       </summary>
       <value>true, to allow using the external DCT decoder to optimize JPEG image decoding; false, the GDI+ decoder is used for JPEG image decoding. The default value is true.</value>
     </member>

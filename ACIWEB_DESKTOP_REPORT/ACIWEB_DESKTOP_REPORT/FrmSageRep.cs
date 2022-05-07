@@ -31,6 +31,7 @@ namespace ACIWEB_DESKTOP_REPORT
         {
             InitializeComponent();
             InitValue();
+          
         }
 
         private void InitValue()
@@ -85,6 +86,9 @@ namespace ACIWEB_DESKTOP_REPORT
 
             try
             {
+
+               
+
                 Cursor = Cursors.WaitCursor; // change cursor to hourglass type
 
                 if (this.chkExport.Checked == true)
@@ -120,10 +124,10 @@ namespace ACIWEB_DESKTOP_REPORT
 
                 FrmRepViwer.repType = "sage";
                 FrmRepViwer repViewer = new FrmRepViwer();
-
+              
 
                 Cursor = Cursors.Arrow; // change cursor to hourglass type
-
+             
 
             }
             catch (Exception theException)
@@ -169,6 +173,18 @@ namespace ACIWEB_DESKTOP_REPORT
         {
             chkExport.Checked = false;
             chkOnlyDS.Checked = false;
+        }
+
+
+
+        private void panelMsg_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

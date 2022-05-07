@@ -12,6 +12,9 @@ using System.IO;
 using AciSageLibrary;
 using SFTPLibrary;
 using DevExpress.XtraPrinting;
+using Pervasive.Data.SqlClient;
+using DevExpress.XtraEditors;
+using DevExpress.XtraPrinting.Native;
 
 namespace ACIWEB_DESKTOP_REPORT
 {
@@ -64,6 +67,7 @@ namespace ACIWEB_DESKTOP_REPORT
 
             try
             {
+                Cursor = Cursors.WaitCursor; // change cursor to hourglass type
 
                 if (repType == "aci")
                 {
@@ -220,121 +224,156 @@ namespace ACIWEB_DESKTOP_REPORT
                     sageRep.LoadLayout(ReportName);
                     exportFileName = DbQuerySage.exportFileName;
 
-                    if (DbQuerySage.repPreview.Tables.Count > 0)
+                    if(DbQuerySage.repPreview != null)
                     {
-                        for (int i = 0; i < DbQuerySage.repPreview.Tables.Count; i++)
+
+                        if (DbQuerySage.repPreview.Tables.Count > 0)
                         {
-                            if (DbQuerySage.repPreview.Tables[i].Rows.Count > 0)
+                            for (int i = 0; i < DbQuerySage.repPreview.Tables.Count; i++)
                             {
-                                hasAnyData = true;
-                                break;
+                                if (DbQuerySage.repPreview.Tables[i].Rows.Count > 0)
+                                {
+                                    hasAnyData = true;
+                                    break;
+                                }
                             }
+
                         }
 
-                    }
-
-                    if (hasAnyData)
-                    {
-                        string fileDir = "";
-                        string fileName = "";
-                        string dirName = @"C:\\ACIDesktopReport\ReportDesigner\SAGE\Export\";
-
-                        if (export == true || Excel == true)
+                        if (hasAnyData)
                         {
-                            if (expFolder == "")
-                            {
+                            string fileDir = "";
+                            string fileName = "";
+                            string dirName = @"C:\\ACIDesktopReport\ReportDesigner\SAGE\Export\";
 
-                                bool exists = Directory.Exists(dirName);
-                                if (!exists)
+                            if (export == true || Excel == true)
+                            {
+                                if (expFolder == "")
                                 {
-                                    Directory.CreateDirectory(dirName);
-                                }
 
-                            }
-                            else
-                            {
-                                dirName = String.Concat(expFolder, "\\");
+                                    bool exists = Directory.Exists(dirName);
+                                    if (!exists)
+                                    {
+                                        Directory.CreateDirectory(dirName);
+                                    }
 
-                            }
-
-                            if (Excel == false)
-                            {
-
-
-                                if (exportFileName != null)
-                                {
-                                    fileName = String.Concat(docview, "_", exportFileName, '.', fileExt);
                                 }
                                 else
                                 {
-                                    fileName = String.Concat(docview, "_", DateTime.Now.ToString("yyyy-MM-dd_hh_mm_ss"), '.', fileExt);
+                                    dirName = String.Concat(expFolder, "\\");
 
                                 }
 
-                                fileDir = String.Concat(dirName, fileName);
-
-                            }
-                            else
-                            {
-                                fileName = String.Concat(docview, "_", DateTime.Now.ToString("yyyy-MM-dd_hh_mm_ss"), ".xlsx");
-                                fileDir = String.Concat(dirName, fileName);
-
-                            }
-
-
-                            //muestra la pantalla de parametros
-                            ReportPrintTool rep = new ReportPrintTool(sageRep);
-
-                            if (export == true)
-                            {
-                                sageRep.ExportToText(fileDir);
-                            }
-
-
-                            if (Excel == true)
-                            {
-
-                                // Get its XLSX export options. 
-                                XlsxExportOptions xlsxOptions = sageRep.ExportOptions.Xlsx;
-
-                                // Set XLSX-specific export options. 
-                                xlsxOptions.ShowGridLines = true;
-                                xlsxOptions.TextExportMode = TextExportMode.Value;
-                                xlsxOptions.ExportHyperlinks = true;
-                                //   xlsxOptions.SheetName = "IncomeStatement";
-                                xlsxOptions.ExportMode = XlsxExportMode.SingleFilePageByPage;
-
-
-                                sageRep.ExportToXlsx(fileDir, xlsxOptions);
-
-                            }
-
-
-
-                            //sageRep.ExportToCsv(fileDir);
-                            if (hasAnyData)
-                            {
-
-                                if (!string.IsNullOrEmpty(sftpFolder) && Excel == false)
+                                if (Excel == false)
                                 {
-                                    SftpConnection sftpConnection = new SftpConnection();
 
-                                    sftpConnection.sendFile(fileName, fileDir, sftpFolder);
+
+                                    if (exportFileName != null)
+                                    {
+                                        fileName = String.Concat(docview, "_", exportFileName, '.', fileExt);
+                                    }
+                                    else
+                                    {
+                                        fileName = String.Concat(docview, "_", DateTime.Now.ToString("yyyy-MM-dd_hh_mm_ss"), '.', fileExt);
+
+                                    }
+
+                                    fileDir = String.Concat(dirName, fileName);
 
                                 }
-                                MessageBox.Show("Data successfuly exported to: " + fileDir);
+                                else
+                                {
+                                    fileName = String.Concat(docview, "_", DateTime.Now.ToString("yyyy-MM-dd_hh_mm_ss"), ".xlsx");
+                                    fileDir = String.Concat(dirName, fileName);
+
+                                }
+
+
+                                //muestra la pantalla de parametros
+                                ReportPrintTool rep = new ReportPrintTool(sageRep);
+
+                                if (export == true)
+                                {
+                                    sageRep.ExportToText(fileDir);
+                                }
+
+
                                 if (Excel == true)
                                 {
-                                    System.Diagnostics.Process.Start(fileDir);
+
+                                    // Get its XLSX export options. 
+                                    XlsxExportOptions xlsxOptions = sageRep.ExportOptions.Xlsx;
+
+                                    // Set XLSX-specific export options. 
+                                    xlsxOptions.ShowGridLines = true;
+                                    xlsxOptions.TextExportMode = TextExportMode.Value;
+                                    xlsxOptions.ExportHyperlinks = true;
+                                    //   xlsxOptions.SheetName = "IncomeStatement";
+                                    xlsxOptions.ExportMode = XlsxExportMode.SingleFilePageByPage;
+
+
+                                    sageRep.ExportToXlsx(fileDir, xlsxOptions);
+
+                                }
+
+
+
+                                //sageRep.ExportToCsv(fileDir);
+                                if (hasAnyData)
+                                {
+
+                                    if (!string.IsNullOrEmpty(sftpFolder) && Excel == false)
+                                    {
+                                        SftpConnection sftpConnection = new SftpConnection();
+
+                                        sftpConnection.sendFile(fileName, fileDir, sftpFolder);
+
+                                    }
+                                    MessageBox.Show("Data successfuly exported to: " + fileDir);
+                                    if (Excel == true)
+                                    {
+                                        System.Diagnostics.Process.Start(fileDir);
+                                    }
+
+                                }
+                                else
+                                {
+
+                                    File.Delete(fileDir);
+
+                                    MessageBox.Show("There´s not data to export for this selection");
+
                                 }
 
                             }
                             else
                             {
 
-                                File.Delete(fileDir);
+                                //muestra la pantalla de parametros
+                                //    ReportPrintTool rep = new ReportPrintTool(sageRep);
 
-                                MessageBox.Show("There´s not data to export for this selection");
+                                if (OnlyDs == false)
+                                {
+
+                                    sageRep.CreateDocument();
+                                    documentViewer1.DocumentSource = sageRep;
+                                    this.Show();
+
+
+                                }
+                                else
+                                {
+
+                                    if (canceled == false)
+                                    {
+                                        FrmViewGrid frmView = new FrmViewGrid(DbQuerySage.repPreview);
+
+                                        frmView.ShowDialog(this);
+                                    }
+
+                                    OnlyDs = false;
+                                }
+
 
                             }
 
@@ -342,46 +381,26 @@ namespace ACIWEB_DESKTOP_REPORT
                         else
                         {
 
-                            //muestra la pantalla de parametros
-                            //    ReportPrintTool rep = new ReportPrintTool(sageRep);
-
-                            if (OnlyDs == false)
-                            {
-
-                                sageRep.CreateDocument();
-                                documentViewer1.DocumentSource = sageRep;
-                                this.Show();
-
-
-                            }
-                            else
-                            {
-
-                                if (canceled == false)
-                                {
-                                    FrmViewGrid frmView = new FrmViewGrid(DbQuerySage.repPreview);
-
-                                    frmView.ShowDialog(this);
-                                }
-
-                                OnlyDs = false;
-                            }
-
+                            MessageBox.Show("There´s not data to export for this selection");
 
                         }
 
-                    }
-                    else
-                    {
-
-                        MessageBox.Show("There´s not data to export for this selection");
-
+                        
                     }
 
+                    /* borrar */
 
+                   
+                    sageRep.CreateDocument();
+                    documentViewer1.DocumentSource = sageRep;
+                    this.Show();
+
+
+                    /* borrar*/
 
                     export = false;
                     repType = "";
+
                 }
 
                 if (repType == "filesource")
@@ -550,6 +569,28 @@ namespace ACIWEB_DESKTOP_REPORT
 
                 }
 
+                if (repType == "customs")
+                {
+                    XtraReportCustoms customsRep = new XtraReportCustoms();
+                    documentViewer1.DocumentSource = customsRep;
+
+                    string ReportName;
+
+                    ReportName = String.Concat(@"C:\\ACIDesktopReport\ReportDesigner\CUSTOMS\", docview, ".repx");
+
+
+                    customsRep.LoadLayout(ReportName);
+                    customsRep.RequestParameters = true;
+                    customsRep.CreateDocument();
+
+                    this.Show();
+
+                    export = false;
+
+
+                }
+
+                Cursor = Cursors.Arrow; // change cursor to hourglass type
 
             }
             catch (Exception theException)

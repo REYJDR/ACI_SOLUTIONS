@@ -1360,6 +1360,11 @@
       </summary>
       <value>true if the warning should be shown; otherwize false.</value>
     </member>
+    <member name="E:DevExpress.XtraCharts.Designer.ChartDesigner.HelpRequested">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
     <member name="P:DevExpress.XtraCharts.Designer.ChartDesigner.Icon">
       <summary>
         <para>Gets or sets the Designer form icon.</para>
@@ -1377,6 +1382,12 @@
       </summary>
       <param name="chartElementType">The type of a chart element.</param>
       <param name="customModelType">The type of a model.</param>
+    </member>
+    <member name="P:DevExpress.XtraCharts.Designer.ChartDesigner.ShowActualData">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.XtraCharts.Designer.ChartDesigner.ShowDialog">
       <summary>

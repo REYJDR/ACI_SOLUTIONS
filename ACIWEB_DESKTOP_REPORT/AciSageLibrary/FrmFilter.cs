@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace AciSageLibrary
 {
     public partial class FrmFilter : Form
@@ -29,6 +30,7 @@ namespace AciSageLibrary
        // Panel panel3 = new Panel();
         FrmCompanyList frmCompanylist = new FrmCompanyList();
         FrmWait frmWait = new FrmWait();
+       
         DataTable list;
 
 
@@ -519,7 +521,48 @@ namespace AciSageLibrary
 
                 }
 
-                
+
+                if (dataType == "journals")
+                {
+
+                    var newLabel = new Label();
+                    newLabel.AutoSize = false;
+                    newLabel.Name = "lbl_" + fielName;
+                    newLabel.Text = fielName.Replace("_", " ");
+                    newLabel.Location = new Point(10, y);
+                    newLabel.Font = new Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    newLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+
+
+                    var comboBox = new ComboBox();
+                    comboBox.AutoSize = false;
+
+                    comboBox.Items.Add("THIS YEAR");
+                    comboBox.Items.Add("NEXT YEAR");
+
+
+                    if (longitud != "")
+                    {
+
+                        comboBox.MaxLength = Convert.ToInt32(longitud) + 2;
+
+                        using (Graphics G = comboBox.CreateGraphics())
+                        {
+                            comboBox.Width = (int)(comboBox.MaxLength *
+                                                      G.MeasureString("x", comboBox.Font).Width);
+                        }
+                    }
+
+                    comboBox.Name = "journals_" + fielName;
+                    comboBox.Location = new Point(10, y);
+
+
+                    // Add items to panel, then add panel to form
+                    selectOptionsPanel.Controls.Add(newLabel);
+                    selectOptionsPanel2.Controls.Add(comboBox);
+                    y = y + 25;
+
+                }
             }
 
             
@@ -540,9 +583,7 @@ namespace AciSageLibrary
             Cursor = Cursors.WaitCursor; // change cursor to hourglass type
 
             exe = true;
-
             
-           
 
             DbQuerySage.mre.Set();            
             DbQuerySage.kill = false;

@@ -4,6 +4,11 @@
     <name>DevExpress.XtraPivotGrid.v18.2</name>
   </assembly>
   <members>
+    <member name="N:DevExpress.XtraPivotGrid">
+      <summary>
+        <para>Contains classes which implement the main functionality of the PivotGridControl.</para>
+      </summary>
+    </member>
     <member name="T:DevExpress.XtraPivotGrid.CancelPivotCellEditEventArgs">
       <summary>
         <para>Provides data for the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.ShowingEditor"/> event.</para>
@@ -1577,10 +1582,10 @@
     </member>
     <member name="M:DevExpress.XtraPivotGrid.PivotCustomDrawCellBaseEventArgs.IsFieldValueRetrievable(DevExpress.XtraPivotGrid.PivotGridField)">
       <summary>
-        <para>Gets whether the value of the specified column or row field can be retrieved for the current cell by the  method.</para>
+        <para>Gets whether the value of the specified column or row field can be retrieved for the current cell by the PivotCustomDrawCellBaseEventArgs.GetFieldValue method.</para>
       </summary>
       <param name="field">A <see cref="T:DevExpress.XtraPivotGrid.PivotGridField"/> object which identifies the column or row field.</param>
-      <returns>true if the specified field&#39;s value can be retrieved via the  method; otherwise, false.</returns>
+      <returns>true if the specified field&#39;s value can be retrieved via the PivotCustomDrawCellBaseEventArgs.GetFieldValue method; otherwise, false.</returns>
     </member>
     <member name="M:DevExpress.XtraPivotGrid.PivotCustomDrawCellBaseEventArgs.IsOthersFieldValue(DevExpress.XtraPivotGrid.PivotGridField)">
       <summary>
@@ -3233,6 +3238,26 @@
         <para>Gets the appearance settings used to paint the horizontal and vertical lines.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Utils.AppearanceObject"/> object which provides the appearance settings used to paint grid lines.</value>
+    </member>
+    <member name="T:DevExpress.XtraPivotGrid.PivotGridAppearancesBase.PivotCellItemFlags">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPivotGrid.PivotGridAppearancesBase.PivotCellItemFlags.CustomTotalAppearance">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPivotGrid.PivotGridAppearancesBase.PivotCellItemFlags.GrandTotalAppearance">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPivotGrid.PivotGridAppearancesBase.PivotCellItemFlags.TotalAppearance">
+      <summary>
+        <para></para>
+      </summary>
     </member>
     <member name="P:DevExpress.XtraPivotGrid.PivotGridAppearancesBase.TotalCell">
       <summary>

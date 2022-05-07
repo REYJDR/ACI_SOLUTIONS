@@ -4,6 +4,11 @@
     <name>DevExpress.XtraReports.v18.2.Extensions</name>
   </assembly>
   <members>
+    <member name="N:DevExpress.XtraReports.Configuration">
+      <summary>
+        <para>Contains classes that enable additional customization of the End-User Report Designer for WinForms.</para>
+      </summary>
+    </member>
     <member name="T:DevExpress.XtraReports.Configuration.ChartDesignOptions">
       <summary>
         <para>Enables you to specify the default behavior of an <see cref="T:DevExpress.XtraReports.UI.XRChart"/> on adding it to a report.</para>
@@ -82,6 +87,11 @@
       </summary>
       <value>true, to show the Load Data from XML tab; otherwise, false.</value>
     </member>
+    <member name="N:DevExpress.XtraReports.Design">
+      <summary>
+        <para>Provides the functionality that is necessary for deep customization of the End-User Report Designer.</para>
+      </summary>
+    </member>
     <member name="T:DevExpress.XtraReports.Design.ComponentVisibility">
       <summary>
         <para>Lists the available modes of component visibility in a Report Designer.</para>
@@ -135,6 +145,11 @@
         <para>For internal use.</para>
       </summary>
       <value></value>
+    </member>
+    <member name="N:DevExpress.XtraReports.Extensions">
+      <summary>
+        <para>Contains design-time extensions to provide advanced customization of the XtraReports End-User Designer.</para>
+      </summary>
     </member>
     <member name="T:DevExpress.XtraReports.Extensions.GetTemplatesHandler">
       <summary>
@@ -466,6 +481,11 @@
       <param name="useExpressionBindings">true, to use expression bindings; false, to use the legacy binding mode.</param>
       <returns>An <see cref="T:DevExpress.XtraReports.UI.XtraReport"/> object.</returns>
     </member>
+    <member name="N:DevExpress.XtraReports.UI">
+      <summary>
+        <para>Contains classes that implement the basic functionality of XtraReports.</para>
+      </summary>
+    </member>
     <member name="T:DevExpress.XtraReports.UI.IReportDesignTool">
       <summary>
         <para>Provides methods for showing both the standard and ribbon-based End-User Report Designer forms.</para>
@@ -743,6 +763,11 @@
       <param name="report">A report to open in the End-User Report Designer.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object which specifies the look and feel settings applied to the End-User Report Designer.</param>
       <param name="hiddenPanels">One or more <see cref="T:DevExpress.XtraReports.UserDesigner.DesignDockPanelType"/> enumeration values identifying the Report Designer dock panels to be hidden.</param>
+    </member>
+    <member name="N:DevExpress.XtraReports.UserDesigner">
+      <summary>
+        <para>Contains classes that implement the functionality of the End-User Designer for XtraReports.</para>
+      </summary>
     </member>
     <member name="T:DevExpress.XtraReports.UserDesigner.CommandVisibility">
       <summary>
@@ -1696,22 +1721,22 @@
     </member>
     <member name="F:DevExpress.XtraReports.UserDesigner.ReportCommand.KeySizeHeightDecrease">
       <summary>
-        <para>Decreases the height of the selected control(s) by a step of a grid size as it has been decreased by the Shift+Up Arrow keys. Note that if you hide this command, an end-user will still be able to decrease the controls height by the Shift+Up Arrow keys.</para>
+        <para>Decreases the selected control&#39;s height when users press the Shift+Up Arrow keys. The decrease depends on the report&#39;s <see cref="P:DevExpress.XtraReports.UI.XtraReport.SnappingMode"/> property value: * None - decreases the height by the <see cref="P:DevExpress.XtraReports.UI.XtraReport.ReportUnit"/> value; * SnapLines - decreases the height to the nearest snap position; * SnapGrid - decreases the height to the nearest grid line; * SnapToGridAndSnapLines - decreases the height to the nearest grid line or snap position. If you hide this command, users can still decrease the controls height with the Shift+Up Arrow keys.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraReports.UserDesigner.ReportCommand.KeySizeHeightIncrease">
       <summary>
-        <para>Increases the height of the selected control(s) by a step of a grid size as it has been increased by the Shift+Down Arrow keys. Note that if you hide this command, an end-user will still be able to increase the controls height by the Shift+Down Arrow keys.</para>
+        <para>Increases the selected control&#39;s height when users press the Shift+Down Arrow keys. The increase depends on the report&#39;s <see cref="P:DevExpress.XtraReports.UI.XtraReport.SnappingMode"/> property value: * None - increases the height by the <see cref="P:DevExpress.XtraReports.UI.XtraReport.ReportUnit"/> value; * SnapLines - increases the height to the nearest snap position; * SnapGrid - increases the height to the nearest grid line; * SnapToGridAndSnapLines - increases the height to the nearest grid line or snap position. If you hide this command, users can still increase the controls height with the Shift+Down Arrow keys.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraReports.UserDesigner.ReportCommand.KeySizeWidthDecrease">
       <summary>
-        <para>Decreases the width of the selected control(s) by a step of a grid size as it has been decreased by the Shift+Left Arrow keys. Note that if you hide this command, an end-user will still be able to decrease the controls width by the Shift+Left Arrow keys.</para>
+        <para>Decreases the selected control&#39;s width when users press the Shift+Left Arrow keys. The decrease depends on the report&#39;s <see cref="P:DevExpress.XtraReports.UI.XtraReport.SnappingMode"/> property value: * None - decreases the width by the <see cref="P:DevExpress.XtraReports.UI.XtraReport.ReportUnit"/> value; * SnapLines - decreases the width to the nearest snap position; * SnapGrid - decreases the width to the nearest grid line; * SnapToGridAndSnapLines - decreases the width to the nearest grid line or snap position. If you hide this command, users can still decrease the controls&#39; width with the Shift+Left Arrow keys.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraReports.UserDesigner.ReportCommand.KeySizeWidthIncrease">
       <summary>
-        <para>Increases the width of the selected control(s) by a step of a grid size as it has been increased by the Shift+Right Arrow keys. Note that if you hide this command, an end-user will still be able to increase the controls width by the Shift+Right Arrow keys.</para>
+        <para>Increases the selected control&#39;s width when users press the Shift+Right Arrow keys. The increase depends on the report&#39;s <see cref="P:DevExpress.XtraReports.UI.XtraReport.SnappingMode"/> property value: * None - increases the width by the <see cref="P:DevExpress.XtraReports.UI.XtraReport.ReportUnit"/> value; * SnapLines - increases the width to the nearest snap position; * SnapGrid - increases the width to the nearest grid line; * SnapToGridAndSnapLines - increases the width to the nearest grid line or snap position. If you hide this command, users can still increase the controls&#39; width with the Shift+Right Arrow keys.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraReports.UserDesigner.ReportCommand.LabelAutoWidth">
@@ -3395,6 +3420,7 @@
       <summary>
         <para>Obtains the service object of the specified type from the designer host used by the <see cref="T:DevExpress.XtraReports.UserDesigner.XRDesignPanel"/>.</para>
       </summary>
+      <typeparam name="T"></typeparam>
       <returns>A service object of the specified generic type, or a null reference (Nothing in Visual Basic) if there is no service object of this type.</returns>
     </member>
     <member name="M:DevExpress.XtraReports.UserDesigner.XRDesignPanel.OpenReport(DevExpress.XtraReports.UI.XtraReport)">
@@ -3422,9 +3448,9 @@
     </member>
     <member name="M:DevExpress.XtraReports.UserDesigner.XRDesignPanel.RemoveCommandHandler(DevExpress.XtraReports.UserDesigner.ICommandHandler)">
       <summary>
-        <para>Removes the specified command handler for one or several of the report commands.</para>
+        <para>Removes the specified command handler.</para>
       </summary>
-      <param name="handler">An object which implements the <see cref="T:DevExpress.XtraReports.UserDesigner.ICommandHandler"/> interface, representing the command handler to be removed.</param>
+      <param name="handler">The command handler to be removed.</param>
     </member>
     <member name="M:DevExpress.XtraReports.UserDesigner.XRDesignPanel.RemoveService(System.Type)">
       <summary>
@@ -3840,16 +3866,16 @@
     </member>
     <member name="T:DevExpress.XtraReports.UserDesigner.XRDialogRunner">
       <summary>
-        <para></para>
+        <para>Enables you to show report-specific dialogs.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraReports.UserDesigner.XRDialogRunner.ShowFilterStringEditorDialog(DevExpress.XtraReports.UI.XtraReportBase,System.Windows.Forms.IWin32Window)">
       <summary>
-        <para></para>
+        <para>Shows the FilterString Editor.</para>
       </summary>
-      <param name="report"></param>
-      <param name="owner"></param>
-      <returns></returns>
+      <param name="report">The report to apply the FilterString to</param>
+      <param name="owner">The owner window</param>
+      <returns>OK, to apply the resulting FilterString; Cancel otherwise</returns>
     </member>
     <member name="T:DevExpress.XtraReports.UserDesigner.XRTabbedMdiManager">
       <summary>
@@ -3870,6 +3896,11 @@
     <member name="E:DevExpress.XtraReports.UserDesigner.XRTabbedMdiManager.AnyDocumentActivated">
       <summary>
         <para>Occurs after any of the documents contained in the <see cref="T:DevExpress.XtraReports.UserDesigner.XRTabbedMdiManager"/> is activated.</para>
+      </summary>
+    </member>
+    <member name="N:DevExpress.XtraReports.Wizards">
+      <summary>
+        <para>Contains classes and interfaces that enable Report Wizard customization.</para>
       </summary>
     </member>
     <member name="N:DevExpress.XtraReports.Wizards.Builder">
@@ -3932,6 +3963,11 @@
       <param name="dataSource">A <see cref="T:System.Object"/> value, specifying the data source.</param>
       <param name="dataMember">A <see cref="T:System.String"/> value, specifying the data member.</param>
       <returns>true, if the report has been created; otherwise, false.</returns>
+    </member>
+    <member name="N:DevExpress.XtraReports.Wizards.Views">
+      <summary>
+        <para>Contains classes and interfaces that provide functionality to the Report Wizard page views.</para>
+      </summary>
     </member>
     <member name="T:DevExpress.XtraReports.Wizards.Views.AddGroupingLevelPageView">
       <summary>
@@ -5150,6 +5186,7 @@
       <summary>
         <para>Enables you to register wizard page views with the corresponding presenters for a specified <see cref="T:DevExpress.XtraReports.Wizards.XtraReportModel"/>.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.XtraReportWizardClient`1.#ctor(DevExpress.DataAccess.Wizard.Services.IConnectionStorageService,DevExpress.DataAccess.Wizard.Services.IParameterService,DevExpress.Entity.ProjectModel.ISolutionTypesProvider,DevExpress.Data.Entity.IConnectionStringsProvider)">
       <summary>
@@ -5362,6 +5399,7 @@
       <summary>
         <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Presenters.ChooseEFConnectionStringPageEx`1"/> class instead.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards3.Presenters.ChooseEFConnectionStringPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IChooseEFConnectionStringPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.Data.Entity.IConnectionStringsProvider,DevExpress.DataAccess.Wizard.Services.IConnectionStorageService)">
       <summary>
@@ -5376,6 +5414,7 @@
       <summary>
         <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Presenters.ChooseEFDataMemberPageEx`1"/> class instead.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards3.Presenters.ChooseEFDataMemberPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IChooseEFDataMemberPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext)">
       <summary>
@@ -5388,6 +5427,7 @@
       <summary>
         <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Presenters.ChooseObjectBindingModePageEx`1"/> class instead.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards3.Presenters.ChooseObjectBindingModePageEx`1.#ctor(DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.Views.IChooseObjectBindingModePageView,DevExpress.DataAccess.Wizard.OperationMode)">
       <summary>
@@ -5401,6 +5441,7 @@
       <summary>
         <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Presenters.ChooseObjectConstructorPageEx`1"/> class instead.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards3.Presenters.ChooseObjectConstructorPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IChooseObjectConstructorPageView,DevExpress.DataAccess.Wizard.OperationMode)">
       <summary>
@@ -5413,6 +5454,7 @@
       <summary>
         <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Presenters.ChooseObjectMemberPageEx`1"/> class instead.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards3.Presenters.ChooseObjectMemberPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IChooseObjectMemberPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.OperationMode)">
       <summary>
@@ -5426,6 +5468,7 @@
       <summary>
         <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Presenters.ChooseObjectTypePageEx`1"/> class instead.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards3.Presenters.ChooseObjectTypePageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IChooseObjectTypePageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.OperationMode)">
       <summary>
@@ -5439,6 +5482,7 @@
       <summary>
         <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Presenters.ConfigureEFConnectionStringPageEx`1"/> class instead.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards3.Presenters.ConfigureEFConnectionStringPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IConfigureEFConnectionStringPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.Services.IConnectionStorageService)">
       <summary>
@@ -5452,6 +5496,7 @@
       <summary>
         <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Presenters.ConfigureEFStoredProceduresPageEx`1"/> class instead.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards3.Presenters.ConfigureEFStoredProceduresPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IConfigureEFStoredProceduresPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.Services.IParameterService)">
       <summary>
@@ -5465,6 +5510,7 @@
       <summary>
         <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Presenters.ConfigureExcelFileColumnsPageEx`1"/> class instead.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards3.Presenters.ConfigureExcelFileColumnsPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IConfigureExcelFileColumnsPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext)">
       <summary>
@@ -5477,6 +5523,7 @@
       <summary>
         <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Presenters.ConfigureQueryPageEx`1"/> class instead.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards3.Presenters.ConfigureQueryPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IConfigureQueryPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.SqlWizardOptions,DevExpress.DataAccess.Sql.IDBSchemaProviderEx,DevExpress.DataAccess.Sql.IResultSchemaProvider,DevExpress.DataAccess.Wizard.Services.IParameterService,DevExpress.DataAccess.Wizard.Services.ICustomQueryValidator)">
       <summary>
@@ -5505,6 +5552,7 @@
       <summary>
         <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Presenters.ConfigureSqlParametersPageEx`1"/> class instead.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards3.Presenters.ConfigureSqlParametersPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IConfigureParametersPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.Services.IParameterService,DevExpress.DataAccess.Sql.IDBSchemaProviderEx,DevExpress.DataAccess.Sql.IResultSchemaProvider,DevExpress.DataAccess.Wizard.Services.ICustomQueryValidator,DevExpress.DataAccess.Wizard.SqlWizardOptions)">
       <summary>
@@ -5533,6 +5581,7 @@
       <summary>
         <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Presenters.ObjectConstructorParametersPageEx`1"/> class instead.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards3.Presenters.ObjectConstructorParametersPageEx`1.#ctor(DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.Views.IObjectConstructorParametersPageView,DevExpress.DataAccess.Wizard.Services.IParameterService)">
       <summary>
@@ -5546,6 +5595,7 @@
       <summary>
         <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Presenters.ObjectMemberParametersPageEx`1"/> class instead.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards3.Presenters.ObjectMemberParametersPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IObjectMemberParametersPageView,DevExpress.DataAccess.Wizard.Services.IParameterService,DevExpress.DataAccess.Wizard.OperationMode)">
       <summary>
@@ -5559,6 +5609,7 @@
       <summary>
         <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Presenters.SelectColumnsPage`1"/> class instead.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards3.Presenters.SelectColumnsPage`1.#ctor(DevExpress.XtraReports.Wizards.Views.ISelectColumnsPageView)">
       <summary>
@@ -5714,6 +5765,8 @@
       <summary>
         <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.XtraReportWizardClient`1"/> class instead.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
+      <typeparam name="TClient"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards3.XtraReportWizardPageFactory`2.#ctor(DevExpress.DataAccess.Wizard.Services.IConnectionStorageService,DevExpress.DataAccess.Wizard.Services.IParameterService,DevExpress.Entity.ProjectModel.ISolutionTypesProvider,DevExpress.Data.Entity.IConnectionStringsProvider)">
       <summary>
@@ -5728,6 +5781,8 @@
       <summary>
         <para>Obsolete. This class is no longer used in the current Report Wizard implementation.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
+      <typeparam name="TClient"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards3.XtraReportWizardRunner`2.#ctor(DevExpress.LookAndFeel.UserLookAndFeel,System.Windows.Forms.IWin32Window)">
       <summary>

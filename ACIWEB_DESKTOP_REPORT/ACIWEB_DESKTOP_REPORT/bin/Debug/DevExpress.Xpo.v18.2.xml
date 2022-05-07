@@ -636,7 +636,7 @@
     </member>
     <member name="F:DevExpress.Xpo.DB.AccessConnectionProvider.XpoProviderTypeString">
       <summary>
-        <para>Gets the name of the current connection provider. This name is used internally when generating a connection string via the  method.</para>
+        <para>Gets the name of the current connection provider. This name is used internally when generating a connection string via the AccessConnectionProvider.GetConnectionString method.</para>
       </summary>
       <value></value>
     </member>
@@ -732,7 +732,7 @@
     </member>
     <member name="F:DevExpress.Xpo.DB.AccessConnectionProviderMultiUserThreadSafe.XpoProviderTypeString">
       <summary>
-        <para>Gets the name of the current connection provider. This name is used internally when generating a connection string via the  method.</para>
+        <para>Gets the name of the current connection provider. This name is used internally when generating a connection string via the AccessConnectionProviderMultiUserThreadSafe.GetConnectionString method.</para>
       </summary>
       <value></value>
     </member>
@@ -1193,7 +1193,7 @@
     </member>
     <member name="F:DevExpress.Xpo.DB.FirebirdConnectionProvider.XpoProviderTypeString">
       <summary>
-        <para>Gets the name of the current connection provider. This name is used internally when generating a connection string via the  method.</para>
+        <para>Gets the name of the current connection provider. This name is used internally when generating a connection string via the FirebirdConnectionProvider.GetConnectionString method.</para>
       </summary>
       <value></value>
     </member>
@@ -1217,7 +1217,7 @@
       <summary>
         <para>Returns a cached data store provider, created based on specified settings.</para>
       </summary>
-      <param name="connectionString">A string that specifies the connection string. Use the  method to create valid connection strings.</param>
+      <param name="connectionString">A string that specifies the connection string. Use the MSSqlConnectionProvider.GetConnectionString method to create valid connection strings.</param>
       <param name="autoCreateOption">An <see cref="T:DevExpress.Xpo.DB.AutoCreateOption"/> value that specifies which operations should be performed when a data store is accessed for the first time.</param>
       <param name="objectsToDisposeOnDisconnect">An array of IDisposable objects that must be disposed on disconnect from the database.</param>
       <returns>A <see cref="T:DevExpress.Xpo.DB.DataCacheNodeLocal"/> instance (an <see cref="T:DevExpress.Xpo.DB.IDataStore"/> implementation) which is connected to a <see cref="T:DevExpress.Xpo.DB.Helpers.MSSql2005SqlDependencyCacheRoot"/> associated with a <see cref="T:DevExpress.Xpo.DB.MSSqlConnectionProvider"/>, that is created based on specified settings.</returns>
@@ -1407,13 +1407,13 @@
     </member>
     <member name="F:DevExpress.Xpo.DB.Helpers.MSSql2005SqlDependencyCacheRoot.XpoProviderTypeString_CacheRoot">
       <summary>
-        <para>Gets the name of a cached data store provider that is created via the <see cref="M:DevExpress.Xpo.DB.Helpers.MSSql2005SqlDependencyCacheRoot.CreateProviderFromString_CacheRoot(System.String,DevExpress.Xpo.DB.AutoCreateOption,System.IDisposable[]@)"/> method. This name is used internally when generating a connection string via the  method.</para>
+        <para>Gets the name of a cached data store provider that is created via the <see cref="M:DevExpress.Xpo.DB.Helpers.MSSql2005SqlDependencyCacheRoot.CreateProviderFromString_CacheRoot(System.String,DevExpress.Xpo.DB.AutoCreateOption,System.IDisposable[]@)"/> method. This name is used internally when generating a connection string via the MSSqlConnectionProvider.GetConnectionString2005CacheRoot method.</para>
       </summary>
       <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.Helpers.MSSql2005SqlDependencyCacheRoot.XpoProviderTypeString_WithCache">
       <summary>
-        <para>Gets the name of a cached data store provider that is created via the <see cref="M:DevExpress.Xpo.DB.Helpers.MSSql2005SqlDependencyCacheRoot.CreateProviderFromString_WithCache(System.String,DevExpress.Xpo.DB.AutoCreateOption,System.IDisposable[]@)"/> method. This name is used internally when generating a connection string via the  method.</para>
+        <para>Gets the name of a cached data store provider that is created via the <see cref="M:DevExpress.Xpo.DB.Helpers.MSSql2005SqlDependencyCacheRoot.CreateProviderFromString_WithCache(System.String,DevExpress.Xpo.DB.AutoCreateOption,System.IDisposable[]@)"/> method. This name is used internally when generating a connection string via the MSSqlConnectionProvider.GetConnectionString2005WithCache method.</para>
       </summary>
       <value></value>
     </member>
@@ -1807,7 +1807,7 @@
     </member>
     <member name="F:DevExpress.Xpo.DB.InMemoryDataStore.XpoProviderTypeString">
       <summary>
-        <para>Gets the name of the current connection provider. This name is used internally when generating a connection string via the  method.</para>
+        <para>Gets the name of the current connection provider. This name is used internally when generating a connection string via the InMemoryDataStore.GetConnectionString method.</para>
       </summary>
       <value></value>
     </member>
@@ -1893,7 +1893,7 @@
     </member>
     <member name="M:DevExpress.Xpo.DB.ISerializableObjectLayerService.LoadDelayedProperties(DevExpress.Xpo.XPDictionaryStub,DevExpress.Xpo.XPObjectStub,System.String[])">
       <summary>
-        <para>When implemented by a class, executes the corresponding  overloaded method implementation of an object layer and returns the operation result.</para>
+        <para>When implemented by a class, executes the corresponding ISerializableObjectLayerEx.LoadDelayedProperties overloaded method implementation of an object layer and returns the operation result.</para>
       </summary>
       <param name="dictionary">An <see cref="T:DevExpress.Xpo.XPDictionaryStub"/> object that is a metadata information provider.</param>
       <param name="theObject">A persistent object containing delayed properties specified by the props.</param>
@@ -1902,7 +1902,7 @@
     </member>
     <member name="M:DevExpress.Xpo.DB.ISerializableObjectLayerService.LoadDelayedProperty(DevExpress.Xpo.XPDictionaryStub,DevExpress.Xpo.XPObjectStubCollection,System.String)">
       <summary>
-        <para>When implemented by a class, executes the corresponding  overloaded method implementation of an object layer and returns the operation result.</para>
+        <para>When implemented by a class, executes the corresponding ISerializableObjectLayerEx.LoadDelayedProperties overloaded method implementation of an object layer and returns the operation result.</para>
       </summary>
       <param name="dictionary">An <see cref="T:DevExpress.Xpo.XPDictionaryStub"/> object that is a metadata information provider.</param>
       <param name="objects">An <see cref="T:DevExpress.Xpo.XPObjectStubCollection"/> object which contains information on persistent objects containing the delayed property specified by the property.</param>
@@ -2282,7 +2282,7 @@
     </member>
     <member name="F:DevExpress.Xpo.DB.MSSqlConnectionProvider.XpoProviderTypeString">
       <summary>
-        <para>Gets the name of the current connection provider. This name is used internally when generating a connection string via the  method.</para>
+        <para>Gets the name of the current connection provider. This name is used internally when generating a connection string via the MSSqlConnectionProvider.GetConnectionString method.</para>
       </summary>
       <value></value>
     </member>
@@ -2361,6 +2361,8 @@
       </summary>
       <param name="predicate"></param>
       <param name="channel"></param>
+      <typeparam name="T"></typeparam>
+      <typeparam name="N"></typeparam>
       <returns></returns>
     </member>
     <member name="F:DevExpress.Xpo.DB.OperationResult.ExecuteClientMaxRetryCount">
@@ -2380,6 +2382,7 @@
       <summary>
         <para>The result of an operation performed by the <see cref="T:DevExpress.Xpo.DB.DataStoreService"/>, <see cref="T:DevExpress.Xpo.DB.CachedDataStoreService"/>, or <see cref="T:DevExpress.Xpo.DB.SerializableObjectLayerService"/>.</para>
       </summary>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.Xpo.DB.OperationResult`1.#ctor">
       <summary>
@@ -2697,7 +2700,7 @@
     </member>
     <member name="F:DevExpress.Xpo.DB.PostgreSqlConnectionProvider.XpoProviderTypeString">
       <summary>
-        <para>Gets the name of the current connection provider. This name is used internally when generating a connection string via the  metho</para>
+        <para>Gets the name of the current connection provider. This name is used internally when generating a connection string via the PostgreSqlConnectionProvider.GetConnectionString metho</para>
       </summary>
       <value></value>
     </member>
@@ -2790,7 +2793,7 @@
     </member>
     <member name="M:DevExpress.Xpo.DB.SerializableObjectLayerProxyBase.LoadDelayedProperties(DevExpress.Xpo.XPDictionaryStub,DevExpress.Xpo.XPObjectStub,System.String[])">
       <summary>
-        <para>Delegates the call to the corresponding  overloaded method of an object layer instance returned by the <see cref="T:DevExpress.Xpo.DB.SerializableObjectLayerProxyBase"/>.GetObjectLayer method implementation.</para>
+        <para>Delegates the call to the corresponding SerializableObjectLayer.LoadDelayedProperties overloaded method of an object layer instance returned by the <see cref="T:DevExpress.Xpo.DB.SerializableObjectLayerProxyBase"/>.GetObjectLayer method implementation.</para>
       </summary>
       <param name="dictionary"></param>
       <param name="theObject"></param>
@@ -2799,7 +2802,7 @@
     </member>
     <member name="M:DevExpress.Xpo.DB.SerializableObjectLayerProxyBase.LoadDelayedProperties(DevExpress.Xpo.XPDictionaryStub,DevExpress.Xpo.XPObjectStubCollection,System.String)">
       <summary>
-        <para>Delegates the call to the corresponding  overloaded method of an object layer instance returned by the <see cref="T:DevExpress.Xpo.DB.SerializableObjectLayerProxyBase"/>.GetObjectLayer method implementation.</para>
+        <para>Delegates the call to the corresponding SerializableObjectLayer.LoadDelayedProperties overloaded method of an object layer instance returned by the <see cref="T:DevExpress.Xpo.DB.SerializableObjectLayerProxyBase"/>.GetObjectLayer method implementation.</para>
       </summary>
       <param name="dictionary"></param>
       <param name="objects"></param>
@@ -2925,7 +2928,7 @@
     </member>
     <member name="M:DevExpress.Xpo.DB.SerializableObjectLayerService.LoadDelayedProperties(DevExpress.Xpo.XPDictionaryStub,DevExpress.Xpo.XPObjectStub,System.String[])">
       <summary>
-        <para>Delegates the call to the corresponding  overloaded method of an object layer instance passed to the <see cref="T:DevExpress.Xpo.DB.SerializableObjectLayerService"/>&#39;s constructor and returns the operation result.</para>
+        <para>Delegates the call to the corresponding SerializableObjectLayer.LoadDelayedProperties overloaded method of an object layer instance passed to the <see cref="T:DevExpress.Xpo.DB.SerializableObjectLayerService"/>&#39;s constructor and returns the operation result.</para>
       </summary>
       <param name="dictionary"></param>
       <param name="theObject"></param>
@@ -2934,7 +2937,7 @@
     </member>
     <member name="M:DevExpress.Xpo.DB.SerializableObjectLayerService.LoadDelayedProperty(DevExpress.Xpo.XPDictionaryStub,DevExpress.Xpo.XPObjectStubCollection,System.String)">
       <summary>
-        <para>Delegates the call to the corresponding  overloaded method of an object layer instance passed to the <see cref="T:DevExpress.Xpo.DB.SerializableObjectLayerService"/>&#39;s constructor and returns the operation result.</para>
+        <para>Delegates the call to the corresponding SerializableObjectLayer.LoadDelayedProperties overloaded method of an object layer instance passed to the <see cref="T:DevExpress.Xpo.DB.SerializableObjectLayerService"/>&#39;s constructor and returns the operation result.</para>
       </summary>
       <param name="dictionary"></param>
       <param name="objects"></param>
@@ -4563,23 +4566,6 @@
       <summary>
         <para>The persistent properties and the fields of a class are stored in the same table as the properties of its parent class.</para>
       </summary>
-    </member>
-    <member name="T:DevExpress.Xpo.MapToAttribute">
-      <summary>
-        <para>Specifies the name of the database object where the class will be mapped.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Xpo.MapToAttribute.#ctor(System.String)">
-      <summary>
-        <para>Initializes a new instance of the <see cref="T:DevExpress.Xpo.MapToAttribute"/> class.</para>
-      </summary>
-      <param name="mappingName">A string which holds the name of the database table to map a class to. This value is used to initialize the <see cref="P:DevExpress.Xpo.MapToAttribute.MappingName"/> property.</param>
-    </member>
-    <member name="P:DevExpress.Xpo.MapToAttribute.MappingName">
-      <summary>
-        <para>Gets the name of the database table to map a class to.</para>
-      </summary>
-      <value>The name of the database table to map a class to.</value>
     </member>
     <member name="T:DevExpress.Xpo.MemberDesignTimeVisibilityAttribute">
       <summary>
@@ -6319,6 +6305,7 @@
         <para>Returns the object of the type designated by the specified generic type parameter, which is the &#39;copy&#39; of the specified object owned by the parent session.</para>
       </summary>
       <param name="obj">The parent object of the type designated by the specified generic type parameter whose &#39;copy&#39; in the nested unit of work is returned.</param>
+      <typeparam name="T"></typeparam>
       <returns>The object in the current unit of work which is the &#39;copy&#39; of the specified object.</returns>
     </member>
     <member name="M:DevExpress.Xpo.NestedUnitOfWork.GetNestedObjects(System.Object[])">
@@ -6340,6 +6327,7 @@
         <para>Returns the object in the parent session of the type designated by the specified generic type parameter, whose &#39;copy&#39; in the current unit of work is specified.</para>
       </summary>
       <param name="obj">The object in the current unit of work which is the &#39;copy&#39; of the returned object.</param>
+      <typeparam name="T"></typeparam>
       <returns>The parent object whose &#39;copy&#39; in the current unit of work is specified.</returns>
     </member>
     <member name="P:DevExpress.Xpo.NestedUnitOfWork.Parent">
@@ -6792,6 +6780,12 @@
     <member name="P:DevExpress.Xpo.ObjectsQuery.Force">
       <summary>
         <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.Xpo.ObjectsQuery.SkipDuplicateCheck">
+      <summary>
+        <para>For internal use.</para>
       </summary>
       <value></value>
     </member>
@@ -8206,6 +8200,7 @@
       </summary>
       <param name="expression">A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> object that specifies the expression to be evaluated.</param>
       <param name="criteria">A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> object that specifies the filter criteria. The objects that match this criteria will be used to evaluate the expression.</param>
+      <typeparam name="ClassType"></typeparam>
       <returns>The evaluated value.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.EvaluateAsync(DevExpress.Xpo.Metadata.XPClassInfo,DevExpress.Data.Filtering.CriteriaOperator,DevExpress.Data.Filtering.CriteriaOperator,System.Threading.CancellationToken)">
@@ -8252,6 +8247,7 @@
       </summary>
       <param name="expression">A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> object that specifies the expression to evaluate.</param>
       <param name="criteria">A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> object that specifies the filter criteria. The method evaluates the expression against objects that match these criteria.</param>
+      <typeparam name="ClassType"></typeparam>
       <returns>A value, which is the evaluation&#39;s result.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.EvaluateInTransactionAsync(DevExpress.Xpo.Metadata.XPClassInfo,DevExpress.Data.Filtering.CriteriaOperator,DevExpress.Data.Filtering.CriteriaOperator,System.Threading.CancellationToken)">
@@ -8281,6 +8277,7 @@
       <param name="expression">A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> object that specifies the expression to evaluate.</param>
       <param name="criteria">A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> object that specifies the filter criteria. The methods evaluates the expression against objects that match these criteria.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="ClassType"></typeparam>
       <returns>A Task that returns a value. This value is the evaluation&#39;s result.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.ExecuteNonQuery(System.String)">
@@ -8500,6 +8497,7 @@
         <para>Searches for the first object of the type designated by the specified generic type parameter which matches the specified criteria.</para>
       </summary>
       <param name="criteria">A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> descendant which represents the criteria to match persistent objects.</param>
+      <typeparam name="ClassType"></typeparam>
       <returns>An object which represents the first persistent object matching the specified criteria. null (Nothing in Visual Basic) if no persistent object matching the criteria is found.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.FindObject``1(DevExpress.Data.Filtering.CriteriaOperator,System.Boolean)">
@@ -8508,6 +8506,7 @@
       </summary>
       <param name="criteria">A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> descendant which represents the criteria to match persistent objects.</param>
       <param name="selectDeleted">true to include persistent objects marked as deleted into the search; otherwise, false.</param>
+      <typeparam name="ClassType"></typeparam>
       <returns>An object which represents the first persistent object matching the specified criteria. null (Nothing in Visual Basic) if no persistent object matching the criteria is found.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.FindObject``1(DevExpress.Xpo.PersistentCriteriaEvaluationBehavior,DevExpress.Data.Filtering.CriteriaOperator)">
@@ -8516,6 +8515,7 @@
       </summary>
       <param name="criteriaEvaluationBehavior">A <see cref="T:DevExpress.Xpo.PersistentCriteriaEvaluationBehavior"/> enumeration value that specifies how the persistent criteria is evaluated.</param>
       <param name="criteria">A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> descendant which represents the criteria to match persistent objects.</param>
+      <typeparam name="ClassType"></typeparam>
       <returns>An object which represents the first persistent object matching the specified criteria. null (Nothing in Visual Basic) if no persistent object matching the criteria is found.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.FindObjectAsync(DevExpress.Xpo.Metadata.XPClassInfo,DevExpress.Data.Filtering.CriteriaOperator,DevExpress.Xpo.Helpers.AsyncFindObjectCallback)">
@@ -8623,6 +8623,7 @@
       </summary>
       <param name="criteria">A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> descendant which represents the criteria to match persistent objects.</param>
       <param name="callback">A DevExpress.Xpo.Helpers.AsyncFindObjectCallback delegate to be called after the method completes.Use callback to do the following:Do not raise exceptions or modify persistent objects within a callback.</param>
+      <typeparam name="ClassType"></typeparam>
       <returns>An object which represents the first persistent object matching the specified criteria. null (Nothing in Visual Basic) if no persistent object matching the criteria is found.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.FindObjectAsync``1(DevExpress.Data.Filtering.CriteriaOperator,System.Boolean,DevExpress.Xpo.Helpers.AsyncFindObjectCallback)">
@@ -8632,6 +8633,7 @@
       <param name="criteria">A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> descendant which represents the criteria to match persistent objects.</param>
       <param name="selectDeleted">true to include persistent objects marked as deleted in the search; otherwise, false.</param>
       <param name="callback">A DevExpress.Xpo.Helpers.AsyncFindObjectCallback delegate to be called after the method completes.Use callback to do the following:Do not raise exceptions or modify persistent objects within a callback.</param>
+      <typeparam name="ClassType"></typeparam>
       <returns>An object which represents the first persistent object matching the specified criteria. null (Nothing in Visual Basic) if no persistent object matching the criteria is found.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.FindObjectAsync``1(DevExpress.Data.Filtering.CriteriaOperator,System.Boolean,System.Threading.CancellationToken)">
@@ -8641,6 +8643,7 @@
       <param name="criteria">A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> descendant which represents the criteria the persistent object must match.</param>
       <param name="selectDeleted">true, to include persistent objects marked as deleted into the search; otherwise, false.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="ClassType"></typeparam>
       <returns>A Task that returns an object. This object represents the first persistent object that matches the specified criteria. null (Nothing in Visual Basic) if no persistent object is found that matches the criteria.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.FindObjectAsync``1(DevExpress.Data.Filtering.CriteriaOperator,System.Threading.CancellationToken)">
@@ -8649,6 +8652,7 @@
       </summary>
       <param name="criteria">A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> descendant which represents the criteria the persistent object must match.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="ClassType"></typeparam>
       <returns>A Task that returns an object. This object represents the first persistent object that matches the specified criteria. null (Nothing in Visual Basic) if no persistent object is found that matches the criteria.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.FindObjectAsync``1(DevExpress.Xpo.PersistentCriteriaEvaluationBehavior,DevExpress.Data.Filtering.CriteriaOperator,DevExpress.Xpo.Helpers.AsyncFindObjectCallback)">
@@ -8658,6 +8662,7 @@
       <param name="criteriaEvaluationBehavior">A <see cref="T:DevExpress.Xpo.PersistentCriteriaEvaluationBehavior"/> enumeration value that specifies how the persistent criteria is evaluated.</param>
       <param name="criteria">A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> descendant which represents the criteria to match persistent objects.</param>
       <param name="callback">A DevExpress.Xpo.Helpers.AsyncFindObjectCallback delegate to be called after the method completes.Use callback to do the following:Do not raise exceptions or modify persistent objects within a callback.</param>
+      <typeparam name="ClassType"></typeparam>
       <returns>An object which represents the first persistent object matching the specified criteria. null (Nothing in Visual Basic) if no persistent object matching the criteria is found.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.FindObjectAsync``1(DevExpress.Xpo.PersistentCriteriaEvaluationBehavior,DevExpress.Data.Filtering.CriteriaOperator,System.Threading.CancellationToken)">
@@ -8667,6 +8672,7 @@
       <param name="criteriaEvaluationBehavior">A <see cref="T:DevExpress.Xpo.PersistentCriteriaEvaluationBehavior"/> enumeration value that specifies how the persistent criteria is evaluated.</param>
       <param name="criteria">A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> descendant which represents the criteria the persistent object must match.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="ClassType"></typeparam>
       <returns>A Task that returns an object. This object represents the first persistent object that matches the specified criteria. null (Nothing in Visual Basic) if no persistent object is found that matches the criteria.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.FlushChanges">
@@ -8720,6 +8726,7 @@
       <summary>
         <para>Returns the <see cref="T:DevExpress.Xpo.Metadata.XPClassInfo"/> for the type designated by the specified generic type parameter.</para>
       </summary>
+      <typeparam name="ClassType"></typeparam>
       <returns>An <see cref="T:DevExpress.Xpo.Metadata.XPClassInfo"/> object which provides metadata information for a class of the specified type.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetIdentityMapBehavior">
@@ -8756,6 +8763,7 @@
         <para>Returns the persistent object of the type designated by the specified generic type parameter, with the specified value of the key property previously loaded from a data store.</para>
       </summary>
       <param name="id">An object which represents the key property&#39;s value of the persistent object.</param>
+      <typeparam name="ClassType"></typeparam>
       <returns>An object which represents a persistent object with the specified value of the key property. null (Nothing in Visual Basic) if the persistent object was not found in memory.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectByKey(DevExpress.Xpo.Metadata.XPClassInfo,System.Object)">
@@ -8797,6 +8805,7 @@
         <para>Returns a persistent object of the type designated by the specified generic type parameter, with the specified value for its key property.</para>
       </summary>
       <param name="id">An object that represents the persistent object&#39;s key property value.</param>
+      <typeparam name="ClassType"></typeparam>
       <returns>An object which represents a persistent object with the specified value for its key property.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectByKey``1(System.Object,System.Boolean)">
@@ -8805,6 +8814,7 @@
       </summary>
       <param name="id">An object that represents the persistent object&#39;s key property value.</param>
       <param name="alwaysGetFromDataStore">true to reload the persistent object from storage if it is found in memory; otherwise, false.</param>
+      <typeparam name="ClassType"></typeparam>
       <returns>An object which represents a persistent object with the specified value for its key property.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectByKeyAsync(DevExpress.Xpo.Metadata.XPClassInfo,System.Object,System.Boolean,System.Threading.CancellationToken)">
@@ -8852,6 +8862,7 @@
       <param name="id">An object that represents the persistent object&#39;s key property value.</param>
       <param name="alwaysGetFromDataStore">true, to always reload the persistent object from storage even if it is found in memory; otherwise, false.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="ClassType"></typeparam>
       <returns>A Task that returns a persistent object from a data store. This persistent object has the specified key property value and a type specified by the generic type parameter.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectByKeyAsync``1(System.Object,System.Threading.CancellationToken)">
@@ -8860,6 +8871,7 @@
       </summary>
       <param name="id">An object that represents the persistent object&#39;s key property value.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="ClassType"></typeparam>
       <returns>A Task that returns a persistent object. This persistent object has the specified key property value and a type specified by the generic type parameter.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjects(DevExpress.Xpo.Metadata.XPClassInfo,DevExpress.Data.Filtering.CriteriaOperator,DevExpress.Xpo.SortingCollection,System.Int32,DevExpress.Xpo.Generators.CollectionCriteriaPatcher,System.Boolean)">
@@ -9135,6 +9147,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="members">An array of <see cref="T:DevExpress.Xpo.LoadDataMemberOrderItem"/> objects which provide mapping information for object members and the query&#39;s result set columns.</param>
       <param name="sql">A <see cref="T:System.String"/> value that specifies a SQL query.</param>
+      <typeparam name="T"></typeparam>
       <returns>A collection of non-persistent objects of the specified type that are instantiated with data obtained via the specified SQL query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectsFromQuery``1(DevExpress.Xpo.LoadDataMemberOrderItem[],System.String,System.Object[])">
@@ -9144,6 +9157,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="members">An array of <see cref="T:DevExpress.Xpo.LoadDataMemberOrderItem"/> objects which provide mapping information for object members and the query&#39;s result set columns.</param>
       <param name="sql">A <see cref="T:System.String"/> value that specifies a parameterized SQL query.</param>
       <param name="parameterValues">An array of objects specifying parameters to pass to the database server along with the query.</param>
+      <typeparam name="T"></typeparam>
       <returns>A collection of non-persistent objects of the specified type that are instantiated with data obtained via the specified SQL query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectsFromQuery``1(DevExpress.Xpo.LoadDataMemberOrderItem[],System.String,System.String[],System.Object[])">
@@ -9154,6 +9168,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="sql">A <see cref="T:System.String"/> value that specifies a parameterized SQL query.</param>
       <param name="parameterNames">An array of strings specifying parameterValues parameter names.</param>
       <param name="parameterValues">An array of objects specifying parameters to pass to the database server along with the query.</param>
+      <typeparam name="T"></typeparam>
       <returns>A collection of non-persistent objects of the specified type that are instantiated with data obtained via the specified SQL query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectsFromQuery``1(System.Collections.Generic.List{DevExpress.Xpo.Metadata.XPMemberInfo},System.String)">
@@ -9162,6 +9177,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="members">A list of <see cref="T:DevExpress.Xpo.Metadata.XPMemberInfo"/> objects representing object members that are mapped to the query&#39;s result set columns. The order of list elements should correspond to the order of result set columns.</param>
       <param name="sql">A <see cref="T:System.String"/> value that specifies an SQL query.</param>
+      <typeparam name="T"></typeparam>
       <returns>A collection of non-persistent objects of the specified type that are instantiated with data obtained via the specified SQL query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectsFromQuery``1(System.Collections.Generic.List{DevExpress.Xpo.Metadata.XPMemberInfo},System.String,System.Object[])">
@@ -9171,6 +9187,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="members">A list of <see cref="T:DevExpress.Xpo.Metadata.XPMemberInfo"/> objects representing classInfo members that are mapped to the query&#39;s result set columns. The order of list elements should correspond to the order of result set columns.</param>
       <param name="sql">A <see cref="T:System.String"/> value that specifies an SQL query.</param>
       <param name="parameterValues">An array of objects specifying parameters to pass to the database server along with the query.</param>
+      <typeparam name="T"></typeparam>
       <returns>A collection of non-persistent objects of the specified type that are instantiated with data obtained via the specified SQL query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectsFromQuery``1(System.Collections.Generic.List{DevExpress.Xpo.Metadata.XPMemberInfo},System.String,System.String[],System.Object[])">
@@ -9181,6 +9198,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="sql">A <see cref="T:System.String"/> value that specifies an SQL query.</param>
       <param name="parameterNames">An array of strings specifying parameterValues parameter names.</param>
       <param name="parameterValues">An array of objects specifying parameters to pass to the database server along with the query.</param>
+      <typeparam name="T"></typeparam>
       <returns>A collection of non-persistent objects of the specified type that are instantiated with data obtained via the specified SQL query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectsFromQuery``1(System.String)">
@@ -9188,6 +9206,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
         <para>Executes a SQL query and returns its result set as a collection of objects of a non-persistent type specified by the generic type parameter.</para>
       </summary>
       <param name="sql">A <see cref="T:System.String"/> value that specifies a SQL query.</param>
+      <typeparam name="T"></typeparam>
       <returns>A collection of non-persistent objects of the specified type that are instantiated with data obtained via the specified SQL query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectsFromQuery``1(System.String,System.Object[])">
@@ -9196,6 +9215,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="sql">A <see cref="T:System.String"/> value that specifies an SQL query.</param>
       <param name="parameterValues">An array of objects specifying parameters to pass to the database server along with the query.</param>
+      <typeparam name="T"></typeparam>
       <returns>A collection of non-persistent objects of the specified type that are instantiated with data obtained via the specified SQL query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectsFromQuery``1(System.String,System.String[],System.Object[])">
@@ -9205,6 +9225,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="sql">A <see cref="T:System.String"/> value that specifies a SQL query.</param>
       <param name="parameterNames">An array of strings specifying parameterValues parameter names.</param>
       <param name="parameterValues">An array of objects specifying parameters to pass to the database server along with the query.</param>
+      <typeparam name="T"></typeparam>
       <returns>A collection of non-persistent objects of the specified type that are instantiated with data obtained via the specified SQL query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectsFromSproc(DevExpress.Xpo.Metadata.XPClassInfo,DevExpress.Xpo.LoadDataMemberOrderItem[],System.String,DevExpress.Data.Filtering.OperandValue[])">
@@ -9243,6 +9264,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="members">An array of <see cref="T:DevExpress.Xpo.LoadDataMemberOrderItem"/> objects which provide mapping information for object members and the stored procedure&#39;s result set columns.</param>
       <param name="sprocName">A <see cref="T:System.String"/> value that specifies the stored procedure&#39;s name.</param>
       <param name="parameters">An array of <see cref="T:DevExpress.Data.Filtering.OperandValue"/> objects representing parameters to pass to the stored procedure.</param>
+      <typeparam name="T"></typeparam>
       <returns>A collection of non-persistent objects of the specified type that are instantiated with data obtained via the specified stored procedure.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectsFromSproc``1(System.Collections.Generic.List{DevExpress.Xpo.Metadata.XPMemberInfo},System.String,DevExpress.Data.Filtering.OperandValue[])">
@@ -9252,6 +9274,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="members">A list of <see cref="T:DevExpress.Xpo.Metadata.XPMemberInfo"/> objects representing object members that are mapped to the stored procedure&#39;s result set columns. The order of list elements should correspond to the order of result set columns.</param>
       <param name="sprocName">A <see cref="T:System.String"/> value that specifies the stored procedure&#39;s name.</param>
       <param name="parameters">An array of <see cref="T:DevExpress.Data.Filtering.OperandValue"/> objects representing parameters to pass to the stored procedure.</param>
+      <typeparam name="T"></typeparam>
       <returns>A collection of non-persistent objects of the specified type that are instantiated with data obtained via the specified stored procedure.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectsFromSproc``1(System.String,DevExpress.Data.Filtering.OperandValue[])">
@@ -9260,6 +9283,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="sprocName">A <see cref="T:System.String"/> value that specifies the stored procedure&#39;s name.</param>
       <param name="parameters">An array of <see cref="T:DevExpress.Data.Filtering.OperandValue"/> objects representing parameters to pass to the stored procedure.</param>
+      <typeparam name="T"></typeparam>
       <returns>A collection of non-persistent objects of the specified type that are instantiated with data obtained via the specified stored procedure.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectsFromSprocParametrized(DevExpress.Xpo.Metadata.XPClassInfo,DevExpress.Xpo.LoadDataMemberOrderItem[],System.String,DevExpress.Xpo.DB.SprocParameter[])">
@@ -9298,6 +9322,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="members">An array of <see cref="T:DevExpress.Xpo.LoadDataMemberOrderItem"/> objects which provide mapping information for object members and the stored procedure&#39;s result set columns.</param>
       <param name="sprocName">A <see cref="T:System.String"/> value that specifies the stored procedure&#39;s name.</param>
       <param name="parameters">An array of SprocParameter objects specifying parameters to pass to the stored procedure.</param>
+      <typeparam name="T"></typeparam>
       <returns>A collection of non-persistent objects of the specified type that are instantiated with data obtained via the specified stored procedure.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectsFromSprocParametrized``1(System.Collections.Generic.List{DevExpress.Xpo.Metadata.XPMemberInfo},System.String,DevExpress.Xpo.DB.SprocParameter[])">
@@ -9307,6 +9332,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="members">A list of <see cref="T:DevExpress.Xpo.Metadata.XPMemberInfo"/> objects that contains mapping information for class members and result set columns. The order of list elements should correspond to the order of result set columns.</param>
       <param name="sprocName">A <see cref="T:System.String"/> value that specifies the stored procedure&#39;s name.</param>
       <param name="parameters">An array of SprocParameter objects specifying parameters to pass to the stored procedure.</param>
+      <typeparam name="T"></typeparam>
       <returns>A collection of non-persistent objects of the specified type that are instantiated with data obtained via the specified stored procedure.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectsFromSprocParametrized``1(System.String,DevExpress.Xpo.DB.SprocParameter[])">
@@ -9315,6 +9341,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="sprocName">A <see cref="T:System.String"/> value that specifies the stored procedure&#39;s name.</param>
       <param name="parameters">An array of SprocParameter objects specifying parameters to pass to the stored procedure.</param>
+      <typeparam name="T"></typeparam>
       <returns>A collection of non-persistent objects of the specified type that are instantiated with data obtained via the specified stored procedure.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.GetObjectsInTransaction(DevExpress.Xpo.Metadata.XPClassInfo,DevExpress.Data.Filtering.CriteriaOperator,DevExpress.Xpo.SortingCollection,System.Int32,System.Int32,System.Boolean)">
@@ -9540,7 +9567,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
     </member>
     <member name="M:DevExpress.Xpo.Session.Load(DevExpress.Xpo.Metadata.XPClassInfo,System.Collections.IEnumerable,System.String[])">
       <summary>
-        <para>This method is obsolete. Use  or <see cref="M:DevExpress.Xpo.Session.PreFetch``1(System.Collections.Generic.IEnumerable{``0},System.String,System.Collections.IEnumerable)"/> instead.</para>
+        <para>This method is obsolete. Use Session.PreFetch or <see cref="M:DevExpress.Xpo.Session.PreFetch``1(System.Collections.Generic.IEnumerable{``0},System.String,System.Collections.IEnumerable)"/> instead.</para>
       </summary>
       <param name="classInfo"></param>
       <param name="objects"></param>
@@ -9548,16 +9575,17 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
     </member>
     <member name="M:DevExpress.Xpo.Session.Load(DevExpress.Xpo.XPBaseCollection[])">
       <summary>
-        <para>This method is obsolete. Use  instead.</para>
+        <para>This method is obsolete. Use Session.BulkLoad instead.</para>
       </summary>
       <param name="collections"></param>
     </member>
     <member name="M:DevExpress.Xpo.Session.Load``1(System.Collections.Generic.IEnumerable{``0},System.String[])">
       <summary>
-        <para>This method is obsolete. Use  or <see cref="M:DevExpress.Xpo.Session.PreFetch``1(System.Collections.Generic.IEnumerable{``0},System.String,System.Collections.IEnumerable)"/> instead.</para>
+        <para>This method is obsolete. Use Session.PreFetch or <see cref="M:DevExpress.Xpo.Session.PreFetch``1(System.Collections.Generic.IEnumerable{``0},System.String,System.Collections.IEnumerable)"/> instead.</para>
       </summary>
       <param name="objects"></param>
       <param name="collections"></param>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="P:DevExpress.Xpo.Session.LockingOption">
       <summary>
@@ -9807,6 +9835,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="objects">An <see cref="T:System.Collections.IEnumerable"/> list of parent objects.</param>
       <param name="collectionInObjects">A string which is the name of the associated collection property.</param>
       <param name="collectionsContent"><see cref="T:System.Collections.IEnumerable"/> list of the collection&#39;s content. If a certain part of the collectionInObjects data was previously loaded, you can avoid reloading it by passing the loaded data to the collectionsContent parameter.</param>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.Xpo.Session.PreFetch``1(System.Collections.Generic.IEnumerable{``0},System.String[])">
       <summary>
@@ -9814,6 +9843,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="objects">An <see cref="T:System.Collections.IEnumerable"/> list of parent objects.</param>
       <param name="propertyPaths">An array of strings that are the collection property and delayed property names, or property paths (e.g, &quot;ChildCollection.AnotherChildCollection&quot;).</param>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.Xpo.Session.PreFetchAsync(DevExpress.Xpo.Metadata.XPClassInfo,System.Collections.IEnumerable,System.Threading.CancellationToken,System.String[])">
       <summary>
@@ -9843,6 +9873,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="collectionInObjects">A string which is the name of the associated collection property.</param>
       <param name="collectionsContent">An <see cref="T:System.Collections.IEnumerable"/> list of the collection&#39;s content. If a certain part of the collectionInObjects data was previously loaded, you can avoid reloading it by passing the loaded data to the collectionsContent parameter.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that forces associated collection data loading for specified parent objects.</returns>
     </member>
     <member name="M:DevExpress.Xpo.Session.ProcessReferences(System.Object,DevExpress.Xpo.ProcessReferenceHandler)">
@@ -12086,6 +12117,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <summary>
         <para>A generic type collection of persistent objects.</para>
       </summary>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.Xpo.XPCollection`1.#ctor">
       <summary>
@@ -13844,7 +13876,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <summary>
         <para>Gets the maximum optimal packet size (the number of operands in a packet) for the <see cref="P:DevExpress.Data.Filtering.InOperator.Operands"/> collection.</para>
       </summary>
-      <value>An integer value that is the maximum value returned by the  method.</value>
+      <value>An integer value that is the maximum value returned by the XpoDefault.GetTerminalInSize method.</value>
     </member>
     <member name="M:DevExpress.Xpo.XpoDefault.NewGuid">
       <summary>
@@ -13943,6 +13975,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <summary>
         <para>A query that allows the construction of LINQ queries for persistent objects.</para>
       </summary>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.Xpo.XPQuery`1.#ctor(DevExpress.Xpo.IDataLayer)">
       <summary>
@@ -14012,6 +14045,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="expression"></param>
       <param name="cancellationToken"></param>
+      <typeparam name="S"></typeparam>
       <returns></returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQuery`1.InTransaction">
@@ -14116,6 +14150,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="predicate">An expression which determines requirements persistent objects need to meet.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns true if all objects in a selection meet specific requirements. Otherwise, it returns false.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.AnyAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">
@@ -14125,6 +14160,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="predicate">An expression which determines requirements persistent objects need to meet.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns true if any object in a selection meets specific requirements. Otherwise, it returns false.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.AnyAsync``1(System.Linq.IQueryable{``0},System.Threading.CancellationToken)">
@@ -14133,6 +14169,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns true if any objects exist in a selection. Otherwise, it returns false.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.AverageAsync(System.Linq.IQueryable{System.Decimal},System.Threading.CancellationToken)">
@@ -14182,6 +14219,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="selector">A lambda expression that gets a value from a persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns an average of objects&#39; specific Decimal fields for a query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.AverageAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Double}},System.Threading.CancellationToken)">
@@ -14191,6 +14229,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="selector">A lambda expression that gets a value from a persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns an average of objects&#39; specific Double fields for a query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.AverageAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Int32}},System.Threading.CancellationToken)">
@@ -14200,6 +14239,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="selector">A lambda expression that gets a value from a persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns an average of objects&#39; specific Int32 fields for a query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.AverageAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Int64}},System.Threading.CancellationToken)">
@@ -14209,6 +14249,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="selector">A lambda expression that gets a value from a persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns an average of objects&#39; specific Int64 fields for a query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.AverageAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Single}},System.Threading.CancellationToken)">
@@ -14218,6 +14259,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="selector">A lambda expression that gets a value from a persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns an average of objects&#39; specific Decimal fields for a query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.CachedExpression``2(System.Linq.IQueryable{``0},System.Func{System.Linq.IQueryable{``0},``1})">
@@ -14226,6 +14268,8 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="source"></param>
       <param name="f"></param>
+      <typeparam name="TSource"></typeparam>
+      <typeparam name="TResult"></typeparam>
       <returns></returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.CachedExpression``3(System.Linq.IQueryable{``0},System.Func{System.Linq.IQueryable{``0},``1,``2},``1)">
@@ -14235,6 +14279,9 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="source"></param>
       <param name="f"></param>
       <param name="a1"></param>
+      <typeparam name="TSource"></typeparam>
+      <typeparam name="TArg1"></typeparam>
+      <typeparam name="TResult"></typeparam>
       <returns></returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.CachedExpression``4(System.Linq.IQueryable{``0},System.Func{System.Linq.IQueryable{``0},``1,``2,``3},``1,``2)">
@@ -14245,6 +14292,10 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="f"></param>
       <param name="a1"></param>
       <param name="a2"></param>
+      <typeparam name="TSource"></typeparam>
+      <typeparam name="TArg1"></typeparam>
+      <typeparam name="TArg2"></typeparam>
+      <typeparam name="TResult"></typeparam>
       <returns></returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.CachedExpression``5(System.Linq.IQueryable{``0},System.Func{System.Linq.IQueryable{``0},``1,``2,``3,``4},``1,``2,``3)">
@@ -14256,6 +14307,11 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="a1"></param>
       <param name="a2"></param>
       <param name="a3"></param>
+      <typeparam name="TSource"></typeparam>
+      <typeparam name="TArg1"></typeparam>
+      <typeparam name="TArg2"></typeparam>
+      <typeparam name="TArg3"></typeparam>
+      <typeparam name="TResult"></typeparam>
       <returns></returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.CachedExpression``6(System.Linq.IQueryable{``0},System.Func{System.Linq.IQueryable{``0},``1,``2,``3,``4,``5},``1,``2,``3,``4)">
@@ -14268,6 +14324,12 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="a2"></param>
       <param name="a3"></param>
       <param name="a4"></param>
+      <typeparam name="TSource"></typeparam>
+      <typeparam name="TArg1"></typeparam>
+      <typeparam name="TArg2"></typeparam>
+      <typeparam name="TArg3"></typeparam>
+      <typeparam name="TArg4"></typeparam>
+      <typeparam name="TResult"></typeparam>
       <returns></returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.CachedExpression``7(System.Linq.IQueryable{``0},System.Func{System.Linq.IQueryable{``0},``1,``2,``3,``4,``5,``6},``1,``2,``3,``4,``5)">
@@ -14281,6 +14343,13 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="a3"></param>
       <param name="a4"></param>
       <param name="a5"></param>
+      <typeparam name="TSource"></typeparam>
+      <typeparam name="TArg1"></typeparam>
+      <typeparam name="TArg2"></typeparam>
+      <typeparam name="TArg3"></typeparam>
+      <typeparam name="TArg4"></typeparam>
+      <typeparam name="TArg5"></typeparam>
+      <typeparam name="TResult"></typeparam>
       <returns></returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.ContainsAsync``1(System.Linq.IQueryable{``0},``0,System.Threading.CancellationToken)">
@@ -14290,6 +14359,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="item">An object, which specifies a persistent object to be found in a selection.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns true if a specific object exists in a selection. Otherwise, it returns false.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.CountAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">
@@ -14299,6 +14369,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="predicate">An expression which determines requirements persistent objects need to meet.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>An Task that returns an Int32 value. This value demonstrates how many objects in a selection meet specific requirements.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.CountAsync``1(System.Linq.IQueryable{``0},System.Threading.CancellationToken)">
@@ -14307,6 +14378,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>An Task that returns an Int32 value. This value is how many objects a selection contains.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.ElementAtAsync``1(System.Linq.IQueryable{``0},System.Int32,System.Threading.CancellationToken)">
@@ -14316,6 +14388,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="index">An Int32 value, which specifies a persistent object&#39;s index.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns an object. This object has a specific index.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.ElementAtOrDefaultAsync``1(System.Linq.IQueryable{``0},System.Int32,System.Threading.CancellationToken)">
@@ -14325,6 +14398,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="index">An Int32 value, which specifies a persistent object&#39;s index.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns an object, if the index is valid, or a default value for &lt;T&gt; if the index is not valid.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.EnumerateAsync``1(System.Linq.IQueryable{``0},DevExpress.Xpo.XPQueryExtensions.AsyncEnumerateCallback)">
@@ -14333,6 +14407,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> to be enumerated.</param>
       <param name="callback">An AsyncEnumerateCallback delegate, which is a method to be called after all elements in the query are enumerated.</param>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.EnumerateAsync``1(System.Linq.IQueryable{``0},DevExpress.Xpo.XPQueryExtensions.AsyncEnumerateCallback{``0})">
       <summary>
@@ -14340,6 +14415,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> to be enumerated.</param>
       <param name="callback">An AsyncEnumerateCallback&lt;T&gt; delegate, which is a method to be called after all elements in the query are enumerated.</param>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.EnumerateAsync``1(System.Linq.IQueryable{``0},System.Threading.CancellationToken)">
       <summary>
@@ -14347,6 +14423,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> to be enumerated.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns a collection of enumerated objects.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.FirstAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">
@@ -14356,6 +14433,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="predicate">An expression which determines requirements the persistent object needs to meet.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns the first object to meet specified requirements in a selection.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.FirstAsync``1(System.Linq.IQueryable{``0},System.Threading.CancellationToken)">
@@ -14364,6 +14442,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns the first object in a selection.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.FirstOrDefaultAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">
@@ -14373,6 +14452,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="predicate">An expression which determines requirements the persistent object needs to meet.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns the first object to meet specified requirements in a selection or a default value for &lt;T&gt;.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.FirstOrDefaultAsync``1(System.Linq.IQueryable{``0},System.Threading.CancellationToken)">
@@ -14381,6 +14461,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns the first object in a selection or a a default value for &lt;T&gt;.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.LastAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">
@@ -14390,6 +14471,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="predicate">An expression which determines requirements the persistent object needs to meet.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns the last object to meet specified requirements in a selection.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.LastAsync``1(System.Linq.IQueryable{``0},System.Threading.CancellationToken)">
@@ -14398,6 +14480,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns the last object in a selection.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.LastOrDefaultAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">
@@ -14407,6 +14490,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="predicate">An expression which determines requirements the persistent object needs to meet.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns the last object to meet specified requirements in a selection or a default value for &lt;T&gt;.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.LastOrDefaultAsync``1(System.Linq.IQueryable{``0},System.Threading.CancellationToken)">
@@ -14415,6 +14499,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns the last object in a selection or a default value for &lt;T&gt;.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.LongCountAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">
@@ -14424,6 +14509,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="predicate">An expression which determines requirements persistent objects need to meet.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>An Task that returns an Int64 value. This value demonstrates how many objects in a selection meet specific requirements.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.LongCountAsync``1(System.Linq.IQueryable{``0},System.Threading.CancellationToken)">
@@ -14432,6 +14518,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>An Task that returns an Int64 value. This value demonstrates how many objects a selection contains.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.MaxAsync``1(System.Linq.IQueryable{``0},System.Threading.CancellationToken)">
@@ -14440,6 +14527,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns a object. This object is the maximum value.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.MaxAsync``2(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Threading.CancellationToken)">
@@ -14449,6 +14537,8 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="selector">A lambda expression that gets a value from a persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
+      <typeparam name="TResult"></typeparam>
       <returns>A Task that returns an object. This object is the maximum value.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.MinAsync``1(System.Linq.IQueryable{``0},System.Threading.CancellationToken)">
@@ -14457,6 +14547,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns an object. This object is the minimum value.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.MinAsync``2(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Threading.CancellationToken)">
@@ -14466,6 +14557,8 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="selector">A lambda expression that gets a value from a persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
+      <typeparam name="TResult"></typeparam>
       <returns>A Task that returns an object. This object is the minimum value.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.Query``1(DevExpress.Xpo.IDataLayer)">
@@ -14473,6 +14566,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
         <para>Creates a new <see cref="T:DevExpress.Xpo.XPQuery`1"/> instance from a specified session&#39;s scope.</para>
       </summary>
       <param name="layer">An <see cref="T:DevExpress.Xpo.IDataLayer"/> object specifying the data access layer.</param>
+      <typeparam name="T"></typeparam>
       <returns>An <see cref="T:DevExpress.Xpo.XPQuery`1"/> object instantiated from the session&#39;s scope.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.Query``1(DevExpress.Xpo.Session)">
@@ -14480,6 +14574,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
         <para>Creates a new <see cref="T:DevExpress.Xpo.XPQuery`1"/> instance from a specified session&#39;s scope.</para>
       </summary>
       <param name="session">A <see cref="T:DevExpress.Xpo.Session"/> object or its descendant, which instantiates an <see cref="T:DevExpress.Xpo.XPQuery`1"/>. The specified session is assigned to the <see cref="P:DevExpress.Xpo.XPQueryBase.Session"/> property.</param>
+      <typeparam name="T"></typeparam>
       <returns>An <see cref="T:DevExpress.Xpo.XPQuery`1"/> object instantiated from the session&#39;s scope.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.QueryInTransaction``1(DevExpress.Xpo.Session)">
@@ -14487,6 +14582,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
         <para>Creates a new <see cref="T:DevExpress.Xpo.XPQuery`1"/> instance with the InTransaction (<see cref="M:DevExpress.Xpo.XPQuery`1.InTransaction"/>) mode enabled, from a specified session&#39;s scope.</para>
       </summary>
       <param name="session">A <see cref="T:DevExpress.Xpo.Session"/> object or its descendant, which instantiates an <see cref="T:DevExpress.Xpo.XPQuery`1"/>. The specified session is assigned to the <see cref="P:DevExpress.Xpo.XPQueryBase.Session"/> property.</param>
+      <typeparam name="T"></typeparam>
       <returns>An <see cref="T:DevExpress.Xpo.XPQuery`1"/> object, instantiated from the session&#39;s scope, with the InTransaction mode enabled.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.SingleAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">
@@ -14496,6 +14592,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="predicate">An expression which determines requirements the persistent object needs to meet.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns one object if this is the only object in a selection to meet the specified requirements.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.SingleAsync``1(System.Linq.IQueryable{``0},System.Threading.CancellationToken)">
@@ -14504,6 +14601,7 @@ The class must be decorated with <see cref="T:DevExpress.Xpo.NonPersistentAttrib
       </summary>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns the only object in a selection.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.SingleOrDefaultAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">
@@ -14514,6 +14612,7 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="predicate">An expression which determines requirements the persistent object needs to meet.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns that returns one object if this is the only object in a selection to meet the specified requirements.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.SingleOrDefaultAsync``1(System.Linq.IQueryable{``0},System.Threading.CancellationToken)">
@@ -14522,6 +14621,7 @@ If the selection has more than one of such elements, throws an exception.</para>
       </summary>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a selection of persistent objects.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns the only object in a selection.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.SumAsync(System.Linq.IQueryable{System.Decimal},System.Threading.CancellationToken)">
@@ -14611,6 +14711,7 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="selector">A lambda expression that gets a value from a persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns a sum of objects&#39; specific Int64 fields for a query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.SumAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Double}},System.Threading.CancellationToken)">
@@ -14620,6 +14721,7 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="selector">A lambda expression that gets a value from a persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns a sum of objects&#39; specific Double fields for a query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.SumAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Int32}},System.Threading.CancellationToken)">
@@ -14629,6 +14731,7 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="selector">A lambda expression that gets a value from a persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns a sum of objects&#39; specific Int32 fields for a query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.SumAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Int64}},System.Threading.CancellationToken)">
@@ -14638,6 +14741,7 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="selector">A lambda expression that gets a value from a persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns a sum of objects&#39; specific Int64 fields, for a query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.SumAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Nullable{System.Decimal}}},System.Threading.CancellationToken)">
@@ -14647,6 +14751,7 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="selector">A lambda expression that gets a value from a persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns a sum of objects&#39; specific nullable Decimal fields for a query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.SumAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Nullable{System.Double}}},System.Threading.CancellationToken)">
@@ -14656,6 +14761,7 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> object that specifies a persistent object selection.</param>
       <param name="selector">A lambda expression that gets a value from a persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns a sum of objects&#39; specific nullable Double fields for a query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.SumAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Nullable{System.Int32}}},System.Threading.CancellationToken)">
@@ -14665,6 +14771,7 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="selector">A lambda expression that gets a value from a persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns a sum of objects&#39; specific nullable Int32 fields for a query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.SumAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Nullable{System.Int64}}},System.Threading.CancellationToken)">
@@ -14674,6 +14781,7 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="selector">A lambda expression that gets a value from a persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns a sum of objects&#39; specific nullable Int64 fields for a query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.SumAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Nullable{System.Single}}},System.Threading.CancellationToken)">
@@ -14683,6 +14791,7 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="selector">A lambda expression that gets a value from a persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns a sum of objects&#39; specific nullable Single fields for a query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.SumAsync``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Single}},System.Threading.CancellationToken)">
@@ -14692,6 +14801,7 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> that specifies a persistent object selection.</param>
       <param name="selector">A lambda expression that gets a value from a persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns a sum of objects&#39; specific Decimal fields for a query.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.ToArrayAsync``1(System.Linq.IQueryable{``0},System.Threading.CancellationToken)">
@@ -14700,6 +14810,7 @@ If the selection has more than one of such elements, throws an exception.</para>
       </summary>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> to be enumerated.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns an array of objects.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.ToDictionaryAsync``2(System.Linq.IQueryable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1},System.Threading.CancellationToken)">
@@ -14710,6 +14821,8 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="keySelector">A function that acquires each persistent object&#39;s key.</param>
       <param name="equalityComparer">A function that returns a result value for each persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
+      <typeparam name="TKey"></typeparam>
       <returns>A Task that returns a Dictionary&lt;TKey,TValue&gt;.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.ToDictionaryAsync``2(System.Linq.IQueryable{``0},System.Func{``0,``1},System.Threading.CancellationToken)">
@@ -14719,6 +14832,8 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> to be enumerated.</param>
       <param name="keySelector">A function that acquires each persistent object&#39;s key.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
+      <typeparam name="TKey"></typeparam>
       <returns>A Task that returns a Dictionary&lt;TKey,TValue&gt;.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.ToDictionaryAsync``3(System.Linq.IQueryable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1},System.Threading.CancellationToken)">
@@ -14730,6 +14845,9 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="elementSelector">A function that returns a result value for each persistent object.</param>
       <param name="equalityComparer">An IEqualityComparer&lt;T&gt; object that compares keys created for persistent objects.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
+      <typeparam name="TKey"></typeparam>
+      <typeparam name="TElement"></typeparam>
       <returns>A Task that returns a Dictionary&lt;TKey,TValue&gt;.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.ToDictionaryAsync``3(System.Linq.IQueryable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Threading.CancellationToken)">
@@ -14740,6 +14858,9 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="keySelector">An function that acquires each persistent object&#39;s key.</param>
       <param name="elementSelector">A function that returns a result value for each persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
+      <typeparam name="TKey"></typeparam>
+      <typeparam name="TElement"></typeparam>
       <returns>A Task that returns a Dictionary&lt;TKey,TValue&gt;.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.ToListAsync``1(System.Linq.IQueryable{``0},System.Threading.CancellationToken)">
@@ -14748,6 +14869,7 @@ If the selection has more than one of such elements, throws an exception.</para>
       </summary>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> to be enumerated.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
       <returns>A Task that returns a list of objects.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.ToLookupAsync``2(System.Linq.IQueryable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1},System.Threading.CancellationToken)">
@@ -14758,6 +14880,8 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="keySelector">A function that acquires each persistent object&#39;s key.</param>
       <param name="equalityComparer">A function that returns a result value for each persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
+      <typeparam name="TKey"></typeparam>
       <returns>A Task that returns a Lookup&lt;TKey,TElement&gt;.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.ToLookupAsync``2(System.Linq.IQueryable{``0},System.Func{``0,``1},System.Threading.CancellationToken)">
@@ -14767,6 +14891,8 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="query">An <see cref="T:DevExpress.Xpo.XPQuery`1"/> to be enumerated.</param>
       <param name="keySelector">A function that acquires each persistent object&#39;s key.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
+      <typeparam name="TKey"></typeparam>
       <returns>A Task that returns a Lookup&lt;TKey,TElement&gt;.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.ToLookupAsync``3(System.Linq.IQueryable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1},System.Threading.CancellationToken)">
@@ -14778,6 +14904,9 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="elementSelector">A function that returns a result value for each persistent object.</param>
       <param name="equalityComparer">A function that returns a result value for each persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
+      <typeparam name="TKey"></typeparam>
+      <typeparam name="TElement"></typeparam>
       <returns>A Task that returns a Lookup&lt;TKey,TElement&gt;.</returns>
     </member>
     <member name="M:DevExpress.Xpo.XPQueryExtensions.ToLookupAsync``3(System.Linq.IQueryable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Threading.CancellationToken)">
@@ -14788,6 +14917,9 @@ If the selection has more than one of such elements, throws an exception.</para>
       <param name="keySelector">A function that acquires each persistent object&#39;s key.</param>
       <param name="elementSelector">A function that returns a result value for each persistent object.</param>
       <param name="cancellationToken">A CancellationToken object that delivers a cancellation notice to the running operation.</param>
+      <typeparam name="T"></typeparam>
+      <typeparam name="TKey"></typeparam>
+      <typeparam name="TElement"></typeparam>
       <returns>A Task that returns a Lookup&lt;TKey,TElement&gt;.</returns>
     </member>
     <member name="T:DevExpress.Xpo.XPServerCollectionSource">

@@ -35,11 +35,13 @@ namespace AciSageLibrary
             public static string To;
             public static string SoNo;
             public static string PoNo;
+            public static string Invoice;
             public static string CustID;
             public static string CustTyp;
             public static string Budget;
             public static int  period1;
             public static int period2;
+            public static int journals;
             public static bool All;
             public static string starPeriodYearSelected;
              String[] strlist;
@@ -83,7 +85,7 @@ namespace AciSageLibrary
                 }
 
             private void showSelecOptionByReport(int Type)
-             {
+            {
 
                     if (Type == 1)
                     {
@@ -133,7 +135,10 @@ namespace AciSageLibrary
                         SelectOptions.Rows.Add("company", "Company", 35);
 
                         SelectOptions.NewRow();
-                        SelectOptions.Rows.Add("text", "Purchase_Order_#", 20);
+                        SelectOptions.Rows.Add("text", "Invoice_#", 20);
+                        SelectOptions.NewRow();
+                        SelectOptions.Rows.Add("desc", "Opcional");
+
                         SelectOptions.NewRow();
                         SelectOptions.Rows.Add("date", "From");
                         SelectOptions.NewRow();
@@ -153,9 +158,9 @@ namespace AciSageLibrary
                         From = from.Text;
                         DateTimePicker to = SO.selectOptionsPanel2.Controls.Find("date_To", true).FirstOrDefault() as DateTimePicker;
                         To = to.Text;
-                        TextBox po = SO.selectOptionsPanel2.Controls.Find("Purchase_Order_#", true).FirstOrDefault() as TextBox;
-                        PoNo = po.Text;
-
+                        TextBox invoice = SO.selectOptionsPanel2.Controls.Find("Invoice_#", true).FirstOrDefault() as TextBox;
+                        PoNo = invoice.Text;
+        
                         exportFileName = PoNo;
 
                     }
@@ -207,6 +212,10 @@ namespace AciSageLibrary
                         SelectOptions.NewRow();
                         SelectOptions.Rows.Add("date", "To");
 
+                        //selection option 
+                        /*SelectOptions.NewRow();
+                        SelectOptions.Rows.Add("journals", "Journals", 35); */
+
                         SelectOptions.NewRow();
                         SelectOptions.Rows.Add("button", "Execute");
 
@@ -223,7 +232,10 @@ namespace AciSageLibrary
                         DateTimePicker to = SO.selectOptionsPanel2.Controls.Find("date_To", true).FirstOrDefault() as DateTimePicker;
                         To = to.Text;
 
-
+               
+                        /*ComboBox comboBox = SO.selectOptionsPanel2.Controls.Find("journals_Journals", true).FirstOrDefault() as ComboBox;
+                          journals = comboBox.SelectedIndex; */
+             
                     }
 
                     if (Type == 5)
@@ -236,8 +248,6 @@ namespace AciSageLibrary
                         SelectOptions.NewRow();
                         SelectOptions.Rows.Add("period2", "End", 20);
                         SelectOptions.NewRow();
-                       
-                
                         SelectOptions.Rows.Add("button", "Execute");
 
 
@@ -257,10 +267,8 @@ namespace AciSageLibrary
 
                         ComboBox per2 = SO.selectOptionsPanel2.Controls.Find("period2_End", true).FirstOrDefault() as ComboBox;
                         period2 = per2.SelectedIndex + 14;
-
-
-
-            }
+                
+                    }
 
                     if (Type == 6)
                     {
@@ -349,6 +357,7 @@ namespace AciSageLibrary
 
             }
 
+                   
 
         }
            //SELECTION OPTIONS
@@ -360,257 +369,265 @@ namespace AciSageLibrary
              
             try
             {
-              
                 /*QUERY*/
-
                     //Past Due
                     if (Type == 1)
                     {
-                        showSelecOptionByReport(1);
-                        mre.WaitOne();
+                            showSelecOptionByReport(1);
+                            mre.WaitOne();
 
-                        if (kill == false)
-                        {
+                            if (kill == false)
+                            {
                         
-                            var to = Convert.ToDateTime(To);
-                            //var lastMonth = to.AddDays(-30);
+                                var to = Convert.ToDateTime(To);
+                                //var lastMonth = to.AddDays(-30);
 
-                            var where = "";
+                                var where = "";
 
-                            if (CustID != "")
-                            {
-                                where = " and Customers.CustomerID='" + CustID + "' ";
-                            }
-
-                            if (CustTyp != "")
-
-                            {
-
-                                where = where + " and Customers.Customer_Type='" + CustTyp + "' ";
-
-                            }
-
-
-
-                            var lastMonth = to.AddDays(-30);
-                            //Facturas abiertas
-                            sql = "SELECT  " +
-                                    "JrnlHdr.Reference as InvoiceNo," +
-                                    "JrnlHdr.TransactionDate as InvoiceDate," +
-                                    "Customers.CustomerID as IdCustomer," +
-                                    "Customers.Customer_Bill_Name as BillTo," +
-                                    "Customers.Customer_Type, " +
-                                    "JrnlHdr.MainAmount," +
-                                    "SUM(IFNULL(Pd.PdAmt,0)) as AmountPaid," +
-                                    "Employee.EmployeeID, " +
-                                    "Employee.EmployeeName, " +
-                                    "JrnlHdr.Comment, " +
-                                    "Customers.CustomField1," +
-                                    "Customers.CustomField2, " +
-                                    "Customers.customField3, " +
-                                    "Customers.CustomField4, " +
-                                    "Customers.CustomField5, " +
-                                    "Company.CompanyName as Company, " +
-                                    "Company.DBN as Database, " +
-                                    "IFNULL(Pmnt.PmntLast30,0)," +
-                                    "Customers.CustomerRecordNumber, " +
-                                    "SUM((JrnlHdr.MainAmount + IFNULL(Pd.PdAmt,0))) AS AmountDue " +
-                                    "FROM JrnlHdr " +
-                                  
-                                    " INNER JOIN JrnlRow ON JrnlHdr.PostOrder = JrnlRow.PostOrder " +
-                                    " LEFT JOIN Customers ON JrnlHdr.CustVendId = Customers.CustomerRecordNumber " +
-                                   
-      "                              LEFT JOIN(" +
-      "                                   SELECT  JH.CustVendID, " +
-      "                                           JR.LinkToAnotherTrx, " +
-      "                                           JR.InvNumForThisTrx, " +
-      "                                           JR.RowDate, " +
-      "                                           SUM(CASE WHEN JH.JournalEx = 9 THEN  JR.Amount * -1 ELSE JR.Amount END) as PdAmt " +
-      "                                  FROM JrnlHdr JH " +
-      "                                   INNER JOIN JrnlRow JR " +
-      "                                     ON JH.PostOrder = JR.PostOrder " +
-                                    "    WHERE 1 = 1 " +
-                                    "      AND JH.JournalEx in (3, 4, 9)  " +
-                                    "      AND JR.RowType in (0, 4, 5, 6, 11)  " +
-                                    "      AND JH.PayCustOrRecVend = 0 " +
-                                    "      AND JR.RowNumber > 0  " +
-                                    "      AND ((JH.CompletedDate IS NULL OR JH.CompletedDate = '9999-12-31') OR (JH.CompletedDate < '" + to.ToString("yyyy-MM-dd") + "' and JH.JournalEx = 9 ) )" +
-                                    "      AND JH.CustVendId <> 0 " +
-                                    "      AND LinkToAnotherTrx <> 0 " +
-                                    "      AND JH.TransactionDate <= '" + to.ToString("yyyy-MM-dd") + "'" +
-                                    "     GROUP by JH.CustVendID, JR.LinkToAnotherTrx, JR.InvNumForThisTrx, JR.RowDate " +
-                                    "    ) as Pd ON JrnlHdr.PostOrder = Pd.LinkToAnotherTrx and JrnlHdr.CustVendID = Pd.CustVendID " +
-
-
-
-      "                              LEFT JOIN(" +
-      "                                   SELECT JH.CustVendID, " +
-      "                                          SUM(CASE WHEN JH.JournalEx = 9 THEN  JR.Amount * -1 ELSE JR.Amount END) as PmntLast30 " +
-      "                                  FROM JrnlHdr JH " +
-      "                                   INNER JOIN JrnlRow JR " +
-      "                                     ON JH.PostOrder = JR.PostOrder " +
-                                    "    WHERE 1 = 1 " +
-                                    "     AND JH.JournalEx in (3, 4, 9)  " +
-                                    "     AND JR.RowType IN(0, 4, 5, 6, 11)  " +
-                                    "     AND JH.PayCustOrRecVend = 0  " +
-                                    "     AND JR.RowNumber > 0  " +
-                                    "     AND((JH.CompletedDate IS NULL OR JH.CompletedDate = '9999-12-31') OR (JH.CompletedDate < '" + to.ToString("yyyy-MM-dd") + "' and JH.JournalEx = 9 )) " +
-                                    "     AND JH.CustVendId <> 0 " +
-                                    "      AND LinkToAnotherTrx <> 0 " +
-                                    "      AND JH.TransactionDate  between '" + lastMonth.ToString("yyyy-MM-dd") + "' and '" + to.ToString("yyyy-MM-dd") + "'" +
-                                    "      GROUP by JH.CustVendID" +
-                                    "    ) as Pmnt ON  JrnlHdr.CustVendID = Pmnt.CustVendID " +
-
-
-
-                                    "LEFT JOIN Contacts  ON Customers.CustomerRecordNumber = Contacts.CustomerRecord AND Contacts.IsPrimaryContact = 1 " +
-                                    "LEFT JOIN Address ON Customers.CustomerRecordNumber = Address.CustomerRecordNumber AND Address.AddressTypeNumber = 0 " +
-                                    "LEFT JOIN Employee ON JrnlHdr.EmpRecordNumber = Employee.EmpRecordNumber " +
-                                    "INNER JOIN Company ON Company.CompanyName = Company.CompanyName " +
-                                    "WHERE 1 = 1 " +
-                                    "AND JrnlHdr.JournalEx in (8, 9, 10) " +
-                                    "AND JrnlRow.RowType in (0, 4, 5, 6, 11) " +
-                                    "AND JrnlHdr.PayCustOrRecVend = 0 " +
-                                    "AND JrnlRow.RowNumber = 0 " +
-                                    "AND(JrnlHdr.CompletedDate > '" + to.ToString("yyyy-MM-dd") + "'  OR JrnlHdr.CompletedDate IS NULL ) " +
-                                    "AND JrnlHdr.TransactionDate <= '" + to.ToString("yyyy-MM-dd") + "'" +
-
-                                    where +
-
-                                    "GROUP BY JrnlHdr.Reference, " +
-                                    "JrnlHdr.TransactionDate, " +
-                                    "Customers.CustomerID, " +
-                                    "Customers.Customer_Bill_Name, " +
-                                    "Customers.Customer_Type, " +
-                                    "JrnlHdr.MainAmount, " +
-                                    "Employee.EmployeeID, " +
-                                    "Employee.EmployeeName, " +
-                                    "JrnlHdr.Comment, " +
-                                    "Customers.CustomField1, " +
-                                    "Customers.CustomField2, " +
-                                    "Customers.customField3, " +
-                                    "Customers.CustomField4, " +
-                                    "Customers.CustomField5, " +
-                                    "Company.CompanyName, " +
-                                    "Company.DBN, " +
-                                    "Customers.CustomerRecordNumber," +
-                                    "Pmnt.PmntLast30 " +
-                                    "ORDER BY JrnlHdr.TransactionDate DESC";
-
-
-
-                            if (company == null || company.Rows.Count == 0)
-                            {
-
-                                MessageBox.Show("No company selected");
-                            }
-                            else
-                            {
-                                if (All == true)
+                                if (CustID != "")
                                 {
-                                    excecute();
+                                    where = " and Customers.CustomerID='" + CustID + "' ";
+                                }
+
+                                if (CustTyp != "")
+
+                                {
+
+                                    where = where + " and Customers.Customer_Type='" + CustTyp + "' ";
+
+                                }
+
+
+
+                                var lastMonth = to.AddDays(-30);
+                                //Facturas abiertas
+                                sql = "SELECT  " +
+                                        "JrnlHdr.Reference as InvoiceNo," +
+                                        "JrnlHdr.TransactionDate as InvoiceDate," +
+                                        "Customers.CustomerID as IdCustomer," +
+                                        "Customers.Customer_Bill_Name as BillTo," +
+                                        "Customers.Customer_Type, " +
+                                        "JrnlHdr.MainAmount," +
+                                        "SUM(IFNULL(Pd.PdAmt,0)) as AmountPaid," +
+                                        "Employee.EmployeeID, " +
+                                        "Employee.EmployeeName, " +
+                                        "JrnlHdr.Comment, " +
+                                        "Customers.CustomField1," +
+                                        "Customers.CustomField2, " +
+                                        "Customers.customField3, " +
+                                        "Customers.CustomField4, " +
+                                        "Customers.CustomField5, " +
+                                        "Company.CompanyName as Company, " +
+                                        "Company.DBN as Database, " +
+                                        "IFNULL(Pmnt.PmntLast30,0)," +
+                                        "Customers.CustomerRecordNumber, " +
+                                        "SUM((JrnlHdr.MainAmount + IFNULL(Pd.PdAmt,0))) AS AmountDue " +
+                                        "FROM JrnlHdr " +
+                                  
+                                        " INNER JOIN JrnlRow ON JrnlHdr.PostOrder = JrnlRow.PostOrder " +
+                                        " LEFT JOIN Customers ON JrnlHdr.CustVendId = Customers.CustomerRecordNumber " +
+                                   
+          "                              LEFT JOIN(" +
+          "                                   SELECT  JH.CustVendID, " +
+          "                                           JR.LinkToAnotherTrx, " +
+          "                                           JR.InvNumForThisTrx, " +
+          "                                           JR.RowDate, " +
+          "                                           SUM(CASE WHEN JH.JournalEx = 9 THEN  JR.Amount * -1 ELSE JR.Amount END) as PdAmt " +
+          "                                  FROM JrnlHdr JH " +
+          "                                   INNER JOIN JrnlRow JR " +
+          "                                     ON JH.PostOrder = JR.PostOrder " +
+                                        "    WHERE 1 = 1 " +
+                                        "      AND JH.JournalEx in (3, 4, 9)  " +
+                                        "      AND JR.RowType in (0, 4, 5, 6, 11)  " +
+                                        "      AND JH.PayCustOrRecVend = 0 " +
+                                        "      AND JR.RowNumber > 0  " +
+                                        "      AND ((JH.CompletedDate IS NULL OR JH.CompletedDate = '9999-12-31') OR (JH.CompletedDate < '" + to.ToString("yyyy-MM-dd") + "' and JH.JournalEx = 9 ) )" +
+                                        "      AND JH.CustVendId <> 0 " +
+                                        "      AND LinkToAnotherTrx <> 0 " +
+                                        "      AND JH.TransactionDate <= '" + to.ToString("yyyy-MM-dd") + "'" +
+                                        "     GROUP by JH.CustVendID, JR.LinkToAnotherTrx, JR.InvNumForThisTrx, JR.RowDate " +
+                                        "    ) as Pd ON JrnlHdr.PostOrder = Pd.LinkToAnotherTrx and JrnlHdr.CustVendID = Pd.CustVendID " +
+
+
+
+          "                              LEFT JOIN(" +
+          "                                   SELECT JH.CustVendID, " +
+          "                                          SUM(CASE WHEN JH.JournalEx = 9 THEN  JR.Amount * -1 ELSE JR.Amount END) as PmntLast30 " +
+          "                                  FROM JrnlHdr JH " +
+          "                                   INNER JOIN JrnlRow JR " +
+          "                                     ON JH.PostOrder = JR.PostOrder " +
+                                        "    WHERE 1 = 1 " +
+                                        "     AND JH.JournalEx in (3, 4, 9)  " +
+                                        "     AND JR.RowType IN(0, 4, 5, 6, 11)  " +
+                                        "     AND JH.PayCustOrRecVend = 0  " +
+                                        "     AND JR.RowNumber > 0  " +
+                                        "     AND((JH.CompletedDate IS NULL OR JH.CompletedDate = '9999-12-31') OR (JH.CompletedDate < '" + to.ToString("yyyy-MM-dd") + "' and JH.JournalEx = 9 )) " +
+                                        "     AND JH.CustVendId <> 0 " +
+                                        "      AND LinkToAnotherTrx <> 0 " +
+                                        "      AND JH.TransactionDate  between '" + lastMonth.ToString("yyyy-MM-dd") + "' and '" + to.ToString("yyyy-MM-dd") + "'" +
+                                        "      GROUP by JH.CustVendID" +
+                                        "    ) as Pmnt ON  JrnlHdr.CustVendID = Pmnt.CustVendID " +
+
+
+
+                                        "LEFT JOIN Contacts  ON Customers.CustomerRecordNumber = Contacts.CustomerRecord AND Contacts.IsPrimaryContact = 1 " +
+                                        "LEFT JOIN Address ON Customers.CustomerRecordNumber = Address.CustomerRecordNumber AND Address.AddressTypeNumber = 0 " +
+                                        "LEFT JOIN Employee ON JrnlHdr.EmpRecordNumber = Employee.EmpRecordNumber " +
+                                        "INNER JOIN Company ON Company.CompanyName = Company.CompanyName " +
+                                        "WHERE 1 = 1 " +
+                                        "AND JrnlHdr.JournalEx in (8, 9, 10) " +
+                                        "AND JrnlRow.RowType in (0, 4, 5, 6, 11) " +
+                                        "AND JrnlHdr.PayCustOrRecVend = 0 " +
+                                        "AND JrnlRow.RowNumber = 0 " +
+                                        "AND(JrnlHdr.CompletedDate > '" + to.ToString("yyyy-MM-dd") + "'  OR JrnlHdr.CompletedDate IS NULL ) " +
+                                        "AND JrnlHdr.TransactionDate <= '" + to.ToString("yyyy-MM-dd") + "'" +
+
+                                        where +
+
+                                        "GROUP BY JrnlHdr.Reference, " +
+                                        "JrnlHdr.TransactionDate, " +
+                                        "Customers.CustomerID, " +
+                                        "Customers.Customer_Bill_Name, " +
+                                        "Customers.Customer_Type, " +
+                                        "JrnlHdr.MainAmount, " +
+                                        "Employee.EmployeeID, " +
+                                        "Employee.EmployeeName, " +
+                                        "JrnlHdr.Comment, " +
+                                        "Customers.CustomField1, " +
+                                        "Customers.CustomField2, " +
+                                        "Customers.customField3, " +
+                                        "Customers.CustomField4, " +
+                                        "Customers.CustomField5, " +
+                                        "Company.CompanyName, " +
+                                        "Company.DBN, " +
+                                        "Customers.CustomerRecordNumber," +
+                                        "Pmnt.PmntLast30 " +
+                                        "ORDER BY JrnlHdr.TransactionDate DESC";
+
+
+
+                                if (company == null || company.Rows.Count == 0)
+                                {
+
+                                    MessageBox.Show("No company selected");
                                 }
                                 else
                                 {
-                                    for (int i = 0; i < company.Rows.Count; i++)
+                                    if (All == true)
                                     {
+                                        excecute();
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < company.Rows.Count; i++)
+                                        {
 
-                                        database = company.Rows[i].Field<string>(1);
+                                            database = company.Rows[i].Field<string>(1);
 
-                                        SqlExceByDB();
+                                            SqlExceByDB();
+
+                                        }
 
                                     }
-
                                 }
-                            }
 
 
+
+
+                        }
 
 
                     }
-
-
-                }
 
                     //PickingList
                     if (Type == 2)
                      {
 
-                        showSelecOptionByReport(2);
+                                showSelecOptionByReport(2);
 
-                        mre.WaitOne();
-                        if (kill == false)
-                        {
-
-                        var to = Convert.ToDateTime(To);
-                        var from = Convert.ToDateTime(From);
-
-                        sql = "SELECT DISTINCT " +
-                            "A.Reference as InvoiceNo," +
-                            "A.TransactionDate as InvoiceDate," +
-                            "C.CustomerID as IdCustomer," +
-                            "C.Customer_Bill_Name as BillTo," +
-                            "B.Quantity," +
-                            "D.ItemID," +
-                            "D.UPC_SKU," +
-                            "D.SalesDescription," +
-                            "D.Weight," +
-                            "B.Amount," +
-                            "D.StockingUM as Unit, " +
-                            "E.JobDescription, " +
-                            "F.PhaseDescription, " +
-                            "G.EmployeeID, " +
-                            "G.EmployeeName, " +
-                            "C.Customer_Type, " +
-                            "D.CustomField1, " +
-                            "D.CustomField2, " +
-                            "D.customField3, " +
-                            "D.CustomField4, " +
-                            "D.CustomField5, " +
-                            "(SELECT CompanyName FROM company) as Company, " +
-                            "(SELECT DBN FROM company) as Database " +
-                            " FROM JrnlHdr A" +
-                            " INNER JOIN JrnlRow B ON A.PostOrder = B.PostOrder" +
-                            " LEFT JOIN Jobs E ON E.JobRecordNumber = B.JobRecordNumber " +
-                            " LEFT JOIN Phase F ON F.PhaseRecordNumber = B.PhaseRecordNumber " +
-                            " LEFT JOIN Employee G on G.EmpRecordNumber = A.EmpRecordNumber" +
-                            " INNER JOIN Customers C ON C.CustomerRecordNumber = B.CustomerRecordNumber" +
-                            " INNER JOIN LineItem D ON D.ItemRecordNumber = B.ItemRecordNumber" +
-                            " WHERE A.JrnlKey_Journal = '3'" +
-                            " AND B.RowType = '0'" +
-                            " AND A.TransactionDate between '" + from.ToString("yyyy-MM-dd") + "' and '" + to.ToString("yyyy-MM-dd") + "' " +
-                            " Order by A.Reference; ";
-
-                            if (company == null || company.Rows.Count == 0)
-                            {
-
-                                MessageBox.Show("No company selected");
-                            }
-                            else
-                            {
-                                if (All == true)
+                                mre.WaitOne();
+                                if (kill == false)
                                 {
-                                    excecute();
+
+                                var to = Convert.ToDateTime(To);
+                                var from = Convert.ToDateTime(From);
+
+
+                                var InvoiceFilter = "";
+
+                                if(Invoice != "")
+                                {
+                                    InvoiceFilter = " AND Reference = '" + Invoice + "' ";
                                 }
-                                else
-                                {
-                                    for (int i = 0; i < company.Rows.Count; i++)
+
+                                sql = "SELECT DISTINCT " +
+                                    "A.Reference as InvoiceNo," +
+                                    "A.TransactionDate as InvoiceDate," +
+                                    "C.CustomerID as IdCustomer," +
+                                    "C.Customer_Bill_Name as BillTo," +
+                                    "B.Quantity," +
+                                    "D.ItemID," +
+                                    "D.UPC_SKU," +
+                                    "D.SalesDescription," +
+                                    "D.Weight," +
+                                    "B.Amount," +
+                                    "D.StockingUM as Unit, " +
+                                    "E.JobDescription, " +
+                                    "F.PhaseDescription, " +
+                                    "G.EmployeeID, " +
+                                    "G.EmployeeName, " +
+                                    "C.Customer_Type, " +
+                                    "D.CustomField1, " +
+                                    "D.CustomField2, " +
+                                    "D.customField3, " +
+                                    "D.CustomField4, " +
+                                    "D.CustomField5, " +
+                                    "(SELECT CompanyName FROM company) as Company, " +
+                                    "(SELECT DBN FROM company) as Database, " +
+                                    " B.RowDescription " +
+                                    " FROM JrnlHdr A" +
+                                    " INNER JOIN JrnlRow B ON A.PostOrder = B.PostOrder" +
+                                    " LEFT JOIN Jobs E ON E.JobRecordNumber = B.JobRecordNumber " +
+                                    " LEFT JOIN Phase F ON F.PhaseRecordNumber = B.PhaseRecordNumber " +
+                                    " LEFT JOIN Employee G on G.EmpRecordNumber = A.EmpRecordNumber" +
+                                    " INNER JOIN Customers C ON C.CustomerRecordNumber = B.CustomerRecordNumber" +
+                                    " INNER JOIN LineItem D ON D.ItemRecordNumber = B.ItemRecordNumber" +
+                                    " WHERE A.JrnlKey_Journal = '3'" +
+                                    " AND B.RowType = '0'" +
+                                      InvoiceFilter +
+                                    " AND A.TransactionDate between '" + from.ToString("yyyy-MM-dd") + "' and '" + to.ToString("yyyy-MM-dd") + "' " +
+                                    " Order by A.Reference , B.RowNumber ";
+
+                                    if (company == null || company.Rows.Count == 0)
                                     {
 
-                                    database = company.Rows[i].Field<string>(1);
+                                        MessageBox.Show("No company selected");
+                                    }
+                                    else
+                                    {
+                                        if (All == true)
+                                        {
+                                            excecute();
+                                        }
+                                        else
+                                        {
+                                            for (int i = 0; i < company.Rows.Count; i++)
+                                            {
 
-                                    SqlExceByDB();
+                                            database = company.Rows[i].Field<string>(1);
 
-                                }
+                                            SqlExceByDB();
 
-                                }
+                                        }
+
+                                        }
+                                    }
+
+
                             }
 
 
-                    }
-
-
-                }
+                        }
 
                     //Purchase Orders
                     if (Type == 3)
@@ -626,7 +643,7 @@ namespace AciSageLibrary
 
                         var PoFilter = "";
 
-                            if (PoNo != null) { PoFilter = "AND A.Reference = '" + PoNo + "'"; }
+                         if (!String.IsNullOrEmpty(PoNo)) { PoFilter = " AND A.Reference = '" + PoNo + "'"; }
 
                             sql = "SELECT DISTINCT " +
                                 "A.Reference as PONo," +
@@ -697,7 +714,7 @@ namespace AciSageLibrary
 
                                 }
                             }
-                    }
+                     }
                     }
                     
                     //Sales Orders
@@ -713,7 +730,7 @@ namespace AciSageLibrary
                             var to = Convert.ToDateTime(To);
                             var from = Convert.ToDateTime(From);
 
-                            if (SoNo != null) { SoFilter = "AND A.Reference = '" + SoNo + "'"; }
+                        if (!String.IsNullOrEmpty(SoNo)) { SoFilter = "AND A.Reference = '" + SoNo + "'"; }
 
 
                             sql = "SELECT DISTINCT " +
@@ -802,37 +819,46 @@ namespace AciSageLibrary
                         var from = Convert.ToDateTime(From);
 
                         sql = "SELECT DISTINCT " +
-                                "A.Reference," +
-                                "A.TransactionDate as Date," +
-                                "H.AccountID as GLAcntNumber ," +
-                                "B.Amount," +
-                                "B.RowDescription," +
-                                "C.CustomerID as CustomerId," +
-                                "C.Customer_Bill_Name as CustomerName," +
-                                "V.VendorID as VendorId," +
-                                "V.Name as VendorName," +
-                                "E.JobID, " +
-                                "E.JobDescription, " +
-                                "F.PhaseID, " +
-                                "F.PhaseDescription, " +
-                                "A.JrnlKey_Journal," +
-                                "B.PostOrder," +
-                                "B.InvNumForThisTrx AS invoiceNum, " +
-                                 "(SELECT CompanyName FROM company) as Company, " +
-                                 "(SELECT DBN FROM company) as Database, " +
-                                 "(SELECT top 1  X.JobID   FROM JrnlRow R  LEFT JOIN Jobs X ON X.JobRecordNumber = R.JobRecordNumber WHERE R.PostOrder = B.LinkToAnotherTrx and R.JobRecordNumber > 0 ) as JobIdRef, " +
-                                 "(SELECT top 1  Z.PhaseID FROM JrnlRow R  LEFT JOIN Phase Z ON Z.PhaseRecordNumber = R.PhaseRecordNumber  WHERE R.PostOrder = B.LinkToAnotherTrx and R.PhaseRecordNumber > 0 ) as PhaseIdRef, " +
-                                 "B.RowType " +
+                                "A.JrnlKey_Journal AS Journal," + //0
+                                "A.Reference," + //1
+                                "A.TransactionDate as Date," + //2
+                                "H.AccountID as GLAcntNumber ," + //3
+                                "H.AccountDescription as AccountDescription, " + //4
+                                "B.PostOrder," + //5
+                                "B.RowType, " + //6
+                                "B.Amount as RowAmount," + //7
+                                "B.RowDescription, " + //8
+                                "C.CustomerID as CustomerId," + //9
+                                "C.Customer_Bill_Name as CustomerName," + //10
+                                "V.VendorID as VendorId," + //11
+                                "V.Name as VendorName," + //12
+                                "CAST(B.dateCleared AS varchar(10) ) as AccountReconciliationDate," + //13
+                                "B.InvNumForThisTrx AS invoiceNum, " + //14
+                                "Co.CompanyName as Company, " + //15
+                                "Co.DBN as Database," +
+                                "  (CASE A.JrnlKey_Journal   " +
+                                            "     WHEN 0 THEN 'General Journal'  " +
+                                            "     WHEN 1 THEN 'Cash Receipts Journal'   " +
+                                            "     WHEN 2 THEN 'Cash Disbursements (Payments) Journal'   " +
+                                            "     WHEN 3 THEN 'Sales Journal'   " +
+                                            "     WHEN 4 THEN 'Purchase Journal'   " +
+                                            "     WHEN 5 THEN 'Payroll Journal'   " +
+                                            "     WHEN 6 THEN 'Cost of Goods Sold Journal'   " +
+                                            "     WHEN 7 THEN 'Inventory Adjustment Journal'   " +
+                                            "     WHEN 8 THEN 'Assembly Adjustments (Build/Unbuild) Journal'   " +
+                                            "     WHEN 9 THEN 'TempBelowZeroInvAdj (Only sage use)'   " +
+                                            "     WHEN 10 THEN 'Purchase Orders Journal'   " +
+                                            "     WHEN 11 THEN 'Sales Orders Journal'   " +
+                                            "     WHEN 12 THEN 'Quotes Journal'   " +
+                                            "   END) AS JournalDesc  " +
                             " FROM JrnlHdr A" +
                             " LEFT JOIN JrnlRow B ON A.PostOrder = B.PostOrder" +
                             " LEFT JOIN Vendors V ON V.VendorRecordNumber = B.VendorRecordNumber" +
                             " LEFT JOIN Customers C ON C.CustomerRecordNumber = B.CustomerRecordNumber" +
-                            " LEFT JOIN Jobs E ON E.JobRecordNumber   = B.JobRecordNumber " +
-                            " LEFT JOIN Phase F ON F.PhaseRecordNumber = B.PhaseRecordNumber " +
                             " LEFT JOIN Chart H ON H.GLAcntNumber = B.GLAcntNumber " +
-                            " WHERE " +
-                             // " B.RowType = '0' AND " +
-                             "A.TransactionDate between '" + from.ToString("yyyy-MM-dd") + "' and '" + to.ToString("yyyy-MM-dd") + "' " +
+                            " INNER JOIN Company Co ON Co.CompanyName = Co.CompanyName " +
+                            " WHERE  " +
+                            " A.TransactionDate between '" + from.ToString("yyyy-MM-dd") + "' and '" + to.ToString("yyyy-MM-dd") + "' " +
                             " Order by A.Reference; ";
 
 
@@ -854,7 +880,7 @@ namespace AciSageLibrary
 
                                        database = company.Rows[i].Field<string>(1);
     
-                                    SqlExceByDB();
+                                       SqlExceByDB();
     
                                     }
 
@@ -1027,7 +1053,7 @@ namespace AciSageLibrary
 
                     //Income statement
                     if (Type == 7)
-                        {
+                    {
 
            
                          showSelecOptionByReport(5);
@@ -1052,9 +1078,7 @@ namespace AciSageLibrary
                             switch (rng)
                             {
 
-
-
-
+                                
                                 //this year vs last year 
                                 case 14:
                                     thisyear = thisyear + "    C.Balance15Net + ";
@@ -1259,7 +1283,7 @@ namespace AciSageLibrary
 
                         }
 
-                        for (int rng = starYP; rng >= period1 && rng <= period2; rng++)
+                        for (int rng = starYP; rng >= starYP && rng <= period2; rng++)
                         {
 
                             switch (rng)
@@ -1509,7 +1533,7 @@ namespace AciSageLibrary
 
                     }
                     
-                    //customer balance
+                    //Customer balance
                     if (Type == 8)
                     {
 
@@ -1622,12 +1646,12 @@ namespace AciSageLibrary
 
                     }
 
-                     //BalanceSheet
+                    //BalanceSheet
                     if (Type == 9)
-                     {
+                    {
 
 
-                                showSelecOptionByReport(8);
+                        showSelecOptionByReport(8);
                                 mre.WaitOne();
 
 
@@ -2346,7 +2370,6 @@ namespace AciSageLibrary
                     }
 
                
-                
             }
             catch (Exception theException)
                 {
@@ -2709,11 +2732,11 @@ namespace AciSageLibrary
                         resTable.Columns.Add("date_from", typeof(String));
                         resTable.Columns.Add("date_to", typeof(String));
                         resTable.Columns.Add("DbName", typeof(String));
+                        resTable.Columns.Add("RowDescription", typeof(String));
 
 
 
-
-                        repPreview = new DataSet();
+                    repPreview = new DataSet();
                         repPreview.Tables.Add(resTable);
 
                         if (doQuery == true)
@@ -2757,7 +2780,8 @@ namespace AciSageLibrary
                                     queryTable.Rows[i].Field<string>(20),
                                     From,
                                     To,
-                                    queryTable.Rows[i].Field<string>(22)
+                                    queryTable.Rows[i].Field<string>(22),
+                                    queryTable.Rows[i].Field<string>(23)
 
                                     );
 
@@ -3065,37 +3089,34 @@ namespace AciSageLibrary
 
                     if (repPreview is null)
                     {
+                    
+                        DataTable resTable = new DataTable("Journals");
 
-
-                        DataTable resTable = new DataTable("Journal");
-                        resTable.Columns.Add("CompanyName", typeof(String));
+                        resTable.Columns.Add("Journal", typeof(Int32));
                         resTable.Columns.Add("Reference", typeof(String));
                         resTable.Columns.Add("Date", typeof(DateTime));
                         resTable.Columns.Add("GLAcntNumber", typeof(String));
-                        resTable.Columns.Add("Amount", typeof(Decimal));
+                        resTable.Columns.Add("GLAcntDescription", typeof(String));
+                        resTable.Columns.Add("PostOrder", typeof(Int64));
+                        resTable.Columns.Add("RowType", typeof(Int16));
+                        resTable.Columns.Add("RowAmount", typeof(Decimal));
                         resTable.Columns.Add("RowDescription", typeof(String));
                         resTable.Columns.Add("IdCustomer", typeof(String));
                         resTable.Columns.Add("CustomerName", typeof(String));
                         resTable.Columns.Add("IdVendor", typeof(String));
                         resTable.Columns.Add("VendorName", typeof(String));
-                        resTable.Columns.Add("JobID", typeof(String));
-                        resTable.Columns.Add("JobDescription", typeof(String));
-                        resTable.Columns.Add("PhaseID", typeof(String));
-                        resTable.Columns.Add("PhaseDescription", typeof(String));
-                        resTable.Columns.Add("JrnlKey_Journal", typeof(Int32));
-                        resTable.Columns.Add("PostOrder", typeof(Int64));
-                        resTable.Columns.Add("invoiceNum", typeof(String));
-                        resTable.Columns.Add("date_from", typeof(String));
-                        resTable.Columns.Add("date_to", typeof(String));
+                        resTable.Columns.Add("AccountReconciliationDate", typeof(String));
+                        resTable.Columns.Add("InvoiceNum", typeof(String));
+                        resTable.Columns.Add("Date_from", typeof(String));
+                        resTable.Columns.Add("Date_to", typeof(String));
+                        resTable.Columns.Add("Company", typeof(String));
                         resTable.Columns.Add("DbName", typeof(String));
-                        resTable.Columns.Add("JobIDRef", typeof(String));
-                        resTable.Columns.Add("PhaseIDRef", typeof(String));
-                        resTable.Columns.Add("RowType", typeof(Int32));
+                        resTable.Columns.Add("Journal_Description", typeof(String));
 
-                   
 
-                        repPreview = new DataSet();
-                        repPreview.Tables.Add(resTable);
+
+                    repPreview = new DataSet();
+                       repPreview.Tables.Add(resTable);
 
                         if (doQuery == true)
                         {
@@ -3106,41 +3127,40 @@ namespace AciSageLibrary
                                 for (int i = 0; i < queryTable.Rows.Count; i++)
                                 {
 
+               
 
-                                    if (queryTable.Rows[i].Field<string>(0) != "")
-                                    {
+                                if (queryTable.Rows[i].Field<string>(15) != "")
+                                {
                                         resTable.NewRow();
 
-                                        rawDate = Convert.ToDateTime(queryTable.Rows[i].Field<DateTime>(1));
+                                        rawDate = Convert.ToDateTime(queryTable.Rows[i].Field<DateTime>(2));
                                         date = rawDate.ToString("dd-MM-yyyy");
 
-                                        resTable.Rows.Add(
-                                        queryTable.Rows[i].Field<string>(16),
-                                        queryTable.Rows[i].Field<string>(0),
+                                    var clearedDate = queryTable.Rows[i].Field<string>(13); 
+                                   // var clearedDateStr = clearedDate.ToString("dd-MM-yyyy");
+
+                                    
+                                    resTable.Rows.Add(
+                                        queryTable.Rows[i].Field<Int32>(0),
+                                        queryTable.Rows[i].Field<string>(1),
                                         date,
-                                        queryTable.Rows[i].Field<string>(2),
-                                        queryTable.Rows[i].Field<decimal>(3),
+                                        queryTable.Rows[i].Field<string>(3),
                                         queryTable.Rows[i].Field<string>(4),
-                                        queryTable.Rows[i].Field<string>(5),
-                                        queryTable.Rows[i].Field<string>(6),
-                                        queryTable.Rows[i].Field<string>(7),
+                                        queryTable.Rows[i].Field<Int64>(5),
+                                        queryTable.Rows[i].Field<Int32>(6),
+                                        queryTable.Rows[i].Field<decimal>(7),
                                         queryTable.Rows[i].Field<string>(8),
                                         queryTable.Rows[i].Field<string>(9),
                                         queryTable.Rows[i].Field<string>(10),
                                         queryTable.Rows[i].Field<string>(11),
                                         queryTable.Rows[i].Field<string>(12),
-                                        queryTable.Rows[i].Field<Int32>(13),
-                                        queryTable.Rows[i].Field<Int64>(14),
-                                        queryTable.Rows[i].Field<string>(15),
+                                        clearedDate,
+                                        queryTable.Rows[i].Field<string>(14),
                                         From,
                                         To,
-                                        queryTable.Rows[i].Field<string>(17),
-                                        queryTable.Rows[i].Field<string>(18),
-                                        queryTable.Rows[i].Field<string>(19),
-                                        queryTable.Rows[i].Field<Int32>(20)
-
-
-
+                                        queryTable.Rows[i].Field<string>(15),
+                                        queryTable.Rows[i].Field<string>(16),
+                                        queryTable.Rows[i].Field<string>(17)
 
                                     );
 

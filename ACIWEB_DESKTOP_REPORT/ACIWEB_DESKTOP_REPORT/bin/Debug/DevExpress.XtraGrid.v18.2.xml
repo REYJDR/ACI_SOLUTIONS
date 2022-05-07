@@ -4,6 +4,11 @@
     <name>DevExpress.XtraGrid.v18.2</name>
   </assembly>
   <members>
+    <member name="N:DevExpress.XtraEditors">
+      <summary>
+        <para>Contains editor classes. They provide the functionality for corresponding controls. Editor specific information is stored within the Persistent classes that are implemented in the <see cref="N:DevExpress.XtraEditors.Persistent"/> namespace.</para>
+      </summary>
+    </member>
     <member name="T:DevExpress.XtraEditors.FindMode">
       <summary>
         <para>Contains values that specify how data searching is initiated within specific controls.</para>
@@ -77,6 +82,11 @@
     <member name="M:DevExpress.XtraEditors.GridLookUpEditBase.ShowPopup">
       <summary>
         <para>Opens the popup window.</para>
+      </summary>
+    </member>
+    <member name="N:DevExpress.XtraEditors.Repository">
+      <summary>
+        <para>Contains classes representing repository items that store editor-specific settings.</para>
       </summary>
     </member>
     <member name="T:DevExpress.XtraEditors.Repository.GridLookUpViewType">
@@ -468,6 +478,11 @@
         <para>Specifies settings specific to the current editor.</para>
       </summary>
       <value>A <see cref="T:DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit"/> object containing settings for the editor.</value>
+    </member>
+    <member name="N:DevExpress.XtraGrid">
+      <summary>
+        <para>Contains classes that provide information about the grid control, grid levels and implement the functionality for summaries, styles and style conditions.</para>
+      </summary>
     </member>
     <member name="N:DevExpress.XtraGrid.Columns">
       <summary>
@@ -2288,11 +2303,23 @@ It specifies whether selecting a date or date range via the embedded calendar fi
       </summary>
       <value>A <see cref="T:DevExpress.XtraGrid.Columns.GridColumn"/> object representing the column that contains images to display in tiles&#39; background.</value>
     </member>
+    <member name="P:DevExpress.XtraGrid.Columns.TileViewColumns.BackgroundImageColumnName">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraGrid.Columns.TileViewColumns.CheckedColumn">
       <summary>
         <para>Gets or sets the column with Boolean values that specify the checked state for tiles.</para>
       </summary>
       <value>A <see cref="T:DevExpress.XtraGrid.Columns.GridColumn"/> object representing a column with Boolean values that specify the checked state for tiles.</value>
+    </member>
+    <member name="P:DevExpress.XtraGrid.Columns.TileViewColumns.CheckedColumnName">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraGrid.Columns.TileViewColumns.EnabledColumn">
       <summary>
@@ -2300,11 +2327,23 @@ It specifies whether selecting a date or date range via the embedded calendar fi
       </summary>
       <value>A <see cref="T:DevExpress.XtraGrid.Columns.GridColumn"/> object that represents a column with Boolean values that specify the enabled/disabled state for tiles.</value>
     </member>
+    <member name="P:DevExpress.XtraGrid.Columns.TileViewColumns.EnabledColumnName">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraGrid.Columns.TileViewColumns.GroupColumn">
       <summary>
         <para>Gets or sets the column whose values are used to combine tiles in groups.</para>
       </summary>
       <value>A <see cref="T:DevExpress.XtraGrid.Columns.GridColumn"/> object representing a column whose values are used to combine tiles in groups.</value>
+    </member>
+    <member name="P:DevExpress.XtraGrid.Columns.TileViewColumns.GroupColumnName">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.XtraGrid.Columns.TileViewColumns.ToString">
       <summary>
@@ -2355,7 +2394,7 @@ It specifies whether selecting a date or date range via the embedded calendar fi
     </member>
     <member name="T:DevExpress.XtraGrid.FilterEditor.ViewFilterColumnCollection">
       <summary>
-        <para>This class is used to retrieve columns from a <see cref="T:DevExpress.XtraGrid.Views.Base.ColumnView"/> object and populate a <see cref="T:DevExpress.XtraEditors.FilterControl"/> with these columns via the  method.</para>
+        <para>This class is used to retrieve columns from a <see cref="T:DevExpress.XtraGrid.Views.Base.ColumnView"/> object and populate a <see cref="T:DevExpress.XtraEditors.FilterControl"/> with these columns via the FilterControl.SetFilterColumnsCollection method.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraGrid.FilterEditor.ViewFilterColumnCollection.#ctor(DevExpress.XtraGrid.Views.Base.ColumnView)">
@@ -12976,6 +13015,18 @@ This option is in effect when the <see cref="P:DevExpress.XtraGrid.Views.Grid.Gr
       </summary>
       <value>true to print/export the View with all data rows visible regardless of the group rows&#39; expanded state; otherwise, false.</value>
     </member>
+    <member name="P:DevExpress.XtraGrid.Views.Grid.GridOptionsPrint.IgnoreGroupDrawMode">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.XtraGrid.Views.Grid.GridOptionsPrint.IgnoreHtmlDrawGroups">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraGrid.Views.Grid.GridOptionsPrint.MaxMergedCellHeight">
       <summary>
         <para>Gets or sets the maximum height of merged cells in the print/export output.</para>
@@ -15041,10 +15092,22 @@ descendant (a <see cref="T:DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo"/
       <param name="kind">The kind of scrollbar annotations to update.</param>
       <param name="rows">An array of row handles.</param>
     </member>
+    <member name="M:DevExpress.XtraGrid.Views.Grid.GridView.ResetAutoFilterCondition(DevExpress.XtraGrid.Columns.GridColumn)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="column"></param>
+    </member>
     <member name="M:DevExpress.XtraGrid.Views.Grid.GridView.ResetAutoFilterConditions">
       <summary>
         <para>Resets all automatic filtering row conditions to their default values.</para>
       </summary>
+    </member>
+    <member name="M:DevExpress.XtraGrid.Views.Grid.GridView.ResetAutoFilterConditions(System.Collections.Generic.IEnumerable{DevExpress.XtraGrid.Columns.GridColumn})">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="columns"></param>
     </member>
     <member name="M:DevExpress.XtraGrid.Views.Grid.GridView.ResetThumbnailCache">
       <summary>
@@ -15200,7 +15263,7 @@ descendant (a <see cref="T:DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo"/
       </summary>
       <param name="rowHandle">An integer value identifying the master row by its handle.</param>
       <param name="relationIndex">A zero-based integer specifying the index of the relationship in the data source.
-If set to -1, the method acts like the  method.</param>
+If set to -1, the method acts like the GridView.SetMasterRowExpanded method.</param>
       <param name="expand">true to open the specified detail; false to hide it.</param>
     </member>
     <member name="M:DevExpress.XtraGrid.Views.Grid.GridView.SetRowExpanded(System.Int32,System.Boolean)">
@@ -19609,6 +19672,12 @@ This value is used to initialize the <see cref="P:DevExpress.XtraGrid.Views.Prin
         <para>Provides access to a set of properties that manage tile background image loading.</para>
       </summary>
       <value>A <see cref="T:DevExpress.XtraGrid.Views.Tile.TileViewOptionsImageLoad"/> object that stores properties that manage tile background image loading.</value>
+    </member>
+    <member name="P:DevExpress.XtraGrid.Views.Tile.TileView.OptionsLayout">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraGrid.Views.Tile.TileView.OptionsList">
       <summary>

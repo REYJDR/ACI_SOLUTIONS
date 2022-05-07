@@ -395,6 +395,7 @@
         <para>Returns the layout element of the type designated by the specified generic type parameter which relates to the specified position in the document model.</para>
       </summary>
       <param name="position">A <see cref="T:DevExpress.XtraRichEdit.API.Native.DocumentPosition"/> object that specifies the position in the document model.</param>
+      <typeparam name="T"></typeparam>
       <returns>The layout element of the type designated by the specified generic type parameter.</returns>
     </member>
     <member name="M:DevExpress.XtraRichEdit.API.Layout.DocumentLayout.GetFormattedPageCount">
@@ -580,7 +581,7 @@
     </member>
     <member name="T:DevExpress.XtraRichEdit.API.Layout.InitialState">
       <summary>
-        <para>Used by the  method to specify the initial position of the iterator.</para>
+        <para>Used by the LayoutIterator.Reset method to specify the initial position of the iterator.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraRichEdit.API.Layout.InitialState.End">
@@ -763,6 +764,7 @@
       <summary>
         <para>Returns the parent layout element of the type designated by the specified generic type parameter.</para>
       </summary>
+      <typeparam name="T"></typeparam>
       <returns>The layout element of the type designated by the specified generic type parameter.</returns>
     </member>
     <member name="M:DevExpress.XtraRichEdit.API.Layout.LayoutElement.GetRelativeBounds(DevExpress.XtraRichEdit.API.Layout.LayoutElement)">
@@ -805,6 +807,7 @@
       <summary>
         <para>Returns the parent layout element of the type designated by the specified generic type parameter.</para>
       </summary>
+      <typeparam name="T"></typeparam>
       <returns>The layout element of the type designated by the specified generic type parameter.</returns>
     </member>
     <member name="M:DevExpress.XtraRichEdit.API.Layout.LayoutElementBase.GetRelativeBounds(DevExpress.XtraRichEdit.API.Layout.LayoutElement)">
@@ -830,6 +833,7 @@
       <summary>
         <para>Base collection for collections of layout elements.</para>
       </summary>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="P:DevExpress.XtraRichEdit.API.Layout.LayoutElementCollection`1.Count">
       <summary>
@@ -965,7 +969,7 @@
       <summary>
         <para>Finalizes editing of the footer content in the document.</para>
       </summary>
-      <param name="document">A <see cref="T:DevExpress.XtraRichEdit.API.Native.SubDocument"/> object which is the footer content obtained by the  method.</param>
+      <param name="document">A <see cref="T:DevExpress.XtraRichEdit.API.Native.SubDocument"/> object which is the footer content obtained by the LayoutFooter.BeginUpdate method.</param>
     </member>
     <member name="P:DevExpress.XtraRichEdit.API.Layout.LayoutFooter.Type">
       <summary>
@@ -1041,7 +1045,7 @@
       <summary>
         <para>Finalizes editing of the header content in the document.</para>
       </summary>
-      <param name="document">A <see cref="T:DevExpress.XtraRichEdit.API.Native.SubDocument"/> object which is the header content obtained by the  method.</param>
+      <param name="document">A <see cref="T:DevExpress.XtraRichEdit.API.Native.SubDocument"/> object which is the header content obtained by the LayoutHeader.BeginUpdate method.</param>
     </member>
     <member name="P:DevExpress.XtraRichEdit.API.Layout.LayoutHeader.Type">
       <summary>
@@ -3385,11 +3389,23 @@ A <see cref="T:System.DateTime"/> object that is the comment creation date.</par
         <para>Enables you to specify application-wide settings to ensure compatibility with previous versions of rich text editors.</para>
       </summary>
     </member>
+    <member name="P:DevExpress.XtraRichEdit.API.Native.CompatibilitySettings.AlignEachTableRow">
+      <summary>
+        <para>Specifies whether to align each row within a table independently.</para>
+      </summary>
+      <value>true to align each table row independently; otherwise, false. Default value is false.</value>
+    </member>
     <member name="P:DevExpress.XtraRichEdit.API.Native.CompatibilitySettings.AllowHyphenationAtTrackBottom">
       <summary>
         <para>Gets or sets whether a line that ends with a hyphenated word is allowed to be the last line in a page or column.</para>
       </summary>
       <value>True, if a line that ends with a hyphenated word is allowed to be the last line in a page or column; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.XtraRichEdit.API.Native.CompatibilitySettings.AllowTablesOutstepMargins">
+      <summary>
+        <para>Specifies whether to allow tables with enabled AutoFit feature to extend beyond the page margins.</para>
+      </summary>
+      <value>true to allow tables to outstep page margins; otherwise, false. Default value is false.</value>
     </member>
     <member name="P:DevExpress.XtraRichEdit.API.Native.CompatibilitySettings.AllowTextAfterFloatingTableBreak">
       <summary>
@@ -3409,6 +3425,12 @@ A <see cref="T:System.DateTime"/> object that is the comment creation date.</par
       </summary>
       <value>true, to apply the conditional formatting to every row separately in the multi-row header; otherwise, false.</value>
     </member>
+    <member name="P:DevExpress.XtraRichEdit.API.Native.CompatibilitySettings.DisableColumnBalance">
+      <summary>
+        <para>Specifies whether to disable balancing column height.</para>
+      </summary>
+      <value>true, to disable column balance; otherwise, false. Default value is false.</value>
+    </member>
     <member name="P:DevExpress.XtraRichEdit.API.Native.CompatibilitySettings.DoNotFlipMirrorIndents">
       <summary>
         <para>Specifies whether to swap the mirrored paragraph indents.</para>
@@ -3427,6 +3449,18 @@ A <see cref="T:System.DateTime"/> object that is the comment creation date.</par
       </summary>
       <value>true, to override the table style&#39;s font size and justification parameters; otherwise, false.</value>
     </member>
+    <member name="P:DevExpress.XtraRichEdit.API.Native.CompatibilitySettings.SplitPageBreakAndParagraphMark">
+      <summary>
+        <para>Specifies whether to move the paragraph mark to a new line on the next page if it is located after the page break.</para>
+      </summary>
+      <value>true, to split page break and paragraph mark; otherwise, false. Default value is false.</value>
+    </member>
+    <member name="P:DevExpress.XtraRichEdit.API.Native.CompatibilitySettings.StretchLinesWithLineBreaks">
+      <summary>
+        <para>Specifies whether to stretch lines which end in a line break when the parent paragraph is fully justified.</para>
+      </summary>
+      <value>true, to stretch lines with line breaks; otherwise, false. Default value is true.</value>
+    </member>
     <member name="P:DevExpress.XtraRichEdit.API.Native.CompatibilitySettings.UseWord2013TrackBottomHyphenation">
       <summary>
         <para>Gets or sets whether the line containing a hyphenated word which ends a page or column is displayed on the following page or column.</para>
@@ -3435,7 +3469,7 @@ A <see cref="T:System.DateTime"/> object that is the comment creation date.</par
     </member>
     <member name="T:DevExpress.XtraRichEdit.API.Native.ConditionalTableStyleFormattingTypes">
       <summary>
-        <para>Lists values that specify the type of the conditional format operator in a conditional formatting rule.</para>
+        <para>Lists table elements to which a style should be applied.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraRichEdit.API.Native.ConditionalTableStyleFormattingTypes.BottomLeftCell">
@@ -6203,12 +6237,12 @@ context.</para>
     </member>
     <member name="F:DevExpress.XtraRichEdit.API.Native.NumberingFormat.ArabicAbjad">
       <summary>
-        <para>Specifies that the sequence shall consist of ascending Abjad numerals.Currently not supported.</para>
+        <para>Specifies that the sequence shall consist of ascending Abjad numerals.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraRichEdit.API.Native.NumberingFormat.ArabicAlpha">
       <summary>
-        <para>Specifies that the sequence shall consist of characters in the Arabic alphabet.Currently not supported.</para>
+        <para>Specifies that the sequence shall consist of characters in the Arabic alphabet.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraRichEdit.API.Native.NumberingFormat.Bullet">
@@ -6309,12 +6343,12 @@ Example: 01, 02, 03, ..., 09, 10</para>
     </member>
     <member name="F:DevExpress.XtraRichEdit.API.Native.NumberingFormat.Hebrew1">
       <summary>
-        <para>Specifies that the sequence shall consist of Hebrew numerals.Currently not supported.</para>
+        <para>Specifies that the sequence shall consist of Hebrew numerals.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraRichEdit.API.Native.NumberingFormat.Hebrew2">
       <summary>
-        <para>Specifies that the sequence shall consist of the Hebrew alphabet.Currently not supported.</para>
+        <para>Specifies that the sequence shall consist of the Hebrew alphabet.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraRichEdit.API.Native.NumberingFormat.Hex">
@@ -6907,7 +6941,7 @@ Example: I, II, III</para>
         <para>Inserts a new Paragraph at a specified position.</para>
       </summary>
       <param name="pos">A <see cref="T:DevExpress.XtraRichEdit.API.Native.DocumentPosition"/> object that specifies a position to insert a new paragraph.</param>
-      <returns>A <see cref="T:DevExpress.XtraRichEdit.API.Native.Paragraph"/> object representing the newly inserted paragraph. A newly inserted paragraph is a paragraph which follows the position specified in the method.</returns>
+      <returns>A paragraph that follows the inserted paragraph.</returns>
     </member>
     <member name="M:DevExpress.XtraRichEdit.API.Native.ParagraphCollection.Insert(DevExpress.XtraRichEdit.API.Native.DocumentPosition,DevExpress.XtraRichEdit.API.Native.InsertOptions)">
       <summary>
@@ -6915,7 +6949,7 @@ Example: I, II, III</para>
       </summary>
       <param name="pos">A <see cref="T:DevExpress.XtraRichEdit.API.Native.DocumentPosition"/> object that specifies a position to insert a new paragraph.</param>
       <param name="insertOptions">An <see cref="T:DevExpress.XtraRichEdit.API.Native.InsertOptions"/> enumeration value, specifying how destination formatting is applied to inserted content.</param>
-      <returns>A <see cref="T:DevExpress.XtraRichEdit.API.Native.Paragraph"/> object representing the newly inserted paragraph.</returns>
+      <returns>A paragraph that follows the inserted paragraph.</returns>
     </member>
     <member name="M:DevExpress.XtraRichEdit.API.Native.ParagraphCollection.RemoveNumberingFromParagraph(DevExpress.XtraRichEdit.API.Native.Paragraph)">
       <summary>
@@ -9486,7 +9520,7 @@ Example: I, II, III</para>
     </member>
     <member name="M:DevExpress.XtraRichEdit.API.Native.SubDocument.EndUpdateCharacters(DevExpress.XtraRichEdit.API.Native.CharacterProperties)">
       <summary>
-        <para>Finalizes the modification of character formatting after calling the  method.</para>
+        <para>Finalizes the modification of character formatting after calling the SubDocument.BeginUpdateCharacters method.</para>
       </summary>
       <param name="properties">A <see cref="T:DevExpress.XtraRichEdit.API.Native.CharacterProperties"/> object containing character properties.</param>
     </member>
@@ -22883,12 +22917,6 @@ Example: I, II, III</para>
       </summary>
       <value>An XtraRichEditStringId enumeration value, identifying the resource string.</value>
     </member>
-    <member name="M:DevExpress.XtraRichEdit.Commands.ShowLanguageFormCommand.UpdateUIState(DevExpress.Utils.Commands.ICommandUIState)">
-      <summary>
-        <para>Updates the command state and applies restrictions.</para>
-      </summary>
-      <param name="state">An <see cref="T:DevExpress.Utils.Commands.ICommandUIState"/> interface defining the state of a command.</param>
-    </member>
     <member name="T:DevExpress.XtraRichEdit.Commands.ShowLineNumberingFormCommand">
       <summary>
         <para>Invokes the Line Numbers dialog.</para>
@@ -27902,7 +27930,7 @@ Example: I, II, III</para>
     </member>
     <member name="P:DevExpress.XtraRichEdit.Export.HtmlDocumentExporterOptions.IgnoreHangingIndentOnNumberingList">
       <summary>
-        <para>Gets or sets whether to ignore the paragraph&#39;s hanging indent value when exporting the numbering and bulleted lists to HTML as plain text.</para>
+        <para>Gets or sets whether to ignore the paragraph&#39;s hanging indent value when exporting the numbering and bulleted lists to HTML.</para>
       </summary>
       <value>true, to ignore the hanging parameter; otherwise, false.</value>
     </member>
@@ -29838,6 +29866,7 @@ Example: I, II, III</para>
       <summary>
         <para>Gets service of the specified type.</para>
       </summary>
+      <typeparam name="T"></typeparam>
       <returns>A service object of the specified type or null for reference types and zero for numeric value types if a service is not available.</returns>
     </member>
     <member name="P:DevExpress.XtraRichEdit.IRichEditDocumentServer.HtmlText">
@@ -29973,7 +30002,7 @@ Example: I, II, III</para>
     </member>
     <member name="P:DevExpress.XtraRichEdit.IRichEditDocumentServer.Model">
       <summary>
-        <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
+        <para>For internal use.</para>
       </summary>
       <value></value>
     </member>
@@ -30021,6 +30050,7 @@ Example: I, II, III</para>
         <para>Performs a service substitution.</para>
       </summary>
       <param name="newService">A service of the specified type that will replace the former service.</param>
+      <typeparam name="T"></typeparam>
       <returns>Previously registered service of the specified type, or null (Nothing in Visual Basic) if the service does not exist.</returns>
     </member>
     <member name="P:DevExpress.XtraRichEdit.IRichEditDocumentServer.RtfText">
@@ -31678,6 +31708,7 @@ Example: I, II, III</para>
       <summary>
         <para>Gets the specified service.</para>
       </summary>
+      <typeparam name="T"></typeparam>
       <returns>A service object of the specified type or null for reference types and zero for numeric value types if a service is not available.</returns>
     </member>
     <member name="P:DevExpress.XtraRichEdit.RichEditDocumentServer.HtmlText">
@@ -31892,7 +31923,7 @@ Example: I, II, III</para>
     </member>
     <member name="P:DevExpress.XtraRichEdit.RichEditDocumentServer.Model">
       <summary>
-        <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
+        <para>For internal use.</para>
       </summary>
       <value></value>
     </member>
@@ -31971,6 +32002,7 @@ Example: I, II, III</para>
         <para>Performs a service substitution.</para>
       </summary>
       <param name="newService">A service of the specified type that will be registered.</param>
+      <typeparam name="T"></typeparam>
       <returns>Previously registered service of the specified type, or null (Nothing in Visual Basic) if the service does not exist.</returns>
     </member>
     <member name="P:DevExpress.XtraRichEdit.RichEditDocumentServer.RtfText">

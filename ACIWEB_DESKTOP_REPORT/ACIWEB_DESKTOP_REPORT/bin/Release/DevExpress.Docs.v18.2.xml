@@ -3560,27 +3560,27 @@
     </member>
     <member name="M:DevExpress.Snap.SnapDocumentServer.MailMerge(DevExpress.XtraRichEdit.API.Native.Document)">
       <summary>
-        <para>Obsolete. Use the  method instead.</para>
+        <para>Obsolete. Use the SnapDocumentServer.SnapMailMerge method instead.</para>
       </summary>
       <param name="document">An object implementing the <see cref="T:DevExpress.XtraRichEdit.API.Native.Document"/> interface.</param>
     </member>
     <member name="M:DevExpress.Snap.SnapDocumentServer.MailMerge(DevExpress.XtraRichEdit.API.Native.MailMergeOptions,DevExpress.XtraRichEdit.API.Native.Document)">
       <summary>
-        <para>Obsolete. Use the  method instead.</para>
+        <para>Obsolete. Use the SnapDocumentServer.SnapMailMerge method instead.</para>
       </summary>
       <param name="options">An object implementing the <see cref="T:DevExpress.XtraRichEdit.API.Native.MailMergeOptions"/> interface.</param>
       <param name="targetDocument">An object implementing the <see cref="T:DevExpress.XtraRichEdit.API.Native.Document"/> interface.</param>
     </member>
     <member name="M:DevExpress.Snap.SnapDocumentServer.MailMerge(DevExpress.XtraRichEdit.API.Native.MailMergeOptions,DevExpress.XtraRichEdit.IRichEditDocumentServer)">
       <summary>
-        <para>Obsolete. Use the  method instead.</para>
+        <para>Obsolete. Use the SnapDocumentServer.SnapMailMerge method instead.</para>
       </summary>
       <param name="options">An object implementing the <see cref="T:DevExpress.XtraRichEdit.API.Native.MailMergeOptions"/> interface.</param>
       <param name="targetDocumentServer">An object implementing the <see cref="T:DevExpress.XtraRichEdit.IRichEditDocumentServer"/> interface.</param>
     </member>
     <member name="M:DevExpress.Snap.SnapDocumentServer.MailMerge(DevExpress.XtraRichEdit.API.Native.MailMergeOptions,System.IO.Stream,DevExpress.XtraRichEdit.DocumentFormat)">
       <summary>
-        <para>Obsolete. Use the  method instead.</para>
+        <para>Obsolete. Use the SnapDocumentServer.SnapMailMerge method instead.</para>
       </summary>
       <param name="options">An object implementing the <see cref="T:DevExpress.XtraRichEdit.API.Native.MailMergeOptions"/> interface.</param>
       <param name="stream">A <see cref="T:System.IO.Stream"/> object.</param>
@@ -3588,7 +3588,7 @@
     </member>
     <member name="M:DevExpress.Snap.SnapDocumentServer.MailMerge(DevExpress.XtraRichEdit.API.Native.MailMergeOptions,System.String,DevExpress.XtraRichEdit.DocumentFormat)">
       <summary>
-        <para>Obsolete. Use the  method instead.</para>
+        <para>Obsolete. Use the SnapDocumentServer.SnapMailMerge method instead.</para>
       </summary>
       <param name="options">An object implementing the <see cref="T:DevExpress.XtraRichEdit.API.Native.MailMergeOptions"/> interface.</param>
       <param name="fileName">A <see cref="T:System.String"/> value.</param>
@@ -3596,20 +3596,20 @@
     </member>
     <member name="M:DevExpress.Snap.SnapDocumentServer.MailMerge(DevExpress.XtraRichEdit.IRichEditDocumentServer)">
       <summary>
-        <para>Obsolete. Use the  method instead.</para>
+        <para>Obsolete. Use the SnapDocumentServer.SnapMailMerge method instead.</para>
       </summary>
       <param name="documentServer">An object implementing the <see cref="T:DevExpress.XtraRichEdit.IRichEditDocumentServer"/> interface.</param>
     </member>
     <member name="M:DevExpress.Snap.SnapDocumentServer.MailMerge(System.IO.Stream,DevExpress.XtraRichEdit.DocumentFormat)">
       <summary>
-        <para>Obsolete. Use the  method instead.</para>
+        <para>Obsolete. Use the SnapDocumentServer.SnapMailMerge method instead.</para>
       </summary>
       <param name="stream">A <see cref="T:System.IO.Stream"/> object.</param>
       <param name="format">A <see cref="T:DevExpress.XtraRichEdit.DocumentFormat"/> structure.</param>
     </member>
     <member name="M:DevExpress.Snap.SnapDocumentServer.MailMerge(System.String,DevExpress.XtraRichEdit.DocumentFormat)">
       <summary>
-        <para>Obsolete. Use the  method instead.</para>
+        <para>Obsolete. Use the SnapDocumentServer.SnapMailMerge method instead.</para>
       </summary>
       <param name="fileName">A <see cref="T:System.String"/> value.</param>
       <param name="format">A <see cref="T:DevExpress.XtraRichEdit.DocumentFormat"/> structure.</param>
@@ -3770,13 +3770,13 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.Export.DataTableExporterExtensions.Export(DevExpress.Spreadsheet.Export.DataTableExporter)">
       <summary>
-        <para>Performs export of the cell range to the DataTable.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Performs export of the cell range to the DataTable.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="exporter">A <see cref="T:DevExpress.Spreadsheet.Export.DataTableExporter"/> object created to export data.</param>
     </member>
     <member name="T:DevExpress.Spreadsheet.Workbook">
       <summary>
-        <para>A non-visual component providing complete spreadsheet functionality.</para>
+        <para>A non-visual component that provides complete spreadsheet functionality. You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this class in production code.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.#ctor">
@@ -3786,24 +3786,24 @@
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.ActiveSheetChanged">
       <summary>
-        <para>Occurs after an active worksheet in a workbook has been changed.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after an active worksheet in a workbook has been changed.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.ActiveSheetChanging">
       <summary>
-        <para>Occurs when an active worksheet in a workbook is about to be changed.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs when an active worksheet in a workbook is about to be changed.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.AddService(System.Type,System.ComponentModel.Design.ServiceCreatorCallback)">
       <summary>
-        <para>Adds the specified service to the service container. Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Adds the specified service to the service container. You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="serviceType">The type of service to add.</param>
       <param name="callback">A callback object that is used to create the service. This allows a service to be declared as available, but delays the creation of the object until the service is requested.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.AddService(System.Type,System.ComponentModel.Design.ServiceCreatorCallback,System.Boolean)">
       <summary>
-        <para>Adds the specified service to the service container.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Adds the specified service to the service container.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="serviceType">The type of service to add.</param>
       <param name="callback">A callback object that is used to create the service. This allows a service to be declared as available, but delays the creation of the object until the service is requested.</param>
@@ -3811,14 +3811,14 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.AddService(System.Type,System.Object)">
       <summary>
-        <para>Adds the specified service to the service container.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Adds the specified service to the service container.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="serviceType">The type of service to add.</param>
       <param name="serviceInstance">An instance of the service type to add. This object must implement or inherit from the type indicated by the serviceType parameter.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.AddService(System.Type,System.Object,System.Boolean)">
       <summary>
-        <para>Adds the specified service to the service container. Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Adds the specified service to the service container. You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="serviceType">The type of service to add.</param>
       <param name="serviceInstance">An instance of the service type to add. This object must implement or inherit from the type indicated by the serviceType parameter.</param>
@@ -3826,12 +3826,12 @@
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.BeforeExport">
       <summary>
-        <para>Occurs before the document is saved (exported to a certain format).Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs before the document is saved (exported to a certain format).You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.BeforeImport">
       <summary>
-        <para>Occurs before a document is loaded (imported from an external source).Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs before a document is loaded (imported from an external source).You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.BeforePrintSheet">
@@ -3841,12 +3841,12 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.BeginUpdate">
       <summary>
-        <para>Locks the <see cref="T:DevExpress.Spreadsheet.Workbook"/> object until the <see cref="M:DevExpress.Spreadsheet.Workbook.EndUpdate"/> method is called.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Locks the <see cref="T:DevExpress.Spreadsheet.Workbook"/> object until the <see cref="M:DevExpress.Spreadsheet.Workbook.EndUpdate"/> method is called.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.Calculate">
       <summary>
-        <para>Forces recalculation of the workbook.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Forces recalculation of the workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.Calculate(DevExpress.Spreadsheet.Range)">
@@ -3878,34 +3878,34 @@
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.ChartSheets">
       <summary>
-        <para>Provides access to a collection of chart sheets contained in the workbook.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Provides access to a collection of chart sheets contained in the workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Spreadsheet.ChartSheetCollection"/> object that is a collection of chart sheets.</value>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.Clipboard">
       <summary>
-        <para>Provides access to the object used for working with the system clipboard.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Provides access to the object used for working with the system clipboard.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>An object implementing the <see cref="T:DevExpress.Spreadsheet.IClipboardManager"/> interface.</value>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.ClipboardDataObtained">
       <summary>
-        <para>Occurs after data on the clipboard is obtained and recognized, but before data is actually pasted.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after data on the clipboard is obtained and recognized, but before data is actually pasted.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.ClipboardDataPasted">
       <summary>
-        <para>Occurs after data has been pasted from the clipboard onto a worksheet.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after data has been pasted from the clipboard onto a worksheet.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.ClipboardDataPasting">
       <summary>
-        <para>Occurs before data is pasted into destination cells.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs before data is pasted into destination cells.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.ColumnsInserted">
       <summary>
-        <para>Occurs after new columns have been added to a worksheet.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after new columns have been added to a worksheet.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.ColumnsInserting">
@@ -3915,7 +3915,7 @@
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.ColumnsRemoved">
       <summary>
-        <para>Occurs after columns have been deleted from a worksheet.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after columns have been deleted from a worksheet.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.ColumnsRemoving">
@@ -3945,94 +3945,94 @@
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.ContentChanged">
       <summary>
-        <para>Occurs when the workbook&#39;s undo history changes. By default, undo history is not logged for the Workbook instance, so the event is not raised.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs when the workbook&#39;s undo history changes. By default, undo history is not logged for the Workbook instance, so the event is not raised.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.CopiedRangePasted">
       <summary>
-        <para>Occurs after the range content has been pasted into target cells.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after the range content has been pasted into target cells.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.CopiedRangePasting">
       <summary>
-        <para>Occurs before the range content is pasted into target cells.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs before the range content is pasted into target cells.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.CreateNewDocument">
       <summary>
-        <para>Creates and loads a new empty workbook. Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Creates and loads a new empty workbook. You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <returns>true, if the document is created successfully; otherwise, false.</returns>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.CurrentAuthor">
       <summary>
-        <para>Gets the system username.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Gets the system username.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>A <see cref="T:System.String"/> value that specifies the username of the person currently logged on the operating system.</value>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.CustomAssemblyLoading">
       <summary>
-        <para>Occurs before a custom assembly is loaded for use as the Entity Framework data source during mail merge and allows cancelling loading.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs before a custom assembly is loaded for use as the Entity Framework data source during mail merge and allows cancelling loading.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.CustomFunctions">
       <summary>
-        <para>Provides access to a collection of custom functions in a workbookUse of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Provides access to a collection of custom functions in a workbookYou require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Spreadsheet.Functions.CustomFunctionCollection"/> collection of custom functions.</value>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.CustomXmlParts">
       <summary>
-        <para>Provides access to the collection of custom XML parts in the document.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Provides access to the collection of custom XML parts in the document.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Spreadsheet.CustomXmlPartCollection"/> object that is the collection of embedded arbitrary XML data (custom XML parts).</value>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.DefinedNameConflictResolving">
       <summary>
-        <para>Occurs when the formula or sheet being moved or copied contains a defined name which already exists on the destination worksheet or workbook.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs when the formula or sheet being moved or copied contains a defined name which already exists on the destination worksheet or workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.DefinedNames">
       <summary>
-        <para>Gets the collection of defined names whose scope is the current workbook.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Gets the collection of defined names whose scope is the current workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Spreadsheet.DefinedNameCollection"/> collection of a worksheet&#39;s defined names.</value>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.Dispose">
       <summary>
-        <para>Releases resources associated with a <see cref="T:DevExpress.Spreadsheet.Workbook"/> instance.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Releases resources associated with a <see cref="T:DevExpress.Spreadsheet.Workbook"/> instance.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.DocumentClosing">
       <summary>
-        <para>Occurs when a document that has not yet been saved is about to be closed.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs when a document that has not yet been saved is about to be closed.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.DocumentLoaded">
       <summary>
-        <para>Occurs after a document is loaded.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after a document is loaded.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.DocumentProperties">
       <summary>
-        <para>Provides access to the document properties associated with a workbook. Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Provides access to the document properties associated with a workbook. You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Spreadsheet.DocumentProperties"/> object containing information about a workbook.</value>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.DocumentSaved">
       <summary>
-        <para>Occurs after a document has been saved.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after a document has been saved.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.DocumentSettings">
       <summary>
-        <para>Provides access to the settings that specify how the calculation is performed and what reference style is used.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Provides access to the settings that specify how the calculation is performed and what reference style is used.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Spreadsheet.DocumentSettings"/> object containing settings for the reference style and calculation options.</value>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.EmptyDocumentCreated">
       <summary>
-        <para>Occurs when a new document is created.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs when a new document is created.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.EncryptedFileIntegrityCheckFailed">
@@ -4052,19 +4052,19 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.EndUpdate">
       <summary>
-        <para>Unlocks the <see cref="T:DevExpress.Spreadsheet.Workbook"/> object.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Unlocks the <see cref="T:DevExpress.Spreadsheet.Workbook"/> object.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.Evaluate(System.String)">
       <summary>
-        <para>Evaluates the specified formula.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Evaluates the specified formula.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="formula">A string that is the formula to be evaluated.</param>
       <returns>A <see cref="T:DevExpress.Spreadsheet.Functions.ParameterValue"/> object that is the calculation result and may contain a value, a reference or a calculation error.</returns>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.Evaluate(System.String,DevExpress.Spreadsheet.Functions.FormulaEvaluationContext)">
       <summary>
-        <para>Evaluates the specified formula in a certain context.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Evaluates the specified formula in a certain context.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="formula">A string that is the formula to be evaluated.</param>
       <param name="context">A <see cref="T:DevExpress.Spreadsheet.Functions.FormulaEvaluationContext"/> object containing information on the row, column and the current culture settings.</param>
@@ -4072,89 +4072,89 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.ExportToHtml(System.IO.Stream,DevExpress.Spreadsheet.Range)">
       <summary>
-        <para>Exports the specified range to the specified stream in HTML format.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Exports the specified range to the specified stream in HTML format.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <param name="stream">A <see cref="T:System.IO.Stream"/> object to which the created HTML file should be sent.</param>
       <param name="range">A <see cref="T:DevExpress.Spreadsheet.Range"/> object to be exported to HTML.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.ExportToHtml(System.IO.Stream,DevExpress.Spreadsheet.Worksheet)">
       <summary>
-        <para>Exports the specified worksheet to the specified stream in HTML format.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Exports the specified worksheet to the specified stream in HTML format.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <param name="stream">A <see cref="T:System.IO.Stream"/> object to which the created HTML file should be sent.</param>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> object to be exported to HTML.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.ExportToHtml(System.IO.Stream,DevExpress.XtraSpreadsheet.Export.HtmlDocumentExporterOptions)">
       <summary>
-        <para>Exports the document&#39;s data to the specified stream in HTML format using the specified options.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Exports the document&#39;s data to the specified stream in HTML format using the specified options.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <param name="stream">A <see cref="T:System.IO.Stream"/> object to which the created HTML file should be sent.</param>
       <param name="options">A <see cref="T:DevExpress.XtraSpreadsheet.Export.HtmlDocumentExporterOptions"/> instance containing required export options.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.ExportToHtml(System.IO.Stream,System.Int32)">
       <summary>
-        <para>Exports the specified worksheet to the specified stream in HTML format.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Exports the specified worksheet to the specified stream in HTML format.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <param name="stream">A <see cref="T:System.IO.Stream"/> object to which the created HTML file should be sent.</param>
       <param name="sheetIndex">An integer value that is the index of the worksheet to be exported to HTML.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.ExportToHtml(System.String,DevExpress.Spreadsheet.Range)">
       <summary>
-        <para>Exports the specified range to the specified file in HTML format.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Exports the specified range to the specified file in HTML format.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <param name="fileName">A <see cref="T:System.String"/> value which contains the full path (including the file name and extension) specifying where the HTML file will be created.</param>
       <param name="range">A <see cref="T:DevExpress.Spreadsheet.Range"/> object to be exported to HTML.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.ExportToHtml(System.String,DevExpress.Spreadsheet.Worksheet)">
       <summary>
-        <para>Exports the specified worksheet to the specified file in HTML format.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Exports the specified worksheet to the specified file in HTML format.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <param name="fileName">A <see cref="T:System.String"/> value which contains the full path (including the file name and extension) specifying where the HTML file will be created.</param>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> object to be exported to HTML.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.ExportToHtml(System.String,DevExpress.XtraSpreadsheet.Export.HtmlDocumentExporterOptions)">
       <summary>
-        <para>Exports the document&#39;s data to the specified file in HTML format using the specified options.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Exports the document&#39;s data to the specified file in HTML format using the specified options.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <param name="fileName">A <see cref="T:System.String"/> value which contains the full path (including the file name and extension) specifying where the HTML file will be created.</param>
       <param name="options">A <see cref="T:DevExpress.XtraSpreadsheet.Export.HtmlDocumentExporterOptions"/> instance containing required export options.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.ExportToHtml(System.String,System.Int32)">
       <summary>
-        <para>Exports the specified worksheet to the specified file in HTML format. Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Exports the specified worksheet to the specified file in HTML format. You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <param name="fileName">A <see cref="T:System.String"/> value which contains the full path (including the file name and extension) specifying where the HTML file will be created.</param>
       <param name="sheetIndex">An integer value that is the index of the worksheet to be exported to HTML.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.ExportToPdf(System.IO.Stream)">
       <summary>
-        <para>Exports the workbook to the specified stream in PDF format.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Exports the workbook to the specified stream in PDF format.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="stream">A <see cref="T:System.IO.Stream"/> object to which the created PDF file should be sent.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.ExportToPdf(System.IO.Stream,DevExpress.XtraPrinting.PdfExportOptions)">
       <summary>
-        <para>Exports the workbook to the specified stream in PDF format using the specified options.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Exports the workbook to the specified stream in PDF format using the specified options.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <param name="stream">A <see cref="T:System.IO.Stream"/> object to which the created PDF file should be sent.</param>
       <param name="options">A <see cref="T:DevExpress.XtraPrinting.PdfExportOptions"/> object specifying export settings.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.ExportToPdf(System.String)">
       <summary>
-        <para>Exports the workbook to the specified file path in PDF format. Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Exports the workbook to the specified file path in PDF format. You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="fileName">A <see cref="T:System.String"/> value which specifies the file name (including the full path) for the created PDF file.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.ExportToPdf(System.String,DevExpress.XtraPrinting.PdfExportOptions)">
       <summary>
-        <para>Exports the workbook to the specified file path in PDF format using the specified options.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Exports the workbook to the specified file path in PDF format using the specified options.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <param name="fileName">A <see cref="T:System.String"/> which specifies the file name (including the full path) for the created PDF file.</param>
       <param name="options">A <see cref="T:DevExpress.XtraPrinting.PdfExportOptions"/> object specifying export settings.</param>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.ExternalWorkbooks">
       <summary>
-        <para>Provides access to the collection of source workbooks used for creating external references in the current workbook.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Provides access to the collection of source workbooks used for creating external references in the current workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>An ExternalWorkbookCollection object.</value>
     </member>
@@ -4166,60 +4166,61 @@
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.Functions">
       <summary>
-        <para>Provides access to the built-in functions in a workbook.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Provides access to the built-in functions in a workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>An object implementing the <see cref="T:DevExpress.Spreadsheet.Functions.WorkbookFunctions"/> interface.</value>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.GenerateMailMergeDocuments">
       <summary>
-        <para>Performs a mail merge and returns the collection of resulting workbooks.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Performs a mail merge and returns the collection of resulting workbooks.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <returns>An IList object that contains workbooks generated after a mail merge is preformed.</returns>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.GetService(System.Type)">
       <summary>
-        <para>Gets the service object of the specified type. Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Gets the service object of the specified type. You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="serviceType">An object that specifies the type of service object to get.</param>
       <returns>A service object of the specified type, or a null reference (Nothing in Visual Basic) if there is no service object of this type.</returns>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.GetService``1">
       <summary>
-        <para>Gets the specified service.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Gets the specified service.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
+      <typeparam name="T"></typeparam>
       <returns>A service object of the specified type or null for reference types and zero for numeric value types if a service is not available.</returns>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.GlobalCustomFunctions">
       <summary>
-        <para>Provides access to a collection of custom functions which are not limited in scope to the workbook in which the functions reside.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Provides access to a collection of custom functions which are not limited in scope to the workbook in which the functions reside.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Spreadsheet.Functions.CustomFunctionCollection"/> collection containing custom functions.</value>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.HasMacros">
       <summary>
-        <para>Determines whether the workbook has VBA projects (macros).Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Determines whether the workbook has VBA projects (macros).You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>true, if a workbook has macros; otherwise, false.</value>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.History">
       <summary>
-        <para>Provides access to the history of operations performed in a workbook.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Provides access to the history of operations performed in a workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Spreadsheet.SpreadsheetHistory"/> object.</value>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.InitializeDocument">
       <summary>
-        <para>Occurs before a document is loaded. Handle this event to set initial document settings.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs before a document is loaded. Handle this event to set initial document settings.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.InvalidFormatException">
       <summary>
-        <para>Fires when the supplied data could not be recognized as data in the assumed format for import.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Fires when the supplied data could not be recognized as data in the assumed format for import.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.IsDisposed">
       <summary>
-        <para>Gets whether a workbook has been disposed of.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Gets whether a workbook has been disposed of.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>true, if the workbook is disposed of; otherwise, false.</value>
     </member>
@@ -4231,7 +4232,7 @@
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.IsUpdateLocked">
       <summary>
-        <para>Returns a value indicating whether the <see cref="T:DevExpress.Spreadsheet.Workbook"/> object is locked for update. Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Returns a value indicating whether the <see cref="T:DevExpress.Spreadsheet.Workbook"/> object is locked for update. You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>true, if the object is locked; otherwise, false.</value>
     </member>
@@ -4259,7 +4260,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.LoadDocument(System.IO.Stream,DevExpress.Spreadsheet.DocumentFormat)">
       <summary>
-        <para>Loads a document from a stream, specifying the document format.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Loads a document from a stream, specifying the document format.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="stream">The stream from which to load a document.</param>
       <param name="format">One of the <see cref="T:DevExpress.Spreadsheet.DocumentFormat"/> members.</param>
@@ -4267,14 +4268,14 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.LoadDocument(System.String)">
       <summary>
-        <para>Loads a document from a file.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Loads a document from a file.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="fileName">A string specifying the file to load (including the full path).</param>
       <returns>true, if a document is loaded successfully; otherwise, false.</returns>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.LoadDocument(System.String,DevExpress.Spreadsheet.DocumentFormat)">
       <summary>
-        <para>Loads a document from a file, specifying the document format.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Loads a document from a file, specifying the document format.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="fileName">A string specifying the file to load (including the full path).</param>
       <param name="format">One of the <see cref="T:DevExpress.Spreadsheet.DocumentFormat"/> members.</param>
@@ -4282,13 +4283,13 @@
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.MailMergeDataMember">
       <summary>
-        <para>Gets or sets a specific data member in a data source that contains several tables or members.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Gets or sets a specific data member in a data source that contains several tables or members.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>A string value specifying the data source member.</value>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.MailMergeDataSource">
       <summary>
-        <para>Gets or sets the data source for the mail merge.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Gets or sets the data source for the mail merge.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>An object that specifies the data source from which the merged data is retrieved.</value>
     </member>
@@ -4306,7 +4307,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.Merge(DevExpress.Spreadsheet.IWorkbook[])">
       <summary>
-        <para>Combines the specified workbooks into a new document.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Combines the specified workbooks into a new document.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="workbooks">An array of <see cref="T:DevExpress.Spreadsheet.IWorkbook"/> objects that are workbooks to be merged.If one or more workbooks is null, a System.ArgumentNullException exception occurs.</param>
       <returns>A <see cref="T:DevExpress.Spreadsheet.Workbook"/> object that is the resulting workbook.</returns>
@@ -4319,51 +4320,51 @@
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.Modified">
       <summary>
-        <para>Gets or sets whether the workbook content was modified since it was last saved.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Gets or sets whether the workbook content was modified since it was last saved.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>true, if the workbook content was modified; otherwise, false.</value>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.ModifiedChanged">
       <summary>
-        <para>Occurs when the value of the <see cref="P:DevExpress.Spreadsheet.Workbook.Modified"/> property is changed.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs when the value of the <see cref="P:DevExpress.Spreadsheet.Workbook.Modified"/> property is changed.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.Options">
       <summary>
-        <para>Provides access to the variety of options which can be specified for the workbook.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Provides access to the variety of options which can be specified for the workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Spreadsheet.DocumentOptions"/> object containing various workbook options.</value>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.PanesFrozen">
       <summary>
-        <para>Occurs after a worksheet area has been frozen.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after a worksheet area has been frozen.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.PanesUnfrozen">
       <summary>
-        <para>Occurs after a frozen worksheet area has been unlocked.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after a frozen worksheet area has been unlocked.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.Path">
       <summary>
-        <para>Gets the file name into which the workbook is saved or from which it is loaded. Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Gets the file name into which the workbook is saved or from which it is loaded. You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>A <see cref="T:System.String"/> which specifies the current file name (including the path and the file extension).</value>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.PivotCaches">
       <summary>
-        <para>Returns a <see cref="T:DevExpress.Spreadsheet.PivotCacheCollection"/> collection that represents all the PivotTable caches in the specified workbook.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Returns a <see cref="T:DevExpress.Spreadsheet.PivotCacheCollection"/> collection that represents all the PivotTable caches in the specified workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Spreadsheet.PivotCacheCollection"/> that is the collection of data caches from the PivotTable reports in a workbook.</value>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.Print">
       <summary>
-        <para>Prints the document to the default printer.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Prints the document to the default printer.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.Print(System.Drawing.Printing.PrinterSettings)">
       <summary>
-        <para>Prints the document using the specified printer settings.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Prints the document using the specified printer settings.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <param name="printerSettings">A <see cref="T:System.Drawing.Printing.PrinterSettings"/> object that contains printer settings.</param>
     </member>
@@ -4377,18 +4378,18 @@
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.Range">
       <summary>
-        <para>Provides access to the cell range in the workbook.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Provides access to the cell range in the workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>An object implementing the <see cref="T:DevExpress.Spreadsheet.IRangeProvider"/> interface.</value>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.RangeCopied">
       <summary>
-        <para>Occurs after the range content has been copied.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after the range content has been copied.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.RangeCopying">
       <summary>
-        <para>Occurs before a cell range is copied in a worksheet.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs before a cell range is copied in a worksheet.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.RealTimeData">
@@ -4399,27 +4400,28 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.RemoveService(System.Type)">
       <summary>
-        <para>Removes the service of the specified type from the service container.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Removes the service of the specified type from the service container.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="serviceType">The type of service to remove.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.RemoveService(System.Type,System.Boolean)">
       <summary>
-        <para>Removes the service of the specified type from the service container.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Removes the service of the specified type from the service container.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="serviceType">The type of service to remove.</param>
       <param name="promote">true, to promote this request to any parent service containers; otherwise, false.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.ReplaceService``1(``0)">
       <summary>
-        <para>Performs a service substitution.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Performs a service substitution.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="newService">A service of the specified type that will be registered.</param>
+      <typeparam name="T"></typeparam>
       <returns>Previously registered service of the specified type, or null (Nothing in Visual Basic) if the service does not exist.</returns>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.RowsInserted">
       <summary>
-        <para>Occurs after new rows have been added to a worksheet.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after new rows have been added to a worksheet.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.RowsInserting">
@@ -4429,7 +4431,7 @@
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.RowsRemoved">
       <summary>
-        <para>Occurs after rows have been deleted from a worksheet.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after rows have been deleted from a worksheet.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.RowsRemoving">
@@ -4446,82 +4448,82 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.SaveDocument(System.IO.Stream,DevExpress.Spreadsheet.DocumentFormat)">
       <summary>
-        <para>Saves the workbook to a stream, specifying the export format.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Saves the workbook to a stream, specifying the export format.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="stream">The <see cref="T:System.IO.Stream"/> object to output the document to.</param>
       <param name="format">One of the <see cref="T:DevExpress.Spreadsheet.DocumentFormat"/> values that is the format of the exported document.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.SaveDocument(System.String)">
       <summary>
-        <para>Saves the document to the specified file. The file format is identified by the file extension.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Saves the document to the specified file. The file format is identified by the file extension.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="fileName">A string value specifying the path to a file into which to save the document.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.SaveDocument(System.String,DevExpress.Spreadsheet.DocumentFormat)">
       <summary>
-        <para>Saves the document to a file, specifying the document format.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Saves the document to a file, specifying the document format.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="fileName">A string value specifying the path to a file into which to save the document.</param>
       <param name="format">One of the <see cref="T:DevExpress.Spreadsheet.DocumentFormat"/> enumeration values.</param>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.SchemaChanged">
       <summary>
-        <para>Occurs when a worksheet or defined name is renamed, inserted or deleted.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs when a worksheet or defined name is renamed, inserted or deleted.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.ScrollPositionChanged">
       <summary>
-        <para>Occurs when the scroll position changes in a worksheet.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs when the scroll position changes in a worksheet.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.Search(System.String)">
       <summary>
-        <para>Performs a search in the current document using the default parameters. Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Performs a search in the current document by using the default parameters. You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
-      <param name="text">A <see cref="T:System.String"/> representing the search text.</param>
-      <returns>An object implementing the <see cref="T:System.Collections.IEnumerable"/> interface which is the collection of cells that match the search term.</returns>
+      <param name="text">Specifies the text to search.</param>
+      <returns>A collection of cells that match the search term.</returns>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.Search(System.String,DevExpress.Spreadsheet.SearchOptions)">
       <summary>
-        <para>Performs a search in the current document using specified options. Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Performs a search in the current document by using the specified options. You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
-      <param name="text">A <see cref="T:System.String"/> representing the search text.</param>
-      <param name="options">A <see cref="T:DevExpress.Spreadsheet.SearchOptions"/> instance containing required search options.</param>
-      <returns>An object implementing the <see cref="T:System.Collections.IEnumerable"/> interface which is the collection of cells that match the search term.</returns>
+      <param name="text">Specifies the text to search.</param>
+      <param name="options">Contains search options.</param>
+      <returns>A collection of cells that match the search term.</returns>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.SelectionChanged">
       <summary>
-        <para>Fires in response to changing cell selection in a worksheet.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Fires in response to changing cell selection in a worksheet.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.ShapeInserted">
       <summary>
-        <para>Occurs after a drawing object has been inserted into a worksheet.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after a drawing object has been inserted into a worksheet.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.ShapeRemoved">
       <summary>
-        <para>Occurs after a drawing object has been removed from a worksheet.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after a drawing object has been removed from a worksheet.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.ShapeRemoving">
       <summary>
-        <para>Occurs before a drawing object is removed from a worksheet.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs before a drawing object is removed from a worksheet.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.ShapesCopying">
       <summary>
-        <para>Occurs before a drawing object is copied in a worksheet.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs before a drawing object is copied in a worksheet.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.SheetInserted">
       <summary>
-        <para>Occurs after a new worksheet has been added to a workbook.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after a new worksheet has been added to a workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.SheetRemoved">
       <summary>
-        <para>Occurs after a worksheet has been removed from a workbook.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after a worksheet has been removed from a workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.SheetRemoving">
@@ -4531,29 +4533,29 @@
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.SheetRenamed">
       <summary>
-        <para>Occurs after a worksheet has been renamed.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs after a worksheet has been renamed.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.SheetRenaming">
       <summary>
-        <para>Occurs when a worksheet is about to be renamed.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Occurs when a worksheet is about to be renamed.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.Sheets">
       <summary>
-        <para>Provides access to a collection of all sheets contained in the workbook.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Provides access to a collection of all sheets contained in the workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Spreadsheet.SheetCollection"/> object specifying a sheet collection.</value>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.Styles">
       <summary>
-        <para>Provides access to the collection of cell styles in the current workbook.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Provides access to the collection of cell styles in the current workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Spreadsheet.StyleCollection"/> collection containing cell styles.</value>
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.TableStyles">
       <summary>
-        <para>Provides access to the collection of styles to format tables in the workbook.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Provides access to the collection of styles to format tables in the workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Spreadsheet.TableStyleCollection"/> object containing table styles.</value>
     </member>
@@ -4565,18 +4567,18 @@
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.Unit">
       <summary>
-        <para>Gets or sets a unit of measure used in the workbook.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Gets or sets a unit of measure used in the workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>The <see cref="T:DevExpress.Office.DocumentUnit"/> enumeration member.</value>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.UnitChanged">
       <summary>
-        <para>Fires after a unit of measurement used in the workbook is changed.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Fires after a unit of measurement used in the workbook is changed.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="E:DevExpress.Spreadsheet.Workbook.UnitChanging">
       <summary>
-        <para>Fires before a unit of measurement used within the workbook is changed.Use of this event in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Fires before a unit of measurement used within the workbook is changed.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this event in production code.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Spreadsheet.Workbook.Unprotect(System.String)">
@@ -4593,7 +4595,7 @@
     </member>
     <member name="P:DevExpress.Spreadsheet.Workbook.Worksheets">
       <summary>
-        <para>Gets a collection of worksheets contained in the workbook.Use of this property in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Gets a collection of worksheets contained in the workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this property in production code.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Spreadsheet.WorksheetCollection"/> object that is a collection of worksheets.</value>
     </member>
@@ -4604,21 +4606,21 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorkbookExtensions.Append(DevExpress.Spreadsheet.IWorkbook,DevExpress.Spreadsheet.IWorkbook[])">
       <summary>
-        <para>Appends all worksheets from the specified workbooks to the current workbook.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Appends all worksheets from the specified workbooks to the current workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="workbook">An object exposing the <see cref="T:DevExpress.Spreadsheet.IWorkbook"/> interface that is a master workbook to which other workbooks should be added.</param>
       <param name="workbooks">An array of <see cref="T:DevExpress.Spreadsheet.IWorkbook"/> objects that are workbooks that should be merged with a master workbook.If one or more workbooks is null, a System.ArgumentNullException exception occurs.</param>
     </member>
     <member name="M:DevExpress.Spreadsheet.WorkbookExtensions.Clone(DevExpress.Spreadsheet.IWorkbook)">
       <summary>
-        <para>Creates a workbook copy.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Creates a workbook copy. You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="workbook">An object exposing the <see cref="T:DevExpress.Spreadsheet.IWorkbook"/> interface that specifies the source workbook for copying.</param>
       <returns>A <see cref="T:DevExpress.Spreadsheet.Workbook"/> object that is the created copy.</returns>
     </member>
     <member name="M:DevExpress.Spreadsheet.WorkbookExtensions.Clone(DevExpress.Spreadsheet.IWorkbook,System.Boolean)">
       <summary>
-        <para>Creates a workbook copy and specifies whether the resulting document should contain formula results instead of formula expressions.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Creates a workbook copy and specifies whether the resulting document should contain formula results instead of formula expressions.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="workbook">An object exposing the <see cref="T:DevExpress.Spreadsheet.IWorkbook"/> interface that specifies the source workbook for copying.</param>
       <param name="copyFormulas">true, to copy formulas of the source workbook; otherwise, false. If false, only the calculated results are copied.</param>
@@ -4626,7 +4628,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorkbookExtensions.Merge(DevExpress.Spreadsheet.IWorkbook,DevExpress.Spreadsheet.WorkbookMergeOptions,DevExpress.Spreadsheet.IWorkbook[])">
       <summary>
-        <para>Merges data from multiple workbooks into a single workbook.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Merges data from multiple workbooks into a single workbook.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="workbook">An object exposing the <see cref="T:DevExpress.Spreadsheet.IWorkbook"/> interface that specifies a workbook to be merged.</param>
       <param name="options">A <see cref="T:DevExpress.Spreadsheet.WorkbookMergeOptions"/> object containing merge options.</param>
@@ -4640,7 +4642,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.CreateDataTable(DevExpress.Spreadsheet.Worksheet,DevExpress.Spreadsheet.Range,System.Boolean)">
       <summary>
-        <para>Creates an empty data table from the specified cell range.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Creates an empty data table from the specified cell range.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> object that is a worksheet containing the specified range.</param>
       <param name="range">A <see cref="T:DevExpress.Spreadsheet.Range"/> of cells that will be transformed to a data table.</param>
@@ -4649,7 +4651,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.CreateDataTable(DevExpress.Spreadsheet.Worksheet,DevExpress.Spreadsheet.Range,System.Boolean,System.Boolean)">
       <summary>
-        <para>Creates an empty data table from the specified cell range.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Creates an empty data table from the specified cell range.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> object that is a worksheet containing the specified range.</param>
       <param name="range">A <see cref="T:DevExpress.Spreadsheet.Range"/> of cells that will be transformed to a data table.</param>
@@ -4659,7 +4661,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.CreateDataTableExporter(DevExpress.Spreadsheet.Worksheet,DevExpress.Spreadsheet.Range,System.Data.DataTable,System.Boolean)">
       <summary>
-        <para>Creates an instance of the data table exporter.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Creates an instance of the data table exporter.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> interface for the worksheet which contains data for export.</param>
       <param name="range">A <see cref="T:DevExpress.Spreadsheet.Range"/> of cells containing data for export.</param>
@@ -4669,7 +4671,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Boolean[],System.Int32,System.Int32,System.Boolean)">
       <summary>
-        <para>Imports data from an one-dimensional array of boolean values.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from an one-dimensional array of boolean values.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="array">A one-dimensional array of boolean values that is the data source.</param>
@@ -4679,7 +4681,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Boolean[0:,0:],System.Int32,System.Int32)">
       <summary>
-        <para>Imports data from a two-dimensional array of boolean values.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a two-dimensional array of boolean values.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="twoDimensionalArray">A two-dimensional array of boolean values that is the data source.</param>
@@ -4688,7 +4690,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Byte[],System.Int32,System.Int32,System.Boolean)">
       <summary>
-        <para>Imports data from an one-dimensional array of bytes.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from an one-dimensional array of bytes.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="array">A one-dimensional array of bytes that is the data source.</param>
@@ -4698,7 +4700,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Byte[0:,0:],System.Int32,System.Int32)">
       <summary>
-        <para>Imports data from a two-dimensional array of bytes.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a two-dimensional array of bytes.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="twoDimensionalArray">A two-dimensional array of bytes that is the data source.</param>
@@ -4707,7 +4709,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Collections.IEnumerable,System.Int32,System.Int32,System.Boolean)">
       <summary>
-        <para>Imports data from a collection.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a collection.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="source">An object that exposes the <see cref="T:System.Collections.IEnumerable"/> interface provided by a collection of objects being imported.</param>
@@ -4717,7 +4719,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Collections.IEnumerable,System.Int32,System.Int32,System.Boolean,DevExpress.Spreadsheet.DataImportOptions)">
       <summary>
-        <para>Imports data from a collection.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a collection.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="source">An object that exposes the <see cref="T:System.Collections.IEnumerable"/> interface provided by a collection of objects being imported.</param>
@@ -4728,7 +4730,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Collections.IEnumerable,System.Int32,System.Int32,System.Boolean,DevExpress.Spreadsheet.IDataValueConverter)">
       <summary>
-        <para>Imports data from a collection.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a collection.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="source">An object that exposes the <see cref="T:System.Collections.IEnumerable"/> interface provided by a collection of objects being imported.</param>
@@ -4739,7 +4741,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Data.DataTable,System.Boolean,System.Int32,System.Int32)">
       <summary>
-        <para>Imports data from a data table.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a data table.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="source">A <see cref="T:System.Data.DataTable"/> object that is the data source for import.</param>
@@ -4749,7 +4751,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Data.DataTable,System.Boolean,System.Int32,System.Int32,DevExpress.Spreadsheet.DataImportOptions)">
       <summary>
-        <para>Imports data from a data table.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a data table.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="source">A <see cref="T:System.Data.DataTable"/> object that is the data source for import.</param>
@@ -4760,7 +4762,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Data.DataTable,System.Boolean,System.Int32,System.Int32,DevExpress.Spreadsheet.IDataValueConverter)">
       <summary>
-        <para>Imports data from a data table.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a data table.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="source">A <see cref="T:System.Data.DataTable"/> object that is the data source for import.</param>
@@ -4771,7 +4773,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Data.IDataReader,System.Boolean,System.Int32,System.Int32)">
       <summary>
-        <para>Imports data from a relational database.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a relational database.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="source">An object that exposes the <see cref="T:System.Data.IDataReader"/> interface, e.g., an object returned by the SqlCommand.ExecuteReader method.</param>
@@ -4781,7 +4783,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Data.IDataReader,System.Boolean,System.Int32,System.Int32,DevExpress.Spreadsheet.DataImportOptions)">
       <summary>
-        <para>Imports data from a relational database.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a relational database.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="source">An object that exposes the <see cref="T:System.Data.IDataReader"/> interface, e.g., an object returned by the SqlCommand.ExecuteReader method.</param>
@@ -4792,7 +4794,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Data.IDataReader,System.Boolean,System.Int32,System.Int32,DevExpress.Spreadsheet.IDataValueConverter)">
       <summary>
-        <para>Imports data from a relational database.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a relational database.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="source">An object that exposes the <see cref="T:System.Data.IDataReader"/> interface, e.g., an object returned by the SqlCommand.ExecuteReader method.</param>
@@ -4803,7 +4805,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.DateTime[],System.Int32,System.Int32,System.Boolean)">
       <summary>
-        <para>Imports data from an one-dimensional array of DateTime values.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from an one-dimensional array of DateTime values.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="array">A one-dimensional array of <see cref="T:System.DateTime"/> values that is the data source.</param>
@@ -4813,7 +4815,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.DateTime[0:,0:],System.Int32,System.Int32)">
       <summary>
-        <para>Imports data from a two-dimensional array of DateTime values.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a two-dimensional array of DateTime values.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="twoDimensionalArray">A two-dimensional array of <see cref="T:System.DateTime"/> values that is the data source.</param>
@@ -4822,7 +4824,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Decimal[],System.Int32,System.Int32,System.Boolean)">
       <summary>
-        <para>Imports data from an one-dimensional array of decimal values.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from an one-dimensional array of decimal values.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="array">A one-dimensional array of decimal values that is the data source.</param>
@@ -4832,7 +4834,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Decimal[0:,0:],System.Int32,System.Int32)">
       <summary>
-        <para>Imports data from a two-dimensional array of decimal values.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a two-dimensional array of decimal values.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="twoDimensionalArray">A two-dimensional array of decimal values that is the data source.</param>
@@ -4841,7 +4843,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Double[],System.Int32,System.Int32,System.Boolean)">
       <summary>
-        <para>Imports data from an one-dimensional array of double-precision floating point values.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from an one-dimensional array of double-precision floating point values.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="array">A one-dimensional array of double-precision floating point values that is the data source.</param>
@@ -4851,7 +4853,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Double[0:,0:],System.Int32,System.Int32)">
       <summary>
-        <para>Imports data from a two-dimensional array of double-precision floating point values.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a two-dimensional array of double-precision floating point values.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="twoDimensionalArray">A two-dimensional array of double-precision floating point values that is the data source.</param>
@@ -4860,7 +4862,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Int16[],System.Int32,System.Int32,System.Boolean)">
       <summary>
-        <para>Imports data from an one-dimensional array of short integers.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from an one-dimensional array of short integers.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="array">A one-dimensional array of short integers that is the data source.</param>
@@ -4870,7 +4872,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Int16[0:,0:],System.Int32,System.Int32)">
       <summary>
-        <para>Imports data from a two-dimensional array of integers.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a two-dimensional array of integers.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="twoDimensionalArray">A two-dimensional array of integers that is the data source.</param>
@@ -4879,7 +4881,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Int32[],System.Int32,System.Int32,System.Boolean)">
       <summary>
-        <para>Imports data from an one-dimensional array of integers.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from an one-dimensional array of integers.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="array">A one-dimensional array of integers that is the data source.</param>
@@ -4889,7 +4891,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Int32[0:,0:],System.Int32,System.Int32)">
       <summary>
-        <para>Imports data from a two-dimensional array of integers.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a two-dimensional array of integers.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="twoDimensionalArray">A two-dimensional array of integers that is the data source.</param>
@@ -4898,7 +4900,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Int64[],System.Int32,System.Int32,System.Boolean)">
       <summary>
-        <para>Imports data from an one-dimensional array of long integers.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from an one-dimensional array of long integers.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="array">A one-dimensional array of long integers that is the data source.</param>
@@ -4908,7 +4910,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Int64[0:,0:],System.Int32,System.Int32)">
       <summary>
-        <para>Imports data from a two-dimensional array of long integers.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a two-dimensional array of long integers.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="twoDimensionalArray">A two-dimensional array of long integers that is the data source.</param>
@@ -4917,7 +4919,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Object,System.Int32,System.Int32)">
       <summary>
-        <para>Imports data from a data source.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a data source.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="dataSource">An object that is the data source for import.</param>
@@ -4926,7 +4928,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Object,System.Int32,System.Int32,DevExpress.Spreadsheet.DataSourceImportOptions)">
       <summary>
-        <para>Imports data from a data source.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a data source.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="dataSource">An object that is the data source for import.</param>
@@ -4936,7 +4938,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Object[],System.Int32,System.Int32,System.Boolean)">
       <summary>
-        <para>Imports data from an one-dimensional array of objects.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from an one-dimensional array of objects.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="array">A one-dimensional array of objects that is the data source.</param>
@@ -4946,7 +4948,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Object[],System.Int32,System.Int32,System.Boolean,DevExpress.Spreadsheet.DataImportOptions)">
       <summary>
-        <para>Imports data from an one-dimensional array of objects.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from an one-dimensional array of objects.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="array">A one-dimensional array of objects that is the data source.</param>
@@ -4957,7 +4959,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Object[],System.Int32,System.Int32,System.Boolean,DevExpress.Spreadsheet.IDataValueConverter)">
       <summary>
-        <para>Imports data from an one-dimensional array of objects.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from an one-dimensional array of objects.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="array">A one-dimensional array of objects that is the data source.</param>
@@ -4968,7 +4970,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Object[0:,0:],System.Int32,System.Int32)">
       <summary>
-        <para>Imports data from a two-dimensional array of objects.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a two-dimensional array of objects.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="twoDimensionalArray">A two-dimensional array of objects that is the source of data.</param>
@@ -4977,7 +4979,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Object[0:,0:],System.Int32,System.Int32,DevExpress.Spreadsheet.DataImportOptions)">
       <summary>
-        <para>Imports data from a two-dimensional array of objects.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a two-dimensional array of objects.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="twoDimensionalArray">A two-dimensional array of objects that is the source of data.</param>
@@ -4987,7 +4989,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Object[0:,0:],System.Int32,System.Int32,DevExpress.Spreadsheet.IDataValueConverter)">
       <summary>
-        <para>Imports data from a two-dimensional array of objects.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a two-dimensional array of objects.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="twoDimensionalArray">A two-dimensional array of objects that is the data source.</param>
@@ -4997,7 +4999,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Single[],System.Int32,System.Int32,System.Boolean)">
       <summary>
-        <para>Imports data from an one-dimensional array of single-precision floating point values.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from an one-dimensional array of single-precision floating point values.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="array">A one-dimensional array of single-precision floating point values that is the data source.</param>
@@ -5007,7 +5009,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.Single[0:,0:],System.Int32,System.Int32)">
       <summary>
-        <para>Imports data from a two-dimensional array of single-precision floating point values.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a two-dimensional array of single-precision floating point values.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="twoDimensionalArray">A two-dimensional array of single-precision floating point values that is the data source.</param>
@@ -5016,7 +5018,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.String[],System.Int32,System.Int32,System.Boolean)">
       <summary>
-        <para>Imports data from an one-dimensional array of strings.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from an one-dimensional array of strings.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="array">A one-dimensional array of strings that is the data source.</param>
@@ -5026,7 +5028,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.String[0:,0:],System.Int32,System.Int32)">
       <summary>
-        <para>Imports data from a two-dimensional array of strings.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a two-dimensional array of strings.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="twoDimensionalArray">A two-dimensional array of strings that is the data source.</param>
@@ -5035,7 +5037,7 @@
     </member>
     <member name="M:DevExpress.Spreadsheet.WorksheetExtensions.Import(DevExpress.Spreadsheet.Worksheet,System.String[0:,0:],System.Int32,System.Int32,DevExpress.Spreadsheet.DataImportOptions)">
       <summary>
-        <para>Imports data from a two-dimensional array of strings.Use of this method in production code requires a license to the DevExpress Office File API or the DevExpress Universal Subscription.</para>
+        <para>Imports data from a two-dimensional array of strings.You require a license to the DevExpress Office File API or DevExpress Universal Subscription to use this method in production code.</para>
       </summary>
       <param name="sheet">A <see cref="T:DevExpress.Spreadsheet.Worksheet"/> that is the worksheet to which the data is imported.</param>
       <param name="twoDimensionalArray">A two-dimensional array of strings that is the data source.</param>
@@ -5137,6 +5139,7 @@
       <summary>
         <para>Base class for unit converters.</para>
       </summary>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.UnitConversion.BaseUnitsConverter`1.Convert(System.Collections.Generic.IList{System.Double},`0,`0)">
       <summary>
@@ -5770,6 +5773,7 @@
       <summary>
         <para>Base class for prefix converters.</para>
       </summary>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.UnitConversion.PrefixUnitsConverter`1.Convert(System.Collections.Generic.IList{System.Double},`0)">
       <summary>
@@ -5890,6 +5894,7 @@
       <summary>
         <para>Contains the unit of measurement and its value.</para>
       </summary>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.UnitConversion.QuantityValue`1.op_Addition(DevExpress.UnitConversion.QuantityValue{`0},DevExpress.UnitConversion.QuantityValue{`0})">
       <summary>

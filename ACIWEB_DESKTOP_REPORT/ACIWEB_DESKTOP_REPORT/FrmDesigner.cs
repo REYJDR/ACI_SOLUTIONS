@@ -143,6 +143,28 @@ namespace ACIWEB_DESKTOP_REPORT
 
                     }
                     break;
+
+                case 3://design for sage
+                    {
+                        if (checkedListReportCustom.CheckedItems.Count >= 1)
+                        {
+                            for (int i = 0; i + 1 <= checkedListReportCustom.Items.Count; i++)
+                            {
+                                if (checkedListReportCustom.GetItemCheckState(i).ToString() == "Checked")
+                                {
+
+                                    reportName = checkedListReportCustom.Items[i].ToString();
+
+
+                                }
+
+
+                            }
+
+                        }
+
+                    }
+                    break;
             }
                        
 
@@ -215,6 +237,34 @@ namespace ACIWEB_DESKTOP_REPORT
                     }
                     break;
 
+                case 3: //design for customs
+                    {
+                        bool exists = Directory.Exists(@"C:\\ACIDesktopReport\ReportDesigner\CUSTOMS\");
+
+                        if (!exists)
+                        {
+                            Directory.CreateDirectory(@"C:\\ACIDesktopReport\ReportDesigner\CUSTOMS\");
+                        }
+
+                       
+                        checkedListReportCustom.Items.Clear();
+
+                        string[] files = Directory.GetFiles(@"C:\\ACIDesktopReport\ReportDesigner\CUSTOMS\", "*.repx");
+
+                        string filename;
+
+                        for (int i = 0; i < files.Length; i++)
+                        {
+
+                            filename = Path.GetFileNameWithoutExtension(files[i]);
+                            checkedListReportCustom.Items.Add(filename);
+
+
+
+                        }
+
+                    }
+                    break;
 
 
             }
@@ -322,7 +372,7 @@ namespace ACIWEB_DESKTOP_REPORT
                 {
                     ReportName = String.Concat(@"C:\\ACIDesktopReport\ReportDesigner\ACIWEB\", ReportName, ".repx");
                     report.LoadLayout(ReportName);
-                    report.CreateDocument();
+                    //report.CreateDocument();
 
                     // Create a new End-User Report Designer form.
                     XRDesignForm designForm = new XRDesignForm();
@@ -384,7 +434,7 @@ namespace ACIWEB_DESKTOP_REPORT
             try
             {
 
-                    XtraReportSage report = new XtraReportSage();
+                XtraReportSage report = new XtraReportSage();
                 ReportDesignTool dt = new ReportDesignTool(report);
 
                 string ReportName = GetReportName();
@@ -393,7 +443,7 @@ namespace ACIWEB_DESKTOP_REPORT
                 {
                     ReportName = String.Concat(@"C:\\ACIDesktopReport\ReportDesigner\SAGE\", ReportName, ".repx");
                     report.LoadLayout(ReportName);
-                    report.CreateDocument();
+                  //  report.CreateDocument();
 
                     // Create a new End-User Report Designer form.
                     XRDesignForm designForm = new XRDesignForm();
@@ -509,8 +559,7 @@ namespace ACIWEB_DESKTOP_REPORT
             setTemplateList();
 
         }
-
-
+        
         private void setTemplateList()
         {
             string[] fileMask = comboBoxRepType.SelectedItem.ToString().Split('_');
@@ -758,6 +807,150 @@ namespace ACIWEB_DESKTOP_REPORT
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNewCustom_Click(object sender, EventArgs e)
+        {
+            XtraReportCustoms report = new XtraReportCustoms();
+            DbQuerySage.repPreview = null;
+
+
+            report.CreateDocument();
+           
+            
+            XRDesignRibbonForm designForm = new XRDesignRibbonForm();
+            designForm.DesignMdiController.DataSourceWizardSettings.SqlWizardSettings.EnableCustomSql = true;
+            designForm.DesignMdiController.OpenReport(report);
+            designForm.ShowDialog();
+
+        }
+
+        private void btnEditCustom_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                XtraReportCustoms report = new XtraReportCustoms();
+                ReportDesignTool dt = new ReportDesignTool(report);
+
+                string ReportName = GetReportName();
+
+                if (ReportName != "")
+                {
+                    ReportName = String.Concat(@"C:\\ACIDesktopReport\ReportDesigner\CUSTOMS\", ReportName, ".repx");
+                    report.LoadLayout(ReportName);
+                    report.RequestParameters = true;
+                   // report.CreateDocument();
+
+
+                    // Create a new End-User Report Designer form.
+                    XRDesignForm designForm = new XRDesignForm();
+                    designForm.DesignMdiController.DataSourceWizardSettings.SqlWizardSettings.EnableCustomSql = true;
+                    DevExpress.XtraReports.Configuration.Settings.Default.StorageOptions.RootDirectory = @"C:\\ACIDesktopReport\ReportDesigner\CUSTOMS";
+
+
+                    // Handle the DesignPanelLoaded event before opening a report in the Report Designer
+                    designForm.FormClosed += DesignMdiController_FormClosed;
+
+                    // Create a new blank report and show it the Report Designer dialog window.
+                    designForm.OpenReport(report);
+                    designForm.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("You must select a template to edit", "Warning");
+
+                }
+            }
+            catch (Exception theException)
+            {
+                String errorMessage;
+                errorMessage = "Error: ";
+                errorMessage = String.Concat(errorMessage, theException.Message);
+                errorMessage = String.Concat(errorMessage, " Line: ");
+                errorMessage = String.Concat(errorMessage, theException.Source);
+
+                MessageBox.Show(errorMessage, "Error");
+            }
+        }
+
+        private void btnDelCustom_Click(object sender, EventArgs e)
+        {
+            string reportName = GetReportName();
+            string reportToDelete = String.Concat(@"C:\\ACIDesktopReport\ReportDesigner\CUSTOMS\", reportName, ".repx");
+
+
+            try
+            {
+
+                if (reportName != "")
+                {
+
+                    DialogResult dr = MessageBox.Show("Do you want to delete this report desing ?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        if (File.Exists(reportToDelete))
+                        {
+                            File.Delete(reportToDelete);
+                            InitDesignerRepVal();
+                        }
+
+                    }
+
+
+                }
+                else
+                {
+                    MessageBox.Show("A report design must be selected", "Warning");
+
+                }
+
+
+
+            }
+            catch (Exception theException)
+            {
+                String errorMessage;
+                errorMessage = "Error: ";
+                errorMessage = String.Concat(errorMessage, theException.Message);
+                errorMessage = String.Concat(errorMessage, " Line: ");
+                errorMessage = String.Concat(errorMessage, theException.Source);
+
+                MessageBox.Show(errorMessage, "Error");
+            }
+        }
+
+        private void btnRefreshCustom_Click(object sender, EventArgs e)
+        {
+            InitDesignerRepVal();
+        }
+
+        private void checkedListReportCustom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (checkedListReportCustom.CheckedItems.Count >= 1) //leo que la lista tenga al menos un checkbox tildado
+            {
+                //leo segun la cantidad total de items que tenga la lista
+                for (int i = 0; i + 1 <= checkedListReportCustom.Items.Count; i++)
+                {
+                    //comparo el valor del item que acabo de check con el que estoy leyendo.
+                    if (checkedListReportCustom.SelectedIndex.ToString() != checkedListReportCustom.Items[i].ToString())
+                    {
+
+                        // si los valores difieren cambio el estado del check 
+                        checkedListReportCustom.SetItemChecked(i, false);
+
+                    }
+
+                }
+
+            }
         }
     }
 }

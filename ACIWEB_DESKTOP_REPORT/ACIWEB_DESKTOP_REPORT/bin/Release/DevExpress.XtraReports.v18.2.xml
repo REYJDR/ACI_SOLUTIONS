@@ -7130,6 +7130,7 @@
         <para></para>
       </summary>
       <param name="name"></param>
+      <typeparam name="T"></typeparam>
       <returns></returns>
     </member>
     <member name="M:DevExpress.XtraReports.ReportInitializer.GetDataSource(System.String)">
@@ -7144,6 +7145,7 @@
         <para></para>
       </summary>
       <param name="name"></param>
+      <typeparam name="T"></typeparam>
       <returns></returns>
     </member>
     <member name="M:DevExpress.XtraReports.ReportInitializer.GetFormattingRule(System.String)">
@@ -7787,13 +7789,13 @@
     </member>
     <member name="M:DevExpress.XtraReports.UI.Band.ToImage">
       <summary>
-        <para>Replaces the  method.</para>
+        <para>Replaces the XRControl.ToImage method.</para>
       </summary>
       <returns>A <see cref="T:System.Drawing.Image"/> object.</returns>
     </member>
     <member name="M:DevExpress.XtraReports.UI.Band.ToImage(System.Drawing.Text.TextRenderingHint)">
       <summary>
-        <para>Replaces the  method.</para>
+        <para>Replaces the XRControl.ToImage method.</para>
       </summary>
       <param name="textRenderingHint">One of the <see cref="T:System.Drawing.Text.TextRenderingHint"/> values that specifies the text rendering mode.</param>
       <returns>A <see cref="T:System.Drawing.Image"/> object.</returns>
@@ -8807,7 +8809,7 @@
     </member>
     <member name="P:DevExpress.XtraReports.UI.DetailBand.PrintOnEmptyDataSource">
       <summary>
-        <para>For internal use.</para>
+        <para>Use the <see cref="P:DevExpress.XtraReports.UI.ReportPrintOptions.DetailCountOnEmptyDataSource"/> property instead.</para>
       </summary>
       <value></value>
     </member>
@@ -9259,7 +9261,7 @@
     </member>
     <member name="P:DevExpress.XtraReports.UI.GetValueEventArgs.Row">
       <summary>
-        <para>Provides access to a data row whose data can be used in calculating a custom value for a calculated field in the <see cref="E:DevExpress.XtraReports.UI.CalculatedField.GetValue"/> event handler.</para>
+        <para>Provides access to a data row whose data can be used to calculate a calculated field&#39;s custom value in the <see cref="E:DevExpress.XtraReports.UI.CalculatedField.GetValue"/> event handler.</para>
       </summary>
       <value>A <see cref="T:System.Object"/> representing a data row.</value>
     </member>
@@ -13504,6 +13506,7 @@
       <summary>
         <para>Returns a collection that contains all controls found within <see cref="T:DevExpress.XtraReports.UI.XRControl"/> (within a report).</para>
       </summary>
+      <typeparam name="T"></typeparam>
       <returns>A collection of objects with the specified type.</returns>
     </member>
     <member name="P:DevExpress.XtraReports.UI.XRControl.AnchorHorizontal">
@@ -17170,7 +17173,7 @@
     </member>
     <member name="P:DevExpress.XtraReports.UI.XRRichText.Text">
       <summary>
-        <para>Specifies the control&#39;s text.</para>
+        <para>For internal use.</para>
       </summary>
       <value>A <see cref="T:System.String"/> value containing the text associated with the control.</value>
     </member>
@@ -17416,6 +17419,7 @@
         <para>For internal use.</para>
       </summary>
       <param name="func"></param>
+      <typeparam name="T"></typeparam>
       <returns></returns>
     </member>
     <member name="M:DevExpress.XtraReports.UI.XRScriptsBase.GenerateDefaultEventScript(System.String)">
@@ -18097,9 +18101,9 @@
     </member>
     <member name="P:DevExpress.XtraReports.UI.XRTable.ProcessHiddenCellMode">
       <summary>
-        <para>Specifies how to distribute a space remaining after hiding table cells among the table&#39;s visible cells.</para>
+        <para>Specifies how to distribute the space that remains after some of the row&#39;s visible cells are hidden. Affects only the table row whose cells were hidden.</para>
       </summary>
-      <value>A <see cref="T:DevExpress.XtraReports.UI.ProcessHiddenCellMode"/> enumeration value.</value>
+      <value>An enumeration value that specifies how to distribute the space.</value>
     </member>
     <member name="P:DevExpress.XtraReports.UI.XRTable.RightToLeft">
       <summary>
@@ -18932,7 +18936,7 @@
     </member>
     <member name="T:DevExpress.XtraReports.UI.XtraReport">
       <summary>
-        <para>The base class for any report created using the XtraReports Suite.</para>
+        <para>A base class for a report.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraReports.UI.XtraReport.#ctor">
@@ -19058,9 +19062,9 @@
     </member>
     <member name="P:DevExpress.XtraReports.UI.XtraReport.DisplayName">
       <summary>
-        <para>Specifies text displayed in the report title of a corresponding End-User Designer&#39;s tab, as well as the default file name of the exported document.</para>
+        <para>Gets or sets the report&#39;s display name. The display name appears in the End-User Designer&#39;s report tab, and serves as the exported document&#39;s default file name.</para>
       </summary>
-      <value>A <see cref="T:System.String"/> value, specifying the report&#39;s display name.</value>
+      <value>The report&#39;s display name.</value>
     </member>
     <member name="P:DevExpress.XtraReports.UI.XtraReport.DocumentExportMode">
       <summary>
@@ -19530,9 +19534,9 @@
     </member>
     <member name="P:DevExpress.XtraReports.UI.XtraReport.Margins">
       <summary>
-        <para>Gets or sets the margins of the report&#39;s pages (measured in report units).</para>
+        <para>Gets or sets the report&#39;s page margins.</para>
       </summary>
-      <value>A <see cref="T:System.Drawing.Printing.Margins"/> object specifying the margins of a report page.</value>
+      <value>The report&#39;s page margins.</value>
     </member>
     <member name="P:DevExpress.XtraReports.UI.XtraReport.MasterReport">
       <summary>
@@ -19590,9 +19594,9 @@
     </member>
     <member name="P:DevExpress.XtraReports.UI.XtraReport.PaperKind">
       <summary>
-        <para>Gets or sets the type of paper for the report.</para>
+        <para>Gets or sets the report&#39;s paper kind.</para>
       </summary>
-      <value>A <see cref="T:System.Drawing.Printing.PaperKind"/> enumeration value. By default, this property is set to PaperKind.Letter.</value>
+      <value>The report&#39;s paper kind.</value>
     </member>
     <member name="P:DevExpress.XtraReports.UI.XtraReport.PaperName">
       <summary>
@@ -19955,7 +19959,7 @@
     </member>
     <member name="P:DevExpress.XtraReports.UI.XtraReportBase.DetailPrintCountOnEmptyDataSource">
       <summary>
-        <para>For internal use.</para>
+        <para>Use the <see cref="P:DevExpress.XtraReports.UI.ReportPrintOptions.DetailCountOnEmptyDataSource"/> property instead.</para>
       </summary>
       <value></value>
     </member>
@@ -19995,6 +19999,7 @@
         <para>Gets the current value (strongly typed) of the specified column in the report&#39;s <see cref="P:DevExpress.XtraReports.UI.XtraReportBase.DataSource"/>.</para>
       </summary>
       <param name="columnName">A <see cref="T:System.String"/> value, specifying the column name.</param>
+      <typeparam name="T"></typeparam>
       <returns>A &lt;T&gt; object that corresponds to the current value of the specified column in the data source. If the specified column was not found, this method returns null (Nothing in Visual Basic).</returns>
     </member>
     <member name="M:DevExpress.XtraReports.UI.XtraReportBase.GetCurrentRow">
@@ -20015,6 +20020,7 @@
         <para>Gets the next value (strongly typed) of the specified column in the report&#39;s <see cref="P:DevExpress.XtraReports.UI.XtraReportBase.DataSource"/>.</para>
       </summary>
       <param name="columnName">A <see cref="T:System.String"/> value, specifying the name of the column whose value to be obtained.</param>
+      <typeparam name="T"></typeparam>
       <returns>A &lt;T&gt; object that corresponds to the next value of the specified column in the data source. If the specified column was not found, this method returns null (Nothing in Visual Basic).</returns>
     </member>
     <member name="M:DevExpress.XtraReports.UI.XtraReportBase.GetNextRow">
@@ -20035,6 +20041,7 @@
         <para>Gets the previous value (strongly typed) of the specified column in the report&#39;s <see cref="P:DevExpress.XtraReports.UI.XtraReportBase.DataSource"/>.</para>
       </summary>
       <param name="columnName">A <see cref="T:System.String"/>, specifying the name of the column whose value to be obtained.</param>
+      <typeparam name="T"></typeparam>
       <returns>A &lt;T&gt; object that corresponds to the previous value of the specified column in the data source. If the specified column was not found, this method returns null (Nothing in Visual Basic).</returns>
     </member>
     <member name="M:DevExpress.XtraReports.UI.XtraReportBase.GetPreviousRow">
@@ -20069,7 +20076,7 @@
     </member>
     <member name="P:DevExpress.XtraReports.UI.XtraReportBase.PrintOnEmptyDataSource">
       <summary>
-        <para>For internal use.</para>
+        <para>Use the <see cref="P:DevExpress.XtraReports.UI.ReportPrintOptions.PrintOnEmptyDataSource"/> property instead.</para>
       </summary>
       <value></value>
     </member>
@@ -21811,6 +21818,7 @@
       <summary>
         <para>Provides a presenter to the Add Grouping Levels (Multi-Query Version) page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.AddGroupingLevelPage`1.#ctor(DevExpress.XtraReports.Wizards.Views.IAddGroupingLevelPageView,DevExpress.XtraReports.Wizards.IColumnInfoCache)">
       <summary>
@@ -21851,6 +21859,7 @@
       <summary>
         <para></para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ChooseDataSourceTypePageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IChooseDataSourceTypePageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.Services.IConnectionStorageService,DevExpress.Entity.ProjectModel.ISolutionTypesProvider,DevExpress.DataAccess.Wizard.SqlWizardOptions,DevExpress.DataAccess.Wizard.Services.DataSourceTypes)">
       <summary>
@@ -21873,6 +21882,7 @@
       <summary>
         <para>Provides a presenter to the Select the Data Context page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ChooseEFConnectionStringPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IChooseEFConnectionStringPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.Data.Entity.IConnectionStringsProvider,DevExpress.DataAccess.Wizard.Services.IConnectionStorageService)">
       <summary>
@@ -21903,6 +21913,7 @@
       <summary>
         <para>Provides a presenter to the Select a Data Member page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ChooseEFDataMemberPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IChooseEFDataMemberPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext)">
       <summary>
@@ -21941,6 +21952,7 @@
       <summary>
         <para></para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ChooseJsonSchemaPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IChooseJsonSchemaPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.XtraReports.Wizards.ReportWizardSettings)">
       <summary>
@@ -21972,6 +21984,7 @@
       <summary>
         <para>Provides a presenter to the Select the Data Binding Mode page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ChooseObjectBindingModePageEx`1.#ctor(DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.Views.IChooseObjectBindingModePageView,DevExpress.DataAccess.Wizard.OperationMode)">
       <summary>
@@ -22012,6 +22025,7 @@
       <summary>
         <para>Provides a presenter to the Select a Data Source Constructor page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ChooseObjectConstructorPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IChooseObjectConstructorPageView,DevExpress.DataAccess.Wizard.OperationMode)">
       <summary>
@@ -22050,6 +22064,7 @@
       <summary>
         <para>Provides a presenter to the Select a Data Source Member page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ChooseObjectMemberPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IChooseObjectMemberPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.OperationMode)">
       <summary>
@@ -22090,6 +22105,7 @@
       <summary>
         <para>Provides a presenter to the Select a Data Source Type page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ChooseObjectTypePageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IChooseObjectTypePageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.OperationMode)">
       <summary>
@@ -22130,6 +22146,7 @@
       <summary>
         <para>Provides a presenter to the Choose a Report Color Scheme page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ChooseReportColorSchemePage`1.#ctor(DevExpress.XtraReports.Wizards.Views.IChooseReportColorSchemePageView,DevExpress.XtraReports.Wizards.ColorSchemes.IColorSchemeStorage)">
       <summary>
@@ -22170,6 +22187,7 @@
       <summary>
         <para>Provides a presenter to the Choose a Report Layout page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ChooseReportLayoutPage`1.#ctor(DevExpress.XtraReports.Wizards.Views.IChooseReportLayoutPageView)">
       <summary>
@@ -22209,6 +22227,7 @@
       <summary>
         <para>Provides a presenter to the Choose a Report Style page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ChooseReportStylePage`1.#ctor(DevExpress.XtraReports.Wizards.Views.IChooseReportStylePageView)">
       <summary>
@@ -22248,6 +22267,7 @@
       <summary>
         <para>Provides a presenter to the Choose a Report Template page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ChooseReportTemplatePage`1.#ctor(DevExpress.XtraReports.Wizards.Views.IChooseReportTemplatePageView,DevExpress.XtraReports.Wizards.Templates.ITemplateStorage,DevExpress.DataAccess.Wizard.Services.IConnectionStorageService,DevExpress.DataAccess.Wizard.Services.DataSourceTypes,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.Entity.ProjectModel.ISolutionTypesProvider)">
       <summary>
@@ -22305,6 +22325,7 @@
       <summary>
         <para>Provides a presenter to the Choose a Report Type page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ChooseReportTypePage`1.#ctor(DevExpress.XtraReports.Wizards.Views.IChooseReportTypePageView,DevExpress.DataAccess.Wizard.Services.IConnectionStorageService,DevExpress.DataAccess.Wizard.Services.DataSourceTypes,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.Entity.ProjectModel.ISolutionTypesProvider)">
       <summary>
@@ -22361,6 +22382,7 @@
       <summary>
         <para>Provides a presenter to the Specify Summary Options (Multi-Query Version) page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ChooseSummaryOptionsPage`1.#ctor(DevExpress.XtraReports.Wizards.Views.IChooseSummaryOptionsPageView,DevExpress.XtraReports.Wizards.IColumnInfoCache)">
       <summary>
@@ -22401,6 +22423,7 @@
       <summary>
         <para></para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ChooseXPObjectSourceConnectionPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IChooseConnectionPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.Services.IConnectionStorageService,DevExpress.DataAccess.Wizard.SqlWizardOptions,DevExpress.DataAccess.Wizard.SensitiveInfoSavingBehavior,DevExpress.XtraReports.Wizards.ReportWizardSettings)">
       <summary>
@@ -22429,6 +22452,7 @@
       <summary>
         <para>Provides a presenter to the Specify a Connection String page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ConfigureEFConnectionStringPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IConfigureEFConnectionStringPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.Services.IConnectionStorageService)">
       <summary>
@@ -22457,6 +22481,7 @@
       <summary>
         <para>Provides a presenter to the Configure Filters page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ConfigureEFFiltersPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IConfigureEFFiltersPageView,DevExpress.XtraReports.Wizards.ReportWizardSettings)">
       <summary>
@@ -22487,6 +22512,7 @@
       <summary>
         <para>Provides a presenter to the Bind to a Stored Procedure page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ConfigureEFStoredProceduresPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IConfigureEFStoredProceduresPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.Services.IParameterService)">
       <summary>
@@ -22515,6 +22541,7 @@
       <summary>
         <para>Provides a presenter to the Choose Columns page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ConfigureExcelFileColumnsPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IConfigureExcelFileColumnsPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext)">
       <summary>
@@ -22554,6 +22581,7 @@
       <summary>
         <para>This page is no longer used in the current Report Wizard implementation. Use the <see cref="T:DevExpress.XtraReports.Wizards.Presenters.MultiQueryConfigurePageEx`1"/> class instead (corresponding to the Create a Query or Select a Stored Procedure (Multi-Query Version) wizard page).</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ConfigureQueryPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IConfigureQueryPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.SqlWizardOptions,DevExpress.DataAccess.Sql.IDBSchemaProviderEx,DevExpress.DataAccess.Sql.IResultSchemaProvider,DevExpress.DataAccess.Wizard.Services.IParameterService,DevExpress.DataAccess.Wizard.Services.ICustomQueryValidator)">
       <summary>
@@ -22613,6 +22641,7 @@
       <summary>
         <para>Provides a presenter to the Specify Report Page Settings page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ConfigureReportPageSettingsPage`1.#ctor(DevExpress.XtraReports.Wizards.Views.IConfigureReportPageSettingsPageView)">
       <summary>
@@ -22652,6 +22681,7 @@
       <summary>
         <para>This page is no longer used in the current Report Wizard implementation. Use the <see cref="T:DevExpress.XtraReports.Wizards.Presenters.MultiQueryConfigureParametersPageEx`1"/> class instead (corresponding to the Configure Query Parameters wizard page).</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ConfigureSqlParametersPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IConfigureParametersPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.Services.IParameterService,DevExpress.DataAccess.Sql.IDBSchemaProviderEx,DevExpress.DataAccess.Sql.IResultSchemaProvider,DevExpress.DataAccess.Wizard.Services.ICustomQueryValidator,DevExpress.DataAccess.Wizard.SqlWizardOptions)">
       <summary>
@@ -22711,6 +22741,7 @@
       <summary>
         <para></para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ConfigureXPObjectSourceConnectionPropertiesPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IConnectionPropertiesPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.Services.IConnectionStorageService,DevExpress.DataAccess.Wizard.SqlWizardOptions,DevExpress.DataAccess.Wizard.SensitiveInfoSavingBehavior,System.Collections.Generic.List{DevExpress.DataAccess.UI.Wizard.ProviderLookupItem},DevExpress.XtraReports.Wizards.ReportWizardSettings)">
       <summary>
@@ -22734,6 +22765,7 @@
       <summary>
         <para>Provides a presenter to the Customize the Label Options page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.CustomizeLabelPage`1.#ctor(DevExpress.XtraReports.Wizards.Views.ICustomizeLabelPageView,DevExpress.XtraReports.Wizards.Labels.ILabelProductRepository)">
       <summary>
@@ -22788,6 +22820,7 @@
       <summary>
         <para>Provides a presenter to the Map Report Template Fields page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.MapReportTemplateFieldsPage`1.#ctor(DevExpress.XtraReports.Wizards.Views.IMapReportTemplateFieldsPageView)">
       <summary>
@@ -22827,6 +22860,7 @@
       <summary>
         <para>Provides a presenter to the Add Grouping Levels (Multi-Query Version) page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.MasterDetailAddGroupingLevelPage`1.#ctor(DevExpress.XtraReports.Wizards.Views.IMasterDetailAddGroupingLevelPageView)">
       <summary>
@@ -22866,6 +22900,7 @@
       <summary>
         <para>Provides a presenter to the Specify Summary Options (Multi-Query Version) page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.MasterDetailChooseSummaryOptionsPage`1.#ctor(DevExpress.XtraReports.Wizards.Views.IMasterDetailChooseSummaryOptionsPageView)">
       <summary>
@@ -23065,6 +23100,7 @@
       <summary>
         <para>Provides a presenter to the Choose Fields to Display in a Report (Multi-Query Version) page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.MasterDetailSelectDataMembersPage`1.#ctor(DevExpress.XtraReports.Wizards.Views.IMasterDetailSelectDataMembersPageView)">
       <summary>
@@ -23119,6 +23155,7 @@
       <summary>
         <para>Provides a presenter to the Create a Query or Select a Stored Procedure (Multi-Query Version) page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.MultiQueryConfigurePageEx`1.#ctor(DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.Views.IMultiQueryConfigurePageView,DevExpress.DataAccess.Sql.IDBSchemaProviderEx,DevExpress.DataAccess.Sql.IResultSchemaProvider,DevExpress.DataAccess.Wizard.Services.IParameterService)">
       <summary>
@@ -23172,6 +23209,7 @@
       <summary>
         <para>Provides a presenter to the Configure Query Parameters page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.MultiQueryConfigureParametersPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IMultiQueryConfigureParametersPageView,DevExpress.DataAccess.Wizard.Services.IParameterService,System.IServiceProvider,DevExpress.DataAccess.Sql.IDBSchemaProviderEx,DevExpress.DataAccess.Sql.IResultSchemaProvider,DevExpress.DataAccess.Wizard.Services.ICustomQueryValidator,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.SqlWizardOptions)">
       <summary>
@@ -23234,6 +23272,7 @@
       <summary>
         <para>Provides a presenter to the Choose Fields to Display in a Report (Obsolete) page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.MultiQuerySelectFieldsPage`1.#ctor(DevExpress.XtraReports.Wizards.Views.IMultiQuerySelectFieldsPageView)">
       <summary>
@@ -23280,6 +23319,7 @@
       <summary>
         <para>Provides a presenter to the Specify the Constructor Parameters page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ObjectConstructorParametersPageEx`1.#ctor(DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.Views.IObjectConstructorParametersPageView,DevExpress.DataAccess.Wizard.Services.IParameterService)">
       <summary>
@@ -23320,6 +23360,7 @@
       <summary>
         <para>Provides a presenter to the Specify the Member Parameters page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.ObjectMemberParametersPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.IObjectMemberParametersPageView,DevExpress.DataAccess.Wizard.Services.IParameterService,DevExpress.DataAccess.Wizard.OperationMode)">
       <summary>
@@ -23360,6 +23401,7 @@
       <summary>
         <para></para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.SaveXPObjectSourceConnectionPageEx`1.#ctor(DevExpress.DataAccess.Wizard.Views.ISaveConnectionPageView,DevExpress.DataAccess.Wizard.IWizardRunnerContext,DevExpress.DataAccess.Wizard.Services.IConnectionStorageService,DevExpress.DataAccess.Wizard.SqlWizardOptions,DevExpress.DataAccess.Wizard.SensitiveInfoSavingBehavior,DevExpress.XtraReports.Wizards.ReportWizardSettings)">
       <summary>
@@ -23394,6 +23436,7 @@
       <summary>
         <para>This page is no longer used in the current Report Wizard implementation. Use the <see cref="T:DevExpress.XtraReports.Wizards.Presenters.MultiQuerySelectFieldsPage`1"/> class instead (corresponding to the Choose Fields to Display in a Report (Multi-Query Version) wizard page).</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.SelectColumnsPage`1.#ctor(DevExpress.XtraReports.Wizards.Views.ISelectColumnsPageView)">
       <summary>
@@ -23440,6 +23483,7 @@
       <summary>
         <para>Provides a presenter to the Select the Label Type page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.SelectLabelTypePage`1.#ctor(DevExpress.XtraReports.Wizards.Views.ISelectLabelTypePageView,DevExpress.XtraReports.Wizards.Labels.ILabelProductRepository)">
       <summary>
@@ -23480,6 +23524,7 @@
       <summary>
         <para>Provides a presenter to the Set the Report Title page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.SetReportTitlePage`1.#ctor(DevExpress.XtraReports.Wizards.Views.ISetReportTitlePageView)">
       <summary>
@@ -23507,6 +23552,7 @@
       <summary>
         <para>Provides a presenter to the Specify Report Template Options page of the Report Wizard.</para>
       </summary>
+      <typeparam name="TModel"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Wizards.Presenters.SpecifyReportTemplateOptionsPage`1.#ctor(DevExpress.XtraReports.Wizards.Views.ISpecifyReportTemplateOptionsPageView)">
       <summary>
@@ -25640,7 +25686,7 @@
       <summary>
         <para>Specifies the JSON data source schema.</para>
       </summary>
-      <value>A <see cref="T:DevExpress.DataAccess.Json.JsonSchemaNode"/> value, specifying the JSON source schema.</value>
+      <value>The JSON source schema.</value>
     </member>
     <member name="P:DevExpress.XtraReports.Wizards.XtraReportModel.JsonSource">
       <summary>

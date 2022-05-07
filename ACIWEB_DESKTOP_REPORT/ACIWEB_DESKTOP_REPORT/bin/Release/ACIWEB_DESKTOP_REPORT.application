@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="ACIWEB_DESKTOP_REPORT.exe.manifest" size="155881">
+    <dependentAssembly dependencyType="install" codebase="ACIWEB_DESKTOP_REPORT.exe.manifest" size="156598">
       <assemblyIdentity name="ACIWEB_DESKTOP_REPORT.exe" version="6.0.4.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zJVb26uJUc00TIEs74qxZe9YcVQR9r5wS0z9rP4aENI=</dsig:DigestValue>
+        <dsig:DigestValue>WUrR2FqMg3AhcLv1W8FdX/sLh1bDXu1hPaVJAukdGGs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

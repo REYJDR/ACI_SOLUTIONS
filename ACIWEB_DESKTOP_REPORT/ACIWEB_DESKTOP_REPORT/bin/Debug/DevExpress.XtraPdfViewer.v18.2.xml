@@ -631,6 +631,12 @@
       </summary>
       <param name="control">A <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> that is the command owner.</param>
     </member>
+    <member name="P:DevExpress.XtraPdfViewer.Commands.PdfOutlinesTextSizeToLargeCommand.Id">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraPdfViewer.Commands.PdfOutlinesTextSizeToLargeCommand.MenuCaptionStringId">
       <summary>
         <para>Gets a string resource identifier of the menu caption of a command.</para>
@@ -648,6 +654,12 @@
       </summary>
       <param name="control">A <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> that is the command owner.</param>
     </member>
+    <member name="P:DevExpress.XtraPdfViewer.Commands.PdfOutlinesTextSizeToMediumCommand.Id">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraPdfViewer.Commands.PdfOutlinesTextSizeToMediumCommand.MenuCaptionStringId">
       <summary>
         <para>Gets a string resource identifier of the menu caption of a command.</para>
@@ -664,6 +676,12 @@
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPdfViewer.Commands.PdfOutlinesTextSizeToSmallCommand"/> class with the specified owner.</para>
       </summary>
       <param name="control">A <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> that is the command owner.</param>
+    </member>
+    <member name="P:DevExpress.XtraPdfViewer.Commands.PdfOutlinesTextSizeToSmallCommand.Id">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPdfViewer.Commands.PdfOutlinesTextSizeToSmallCommand.MenuCaptionStringId">
       <summary>
@@ -1026,6 +1044,12 @@
       </summary>
       <param name="control">A <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> that is the command owner.</param>
     </member>
+    <member name="P:DevExpress.XtraPdfViewer.Commands.PdfSetActualSizeZoomModeCommand.Id">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraPdfViewer.Commands.PdfSetActualSizeZoomModeCommand.MenuCaptionStringId">
       <summary>
         <para>Gets a string resource identifier of the menu caption of a command.</para>
@@ -1042,6 +1066,12 @@
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPdfViewer.Commands.PdfSetFitVisibleZoomModeCommand"/> class with the specified owner.</para>
       </summary>
       <param name="control">A <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> that is the command owner.</param>
+    </member>
+    <member name="P:DevExpress.XtraPdfViewer.Commands.PdfSetFitVisibleZoomModeCommand.Id">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPdfViewer.Commands.PdfSetFitVisibleZoomModeCommand.MenuCaptionStringId">
       <summary>
@@ -1060,6 +1090,12 @@
       </summary>
       <param name="control">A <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> that is the command owner.</param>
     </member>
+    <member name="P:DevExpress.XtraPdfViewer.Commands.PdfSetFitWidthZoomModeCommand.Id">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraPdfViewer.Commands.PdfSetFitWidthZoomModeCommand.MenuCaptionStringId">
       <summary>
         <para>Gets a string resource identifier of the menu caption of a command.</para>
@@ -1076,6 +1112,12 @@
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPdfViewer.Commands.PdfSetPageLevelZoomModeCommand"/> class with the specified owner.</para>
       </summary>
       <param name="control">A <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> that is the command owner.</param>
+    </member>
+    <member name="P:DevExpress.XtraPdfViewer.Commands.PdfSetPageLevelZoomModeCommand.Id">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPdfViewer.Commands.PdfSetPageLevelZoomModeCommand.MenuCaptionStringId">
       <summary>
@@ -1816,6 +1858,12 @@
       </summary>
       <param name="control">A <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> that is the command owner.</param>
     </member>
+    <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom100Command.Id">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom100Command.MenuCaptionStringId">
       <summary>
         <para>Gets a string resource identifier of a menu caption corresponding to <see cref="T:DevExpress.XtraPdfViewer.Commands.PdfZoom100Command"/>.</para>
@@ -1832,6 +1880,12 @@
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPdfViewer.Commands.PdfZoom10Command"/> class with the specified owner.</para>
       </summary>
       <param name="control">A <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> that is the command owner.</param>
+    </member>
+    <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom10Command.Id">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom10Command.MenuCaptionStringId">
       <summary>
@@ -1850,6 +1904,12 @@
       </summary>
       <param name="control">A <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> that is the command owner.</param>
     </member>
+    <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom125Command.Id">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom125Command.MenuCaptionStringId">
       <summary>
         <para>Gets a string resource identifier of a menu caption corresponding to <see cref="T:DevExpress.XtraPdfViewer.Commands.PdfZoom125Command"/>.</para>
@@ -1866,6 +1926,12 @@
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPdfViewer.Commands.PdfZoom150Command"/> class with the specified owner.</para>
       </summary>
       <param name="control">A <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> that is the command owner.</param>
+    </member>
+    <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom150Command.Id">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom150Command.MenuCaptionStringId">
       <summary>
@@ -1884,6 +1950,12 @@
       </summary>
       <param name="control">A <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> that is the command owner.</param>
     </member>
+    <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom200Command.Id">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom200Command.MenuCaptionStringId">
       <summary>
         <para>Gets a string resource identifier of a menu caption corresponding to <see cref="T:DevExpress.XtraPdfViewer.Commands.PdfZoom200Command"/>.</para>
@@ -1900,6 +1972,12 @@
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPdfViewer.Commands.PdfZoom25Command"/> class with the specified owner.</para>
       </summary>
       <param name="control">A <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> that is the command owner.</param>
+    </member>
+    <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom25Command.Id">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom25Command.MenuCaptionStringId">
       <summary>
@@ -1918,6 +1996,12 @@
       </summary>
       <param name="control">A <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> that is the command owner.</param>
     </member>
+    <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom400Command.Id">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom400Command.MenuCaptionStringId">
       <summary>
         <para>Gets a string resource identifier of a menu caption corresponding to <see cref="T:DevExpress.XtraPdfViewer.Commands.PdfZoom400Command"/>.</para>
@@ -1934,6 +2018,12 @@
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPdfViewer.Commands.PdfZoom500Command"/> class with the specified owner.</para>
       </summary>
       <param name="control">A <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> that is the command owner.</param>
+    </member>
+    <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom500Command.Id">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom500Command.MenuCaptionStringId">
       <summary>
@@ -1952,6 +2042,12 @@
       </summary>
       <param name="control">A <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> that is the command owner.</param>
     </member>
+    <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom50Command.Id">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom50Command.MenuCaptionStringId">
       <summary>
         <para>Gets a string resource identifier of a menu caption corresponding to <see cref="T:DevExpress.XtraPdfViewer.Commands.PdfZoom50Command"/>.</para>
@@ -1968,6 +2064,12 @@
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPdfViewer.Commands.PdfZoom75Command"/> class with the specified owner.</para>
       </summary>
       <param name="control">A <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> that is the command owner.</param>
+    </member>
+    <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom75Command.Id">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPdfViewer.Commands.PdfZoom75Command.MenuCaptionStringId">
       <summary>
@@ -4251,6 +4353,7 @@ This option is not supported for the <see cref="P:DevExpress.XtraPdfViewer.PdfVi
       <summary>
         <para>Gets the specified service.</para>
       </summary>
+      <typeparam name="T"></typeparam>
       <returns>A service object of the specified generic type, or a null reference (Nothing in Visual Basic) if there is no service object of this type.</returns>
     </member>
     <member name="P:DevExpress.XtraPdfViewer.PdfViewer.HandTool">
@@ -4348,6 +4451,12 @@ This option is not supported for the <see cref="P:DevExpress.XtraPdfViewer.PdfVi
       </summary>
       <param name="documentPosition">A <see cref="T:DevExpress.Pdf.PdfDocumentPosition"/> object that contains information about a specific document&#39;s position.</param>
       <returns>true, if a specific PDF document position is visible; otherwise, false.</returns>
+    </member>
+    <member name="M:DevExpress.XtraPdfViewer.PdfViewer.LoadDocument">
+      <summary>
+        <para>Invokes the &quot;Open...&quot; file dialog, creates a specific importer and loads the file.</para>
+      </summary>
+      <returns>true, if the document was loaded successfully; otherwise, false.</returns>
     </member>
     <member name="M:DevExpress.XtraPdfViewer.PdfViewer.LoadDocument(System.IO.Stream)">
       <summary>
@@ -4549,6 +4658,12 @@ This option is not supported for the <see cref="P:DevExpress.XtraPdfViewer.PdfVi
       </summary>
       <value>An integer value, specifying the rotation angle of document pages (in degrees). This value must be multiple of 90.</value>
     </member>
+    <member name="M:DevExpress.XtraPdfViewer.PdfViewer.SaveDocument">
+      <summary>
+        <para>Saves a document in its original format to its original location.</para>
+      </summary>
+      <returns>true if a document has been successfully saved; otherwise, false.</returns>
+    </member>
     <member name="M:DevExpress.XtraPdfViewer.PdfViewer.SaveDocument(System.IO.Stream)">
       <summary>
         <para>Saves the current PDF to the specified stream.</para>
@@ -4654,6 +4769,12 @@ This option is not supported for the <see cref="P:DevExpress.XtraPdfViewer.PdfVi
         <para>Gets or sets  whether or not to show a print status dialog when printing a document.</para>
       </summary>
       <value>true, to show a print status dialog; otherwise false.</value>
+    </member>
+    <member name="P:DevExpress.XtraPdfViewer.PdfViewer.ShowSavingProgressDialog">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.XtraPdfViewer.PdfViewer.StrikethroughSelectedText">
       <summary>

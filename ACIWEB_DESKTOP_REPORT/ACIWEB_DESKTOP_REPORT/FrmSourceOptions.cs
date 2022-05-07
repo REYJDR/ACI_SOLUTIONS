@@ -56,5 +56,16 @@ namespace ACIWEB_DESKTOP_REPORT
             fileSource.Show();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmDbRep fileSource = new FrmDbRep();
+            SourcePanel.Controls.Clear();
+
+            fileSource.TopLevel = false;
+            fileSource.AutoScroll = true;
+            SourcePanel.Controls.Add(fileSource);
+            fileSource.Show();
+        }
     }
 }

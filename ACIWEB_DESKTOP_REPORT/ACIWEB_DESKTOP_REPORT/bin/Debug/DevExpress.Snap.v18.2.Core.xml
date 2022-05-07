@@ -1399,20 +1399,20 @@
     </member>
     <member name="M:DevExpress.Snap.Core.API.SnapDocument.MailMerge(DevExpress.XtraRichEdit.API.Native.Document)">
       <summary>
-        <para>Obsolete. Use the  method instead.</para>
+        <para>Obsolete. Use the SnapDocument.SnapMailMerge method instead.</para>
       </summary>
       <param name="targetDocument">An object implementing the <see cref="T:DevExpress.XtraRichEdit.API.Native.Document"/> interface.</param>
     </member>
     <member name="M:DevExpress.Snap.Core.API.SnapDocument.MailMerge(DevExpress.XtraRichEdit.API.Native.MailMergeOptions,DevExpress.XtraRichEdit.API.Native.Document)">
       <summary>
-        <para>Obsolete. Use the  method instead.</para>
+        <para>Obsolete. Use the SnapDocument.SnapMailMerge method instead.</para>
       </summary>
       <param name="options">An object implementing the <see cref="T:DevExpress.XtraRichEdit.API.Native.MailMergeOptions"/> interface.</param>
       <param name="targetDocument">An object implementing the <see cref="T:DevExpress.XtraRichEdit.API.Native.Document"/> interface.</param>
     </member>
     <member name="M:DevExpress.Snap.Core.API.SnapDocument.MailMerge(DevExpress.XtraRichEdit.API.Native.MailMergeOptions,System.IO.Stream,DevExpress.XtraRichEdit.DocumentFormat)">
       <summary>
-        <para>Obsolete. Use the  method instead.</para>
+        <para>Obsolete. Use the SnapDocument.SnapMailMerge method instead.</para>
       </summary>
       <param name="options">An object implementing the <see cref="T:DevExpress.XtraRichEdit.API.Native.MailMergeOptions"/> interface.</param>
       <param name="stream">A <see cref="T:System.IO.Stream"/> object.</param>
@@ -1420,7 +1420,7 @@
     </member>
     <member name="M:DevExpress.Snap.Core.API.SnapDocument.MailMerge(DevExpress.XtraRichEdit.API.Native.MailMergeOptions,System.String,DevExpress.XtraRichEdit.DocumentFormat)">
       <summary>
-        <para>Obsolete. Use the  method instead.</para>
+        <para>Obsolete. Use the SnapDocument.SnapMailMerge method instead.</para>
       </summary>
       <param name="options">An object implementing the <see cref="T:DevExpress.XtraRichEdit.API.Native.MailMergeOptions"/> interface.</param>
       <param name="fileName">A <see cref="T:System.String"/> value.</param>
@@ -1428,14 +1428,14 @@
     </member>
     <member name="M:DevExpress.Snap.Core.API.SnapDocument.MailMerge(System.IO.Stream,DevExpress.XtraRichEdit.DocumentFormat)">
       <summary>
-        <para>Obsolete. Use the  method instead.</para>
+        <para>Obsolete. Use the SnapDocument.SnapMailMerge method instead.</para>
       </summary>
       <param name="stream">A <see cref="T:System.IO.Stream"/> object.</param>
       <param name="format">A <see cref="T:DevExpress.XtraRichEdit.DocumentFormat"/> structure.</param>
     </member>
     <member name="M:DevExpress.Snap.Core.API.SnapDocument.MailMerge(System.String,DevExpress.XtraRichEdit.DocumentFormat)">
       <summary>
-        <para>Obsolete. Use the  method instead.</para>
+        <para>Obsolete. Use the SnapDocument.SnapMailMerge method instead.</para>
       </summary>
       <param name="fileName">A <see cref="T:System.String"/> value.</param>
       <param name="format">A <see cref="T:DevExpress.XtraRichEdit.DocumentFormat"/> structure.</param>
@@ -1759,6 +1759,12 @@
         <para>Applies the selected table style to the current list at the specified nesting level.</para>
       </summary>
       <param name="level">An integer value, specifying the document nesting level.</param>
+    </member>
+    <member name="P:DevExpress.Snap.Core.API.SnapList.BottomBorderVisibleWhenNested">
+      <summary>
+        <para>Specifies whether the bottom border for a SnapList table located inside a table cell should be visible.</para>
+      </summary>
+      <value>true, to enable a SnapList table&#39;s bottom border; otherwise, false.</value>
     </member>
     <member name="P:DevExpress.Snap.Core.API.SnapList.DataMember">
       <summary>

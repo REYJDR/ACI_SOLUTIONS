@@ -4,6 +4,11 @@
     <name>DevExpress.XtraRichEdit.v18.2</name>
   </assembly>
   <members>
+    <member name="N:DevExpress.XtraEditors.Repository">
+      <summary>
+        <para>Contains classes representing repository items that store editor-specific settings.</para>
+      </summary>
+    </member>
     <member name="T:DevExpress.XtraEditors.Repository.RepositoryItemRichTextEdit">
       <summary>
         <para>Contains settings specific to an in-place editor that displays RTF data.</para>
@@ -854,7 +859,7 @@
     </member>
     <member name="M:DevExpress.XtraRichEdit.RichEditControl.BeginUpdate">
       <summary>
-        <para>Locks the <see cref="T:DevExpress.XtraRichEdit.RichEditControl"/> to prevent its visual updates until the  method is called.</para>
+        <para>Locks the <see cref="T:DevExpress.XtraRichEdit.RichEditControl"/> to prevent its visual updates until the RichEditControl.EndUpdate method is called.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraRichEdit.RichEditControl.BookmarkFormShowing">
@@ -880,7 +885,7 @@
     </member>
     <member name="M:DevExpress.XtraRichEdit.RichEditControl.CancelUpdate">
       <summary>
-        <para>This method supports the internal infrastructure and is not intended to be called directly from your code. Use the  method instead.</para>
+        <para>This method supports the internal infrastructure and is not intended to be called directly from your code. Use the RichEditControl.EndUpdate method instead.</para>
       </summary>
     </member>
     <member name="P:DevExpress.XtraRichEdit.RichEditControl.CanRedo">
@@ -1123,7 +1128,7 @@
     </member>
     <member name="M:DevExpress.XtraRichEdit.RichEditControl.EndUpdate">
       <summary>
-        <para>Unlocks the <see cref="T:DevExpress.XtraRichEdit.RichEditControl"/> object after a call to the  method and causes an immediate visual update.</para>
+        <para>Unlocks the <see cref="T:DevExpress.XtraRichEdit.RichEditControl"/> object after a call to the RichEditControl.BeginUpdate method and causes an immediate visual update.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraRichEdit.RichEditControl.ExportToPdf(System.IO.Stream)">
@@ -1239,6 +1244,7 @@
       <summary>
         <para>Gets the specified service.</para>
       </summary>
+      <typeparam name="T"></typeparam>
       <returns>A service object of the specified type or null for reference types and zero for numeric value types if a service is not available.</returns>
     </member>
     <member name="M:DevExpress.XtraRichEdit.RichEditControl.GetShortcutKey(DevExpress.XtraRichEdit.Commands.RichEditCommandId,DevExpress.XtraRichEdit.RichEditViewType)">
@@ -1748,6 +1754,7 @@
         <para>Performs a service substitution.</para>
       </summary>
       <param name="newService">A service of the specified type that will be registered.</param>
+      <typeparam name="T"></typeparam>
       <returns>Previously registered service of the specified type, or null (Nothing in Visual Basic) if the service does not exist.</returns>
     </member>
     <member name="M:DevExpress.XtraRichEdit.RichEditControl.ResetText">

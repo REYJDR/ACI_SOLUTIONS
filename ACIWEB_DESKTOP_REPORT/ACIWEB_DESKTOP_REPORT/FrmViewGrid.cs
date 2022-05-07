@@ -43,11 +43,13 @@ namespace ACIWEB_DESKTOP_REPORT
         {
             
             string table= cmbTables.SelectedItem.ToString();
-           
+            DSGridView.RowHeadersVisible = false;
             DSGridView.DataSource = dataSet.Tables[table];
-            DSGridView.Refresh();
-
-            DSGridView.AutoResizeColumns();
+           // DSGridView.RowHeadersVisible = true;
+          //  DSGridView.Refresh();
+           
+            //DSGridView.AutoResizeColumns();
+            DSGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
 
             cmbFields.Items.Clear();
 
@@ -65,12 +67,12 @@ namespace ACIWEB_DESKTOP_REPORT
         {
 
             textSearch.Text = "";
-
+            DSGridView.RowHeadersVisible = false;
             DSGridView.DataSource = dataSet.Tables[cmbTables.SelectedItem.ToString()];
             DSGridView.Update();
             DSGridView.Refresh();
-            DSGridView.AutoResizeColumns();
-            
+           // DSGridView.AutoResizeColumns();
+            DSGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
 
         }
 

@@ -166,17 +166,21 @@
       <summary>
         <para>Adds the specified service to the service container.</para>
       </summary>
+      <typeparam name="T"></typeparam>
+      <typeparam name="TImpl"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.ClientControls.DefaultClientControlContainer.UseCustomGlobalizationService``1">
       <summary>
         <para>Registers the specified custom globalization service type.</para>
       </summary>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.ClientControls.DefaultClientControlContainer.UseCustomGlobalizationService``1(``0)">
       <summary>
         <para>Registers the specified custom globalization service instance.</para>
       </summary>
       <param name="globalizationService">An object implementing the <see cref="T:DevExpress.XtraReports.Web.ClientControls.IGlobalizationService"/> interface.</param>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="T:DevExpress.XtraReports.Web.ClientControls.ExceptionHandler">
       <summary>
@@ -2092,32 +2096,41 @@
         <para>Adds the specified service instance to the service container.</para>
       </summary>
       <param name="instance">An instance to register.</param>
+      <typeparam name="T">A base type.</typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.QueryBuilder.DefaultQueryBuilderContainer.Register``2">
       <summary>
         <para>Adds the specified service implementation to the service container.</para>
       </summary>
+      <typeparam name="T">A base type.</typeparam>
+      <typeparam name="TImpl">An implemented type.</typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.QueryBuilder.DefaultQueryBuilderContainer.RegisterDataSourceWizardDBSchemaProviderExFactory``1">
       <summary>
         <para>Registers the custom database schema provider factory.</para>
       </summary>
+      <typeparam name="T">An implemented type.</typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.QueryBuilder.DefaultQueryBuilderContainer.RegisterDataSourceWizardDBSchemaProviderFactory``1">
       <summary>
         <para>For internal use.</para>
       </summary>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.QueryBuilder.DefaultQueryBuilderContainer.RegisterSingleton``2">
       <summary>
         <para>Adds the specified service implementation to the service container as a singleton.</para>
       </summary>
+      <typeparam name="T">A base type.</typeparam>
+      <typeparam name="TImpl">An implemented type.</typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.QueryBuilder.DefaultQueryBuilderContainer.RegisterSingleton``2(``1)">
       <summary>
         <para>Adds the specified service instance to the service container as a singleton.</para>
       </summary>
       <param name="instance">An instance to register.</param>
+      <typeparam name="T">A base type.</typeparam>
+      <typeparam name="TImpl">An implemented type.</typeparam>
     </member>
     <member name="T:DevExpress.XtraReports.Web.QueryBuilder.QueryBuilderModel">
       <summary>
@@ -2336,6 +2349,8 @@
       <summary>
         <para>Adds the specified service to the service container.</para>
       </summary>
+      <typeparam name="T"></typeparam>
+      <typeparam name="TImpl"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.ReportDesigner.DefaultReportDesignerContainer.RegisterDataSourceWizardConfigFileConnectionStringsProvider">
       <summary>
@@ -2346,43 +2361,52 @@
       <summary>
         <para>Registers the connection strings provider for custom data connections (without overriding connections defined in the application&#39;s Web.config file).</para>
       </summary>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.ReportDesigner.DefaultReportDesignerContainer.RegisterDataSourceWizardConnectionStringsProvider``1(System.Boolean)">
       <summary>
         <para>Registers the connection strings provider for custom data connections with a parameter value specifying whether or not to override connections defined in the application&#39;s Web.config file.</para>
       </summary>
       <param name="overrideWebConfigConnections">true, to override connections defined in the application&#39;s Web.config file (and never save data connection parameters along with report layouts); otherwise, false.</param>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.ReportDesigner.DefaultReportDesignerContainer.RegisterDataSourceWizardDBSchemaProviderExFactory``1">
       <summary>
         <para>Registers the custom database schema provider factory.</para>
       </summary>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.ReportDesigner.DefaultReportDesignerContainer.RegisterDataSourceWizardDBSchemaProviderFactory``1">
       <summary>
         <para>For internal use.</para>
       </summary>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.ReportDesigner.DefaultReportDesignerContainer.RegisterSecureDataConverter``1">
       <summary>
         <para>Enables the Web Report Designer to use a custom algorithm for encryption of data source connection strings on the client.</para>
       </summary>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.ReportDesigner.DefaultReportDesignerContainer.RegisterSingleton``1(``0)">
       <summary>
         <para>Adds the specified service instance to the service container as a singleton.</para>
       </summary>
       <param name="instance">An instance to register.</param>
+      <typeparam name="T">A base type.</typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.ReportDesigner.DefaultReportDesignerContainer.RegisterSingleton``2">
       <summary>
         <para>Adds the specified service implementation to the service container as a singleton.</para>
       </summary>
+      <typeparam name="T">A base type.</typeparam>
+      <typeparam name="TImpl">An implemented type.</typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.ReportDesigner.DefaultReportDesignerContainer.RegisterSqlDataSourceWizardCustomizationService``1">
       <summary>
         <para>Registers the SQL data source wizard customization service.</para>
       </summary>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="T:DevExpress.XtraReports.Web.ReportDesigner.ReportDesignerClientSideModelGenerator">
       <summary>
@@ -2900,27 +2924,34 @@
       <summary>
         <para>Adds the specified service to the service container.</para>
       </summary>
+      <typeparam name="T"></typeparam>
+      <typeparam name="TImpl"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.WebDocumentViewer.DefaultWebDocumentViewerContainer.RegisterConnectionProviderFactory``1">
       <summary>
         <para>Registers a factory that returns an object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IConnectionProviderService"/> interface.</para>
       </summary>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.WebDocumentViewer.DefaultWebDocumentViewerContainer.RegisterSingleton``1(``0)">
       <summary>
         <para>Enables registering a specified custom service instance in a Web Document Viewer.</para>
       </summary>
       <param name="instance">A <see cref="T:System.Object"/> value, specifying the custom service.</param>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.WebDocumentViewer.DefaultWebDocumentViewerContainer.RegisterSingleton``2">
       <summary>
         <para>Enables registering a custom service in a Web Document Viewer.</para>
       </summary>
+      <typeparam name="T"></typeparam>
+      <typeparam name="TImpl"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.WebDocumentViewer.DefaultWebDocumentViewerContainer.RegisterWebDocumentViewerDrillThroughProcessor``1">
       <summary>
         <para>Registers a custom drill-through processor in a web application.</para>
       </summary>
+      <typeparam name="T"></typeparam>
     </member>
     <member name="M:DevExpress.XtraReports.Web.WebDocumentViewer.DefaultWebDocumentViewerContainer.UseCachedReportSourceBuilder">
       <summary>

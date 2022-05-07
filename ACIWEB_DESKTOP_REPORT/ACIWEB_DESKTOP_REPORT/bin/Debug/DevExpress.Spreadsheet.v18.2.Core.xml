@@ -1481,9 +1481,9 @@
     </member>
     <member name="P:DevExpress.Spreadsheet.CellKey.SheetId">
       <summary>
-        <para>Gets the index of a worksheet that contains the current cell.</para>
+        <para>Gets the ID of a worksheet that contains the current cell.</para>
       </summary>
-      <value>A zero-based integer value that specifies the index of the worksheet containing the current cell.</value>
+      <value>An integer that is the worksheet&#39;s ID.</value>
     </member>
     <member name="M:DevExpress.Spreadsheet.CellKey.ToLong">
       <summary>
@@ -3167,6 +3167,18 @@
         <para>Gets the text displayed in a chart element.</para>
       </summary>
       <value>A string that is the displayed text.</value>
+    </member>
+    <member name="P:DevExpress.Spreadsheet.Charts.ChartText.Range">
+      <summary>
+        <para>Returns a cell range from which a chart element&#39;s text is obtained.</para>
+      </summary>
+      <value>Specifies a referenced cell range.</value>
+    </member>
+    <member name="P:DevExpress.Spreadsheet.Charts.ChartText.RefersTo">
+      <summary>
+        <para>Returns the string representation of the referenced cell range or formula.</para>
+      </summary>
+      <value>Specifies the source for the text used in a chart element.</value>
     </member>
     <member name="M:DevExpress.Spreadsheet.Charts.ChartText.SetAuto">
       <summary>
@@ -11300,9 +11312,9 @@
     </member>
     <member name="P:DevExpress.Spreadsheet.Formulas.CellCalculationArgs.SheetId">
       <summary>
-        <para>Gets the index of a worksheet in a workbook containing the current cell.</para>
+        <para>Gets the ID of a worksheet that contains the current cell.</para>
       </summary>
-      <value>An integer that is the worksheet index.</value>
+      <value>An integer that is the worksheet&#39;s ID.</value>
     </member>
     <member name="P:DevExpress.Spreadsheet.Formulas.CellCalculationArgs.Value">
       <summary>
@@ -13313,7 +13325,7 @@ A <see cref="T:DevExpress.Spreadsheet.Formulas.ConstantExpression"/> class insta
     </member>
     <member name="T:DevExpress.Spreadsheet.Functions.ParameterInfo">
       <summary>
-        <para>Defines a parameter to pass to the custom function.</para>
+        <para>Defines a parameter to pass to a custom function.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Spreadsheet.Functions.ParameterInfo.#ctor(DevExpress.Spreadsheet.Functions.ParameterType)">
@@ -14472,7 +14484,7 @@ A <see cref="T:DevExpress.Spreadsheet.Formulas.ConstantExpression"/> class insta
     </member>
     <member name="P:DevExpress.Spreadsheet.ICustomXmlPart.CustomXmlGuid">
       <summary>
-        <para>Gets or sets a globally unique identifier (GUID) that identifies the custom XML part.</para>
+        <para>Gets a globally unique identifier (GUID) that identifies the custom XML part.</para>
       </summary>
       <value>A <see cref="T:System.String"/> that is the GUID.</value>
     </member>
@@ -16912,7 +16924,7 @@ to group by in date range grouping.</param>
     </member>
     <member name="F:DevExpress.Spreadsheet.PivotFieldGroupByType.Days">
       <summary>
-        <para>Groups items in the date or time field by days.The number of days included in each group is defined by the interval parameter of the  method and returned by the <see cref="P:DevExpress.Spreadsheet.PivotFieldGroupingInfo.Interval"/> property.</para>
+        <para>Groups items in the date or time field by days.The number of days included in each group is defined by the interval parameter of the PivotField.GroupItems method and returned by the <see cref="P:DevExpress.Spreadsheet.PivotFieldGroupingInfo.Interval"/> property.</para>
       </summary>
     </member>
     <member name="F:DevExpress.Spreadsheet.PivotFieldGroupByType.Hours">
@@ -16937,7 +16949,7 @@ to group by in date range grouping.</param>
     </member>
     <member name="F:DevExpress.Spreadsheet.PivotFieldGroupByType.NumericRanges">
       <summary>
-        <para>Groups items in a numeric field into intervals.The interval length is defined by the interval parameter of the  method and returned by <see cref="P:DevExpress.Spreadsheet.PivotFieldGroupingInfo.Interval"/> property.</para>
+        <para>Groups items in a numeric field into intervals.The interval length is defined by the interval parameter of the PivotField.GroupItems method and returned by <see cref="P:DevExpress.Spreadsheet.PivotFieldGroupingInfo.Interval"/> property.</para>
       </summary>
     </member>
     <member name="F:DevExpress.Spreadsheet.PivotFieldGroupByType.Quarters">

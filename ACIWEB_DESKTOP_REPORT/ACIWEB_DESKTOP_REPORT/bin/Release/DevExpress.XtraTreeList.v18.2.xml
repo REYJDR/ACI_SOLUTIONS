@@ -4,6 +4,16 @@
     <name>DevExpress.XtraTreeList.v18.2</name>
   </assembly>
   <members>
+    <member name="N:DevExpress.XtraEditors">
+      <summary>
+        <para>Contains editor classes. They provide the functionality for corresponding controls. Editor specific information is stored within the Persistent classes that are implemented in the <see cref="N:DevExpress.XtraEditors.Persistent"/> namespace.</para>
+      </summary>
+    </member>
+    <member name="N:DevExpress.XtraEditors.Repository">
+      <summary>
+        <para>Contains classes representing repository items that store editor-specific settings.</para>
+      </summary>
+    </member>
     <member name="T:DevExpress.XtraEditors.Repository.RepositoryItemTreeListLookUpEdit">
       <summary>
         <para>A repository item which stores settings specific to a <see cref="T:DevExpress.XtraEditors.TreeListLookUpEdit"/> control.</para>
@@ -359,13 +369,20 @@ This constant is used to initialize the <see cref="P:DevExpress.XtraEditors.Repo
         <para>Provides data for the <see cref="E:DevExpress.XtraTreeList.TreeList.CellValueChanged"/> and <see cref="E:DevExpress.XtraTreeList.TreeList.CellValueChanging"/> events.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraTreeList.CellValueChangedEventArgs.#ctor(DevExpress.XtraTreeList.Columns.TreeListColumn,DevExpress.XtraTreeList.Nodes.TreeListNode,System.Object)">
+    <member name="M:DevExpress.XtraTreeList.CellValueChangedEventArgs.#ctor(DevExpress.XtraTreeList.Columns.TreeListColumn,DevExpress.XtraTreeList.Nodes.TreeListNode,System.Object,System.Boolean)">
       <summary>
-        <para>Creates an instance of the <see cref="T:DevExpress.XtraTreeList.CellValueChangedEventArgs"/> class.</para>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraTreeList.CellValueChangedEventArgs"/> class with specified settings.</para>
       </summary>
-      <param name="column">A <see cref="T:DevExpress.XtraTreeList.Columns.TreeListColumn"/> object representing the column whose cell&#39;s value has been modified. This value is assigned to the <see cref="P:DevExpress.XtraTreeList.CellEventArgs.Column"/> property.</param>
-      <param name="node">A <see cref="T:DevExpress.XtraTreeList.Nodes.TreeListNode"/> object representing the node whose cell&#39;s value has been modified. This value is assigned to the <see cref="P:DevExpress.XtraTreeList.NodeEventArgs.Node"/> property.</param>
-      <param name="val">An object representing the new value assigned to the cell. This value is assigned to the <see cref="P:DevExpress.XtraTreeList.CellValueChangedEventArgs.Value"/> property.</param>
+      <param name="column"></param>
+      <param name="node"></param>
+      <param name="val"></param>
+      <param name="changedByUser"></param>
+    </member>
+    <member name="P:DevExpress.XtraTreeList.CellValueChangedEventArgs.ChangedByUser">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraTreeList.CellValueChangedEventArgs.Value">
       <summary>
@@ -3558,7 +3575,7 @@ When handling the <see cref="E:DevExpress.XtraTreeList.TreeList.GetSelectImage"/
     </member>
     <member name="F:DevExpress.XtraTreeList.NodeChangeTypeEnum.Add">
       <summary>
-        <para>A new node has been added to the Tree List&#39;s <see cref="P:DevExpress.XtraTreeList.TreeList.Nodes"/> collection. This can be performed by calling the  method.</para>
+        <para>A new node has been added to the Tree List&#39;s <see cref="P:DevExpress.XtraTreeList.TreeList.Nodes"/> collection. This can be performed by calling the TreeListNodes.Add method.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraTreeList.NodeChangeTypeEnum.CheckBoxStyle">
@@ -4019,6 +4036,12 @@ By using <see cref="T:DevExpress.XtraTreeList.Nodes.TreeListNode"/> class method
         <para>Gets or sets the index of the node&#39;s select image displayed when this node is not focused.</para>
       </summary>
       <value>An integer value representing the zero-based index of the select image displayed when this node is not focused.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeList.Nodes.TreeListNode.IsSelected">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraTreeList.Nodes.TreeListNode.Item(System.Object)">
       <summary>
@@ -4982,6 +5005,12 @@ By using <see cref="T:DevExpress.XtraTreeList.Nodes.TreeListNode"/> class method
     <member name="F:DevExpress.XtraTreeList.TreeList.AutoFilterNodeId">
       <summary>
         <para>Contains a value which specifies the Automatic Filtering Row&#39;s ID.</para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.XtraTreeList.TreeList.BackColor">
+      <summary>
+        <para></para>
       </summary>
       <value></value>
     </member>
@@ -7016,10 +7045,22 @@ In versions 17.1 and newer, we suggest that you use the advanced in-code filteri
       </summary>
       <param name="node">A <see cref="T:DevExpress.XtraTreeList.Nodes.TreeListNode"/> to be refreshed.</param>
     </member>
+    <member name="M:DevExpress.XtraTreeList.TreeList.ResetAutoFilterCondition(DevExpress.XtraTreeList.Columns.TreeListColumn)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="column"></param>
+    </member>
     <member name="M:DevExpress.XtraTreeList.TreeList.ResetAutoFilterConditions">
       <summary>
         <para>Resets all automatic filtering row conditions to their defaults.</para>
       </summary>
+    </member>
+    <member name="M:DevExpress.XtraTreeList.TreeList.ResetAutoFilterConditions(System.Collections.Generic.IEnumerable{DevExpress.XtraTreeList.Columns.TreeListColumn})">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="columns"></param>
     </member>
     <member name="M:DevExpress.XtraTreeList.TreeList.RestoreLayoutFromRegistry(System.String)">
       <summary>

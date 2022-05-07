@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chkExcel = new System.Windows.Forms.CheckBox();
             this.chkOnlyDS = new System.Windows.Forms.CheckBox();
             this.cmbFileType = new System.Windows.Forms.ComboBox();
             this.chkExport = new System.Windows.Forms.CheckBox();
@@ -38,7 +39,6 @@
             this.btnQuery = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.chkRepD = new System.Windows.Forms.CheckBox();
-            this.chkExcel = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +55,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(598, 429);
             this.panel1.TabIndex = 5;
+            // 
+            // chkExcel
+            // 
+            this.chkExcel.AutoSize = true;
+            this.chkExcel.Location = new System.Drawing.Point(11, 112);
+            this.chkExcel.Name = "chkExcel";
+            this.chkExcel.Size = new System.Drawing.Size(92, 17);
+            this.chkExcel.TabIndex = 31;
+            this.chkExcel.Text = "Open in Excel";
+            this.chkExcel.UseVisualStyleBackColor = true;
+            this.chkExcel.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
             // 
             // chkOnlyDS
             // 
@@ -133,17 +144,6 @@
             this.chkRepD.Name = "chkRepD";
             this.chkRepD.Size = new System.Drawing.Size(104, 24);
             this.chkRepD.TabIndex = 4;
-            // 
-            // chkExcel
-            // 
-            this.chkExcel.AutoSize = true;
-            this.chkExcel.Location = new System.Drawing.Point(11, 112);
-            this.chkExcel.Name = "chkExcel";
-            this.chkExcel.Size = new System.Drawing.Size(92, 17);
-            this.chkExcel.TabIndex = 31;
-            this.chkExcel.Text = "Open in Excel";
-            this.chkExcel.UseVisualStyleBackColor = true;
-            this.chkExcel.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
             // 
             // FrmSageRep
             // 

@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{DA71B708-8291-497D-892C-6EBA576CCA84}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../../Library/Frameworks/Mono.framework/Versions/6.10.0/lib/mono/msbuild/Current/bin/Microsoft.Common.CurrentVersion.targets">
+    <Files>
+      <File FileName="AciSageLibrary/DbQuerySage.cs" Line="87" Column="13" />
+      <File FileName="../../../../../../Library/Frameworks/Mono.framework/Versions/6.10.0/lib/mono/msbuild/Current/bin/Microsoft.Common.CurrentVersion.targets" Line="3162" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ACIWEB_DESKTOP_REPORT" expanded="True">
+            <Node name="AciSageLibrary" expanded="True" />
+            <Node name="ACIWEB_DESKTOP_REPORT" expanded="True" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.ACIWEB__DESKTOP__REPORT PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

@@ -51,6 +51,13 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkedListReportFS = new System.Windows.Forms.CheckedListBox();
             this.btnFSDNew = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnEditCustom = new System.Windows.Forms.Button();
+            this.btnRefreshCustom = new System.Windows.Forms.Button();
+            this.btnDelCustom = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkedListReportCustom = new System.Windows.Forms.CheckedListBox();
+            this.btnNewCustom = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -58,6 +65,8 @@
             this.gpoTempSage.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -65,6 +74,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(-1, -1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -310,6 +320,83 @@
             this.btnFSDNew.UseVisualStyleBackColor = true;
             this.btnFSDNew.Click += new System.EventHandler(this.btnFSDNew_Click);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.btnEditCustom);
+            this.tabPage3.Controls.Add(this.btnRefreshCustom);
+            this.tabPage3.Controls.Add(this.btnDelCustom);
+            this.tabPage3.Controls.Add(this.groupBox1);
+            this.tabPage3.Controls.Add(this.btnNewCustom);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(590, 402);
+            this.tabPage3.TabIndex = 4;
+            this.tabPage3.Text = "Customs Templates";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // btnEditCustom
+            // 
+            this.btnEditCustom.Location = new System.Drawing.Point(366, 47);
+            this.btnEditCustom.Name = "btnEditCustom";
+            this.btnEditCustom.Size = new System.Drawing.Size(75, 23);
+            this.btnEditCustom.TabIndex = 38;
+            this.btnEditCustom.Text = "Edit";
+            this.btnEditCustom.UseVisualStyleBackColor = true;
+            this.btnEditCustom.Click += new System.EventHandler(this.btnEditCustom_Click);
+            // 
+            // btnRefreshCustom
+            // 
+            this.btnRefreshCustom.Location = new System.Drawing.Point(366, 105);
+            this.btnRefreshCustom.Name = "btnRefreshCustom";
+            this.btnRefreshCustom.Size = new System.Drawing.Size(75, 23);
+            this.btnRefreshCustom.TabIndex = 37;
+            this.btnRefreshCustom.Text = "Refresh";
+            this.btnRefreshCustom.UseVisualStyleBackColor = true;
+            this.btnRefreshCustom.Click += new System.EventHandler(this.btnRefreshCustom_Click);
+            // 
+            // btnDelCustom
+            // 
+            this.btnDelCustom.Location = new System.Drawing.Point(366, 76);
+            this.btnDelCustom.Name = "btnDelCustom";
+            this.btnDelCustom.Size = new System.Drawing.Size(75, 23);
+            this.btnDelCustom.TabIndex = 36;
+            this.btnDelCustom.Text = "Delete";
+            this.btnDelCustom.UseVisualStyleBackColor = true;
+            this.btnDelCustom.Click += new System.EventHandler(this.btnDelCustom_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.checkedListReportCustom);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(354, 274);
+            this.groupBox1.TabIndex = 35;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Reports templates";
+            // 
+            // checkedListReportCustom
+            // 
+            this.checkedListReportCustom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListReportCustom.CheckOnClick = true;
+            this.checkedListReportCustom.FormattingEnabled = true;
+            this.checkedListReportCustom.Location = new System.Drawing.Point(6, 21);
+            this.checkedListReportCustom.Name = "checkedListReportCustom";
+            this.checkedListReportCustom.Size = new System.Drawing.Size(342, 240);
+            this.checkedListReportCustom.TabIndex = 20;
+            this.checkedListReportCustom.SelectedIndexChanged += new System.EventHandler(this.checkedListReportCustom_SelectedIndexChanged);
+            // 
+            // btnNewCustom
+            // 
+            this.btnNewCustom.Location = new System.Drawing.Point(366, 18);
+            this.btnNewCustom.Name = "btnNewCustom";
+            this.btnNewCustom.Size = new System.Drawing.Size(75, 23);
+            this.btnNewCustom.TabIndex = 34;
+            this.btnNewCustom.Text = "New ";
+            this.btnNewCustom.UseVisualStyleBackColor = true;
+            this.btnNewCustom.Click += new System.EventHandler(this.btnNewCustom_Click);
+            // 
             // FrmDesigner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,6 +413,8 @@
             this.gpoTempSage.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -355,5 +444,12 @@
         private System.Windows.Forms.CheckedListBox checkedListReportFS;
         private System.Windows.Forms.Button btnFSDNew;
         public System.Windows.Forms.ComboBox comboBoxRepType;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button btnEditCustom;
+        private System.Windows.Forms.Button btnRefreshCustom;
+        private System.Windows.Forms.Button btnDelCustom;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckedListBox checkedListReportCustom;
+        private System.Windows.Forms.Button btnNewCustom;
     }
 }

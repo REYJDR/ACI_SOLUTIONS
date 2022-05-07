@@ -170,6 +170,7 @@
             // 
             // settingsPanel
             // 
+            this.settingsPanel.AutoSize = true;
             this.settingsPanel.Controls.Add(this.tabSetting);
             this.settingsPanel.Location = new System.Drawing.Point(0, 0);
             this.settingsPanel.Name = "settingsPanel";
@@ -182,6 +183,7 @@
             this.tabSetting.Controls.Add(this.tabSageDb);
             this.tabSetting.Controls.Add(this.tabFileSource);
             this.tabSetting.Controls.Add(this.tabSFTP);
+            this.tabSetting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabSetting.Location = new System.Drawing.Point(0, 0);
             this.tabSetting.Name = "tabSetting";
             this.tabSetting.SelectedIndex = 0;
@@ -1321,6 +1323,7 @@
             this.groupBox4.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
